@@ -1,0 +1,376 @@
+/* --- Main Page Layout --- */
+.signupPage {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- Left Panel (Blue) --- */
+.leftPanel {
+  background: linear-gradient(160deg, #1e3a8a 0%, #3a86ff 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.testimonial {
+  max-width: 400px;
+  position: relative;
+}
+
+.quoteIcon {
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.author {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.avatars {
+  display: flex;
+  gap: -10px; /* Overlap avatars */
+  margin-top: 30px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  border: 3px solid #3a86ff;
+}
+
+.avatar1 { background: #ff6b6b; }
+.avatar2 { background: #f06595; }
+.avatar3 { background: #748ffc; }
+
+/* --- Testimonial Carousel --- */
+.testimonialCarouselContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carouselWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselContent {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carouselItem {
+  min-width: 100%;
+  padding: 20px;
+  display: none;
+}
+
+.carouselItem.active {
+  display: block;
+}
+
+.testimonialStars {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.starIcon {
+  color: #ffc107;
+  margin: 0 2px;
+}
+
+.testimonialTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.testimonialText {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.testimonialDate {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.carouselButtonLeft,
+.carouselButtonRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.carouselButtonLeft:hover,
+.carouselButtonRight:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.carouselButtonLeft {
+  left: 10px;
+}
+
+.carouselButtonRight {
+  right: 10px;
+}
+
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+}
+
+.starRating {
+  display: flex;
+}
+
+
+/* --- Right Panel (White) --- */
+.rightPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.signupForm {
+  width: 100%;
+  max-width: 400px;
+}
+
+.signupForm h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #007bff;
+  margin: 0;
+}
+
+.subtitle {
+  color: #666;
+  margin: 10px 0 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.socialLogin {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.socialLogin button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s;
+}
+.googleBtn {
+  background-color: #db4437;
+  color: #fff;
+  border-color: #db4437;
+}
+.emailBtn {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+  margin: 25px 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+.separator span { padding: 0 10px; }
+
+/* Form Elements */
+.inputGroup {
+  margin-bottom: 20px;
+}
+.inputGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 5px;
+}
+.inputGroup input,
+.inputGroup select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.emailWrapper {
+    position: relative;
+}
+
+.resendLink {
+    position: absolute;
+    right: 0;
+    top: -22px; /* Position next to the label */
+    font-size: 12px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.checkboxGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+.checkboxGroup label a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.checkboxGroup input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.recaptchaLogo {
+    width: 40px;
+    height: 40px;
+    background: url('https://www.gstatic.com/recaptcha/api2/logo_48.png') no-repeat center center;
+    background-size: contain;
+    margin-left: auto; /* Pushes it to the right */
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 10px;
+}
+.submitBtn:hover {
+  background-color: #0056b3;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+.loginLink a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .signupPage {
+    grid-template-columns: 1fr; /* Stack columns */
+  }
+  .leftPanel {
+    display: none; /* Hide the decorative panel on smaller screens */
+  }
+  .rightPanel {
+    padding: 30px;
+  }
+}

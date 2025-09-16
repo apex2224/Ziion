@@ -1,0 +1,146 @@
+/* --- FAQ Section --- */
+.faqSection {
+  width: 100%;
+  padding: 80px 5%;
+  background-color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* --- Header --- */
+.header {
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e6f7ff;
+  color: #007bff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 36px;
+  color: #222;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.subtitle a,
+.footer p a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.subtitle a:hover,
+.footer p a:hover {
+  text-decoration: underline;
+}
+
+/* --- FAQ Grid --- */
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px; /* No row gap, 40px column gap */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faqColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- FAQ Item --- */
+.faqItem {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.faqItem h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.questionButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.questionText {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  padding-right: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* Answer with transition */
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.2s ease-out,
+    padding 0.3s ease-out;
+}
+
+.answer.open {
+  max-height: 200px; /* Adjust as needed for longer answers */
+  opacity: 1;
+  padding-bottom: 24px;
+}
+
+.answer p {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* --- Footer --- */
+.footer {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .faqGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+}

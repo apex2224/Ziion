@@ -1,0 +1,302 @@
+/* --- Rating Section --- */
+.ratingSection {
+  width: 100%;
+  padding: 80px 5%;
+  background-color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #28a745; /* Green color for CPIDroid */
+}
+
+/* --- Content Wrapper --- */
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+}
+
+/* --- Trustpilot Card (Left) --- */
+.trustpilotCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.excellent {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.cardStars {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.reviewCount {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Star Rating Helper */
+.starRating {
+  color: #00b67a; /* Trustpilot Green */
+}
+
+/* Trustpilot Logo Helper */
+.trustpilotLogo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+}
+
+.trustpilotIcon {
+  color: #00b67a;
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+/* --- Testimonial (Right) --- */
+.testimonialWrapper {
+  flex-grow: 1;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Carousel Container */
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Carousel Buttons */
+.carouselButtonLeft,
+.carouselButtonRight {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.carouselButtonLeft:hover,
+.carouselButtonRight:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carouselButtonLeft {
+  margin-right: 10px;
+}
+
+.carouselButtonRight {
+  margin-left: 10px;
+}
+
+/* Testimonial Carousel */
+.testimonialCarousel {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+
+.testimonialStars {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.testimonialTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.testimonialText {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.author {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.date {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Carousel Indicators */
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+/* --- Footer --- */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footerText {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.footerLogo {
+  font-size: 18px; /* Slightly smaller logo in footer */
+}
+
+.footerLogo .trustpilotIcon {
+  font-size: 17px;
+}
+
+.ctaButton {
+  background-color: #f7c32e;
+  color: #222;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #e6b320;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .trustpilotCard {
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+  }
+
+  .testimonialWrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .testimonialCarousel {
+    height: 350px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .carouselContainer {
+    position: relative;
+  }
+  
+  .carouselButtonLeft,
+  .carouselButtonRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .carouselButtonLeft {
+    left: 10px;
+    margin-right: 0;
+  }
+  
+  .carouselButtonRight {
+    right: 10px;
+    margin-left: 0;
+  }
+  
+  .testimonial {
+    padding: 0 40px;
+  }
+  
+  .testimonialText {
+    font-size: 15px;
+  }
+}

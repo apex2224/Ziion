@@ -1,0 +1,171 @@
+/* --- Main Page Container --- */
+.contactPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #f0f0e6; /* Muted beige background from image */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- Form Container Card --- */
+.formContainer {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.formHeader h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.formHeader p {
+  font-size: 1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Form Layout --- */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+/* --- Input, Select, Textarea Styling --- */
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Specific padding for inputs with icons */
+.inputGroup input,
+.inputGroup select {
+  padding-right: 45px;
+}
+
+.inputGroup select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* --- Focus State --- */
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: #e83e8c; /* Pink accent color */
+  box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.1);
+}
+
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none; /* Allows clicking through the icon to the input */
+}
+
+/* --- Form Footer & Buttons --- */
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.backButton,
+.submitButton {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.backButton {
+  background-color: #343a40;
+  color: #fff;
+  text-decoration: none; /* For the <Link> component */
+}
+
+.backButton:hover {
+  background-color: #495057;
+}
+
+.submitButton {
+  background-color: #e83e8c;
+  color: #fff;
+}
+
+.submitButton:hover {
+  background-color: #d81b60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(232, 62, 140, 0.4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .formFooter {
+    flex-direction: column-reverse; /* Puts submit button on top */
+    gap: 15px;
+  }
+
+  .backButton,
+  .submitButton {
+    width: 100%;
+  }
+}
