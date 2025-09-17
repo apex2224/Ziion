@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import {
   FaChevronDown,
@@ -69,12 +69,33 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  // Check authentication status on component mount
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuthenticated") === "true";
+    setIsAuthenticated(authStatus);
+  }, []);
 
   const handleMouseEnter = (menu) => setOpenMenu(menu);
   const handleMouseLeave = () => setOpenMenu(null);
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
   const toggleMobileDropdown = (menu) => {
     setMobileDropdown(mobileDropdown === menu ? null : menu);
+  };
+
+  const handleDashboardClick = () => {
+    navigate("/advertiser");
+    setMobileMenuOpen(false);
+  };
+
+  const handleLogout = () => {
+    // Clear authentication status
+    localStorage.setItem("isAuthenticated", "false");
+    setIsAuthenticated(false);
+    navigate("/");
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -210,12 +231,31 @@ const Header = () => {
           </ul>
 
           <div className={styles.authButtons}>
-            <Link to="/login" className={styles.loginButton}>
-              LOGIN
-            </Link>
-            <Link to="/signup" className={styles.signupButton}>
-              FREE SIGNUP
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <button 
+                  className={styles.dashboardButton}
+                  onClick={handleDashboardClick}
+                >
+                  DASHBOARD
+                </button>
+                <button 
+                  className={styles.logoutButton}
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className={styles.loginButton}>
+                  LOGIN
+                </Link>
+                <Link to="/signup" className={styles.signupButton}>
+                  FREE SIGNUP
+                </Link>
+              </>
+            )}
           </div>
 
           {/* --- Mobile Menu Toggle --- */}
@@ -426,20 +466,39 @@ const Header = () => {
           </div>
 
           <hr />
-          <Link
-            to="/login"
-            className={styles.loginButtonMobile}
-            onClick={toggleMobileMenu}
-          >
-            LOGIN
-          </Link>
-          <Link
-            to="/signup"
-            className={styles.signupButtonMobile}
-            onClick={toggleMobileMenu}
-          >
-            FREE SIGNUP
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <button
+                className={styles.dashboardButtonMobile}
+                onClick={handleDashboardClick}
+              >
+                DASHBOARD
+              </button>
+              <button
+                className={styles.logoutButtonMobile}
+                onClick={handleLogout}
+              >
+                LOGOUT
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className={styles.loginButtonMobile}
+                onClick={toggleMobileMenu}
+              >
+                LOGIN
+              </Link>
+              <Link
+                to="/signup"
+                className={styles.signupButtonMobile}
+                onClick={toggleMobileMenu}
+              >
+                FREE SIGNUP
+              </Link>
+            </>
+          )}
         </div>
       )}
     </header>

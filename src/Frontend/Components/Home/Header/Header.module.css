@@ -160,6 +160,38 @@
   background-color: #0056b3;
 }
 
+.dashboardButton {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboardButton:hover {
+  background-color: #218838;
+}
+
+.logoutButton {
+  font-weight: 600;
+  color: #dc3545;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: #f8d7da;
+}
+
 .mobileMenuToggle {
   display: none;
   background: none;
@@ -362,6 +394,34 @@
   margin: 10px 0;
   display: block;
   font-weight: 600;
+}
+
+.dashboardButtonMobile {
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.logoutButtonMobile {
+  background-color: #dc3545;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 

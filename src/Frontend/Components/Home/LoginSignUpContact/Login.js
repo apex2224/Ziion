@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import {
   FaQuoteLeft,
@@ -17,6 +17,16 @@ const Login = () => {
   const [email, setEmail] = useState("Siddahnat2107");
   const [password, setPassword] = useState("**********");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate login process
+    // Set authentication status in localStorage
+    localStorage.setItem("isAuthenticated", "true");
+    // Navigate to Advertiser dashboard on successful login
+    navigate("/advertiser");
+  };
 
   return (
     <div className={styles.loginPage}>
@@ -47,7 +57,7 @@ const Login = () => {
             <span>OR SUBMIT WITH</span>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
               <label htmlFor="email">EMAIL / USERNAME</label>
               <input

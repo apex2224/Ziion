@@ -1,0 +1,143 @@
+/* --- CSS Variables for theming --- */
+:root {
+  --primary-blue: #007bff;
+  --text-primary: #333;
+  --text-secondary: #6c757d;
+  --bg-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --white: #fff;
+  --green: #28a745;
+  --orange: #fd7e14;
+}
+
+/* --- Main Dashboard Layout --- */
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidebar main right";
+  height: 100vh;
+  background-color: var(--bg-light);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header { grid-area: header; display: flex; align-items: center; padding: 0 20px; background: var(--white); border-bottom: 1px solid var(--border-color); }
+.sidebar { grid-area: sidebar; background: var(--white); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
+.mainContent { grid-area: main; padding: 20px; overflow-y: auto; }
+.rightSidebar { grid-area: right; padding: 20px; overflow-y: auto; }
+
+/* --- Header --- */
+.logo { font-size: 20px; font-weight: 700; color: var(--primary-blue); }
+.searchBar { display: flex; align-items: center; gap: 10px; margin: 0 auto; color: var(--text-secondary); }
+.searchBar input { border: none; outline: none; background: transparent; }
+.userMenu { display: flex; align-items: center; gap: 20px; }
+.getHelp { color: var(--primary-blue); text-decoration: none; font-weight: 500; }
+.headerIcon { color: var(--text-secondary); }
+
+/* --- Sidebar --- */
+.profile { display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 1px solid var(--border-color); }
+.profileInfo h4 { margin: 0; font-size: 14px; }
+.plan { font-size: 12px; color: var(--text-secondary); }
+.nav { padding: 10px 0; }
+.navItem { display: flex; align-items: center; gap: 10px; padding: 12px 20px; text-decoration: none; color: var(--text-secondary); font-weight: 500; }
+.navItem.active, .navItem:hover { color: var(--primary-blue); background-color: #e6f2ff; }
+.badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; color: var(--white); }
+.navItem .badge { background-color: var(--orange); }
+.navHeader { padding: 0 20px; font-size: 11px; color: #aaa; text-transform: uppercase; margin: 20px 0 10px 0; }
+.sidebarFooter { margin-top: auto; padding: 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+
+/* --- Main Content --- */
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.statCard { display: flex; justify-content: space-between; padding: 20px; background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); }
+.statCard p { margin: 0; color: var(--text-secondary); font-size: 12px; }
+.statCard h3 { margin: 5px 0; font-size: 24px; }
+.statCard a { text-decoration: none; color: var(--text-secondary); font-size: 12px; }
+.statIcon { font-size: 24px; }
+.statIcon.blue { color: var(--primary-blue); }
+
+.campaignsTable { margin-top: 30px; background: var(--white); border-radius: 8px; padding: 20px; }
+.tableHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.tableHeader h4 { margin: 0; }
+.tableControls { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); }
+.tableSearch { display: flex; align-items: center; gap: 5px; border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 6px; }
+.tableSearch input { border: none; outline: none; }
+.tableWrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 13px; white-space: nowrap; }
+th { color: var(--text-secondary); font-weight: 500; }
+.noData { text-align: center; padding: 40px; color: var(--text-secondary); }
+.tableFooter { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-secondary); margin-top: 20px; }
+.pagination button { padding: 5px 10px; border: 1px solid var(--border-color); background: var(--white); border-radius: 4px; }
+.bottomActions { margin-top: 20px; }
+.manageBtn { background: var(--primary-blue); color: var(--white); border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+
+/* --- Right Sidebar --- */
+.widget { background: var(--white); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+.widget h4 { margin: 0 0 15px 0; }
+.serviceItem { margin-bottom: 15px; }
+.serviceItem h5 { margin: 0 0 5px 0; }
+.serviceItem p { margin: 0; font-size: 13px; color: var(--text-secondary); }
+.moreInfo { font-size: 13px; color: var(--primary-blue); text-decoration: none; }
+.referWidget p { font-size: 14px; color: var(--text-secondary); }
+.referralLink { display: flex; justify-content: space-between; align-items: center; background: var(--bg-light); padding: 10px; border-radius: 6px; margin: 15px 0; }
+.shareButtons { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.shareButtons button { background: var(--bg-light); border: 1px solid var(--border-color); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+.membershipInfo { display: flex; align-items: center; gap: 15px; }
+.membershipIcon { font-size: 32px; color: var(--primary-blue); }
+.membershipInfo p { margin: 0; font-weight: 600; }
+.membershipInfo a { text-decoration: none; color: var(--primary-blue); font-size: 13px; }
+/* --- New Dashboard Selector Section CSS --- */
+.dashboardSelector {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.selectorOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.selectorText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.selectorText svg {
+  color: var(--text-secondary);
+}
+
+.dashboardTabs {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.dashboardTab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-light);
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dashboardTab:hover {
+  background-color: #e0e0e0;
+}
+
+.dashboardTab.activeTab {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
