@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PublisherProfile from "./PublisherProfile";
 import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
@@ -32,6 +33,7 @@ import {
   FaExclamationCircle,
   FaBars,
   FaTimes,
+  FaArrowLeft,
 } from "react-icons/fa";
 
 // Sub-component for the top header
@@ -72,7 +74,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
     <div className={styles.dashboardSelector}>
       <div className={styles.selectorOption}>
         <div className={styles.selectorText}>
-          <span>Satenderjeet</span>
+          <span>Welcome</span>
           <FaAngleDown />
         </div>
         <div className={styles.profileAmounts}>
@@ -225,7 +227,7 @@ const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
 );
 
 // Dashboard Home Component
-const DashboardHome = () => {
+const DashboardHome = ({ setShowPublisherProfile }) => {
   // Sub-component for the stat cards
   const StatCard = ({ title, value, icon, color }) => (
     <div className={styles.statCard}>
@@ -280,7 +282,12 @@ const DashboardHome = () => {
           <ul>
             <li>
               You don't have a publisher profile. -{" "}
-              <a href="#">Apply for Publisher Profile</a>
+              <a href="#" onClick={(e) => {
+                e.preventDefault();
+                setShowPublisherProfile(true);
+              }}>
+                Apply for Publisher Profile
+              </a>
             </li>
           </ul>
           <div className={styles.alertActions}>
@@ -290,16 +297,16 @@ const DashboardHome = () => {
             <button className={styles.chatBtn}>
               <FaComments /> Chat with Support
             </button>
-            <button1 className={styles.ticketBtn}>
+            <button className={styles.ticketBtn}>
               <FaTicketAlt /> Create Support Ticket
-            </button1>
+            </button>
           </div>
         </div>
         <div className={styles.warning}>
           <FaExclamationCircle className={styles.warningIcon} />
           <p>
-            IMPORTANT Going forward, publishers will have to mandatorily ensure
-            these <a href="#">Guidelines to Reduce Fraud Rate.</a>
+            IMPORTANT Going forward, publishers will have to mandatorily
+            ensure these <a href="#">Guidelines to Reduce Fraud Rate.</a>
           </p>
         </div>
       </section>
@@ -525,6 +532,7 @@ const Publisher = () => {
   const [activeTab, setActiveTab] = useState("publisher");
   const [activeItem, setActiveItem] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showPublisherProfile, setShowPublisherProfile] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -538,7 +546,7 @@ const Publisher = () => {
   const renderActiveComponent = () => {
     switch (activeItem) {
       case "dashboard":
-        return <DashboardHome />;
+        return <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />;
       case "offers":
         return <Offers />;
       case "addPlacement":
@@ -554,9 +562,26 @@ const Publisher = () => {
       case "asoBooster":
         return <ASOBooster />;
       default:
-        return <DashboardHome />;
+        return <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />;
     }
   };
+
+  // Show PublisherProfile page if state is set to true
+  if (showPublisherProfile) {
+    return (
+      <div className={styles.publisherProfileLayout}>
+        <div className={styles.backButtonContainer}>
+          <button 
+            className={styles.backButton}
+            onClick={() => setShowPublisherProfile(false)}
+          >
+            <FaArrowLeft /> Back to Dashboard
+          </button>
+        </div>
+        <PublisherProfile />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.dashboardLayout}>

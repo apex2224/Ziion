@@ -1,0 +1,415 @@
+/* --- Page Layout --- */
+.publisherPage {
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e6f7ff, #e9e6ff);
+}
+
+.hero h1 {
+  color: #007bff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 10px auto 0 auto;
+}
+
+.mainContent {
+  padding: 0 20px 50px 20px;
+}
+
+/* --- Monetization Solutions Section --- */
+.monetizationSection {
+  margin-bottom: 50px;
+}
+
+.integrationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.integrationCard {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  text-align: left;
+}
+
+.cardImage {
+  height: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImage img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.integrationCard h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.integrationCard p {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.solutionLink {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s ease;
+}
+
+.solutionLink:hover {
+  gap: 12px;
+}
+
+/* --- Demo Section --- */
+.demoSection {
+  padding: 80px 5%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 50px;
+}
+
+.demoSection h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.demoSubtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.demoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.qrCodeSide h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.qrCodeSide p {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.qrCode {
+  max-width: 200px;
+}
+
+.qrCode img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.previewLabel {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.mobilePreview {
+  max-width: 350px;
+}
+
+.mobilePreview img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Benefits Section --- */
+.benefitsSection {
+  padding: 40px 5% 80px 5%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.benefitIcon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.benefitItem h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Icon Theme Colors */
+.green { background-color: #eaf8f0; color: #28a745; }
+.yellow { background-color: #fff8e1; color: #ffc107; }
+.blue { background-color: #e6f7ff; color: #007bff; }
+.orange { background-color: #fff3e0; color: #fd7e14; }
+
+/* --- Form Wrapper Card --- */
+.formWrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 900px;
+  /* Negative margin pulls the card up into the hero section */
+  margin: -60px auto 0 auto;
+  position: relative;
+  z-index: 2;
+  border: 1px solid #dee2e6;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tag {
+  background-color: #e6f7ff;
+  color: #007bff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.formHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.formHeader p {
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+/* --- Form Styling --- */
+.applicationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.textareaWrapper {
+  position: relative;
+}
+
+.textareaIcon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  color: #adb5bd;
+  pointer-events: none;
+}
+
+/* --- Submit Button --- */
+.submitButton {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  width: 250px;
+  margin: 20px auto 0 auto;
+  display: block;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .integrationGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .demoGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .qrCode {
+    margin: 0 auto;
+  }
+  
+  .mobilePreview {
+    margin: 40px auto 0 auto;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .formWrapper {
+    padding: 30px;
+    margin: -30px auto 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 0 15px 30px 15px;
+  }
+  
+  .integrationGrid {
+    gap: 20px;
+  }
+  
+  .integrationCard {
+    padding: 20px;
+  }
+  
+  .demoSection {
+    padding: 40px 5%;
+  }
+  
+  .demoSection h2 {
+    font-size: 2rem;
+  }
+  
+  .qrCodeSide h3 {
+    font-size: 1.5rem;
+  }
+  
+  .benefitsSection {
+    padding: 20px 5% 40px 5%;
+  }
+  
+  .formWrapper {
+    padding: 20px;
+  }
+  
+  .formHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .submitButton {
+    width: 100%;
+  }
+}

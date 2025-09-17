@@ -157,15 +157,22 @@
   gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
-  /* Simulating the logo appearance */
-  color: #a9b8d6;
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: lowercase;
+  padding: 20px 0;
 }
 
-.paymentIconsContainer span {
-  filter: grayscale(100%) opacity(0.6);
+.paymentIcon {
+  height: 24px;
+  filter: none;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.paymentIcon:hover {
+  transform: scale(1.1);
 }
 
 /* --- Credits --- */

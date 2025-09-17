@@ -258,18 +258,90 @@ const Footer = () => {
 
       {/* Payment methods section */}
       <div className={styles.paymentMethods}>
-        <div className={styles.paymentIconsContainer}>
-          {/* Using text as placeholders for images */}
-          <span>stripe</span>
-          <span>razorpay</span>
-          <span>wise</span>
-          <span>payoneer</span>
-          <span>PayPal</span>
-          <span>PhonePe</span>
-          <span>Paytm</span>
-          <span>coinbase</span>
-          <span>CRYPTO</span>
-          <span>wire</span>
+        <div className={`${styles.paymentIconsContainer} text-center mb-3`}>
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.stripe.svg" 
+            height="24" 
+            alt="Payment Stripe" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.tazapay.svg" 
+            height="24" 
+            alt="Payment Tazapay" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.payoneer.svg" 
+            height="24" 
+            alt="Payment Payoneer" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.paytm.svg" 
+            height="24" 
+            alt="Payment Paytm" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.instarem.png" 
+            height="24" 
+            alt="Payment InstaReM" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.instamojo.jpg" 
+            height="24" 
+            alt="Payment InstaMojo" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.paypal.svg" 
+            height="24" 
+            alt="Payment PayPal" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.bitpay.svg" 
+            height="24" 
+            alt="Payment Bitpay" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.nowpayments.png" 
+            height="24" 
+            alt="Payment NowPayments" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/brand.coinbase.svg" 
+            height="24" 
+            alt="Payment Coinbase" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/payment_visa.svg" 
+            alt="Payment Visa" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/payment_mastercard.svg" 
+            height="24" 
+            alt="Payment MasterCard" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/payment_amex.svg" 
+            height="24" 
+            alt="Payment AmEx" 
+          />
+          <img 
+            className={styles.paymentIcon} 
+            src="//tswcdn.xyz/assets/img/payment_bitcoin.svg" 
+            height="24" 
+            alt="Payment Bitcoin" 
+          />
         </div>
       </div>
 
