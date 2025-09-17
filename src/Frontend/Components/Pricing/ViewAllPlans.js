@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./ViewAllPlans.module.css";
 import FAQ from "../RBFFAQ/FAQ";
 import Footer from "../Home/Footer/Footer";
@@ -71,63 +72,116 @@ const specialCampaigns = [
 
 // --- Sub-Components (defined in the same file for simplicity) ---
 
-const PricingCard = ({ plan }) => (
-  <div className={styles.pricingCard}>
-    {plan.isHot && (
-      <span className={styles.hotBadge}>
-        <FaFire /> Hot
-      </span>
-    )}
-    <h3 className={styles.cardTitle}>{plan.title}</h3>
-    <div className={styles.price}>
-      <span className={styles.currency}>₹</span>
-      {plan.price}
-      <span className={styles.perConversion}> per successful conversion</span>
+const PricingCard = ({ plan }) => {
+  const navigate = useNavigate();
+  
+  const handleSeeDetailsClick = () => {
+    navigate("/signup");
+  };
+
+  return (
+    <div className={styles.pricingCard}>
+      {plan.isHot && (
+        <span className={styles.hotBadge}>
+          <FaFire /> Hot
+        </span>
+      )}
+      <h3 className={styles.cardTitle}>{plan.title}</h3>
+      <div className={styles.price}>
+        <span className={styles.currency}>₹</span>
+        {plan.price}
+        <span className={styles.perConversion}> per successful conversion</span>
+      </div>
+      <ul className={styles.features}>
+        {plan.features.map((feature, index) => (
+          <li key={index}>
+            <FaCheckCircle className={styles.checkIcon} /> {feature}
+          </li>
+        ))}
+      </ul>
+      <button 
+        className={styles.seeDetailsButton}
+        onClick={handleSeeDetailsClick}
+      >
+        See Details
+      </button>
     </div>
-    <ul className={styles.features}>
-      {plan.features.map((feature, index) => (
-        <li key={index}>
-          <FaCheckCircle className={styles.checkIcon} /> {feature}
-        </li>
-      ))}
-    </ul>
-    <button className={styles.seeDetailsButton}>See Details</button>
-  </div>
-);
+  );
+};
 
-const SpecialCard = ({ campaign }) => (
-  <div
-    className={`${styles.specialCard} ${
-      campaign.isBlue ? styles.blueCard : ""
-    }`}
-  >
-    <h4>{campaign.title}</h4>
-    <p>{campaign.description}</p>
-    <a href="#" className={styles.seeDetailsLink}>
-      See Details <FaArrowRight />
-    </a>
-  </div>
-);
+const SpecialCard = ({ campaign }) => {
+  const navigate = useNavigate();
+  
+  const handleSeeDetailsClick = () => {
+    navigate("/signup");
+  };
 
-const BuyInstallCard = ({ title, description, isAndroid }) => (
-  <div className={styles.buyInstallCard}>
-    <div className={styles.buyInstallContent}>
-      <h4>{title}</h4>
-      <p>{description}</p>
-      <a href="#" className={styles.viewPlansLink}>
-        View Plans <FaArrowRight />
+  return (
+    <div
+      className={`${styles.specialCard} ${
+        campaign.isBlue ? styles.blueCard : ""
+      }`}
+    >
+      <h4>{campaign.title}</h4>
+      <p>{campaign.description}</p>
+      <a 
+        href="#" 
+        className={styles.seeDetailsLink}
+        onClick={(e) => {
+          e.preventDefault();
+          handleSeeDetailsClick();
+        }}
+      >
+        See Details <FaArrowRight />
       </a>
     </div>
-    <div className={styles.buyInstallImage}>
-      {/* Placeholder for the phone images */}
-      <div className={isAndroid ? styles.androidPhone : styles.iosPhone}></div>
+  );
+};
+
+const BuyInstallCard = ({ title, description, isAndroid }) => {
+  const navigate = useNavigate();
+  
+  const handleViewPlansClick = () => {
+    navigate("/signup");
+  };
+
+  return (
+    <div className={styles.buyInstallCard}>
+      <div className={styles.buyInstallContent}>
+        <h4>{title}</h4>
+        <p>{description}</p>
+        <a 
+          href="#" 
+          className={styles.viewPlansLink}
+          onClick={(e) => {
+            e.preventDefault();
+            handleViewPlansClick();
+          }}
+        >
+          View Plans <FaArrowRight />
+        </a>
+      </div>
+      <div className={styles.buyInstallImage}>
+        {/* Placeholder for the phone images */}
+        <div className={isAndroid ? styles.androidPhone : styles.iosPhone}></div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // --- Main Component ---
 
 const ViewAllPlans = () => {
+  const navigate = useNavigate();
+  
+  const handleStartClick = () => {
+    navigate("/signup");
+  };
+
+  const handleKnowMoreClick = () => {
+    navigate("/contact");
+  };
+
   return (
     <div className={styles.viewAllPlansPage}>
       {/* This div creates the blue wave at the top */}
@@ -141,8 +195,18 @@ const ViewAllPlans = () => {
             for your Android/iOS app
           </h2>
           <div className={styles.heroButtonGroup}>
-            <button className={styles.startButton}>Start</button>
-            <button className={styles.knowMoreButton}>Know more</button>
+            <button 
+              className={styles.startButton}
+              onClick={handleStartClick}
+            >
+              Start
+            </button>
+            <button 
+              className={styles.knowMoreButton}
+              onClick={handleKnowMoreClick}
+            >
+              Know more
+            </button>
           </div>
         </section>
 
