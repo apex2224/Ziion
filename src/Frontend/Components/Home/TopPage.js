@@ -1,8 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./TopPage.module.css";
 
 const TopPage = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  // Check authentication status on component mount
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuthenticated") === "true";
+    setIsAuthenticated(authStatus);
+  }, []);
+
+  const handleDashboardClick = () => {
+    navigate("/advertiser");
+  };
+
   return (
     <div className={styles.topPageContainer}>
       <h1 className={styles.mainHeading}>
@@ -16,9 +29,18 @@ const TopPage = () => {
         <div className={styles.card}>
           <h2>PUBLISHERS</h2>
           <p>Increase Your Monthly Earnings with us</p>
-          <Link to="/signup">
-            <button className={styles.cardButton}>SIGN UP</button>
-          </Link>
+          {isAuthenticated ? (
+            <button 
+              className={styles.cardButton}
+              onClick={handleDashboardClick}
+            >
+              DASHBOARD
+            </button>
+          ) : (
+            <Link to="/signup">
+              <button className={styles.cardButton}>SIGN UP</button>
+            </Link>
+          )}
         </div>
 
         <div className={styles.card}>

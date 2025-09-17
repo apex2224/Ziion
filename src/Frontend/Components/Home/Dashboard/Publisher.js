@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
   FaBell,
   FaCog,
   FaChartBar,
-  FaBullseye,
+  FaFileAlt,
   FaTasks,
   FaClipboardList,
   FaRocket,
@@ -15,11 +16,30 @@ import {
   FaDownload,
   FaAngleDown,
   FaSearch,
+  FaFacebookF,
+  FaTwitter,
+  FaWhatsapp,
+  FaShareAlt,
+  FaExclamationTriangle,
+  FaCheck,
+  FaSpinner,
+  FaDollarSign,
+  FaFlag,
+  FaPlus,
+  FaQuestionCircle,
+  FaComments,
+  FaTicketAlt,
+  FaExclamationCircle,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
 // Sub-component for the top header
-const Dashboard = () => (
+const DashboardHeader = ({ toggleSidebar }) => (
   <header className={styles.header}>
+    <button className={styles.menuToggle} onClick={toggleSidebar}>
+      <FaBars />
+    </button>
     <div className={styles.logo}>CPIDroid</div>
     <div className={styles.searchBar}>
       <FaSearch />
@@ -36,59 +56,167 @@ const Dashboard = () => (
   </header>
 );
 
-// New sub-component for the dashboard selection
-const DashboardSelector = () => (
-  <div className={styles.dashboardSelector}>
-    <div className={styles.selectorOption}>
-      <div className={styles.selectorText}>
-        <span>rohitrakaror12</span>
-        <FaAngleDown />
+// Sub-component for the dashboard selection (reused)
+const DashboardSelector = ({ activeTab, setActiveTab }) => {
+  const navigate = useNavigate();
+
+  const handlePublisherClick = () => {
+    // Already on publisher page, no need to navigate
+  };
+
+  const handleAdvertiserClick = () => {
+    navigate("/advertiser");
+  };
+
+  return (
+    <div className={styles.dashboardSelector}>
+      <div className={styles.selectorOption}>
+        <div className={styles.selectorText}>
+          <span>Satenderjeet</span>
+          <FaAngleDown />
+        </div>
+        <div className={styles.profileAmounts}>
+          <div className={styles.advertiserAmount}>
+            Advertiser <span>$0.00</span>
+          </div>
+          <div className={styles.publisherAmount}>
+            Publisher <span>$0.00</span>
+          </div>
+        </div>
+      </div>
+      <div className={styles.dashboardTabs}>
+        <button
+          className={`${styles.dashboardTab} ${
+            activeTab === "publisher" ? styles.activeTab : ""
+          }`}
+          onClick={handlePublisherClick}
+        >
+          Publisher
+        </button>
+        <button
+          className={`${styles.dashboardTab} ${
+            activeTab === "advertiser" ? styles.activeTab : ""
+          }`}
+          onClick={handleAdvertiserClick}
+        >
+          Advertiser
+        </button>
       </div>
     </div>
-    <div className={styles.dashboardTabs}>
-      <button className={`${styles.dashboardTab} ${styles.activeTab}`}>Publisher</button>
-      <button className={styles.dashboardTab}>Advertiser</button>
-    </div>
-  </div>
-);
+  );
+};
 
 // Sub-component for the sidebar navigation
-const Sidebar = () => (
+const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
   <aside className={styles.sidebar}>
-    <DashboardSelector />
+    <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
     <nav className={styles.nav}>
-      <a href="#" className={`${styles.navItem} ${styles.active}`}>
+      <p className={styles.navHeader}>MAIN MENU</p>
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "dashboard" ? styles.active : ""
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setActiveItem("dashboard");
+        }}
+      >
         <FaChartBar /> Dashboard
+        <span className={styles.navItemBadge}>Publisher</span>
       </a>
-      <a href="#" className={styles.navItem}>
-        <FaBullseye /> Campaigns
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "offers" ? styles.active : ""
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setActiveItem("offers");
+        }}
+      >
+        <FaFileAlt /> Offers
+        <span className={styles.badge}>New</span>
       </a>
-      <a href="#" className={styles.navItem}>
-        <FaTasks /> Tracking
+      <div className={styles.navGroup}>
+        <p className={styles.navHeader}>Apps / Placements / PUBLISH</p>
+        <a
+          href="#"
+          className={`${styles.navItem} ${
+            activeItem === "addPlacement" ? styles.active : ""
+          }`}
+          onClick={(e) => {
+            e.preventDefault();
+            setActiveItem("addPlacement");
+          }}
+        >
+          <FaPlus /> Add Placement
+        </a>
+        <a
+          href="#"
+          className={`${styles.navItem} ${
+            activeItem === "managePlacements" ? styles.active : ""
+          }`}
+          onClick={(e) => {
+            e.preventDefault();
+            setActiveItem("managePlacements");
+          }}
+        >
+          <FaTasks /> Manage Placements
+        </a>
+      </div>
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "billing" ? styles.active : ""
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setActiveItem("billing");
+        }}
+      >
+        <FaDollarSign /> Publisher Billing
       </a>
-      <a href="#" className={styles.navItem}>
-        <FaClipboardList /> Applications{" "}
-        <span className={styles.badge}>PRO</span>
-      </a>
-      <a href="#" className={styles.navItem}>
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "reports" ? styles.active : ""
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setActiveItem("reports");
+        }}
+      >
         <FaClipboardList /> Publisher Report
       </a>
-      <a href="#" className={styles.navItem}>
-        <FaGift /> Referral Program <span className={styles.badge}>NEW</span>
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "referral" ? styles.active : ""
+        }`}
+        onClick={(e) => {
+          e.preventDefault();
+          setActiveItem("referral");
+        }}
+      >
+        <FaGift /> Referral Program
       </a>
+      <div className={styles.managedServices}>
+        <p className={styles.navHeader}>MANAGED SERVICES</p>
+        <a
+          href="#"
+          className={`${styles.navItem} ${
+            activeItem === "asoBooster" ? styles.active : ""
+          }`}
+          onClick={(e) => {
+            e.preventDefault();
+            setActiveItem("asoBooster");
+          }}
+        >
+          <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
+        </a>
+      </div>
     </nav>
-    <div className={styles.managedServices}>
-      <p className={styles.navHeader}>MANAGED SERVICES</p>
-      <a href="#" className={styles.navItem}>
-        <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
-      </a>
-    </div>
-    <div className={styles.resources}>
-      <p className={styles.navHeader}>RESOURCES</p>
-      <a href="#" className={styles.navItem}>
-        <FaBookOpen /> Getting Started
-      </a>
-    </div>
     <div className={styles.sidebarFooter}>
       <a href="#">Referral Program</a>
       <FaCog />
@@ -96,79 +224,115 @@ const Sidebar = () => (
   </aside>
 );
 
-// Sub-component for the stat cards (Running, Paused, etc.)
-const StatCard = ({ title, value, icon, color }) => (
-  <div className={styles.statCard}>
-    <div>
-      <p>{title}</p>
-      <h3>{value}</h3>
-      <a href="#">
-        {title} Campaigns <FaAngleDown size={12} />
-      </a>
+// Dashboard Home Component
+const DashboardHome = () => {
+  // Sub-component for the stat cards
+  const StatCard = ({ title, value, icon, color }) => (
+    <div className={styles.statCard}>
+      <div>
+        <p>{title}</p>
+        <h3>{value}</h3>
+        <a href="#">
+          {title} <FaAngleDown size={12} />
+        </a>
+      </div>
+      <div className={`${styles.statIcon} ${styles[color]}`}>{icon}</div>
     </div>
-    <div className={`${styles.statIcon} ${styles[color]}`}>{icon}</div>
-  </div>
-);
+  );
 
-// Main Publisher Dashboard Component
-const Publisher = () => {
   return (
-    <div className={styles.dashboardLayout}>
-      <Dashboard />
-      <Sidebar />
-      <main className={styles.mainContent}>
-        {/* Top Stats Section */}
-        <section className={styles.statsGrid}>
-          <StatCard title="RUNNING" value="0" icon={<FaTasks />} color="blue" />
-          <StatCard title="PAUSED" value="0" icon={<FaTasks />} color="blue" />
-          <StatCard
-            title="COMPLETED"
-            value="0"
-            icon={<FaTasks />}
-            color="blue"
-          />
-          <StatCard
-            title="TOTAL CAMPAIGNS"
-            value="0"
-            icon={<FaTasks />}
-            color="blue"
-          />
-        </section>
+    <>
+      {/* Top Stats Section */}
+      <section className={styles.statsGrid}>
+        <StatCard
+          title="APPROVED OFFERS"
+          value="0"
+          icon={<FaFlag />}
+          color="blue"
+        />
+        <StatCard
+          title="PENDING APPROVAL"
+          value="0"
+          icon={<FaSpinner />}
+          color="blue"
+        />
+        <StatCard
+          title="TOTAL CONVERSIONS"
+          value="0"
+          icon={<FaCheck />}
+          color="blue"
+        />
+        <StatCard
+          title="TOTAL EARNINGS"
+          value="$0.00"
+          icon={<FaDollarSign />}
+          color="blue"
+        />
+      </section>
 
-        {/* Active Campaigns Table */}
-        <section className={styles.campaignsTable}>
-          <div className={styles.tableHeader}>
-            <h4>Active Campaigns</h4>
-            <div className={styles.tableControls}>
-              <select>
-                <option>10</option>
-              </select>
-              <span>entries per page</span>
-              <div className={styles.tableSearch}>
-                <FaSearch />
-                <input type="text" placeholder="Search" />
-              </div>
+      {/* Alert and Warning Sections */}
+      <section className={styles.alertSection}>
+        <div className={styles.alert}>
+          <FaExclamationTriangle className={styles.alertIcon} />
+          <p className={styles.alertText}>
+            Kindly check & fix following errors:
+          </p>
+          <ul>
+            <li>
+              You don't have a publisher profile. -{" "}
+              <a href="#">Apply for Publisher Profile</a>
+            </li>
+          </ul>
+          <div className={styles.alertActions}>
+            <div className={styles.needHelp}>
+              <FaQuestionCircle /> Need help?
+            </div>
+            <button className={styles.chatBtn}>
+              <FaComments /> Chat with Support
+            </button>
+            <button1 className={styles.ticketBtn}>
+              <FaTicketAlt /> Create Support Ticket
+            </button1>
+          </div>
+        </div>
+        <div className={styles.warning}>
+          <FaExclamationCircle className={styles.warningIcon} />
+          <p>
+            IMPORTANT Going forward, publishers will have to mandatorily ensure
+            these <a href="#">Guidelines to Reduce Fraud Rate.</a>
+          </p>
+        </div>
+      </section>
+
+      {/* Performance and Conversion Tables */}
+      <section className={styles.tablesSection}>
+        <div className={styles.tableBlock}>
+          <h4>Recent Conversion(s)</h4>
+          <div className={styles.tableControls}>
+            <select>
+              <option>10</option>
+            </select>
+            <span>entries per page</span>
+            <div className={styles.tableSearch}>
+              <FaSearch />
+              <input type="text" placeholder="Search" />
             </div>
           </div>
           <div className={styles.tableWrapper}>
             <table>
               <thead>
                 <tr>
-                  <th>#</th>
                   <th>PLATFORM</th>
-                  <th>TYPE</th>
-                  <th>APP</th>
-                  <th>TARGET COUNTRY</th>
-                  <th>CONV / CLICKS TODAY</th>
-                  <th>CONVERSIONS</th>
-                  <th>CR</th>
-                  <th>PROGRESS</th>
-                  <th>STATUS</th>
+                  <th>OFFER</th>
+                  <th>COUNTRY</th>
+                  <th>CITY</th>
+                  <th>PAYOUT (USD)</th>
+                  <th>CREATED</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan="10" className={styles.noData}>
+                  <td colSpan="6" className={styles.noData}>
                     No data available in table
                   </td>
                 </tr>
@@ -182,61 +346,269 @@ const Publisher = () => {
               <button>&gt;</button>
             </div>
           </div>
-        </section>
-
-        <div className={styles.bottomActions}>
-          <button className={styles.manageBtn}>
-            <FaDownload /> Manage All Campaigns
-          </button>
         </div>
-      </main>
+        <div className={styles.tableBlock}>
+          <h4>Recent Click(s)</h4>
+          <div className={styles.tableControls}>
+            <select>
+              <option>10</option>
+            </select>
+            <span>entries per page</span>
+            <div className={styles.tableSearch}>
+              <FaSearch />
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+          <div className={styles.tableWrapper}>
+            <table>
+              <thead>
+                <tr>
+                  <th>PLATFORM</th>
+                  <th>OFFER</th>
+                  <th>COUNTRY</th>
+                  <th>CITY</th>
+                  <th>PAYOUT (USD)</th>
+                  <th>CREATED</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="6" className={styles.noData}>
+                    No data available in table
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className={styles.tableFooter}>
+            <span>Showing 0 to 0 of 0 entries</span>
+            <div className={styles.pagination}>
+              <button>&lt;</button>
+              <button>&gt;</button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.tableBlock}>
+          <h4>Todays Performance</h4>
+          <button className={styles.createPlacementBtn}>
+            <FaPlus /> Create New Placement
+          </button>
+          <div className={styles.tableControls}>
+            <select>
+              <option>10</option>
+            </select>
+            <span>entries per page</span>
+            <div className={styles.tableSearch}>
+              <FaSearch />
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+          <div className={styles.tableWrapper}>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>APP / PLACEMENT / PUBLISHER</th>
+                  <th>TYPE</th>
+                  <th>CONVERSIONS / CLICKS (TODAY)</th>
+                  <th>CONVERSION RATE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan="5" className={styles.noData}>
+                    No data available in table
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className={styles.tableFooter}>
+            <span>Showing 0 to 0 of 0 entries</span>
+            <div className={styles.pagination}>
+              <button>&lt;</button>
+              <button>&gt;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+// Offers Component
+const Offers = () => (
+  <div className={styles.offersSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Offers</h2>
+    </div>
+    <div className={styles.offersContent}>
+      <p>Manage your offers and campaigns here.</p>
+    </div>
+  </div>
+);
+
+// Add Placement Component
+const AddPlacement = () => (
+  <div className={styles.addPlacementSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Add New Placement</h2>
+    </div>
+    <div className={styles.addPlacementContent}>
+      <p>Add a new placement for your apps.</p>
+    </div>
+  </div>
+);
+
+// Manage Placements Component
+const ManagePlacements = () => (
+  <div className={styles.managePlacementsSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Manage Placements</h2>
+    </div>
+    <div className={styles.managePlacementsContent}>
+      <p>View and manage your existing placements.</p>
+    </div>
+  </div>
+);
+
+// Publisher Billing Component
+const PublisherBilling = () => (
+  <div className={styles.billingSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Publisher Billing</h2>
+    </div>
+    <div className={styles.billingContent}>
+      <p>View your billing information and payment history.</p>
+    </div>
+  </div>
+);
+
+// Publisher Report Component
+const PublisherReport = () => (
+  <div className={styles.reportSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Publisher Report</h2>
+    </div>
+    <div className={styles.reportContent}>
+      <p>View detailed reports of your performance.</p>
+    </div>
+  </div>
+);
+
+// Referral Program Component
+const ReferralProgram = () => (
+  <div className={styles.referralSection}>
+    <div className={styles.sectionHeader}>
+      <h2>Referral Program</h2>
+    </div>
+    <div className={styles.referralContent}>
+      <p>Refer friends and earn rewards.</p>
+    </div>
+  </div>
+);
+
+// ASO Booster Component
+const ASOBooster = () => (
+  <div className={styles.asoBoosterSection}>
+    <div className={styles.sectionHeader}>
+      <h2>ASO Booster</h2>
+    </div>
+    <div className={styles.asoBoosterContent}>
+      <p>Boost your app's visibility with our ASO services.</p>
+    </div>
+  </div>
+);
+
+// Main Publisher Dashboard Component
+const Publisher = () => {
+  const [activeTab, setActiveTab] = useState("publisher");
+  const [activeItem, setActiveItem] = useState("dashboard");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  // Render the appropriate component based on the active item
+  const renderActiveComponent = () => {
+    switch (activeItem) {
+      case "dashboard":
+        return <DashboardHome />;
+      case "offers":
+        return <Offers />;
+      case "addPlacement":
+        return <AddPlacement />;
+      case "managePlacements":
+        return <ManagePlacements />;
+      case "billing":
+        return <PublisherBilling />;
+      case "reports":
+        return <PublisherReport />;
+      case "referral":
+        return <ReferralProgram />;
+      case "asoBooster":
+        return <ASOBooster />;
+      default:
+        return <DashboardHome />;
+    }
+  };
+
+  return (
+    <div className={styles.dashboardLayout}>
+      <DashboardHeader toggleSidebar={toggleSidebar} />
+
+      {/* Desktop sidebar */}
+      <aside className={styles.sidebar}>
+        <Sidebar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          activeItem={activeItem}
+          setActiveItem={setActiveItem}
+        />
+      </aside>
+
+      <main className={styles.mainContent}>{renderActiveComponent()}</main>
 
       {/* Right Sidebar */}
       <aside className={styles.rightSidebar}>
         <div className={styles.widget}>
-          <h4>Our Services</h4>
-          <div className={styles.serviceItem}>
-            <div>
-              <h5>CPC Campaigns</h5>
-              <p>CPC (Pay per click) on interested clicks. No SDK required.</p>
-            </div>
-          </div>
-          <div className={styles.serviceItem}>
-            <div>
-              <h5>CPI Campaigns</h5>
-              <p>
-                CPI (Pay per install) on installs. Best for cost-efficent
-                marketing.
-              </p>
-            </div>
-          </div>
-          <div className={styles.serviceItem}>
-            <div>
-              <h5>CPA Campaigns</h5>
-              <p>
-                CPA (Pay per action) on action after free signup to install.
-              </p>
-            </div>
-          </div>
-          <a href="#" className={styles.moreInfo}>
-            Understanding various Campaign Types/Conversions
-          </a>
+          <h4>Useful Resources</h4>
+          <a href="#">Understanding various Campaign Types (Overview)</a>
         </div>
 
         <div className={`${styles.widget} ${styles.referWidget}`}>
           <h4>Refer & Earn UNLIMITED 🤑</h4>
           <p>Share your referral link with friends to start earning.</p>
           <div className={styles.referralLink}>
-            <span>https://cpidroid.com/?ref=K12345</span>
+            <span>https://cpidroid.com/?ref=13084</span>
             <FaLink />
           </div>
+          <div className={styles.shareButtons}>
+            <span>SHARE</span>
+            <button>
+              <FaFacebookF />
+            </button>
+            <button>
+              <FaTwitter />
+            </button>
+            <button>
+              <FaWhatsapp />
+            </button>
+            <button>
+              <FaShareAlt />
+            </button>
+          </div>
         </div>
-
         <div className={styles.widget}>
           <h4>Membership</h4>
           <div className={styles.membershipInfo}>
             <div className={styles.membershipIcon}>
-              <FaUserCircle />
+              <FaFlag />
             </div>
             <div>
               <p>FREE</p>
@@ -244,6 +616,63 @@ const Publisher = () => {
             </div>
           </div>
         </div>
+        <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
+
+        {/* Mobile sidebar overlay and content */}
+        {isSidebarOpen && (
+          <>
+            <div
+              className={styles.overlay}
+              onClick={closeSidebar}
+              style={{
+                background: "rgba(0, 0, 0, 0.5)",
+                zIndex: 999,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+            ></div>
+            <div
+              className={`${styles.mobileSidebar} ${styles.open}`}
+              style={{
+                background: "white",
+                zIndex: 1000,
+                position: "fixed",
+                left: 0,
+                top: 0,
+                bottom: 0,
+                width: "240px",
+                overflowY: "auto",
+              }}
+            >
+              <div className={styles.mobileSidebarHeader}>
+                <button className={styles.closeMenu} onClick={closeSidebar}>
+                  <FaTimes />
+                </button>
+              </div>
+              <div
+                className={styles.mobileSidebarContent}
+                style={{
+                  background: "white",
+                  height: "calc(100% - 60px)",
+                  overflowY: "auto",
+                }}
+              >
+                <Sidebar
+                  activeTab={activeTab}
+                  setActiveTab={setActiveTab}
+                  activeItem={activeItem}
+                  setActiveItem={(item) => {
+                    setActiveItem(item);
+                    closeSidebar(); // Close sidebar when item is selected
+                  }}
+                />
+              </div>
+            </div>
+          </>
+        )}
       </aside>
     </div>
   );
