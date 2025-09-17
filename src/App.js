@@ -17,6 +17,8 @@ import TopPage from "./Frontend/Components/Home/TopPage";
 import PromotionalBenefits from "./Frontend/Components/Home/PromotionalBenefits";
 import Advertiser from "./Frontend/Components/Home/Dashboard/Advertiser";
 import Publisher from "./Frontend/Components/Home/Dashboard/Publisher";
+import ASObooster from "./Frontend/Components/Home/Dashboard/ASObooster";
+
 
 const LandingPage = () => {
   return (
@@ -32,6 +34,7 @@ const LandingPage = () => {
       <FAQ />
       <hr />
       <Blog />
+       
       <Footer />
     </>
   );
@@ -51,6 +54,7 @@ const App = () => {
         <Route path="/publisher" element={<Publisher />} />
       </Routes>
     </BrowserRouter>
+   
   );
 };
 

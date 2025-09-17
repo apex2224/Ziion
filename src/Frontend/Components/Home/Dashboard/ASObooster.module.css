@@ -1,0 +1,261 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.contentLeft {
+  flex: 1;
+  z-index: 10;
+  padding-top: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1e2022;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.viewListButton {
+  background-color: #fff;
+  color: #377dff;
+  border: 2px solid #377dff;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewListButton:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(55, 125, 255, 0.15);
+}
+
+.letsChatButton {
+  background-color: #377dff;
+  color: white;
+  border: 2px solid #377dff;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.letsChatButton:hover {
+  background-color: #1e64f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(55, 125, 255, 0.3);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.contentRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.svgIllustration {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s ease;
+}
+
+.hikerManSVGWrapper {
+  width: 100%;
+  max-width: 500px; /* Reduced size */
+  height: auto;
+  z-index: 1; /* Behind content */
+}
+
+.contentRight img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.featuresSection {
+  position: relative;
+  margin-top: 100px;
+  padding: 50px 0;
+}
+
+.featuresContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+.featuresSVG {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuresBoxes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 10;
+}
+
+.featureBoxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.featureBox {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  max-width: 400px;
+}
+
+.featureBox:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border-color: #e7eaf3;
+}
+
+.featureBox.activeFeature {
+  border-color: #377dff;
+  box-shadow: 0 10px 25px rgba(55, 125, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.featureIcon {
+  width: 60px;
+  height: 60px;
+  background: #f8fafd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #377dff;
+}
+
+.featureText h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1e2022;
+}
+
+.featureText p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .contentLeft {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .buttons {
+    justify-content: center;
+  }
+  
+  .hikerManSVGWrapper {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto 0;
+    z-index: 1;
+  }
+  
+  .featuresSection {
+    margin-top: 50px;
+  }
+  
+  .featuresContainer {
+    flex-direction: column;
+  }
+  
+  .featureBoxes {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .featureBox {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .featureBoxes {
+    gap: 20px;
+  }
+  
+  .featureBox {
+    padding: 20px;
+  }
+}
