@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUp.module.css";
 import {
   FaQuoteLeft,
@@ -9,6 +9,7 @@ import {
   FaStar,
   FaChevronLeft,
   FaChevronRight,
+  FaCheckCircle,
 } from "react-icons/fa";
 
 const SignUp = () => {
@@ -16,6 +17,22 @@ const SignUp = () => {
   const [country, setCountry] = useState("India");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate signup process
+    setShowSuccessModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowSuccessModal(false);
+    // Set authentication status in localStorage
+    localStorage.setItem("isAuthenticated", "true");
+    // Navigate to advertiser dashboard after successful signup
+    navigate("/advertiser");
+  };
 
   return (
     <div className={styles.signupPage}>
@@ -46,7 +63,7 @@ const SignUp = () => {
             <span>OR SUBMIT WITH</span>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
               <label htmlFor="username">USERNAME</label>
               <input
@@ -127,6 +144,25 @@ const SignUp = () => {
           </p>
         </div>
       </div>
+
+      {/* Signup Success Modal */}
+      {showSuccessModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.successModal}>
+            <div className={styles.modalContent}>
+              <FaCheckCircle className={styles.successIcon} />
+              <h2>Signup Successful!</h2>
+              <p>Welcome to CPIDroid. Your account has been created successfully.</p>
+              <button 
+                className={styles.modalButton}
+                onClick={handleModalClose}
+              >
+                Continue to Dashboard
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

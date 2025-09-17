@@ -15,6 +15,7 @@ import Contact from "./Frontend/Components/Home/LoginSignUpContact/Contact";
 import ViewAllPlans from "./Frontend/Components/Pricing/ViewAllPlans";
 import TopPage from "./Frontend/Components/Home/TopPage";
 import PromotionalBenefits from "./Frontend/Components/Home/PromotionalBenefits";
+import Advertiser from "./Frontend/Components/Home/Main/Advertiser";
 
 const LandingPage = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/advertiser" element={<Advertiser />} />
       </Routes>
     </BrowserRouter>
   );
