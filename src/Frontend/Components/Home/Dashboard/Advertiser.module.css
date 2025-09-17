@@ -88,3 +88,56 @@ th { color: var(--text-secondary); font-weight: 500; }
 .membershipIcon { font-size: 32px; color: var(--primary-blue); }
 .membershipInfo p { margin: 0; font-weight: 600; }
 .membershipInfo a { text-decoration: none; color: var(--primary-blue); font-size: 13px; }
+/* --- New Dashboard Selector Section CSS --- */
+.dashboardSelector {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.selectorOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.selectorText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.selectorText svg {
+  color: var(--text-secondary);
+}
+
+.dashboardTabs {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.dashboardTab {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--bg-light);
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dashboardTab:hover {
+  background-color: #e0e0e0;
+}
+
+.dashboardTab.activeTab {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}

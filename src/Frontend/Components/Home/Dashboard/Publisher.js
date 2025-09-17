@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Advertiser.module.css";
+import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
   FaBell,
@@ -8,7 +8,6 @@ import {
   FaBullseye,
   FaTasks,
   FaClipboardList,
-  FaPlus,
   FaRocket,
   FaLink,
   FaGift,
@@ -16,14 +15,10 @@ import {
   FaDownload,
   FaAngleDown,
   FaSearch,
-  FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
-  FaShareAlt,
 } from "react-icons/fa";
 
 // Sub-component for the top header
-const DashboardHeader = () => (
+const Dashboard = () => (
   <header className={styles.header}>
     <div className={styles.logo}>CPIDroid</div>
     <div className={styles.searchBar}>
@@ -41,16 +36,26 @@ const DashboardHeader = () => (
   </header>
 );
 
+// New sub-component for the dashboard selection
+const DashboardSelector = () => (
+  <div className={styles.dashboardSelector}>
+    <div className={styles.selectorOption}>
+      <div className={styles.selectorText}>
+        <span>rohitrakaror12</span>
+        <FaAngleDown />
+      </div>
+    </div>
+    <div className={styles.dashboardTabs}>
+      <button className={`${styles.dashboardTab} ${styles.activeTab}`}>Publisher</button>
+      <button className={styles.dashboardTab}>Advertiser</button>
+    </div>
+  </div>
+);
+
 // Sub-component for the sidebar navigation
 const Sidebar = () => (
   <aside className={styles.sidebar}>
-    <div className={styles.profile}>
-      <div className={styles.profileInfo}>
-        <h4>rohitrakaror12</h4>
-        <span className={styles.plan}>FREE</span>
-      </div>
-      <FaAngleDown />
-    </div>
+    <DashboardSelector />
     <nav className={styles.nav}>
       <a href="#" className={`${styles.navItem} ${styles.active}`}>
         <FaChartBar /> Dashboard
@@ -66,7 +71,7 @@ const Sidebar = () => (
         <span className={styles.badge}>PRO</span>
       </a>
       <a href="#" className={styles.navItem}>
-        <FaClipboardList /> Advertiser Report
+        <FaClipboardList /> Publisher Report
       </a>
       <a href="#" className={styles.navItem}>
         <FaGift /> Referral Program <span className={styles.badge}>NEW</span>
@@ -105,11 +110,11 @@ const StatCard = ({ title, value, icon, color }) => (
   </div>
 );
 
-// Main Advertiser Dashboard Component
-const Advertiser = () => {
+// Main Publisher Dashboard Component
+const Publisher = () => {
   return (
     <div className={styles.dashboardLayout}>
-      <DashboardHeader />
+      <Dashboard />
       <Sidebar />
       <main className={styles.mainContent}>
         {/* Top Stats Section */}
@@ -225,21 +230,6 @@ const Advertiser = () => {
             <span>https://cpidroid.com/?ref=K12345</span>
             <FaLink />
           </div>
-          <div className={styles.shareButtons}>
-            <span>SHARE</span>
-            <button>
-              <FaFacebookF />
-            </button>
-            <button>
-              <FaTwitter />
-            </button>
-            <button>
-              <FaWhatsapp />
-            </button>
-            <button>
-              <FaShareAlt />
-            </button>
-          </div>
         </div>
 
         <div className={styles.widget}>
@@ -259,4 +249,4 @@ const Advertiser = () => {
   );
 };
 
-export default Advertiser;
+export default Publisher;
