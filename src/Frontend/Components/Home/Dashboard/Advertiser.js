@@ -80,7 +80,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
     <div className={styles.dashboardSelector}>
       <div className={styles.selectorOption}>
         <div className={styles.selectorText}>
-          <span>rohitrakaror12</span>
+          <span>Welcome</span>
           <FaAngleDown />
         </div>
         <div className={styles.profileAmounts}>
