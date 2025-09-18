@@ -1,0 +1,312 @@
+.container {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.shieldIcon {
+  width: 64px;
+  height: 64px;
+  color: #007bff;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.contentLeft {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.benefitsCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.benefitsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.bulletPoint {
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+
+.benefitText {
+  color: #555;
+  line-height: 1.5;
+}
+
+.guaranteeBox {
+  background: #e6f7ff;
+  border-left: 4px solid #1890ff;
+  padding: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.guaranteeText {
+  color: #007bff;
+  font-weight: 500;
+  margin: 0;
+}
+
+.visualSection {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.securityDisplay {
+  padding: 1rem;
+}
+
+.securityContent {
+  position: relative;
+}
+
+.shieldContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.shieldIcon {
+  width: 80px;
+  height: 80px;
+  color: #52c41a;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.statusDot {
+  width: 20px;
+  height: 20px;
+  background-color: #52c41a;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.protectedTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.protectedSubtitle {
+  color: #52c41a;
+  font-weight: 500;
+  margin: 0;
+}
+
+.featuresSection {
+  margin-bottom: 3rem;
+}
+
+.featuresTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featureIconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.featureIcon {
+  width: 40px;
+  height: 40px;
+  color: #007bff;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.featureDescription {
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ctaSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaSubtitle {
+    font-size: 1rem;
+  }
+}
