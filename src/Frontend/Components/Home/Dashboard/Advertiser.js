@@ -120,76 +120,90 @@ const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
     <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
     <nav className={styles.nav}>
       <p className={styles.navHeader}>MAIN MENU</p>
-      <a 
-        href="#" 
-        className={`${styles.navItem} ${activeItem === 'dashboard' ? styles.active : ''}`}
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "dashboard" ? styles.active : ""
+        }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem('dashboard');
+          setActiveItem("dashboard");
         }}
       >
         <FaChartBar /> Dashboard
         <span className={styles.navItemBadge}>Advertiser</span>
       </a>
-      <a 
-        href="#" 
-        className={`${styles.navItem} ${activeItem === 'campaigns' ? styles.active : ''}`}
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "campaigns" ? styles.active : ""
+        }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem('campaigns');
+          setActiveItem("campaigns");
         }}
       >
         <FaBullseye /> Campaigns
       </a>
       <div className={styles.navGroup}>
         <p className={styles.navHeader}>Apps / Campaigns</p>
-        <a 
-          href="#" 
-          className={`${styles.navItem} ${activeItem === 'tracking' ? styles.active : ''}`}
+        <a
+          href="#"
+          className={`${styles.navItem} ${
+            activeItem === "tracking" ? styles.active : ""
+          }`}
           onClick={(e) => {
             e.preventDefault();
-            setActiveItem('tracking');
+            setActiveItem("tracking");
           }}
         >
           <FaTasks /> Manage Campaigns
         </a>
-        <a 
-          href="#" 
-          className={`${styles.navItem} ${activeItem === 'applications' ? styles.active : ''}`}
+        <a
+          href="#"
+          className={`${styles.navItem} ${
+            activeItem === "applications" ? styles.active : ""
+          }`}
           onClick={(e) => {
             e.preventDefault();
-            setActiveItem('applications');
+            setActiveItem("applications");
           }}
         >
           <FaClipboardList /> Applications
         </a>
       </div>
-      <a 
-        href="#" 
-        className={`${styles.navItem} ${activeItem === 'reports' ? styles.active : ''}`}
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "reports" ? styles.active : ""
+        }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem('reports');
+          setActiveItem("reports");
         }}
       >
         <FaDollarSign /> Advertiser Billing
       </a>
-      <a 
-        href="#" 
-        className={`${styles.navItem} ${activeItem === 'reports' ? styles.active : ''}`}
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "reports" ? styles.active : ""
+        }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem('reports');
+          setActiveItem("reports");
         }}
       >
         <FaClipboardList /> Advertiser Report
       </a>
-      <a 
-        href="#" 
-        className={`${styles.navItem} ${activeItem === 'referral' ? styles.active : ''}`}
+      <a
+        href="#"
+        className={`${styles.navItem} ${
+          activeItem === "referral" ? styles.active : ""
+        }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem('referral');
+          setActiveItem("referral");
         }}
       >
         <FaGift /> Referral Program
@@ -1165,45 +1179,14 @@ const Advertiser = () => {
       {/* Mobile sidebar overlay and content */}
       {isSidebarOpen && (
         <>
-          <div 
-            className={styles.overlay} 
-            onClick={closeSidebar}
-            style={{ 
-              background: 'rgba(0, 0, 0, 0.5)', 
-              zIndex: 999,
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0
-            }}
-          ></div>
-          <div 
-            className={`${styles.mobileSidebar} ${styles.open}`}
-            style={{ 
-              background: 'white', 
-              zIndex: 1000,
-              position: 'fixed',
-              left: 0,
-              top: 0,
-              bottom: 0,
-              width: '240px',
-              overflowY: 'auto'
-            }}
-          >
+          <div className={styles.overlay} onClick={closeSidebar}></div>
+          <div className={styles.mobileSidebar}>
             <div className={styles.mobileSidebarHeader}>
               <button className={styles.closeMenu} onClick={closeSidebar}>
                 <FaTimes />
               </button>
             </div>
-            <div 
-              className={styles.mobileSidebarContent} 
-              style={{ 
-                background: 'white',
-                height: 'calc(100% - 60px)',
-                overflowY: 'auto'
-              }}
-            >
+            <div className={styles.mobileSidebarContent}>
               <Sidebar
                 activeItem={activeItem}
                 setActiveItem={(item) => {

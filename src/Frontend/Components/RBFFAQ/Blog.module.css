@@ -208,27 +208,234 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 992px) {
-  .postGrid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+  .blogSection {
+    padding: 70px 4%;
   }
-
+  
+  .header {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+  }
+  
+  .tag {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
   .title {
     font-size: 32px;
+    margin: 12px 0;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .postGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .postCard {
+    padding: 20px;
+  }
+  
+  .postImage {
+    height: 180px;
+    margin-bottom: 15px;
+  }
+  
+  .postTag {
+    padding: 4px 8px;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  
+  .postTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .postExcerpt {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .readMore {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  
+  .paginationControls {
+    margin-top: 40px;
+    gap: 20px;
+  }
+  
+  .paginationButton {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .paginationNumbers button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 0 3px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blogSection {
+    padding: 60px 3%;
+  }
+  
+  .header {
+    margin: 0 auto 35px auto;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+  }
+  
+  .postGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+  }
+  
+  .postCard {
+    padding: 18px;
+  }
+  
+  .postImage {
+    height: 160px;
+    margin-bottom: 12px;
+  }
+  
+  .postTag {
+    padding: 3px 6px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .postTitle {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .postExcerpt {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .readMore {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .paginationControls {
+    margin-top: 35px;
+    gap: 15px;
+  }
+  
+  .paginationButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .paginationNumbers button {
+    padding: 6px 10px;
+    font-size: 13px;
+    margin: 0 2px;
   }
 }
 
 @media (max-width: 768px) {
-  .postGrid {
-    grid-template-columns: 1fr;
+  .blogSection {
+    padding: 50px 2%;
   }
-
+  
+  .header {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+  }
+  
+  .tag {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  
   .title {
     font-size: 28px;
+    margin: 10px 0;
   }
-
+  
   .subtitle {
+    font-size: 14px;
+  }
+  
+  .postGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 500px;
+  }
+  
+  .postCard {
+    padding: 15px;
+  }
+  
+  .postImage {
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .postTag {
+    padding: 3px 6px;
+    font-size: 9px;
+    margin-bottom: 8px;
+  }
+  
+  .postTitle {
     font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  .postExcerpt {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .readMore {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  .paginationControls {
+    margin-top: 30px;
+    gap: 15px;
+  }
+  
+  .paginationButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .paginationNumbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .paginationNumbers button {
+    padding: 5px 8px;
+    font-size: 12px;
+    margin: 0 1px 5px 1px;
   }
   
   .paginationControls {
@@ -238,5 +445,62 @@
   
   .paginationNumbers {
     order: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .blogSection {
+    padding: 40px 2%;
+  }
+  
+  .header {
+    margin: 0 auto 25px auto;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 13px;
+  }
+  
+  .postGrid {
+    gap: 12px;
+  }
+  
+  .postCard {
+    padding: 12px;
+  }
+  
+  .postImage {
+    height: 180px;
+  }
+  
+  .postTitle {
+    font-size: 15px;
+  }
+  
+  .postExcerpt {
+    font-size: 11px;
+  }
+  
+  .readMore {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  
+  .paginationControls {
+    margin-top: 25px;
+  }
+  
+  .paginationButton {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  
+  .paginationNumbers button {
+    padding: 4px 6px;
+    font-size: 11px;
   }
 }

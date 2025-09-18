@@ -1,0 +1,223 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Initial position */
+.initial {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Falling animation */
+.falling {
+  animation: fallDown 1.5s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(100px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+}
+
+/* Rising animation from above */
+.rising {
+  animation: riseUp 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: translateY(-500px);
+}
+
+@keyframes riseUp {
+  0% {
+    transform: translateY(-500px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100px) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Final landed position */
+.landed {
+  transform: translateY(0);
+  opacity: 1;
+  animation: land 0.5s ease-out;
+}
+
+@keyframes land {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Void effect when text is falling */
+.void {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.voidEffect {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.5) 100%);
+  animation: pulse 1.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* UFO effect when rising */
+.ufo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  animation: fly 2s ease-out;
+}
+
+.ufoBody {
+  width: 80px;
+  height: 30px;
+  background: linear-gradient(135deg, #6ecbf5, #3a9bdb);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(58, 155, 219, 0.7);
+  position: relative;
+}
+
+.ufoBody::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.ufoLight {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 40%, transparent 70%);
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: lightPulse 0.5s infinite alternate;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, 100px) scale(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -100px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes lightPulse {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+  }
+  
+  .ufoBody {
+    width: 60px;
+    height: 25px;
+  }
+  
+  .ufoBody::before {
+    width: 30px;
+    height: 15px;
+    top: -8px;
+  }
+  
+  .ufoLight {
+    width: 80px;
+    height: 80px;
+  }
+}

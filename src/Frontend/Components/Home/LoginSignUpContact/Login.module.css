@@ -368,14 +368,163 @@
   text-decoration: none;
 }
 
+@media (max-width: 1200px) {
+  .loginPage {
+    grid-template-columns: 35% 65%;
+  }
+  
+  .leftPanel {
+    padding: 40px;
+  }
+  
+  .logo {
+    top: 30px;
+    left: 30px;
+    font-size: 22px;
+  }
+  
+  .testimonial {
+    max-width: 350px;
+  }
+  
+  .testimonial blockquote {
+    font-size: 1.15rem;
+  }
+  
+  .authorImage {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rightPanel {
+    padding: 40px;
+  }
+  
+  .loginForm {
+    max-width: 400px;
+  }
+  
+  .formGroup input, .formGroup textarea {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .signinBtn {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 992px) {
   .loginPage {
     grid-template-columns: 1fr;
   }
+  
   .leftPanel {
     display: none;
   }
+  
   .rightPanel {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .loginForm {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .formTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .formGroup input, .formGroup textarea {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+  
+  .signinBtn {
+    padding: 14px;
+    font-size: 17px;
+  }
+  
+  .signupLink {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginPage {
+    min-height: 90vh;
+  }
+  
+  .rightPanel {
+    padding: 25px 20px;
+  }
+  
+  .loginForm {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .formTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup input, .formGroup textarea {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .signinBtn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .signupLink {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginPage {
+    min-height: 85vh;
+  }
+  
+  .rightPanel {
+    padding: 20px 15px;
+  }
+  
+  .formTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 18px;
+  }
+  
+  .formGroup input, .formGroup textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .signinBtn {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .signupLink {
+    margin-top: 18px;
+    font-size: 13px;
   }
 }

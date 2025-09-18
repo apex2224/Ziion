@@ -327,6 +327,137 @@
 }
 
 /* --- Responsive --- */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 50px 15px;
+  }
+  
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  
+  .hero p {
+    font-size: 1.05rem;
+    max-width: 550px;
+  }
+  
+  .mainContent {
+    padding: 0 15px 40px 15px;
+  }
+  
+  .monetizationSection {
+    margin-bottom: 40px;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+  
+  .integrationGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+  }
+  
+  .integrationCard {
+    padding: 25px;
+  }
+  
+  .integrationCard h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .integrationCard p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .integrationCard ul {
+    margin-bottom: 20px;
+  }
+  
+  .integrationCard li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .integrationCard button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .demoSection {
+    padding: 50px 4%;
+  }
+  
+  .demoSection h2 {
+    font-size: 2.2rem;
+  }
+  
+  .demoContent {
+    gap: 40px;
+    max-width: 1100px;
+  }
+  
+  .qrCodeSide h3 {
+    font-size: 1.8rem;
+  }
+  
+  .qrCodeSide p {
+    font-size: 1rem;
+  }
+  
+  .benefitsSection {
+    padding: 30px 4% 50px 4%;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .benefitCard h3 {
+    font-size: 1.3rem;
+  }
+  
+  .benefitCard p {
+    font-size: 0.95rem;
+  }
+  
+  .contactForm {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .formWrapper {
+    padding: 30px;
+    margin: -30px auto 0 auto;
+    max-width: 500px;
+  }
+  
+  .formHeader h2 {
+    font-size: 1.8rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .tag {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+  
+  .submitButton {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 992px) {
   .integrationGrid {
     grid-template-columns: 1fr;
@@ -368,48 +499,211 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 40px 10px;
+  }
+  
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 450px;
+  }
+  
   .mainContent {
-    padding: 0 15px 30px 15px;
+    padding: 0 10px 30px 10px;
+  }
+  
+  .monetizationSection {
+    margin-bottom: 30px;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.6rem;
   }
   
   .integrationGrid {
-    gap: 20px;
+    gap: 15px;
+    max-width: 500px;
   }
   
   .integrationCard {
     padding: 20px;
   }
   
+  .integrationCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .integrationCard p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  
+  .integrationCard ul {
+    margin-bottom: 15px;
+  }
+  
+  .integrationCard li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+  
+  .integrationCard button {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+  
   .demoSection {
-    padding: 40px 5%;
+    padding: 40px 2%;
   }
   
   .demoSection h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .qrCodeSide h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .qrCodeSide p {
+    font-size: 0.9rem;
   }
   
   .benefitsSection {
-    padding: 20px 5% 40px 5%;
+    padding: 20px 2% 35px 2%;
+  }
+  
+  .benefitsGrid {
+    gap: 15px;
+  }
+  
+  .benefitCard {
+    padding: 20px;
+  }
+  
+  .benefitCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .benefitCard p {
+    font-size: 0.85rem;
+  }
+  
+  .contactForm {
+    max-width: 500px;
   }
   
   .formWrapper {
     padding: 20px;
+    margin: -20px auto 0 auto;
+    max-width: 400px;
   }
   
   .formHeader h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    font-size: 14px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 8px 10px;
+    font-size: 13px;
   }
   
   .tag {
-    font-size: 10px;
-    padding: 3px 8px;
+    font-size: 9px;
+    padding: 2px 6px;
   }
   
   .submitButton {
-    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 35px 8px;
+  }
+  
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .mainContent {
+    padding: 0 8px 25px 8px;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .integrationCard {
+    padding: 18px;
+  }
+  
+  .demoSection {
+    padding: 35px 2%;
+  }
+  
+  .demoSection h2 {
+    font-size: 1.6rem;
+  }
+  
+  .qrCodeSide h3 {
+    font-size: 1.3rem;
+  }
+  
+  .qrCodeSide p {
+    font-size: 0.85rem;
+  }
+  
+  .benefitCard {
+    padding: 18px;
+  }
+  
+  .contactForm {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .formWrapper {
+    padding: 18px;
+    margin: -18px auto 0 auto;
+    max-width: 100%;
+  }
+  
+  .formHeader h2 {
+    font-size: 1.3rem;
+  }
+  
+  .formGroup label {
+    font-size: 13px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    font-size: 12px;
+  }
+  
+  .submitButton {
+    font-size: 13px;
   }
 }

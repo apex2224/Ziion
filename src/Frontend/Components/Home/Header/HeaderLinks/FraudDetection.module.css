@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-.header {
+.pageHeader {
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem 0;
@@ -135,6 +135,14 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+}
+
+.fraudDetectionImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .securityDisplay {
@@ -307,6 +315,214 @@
   }
 
   .ctaSubtitle {
+    font-size: 1rem;
+  }
+  
+  .visualCard {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .securityContent {
+    padding: 0.5rem;
+  }
+  
+  .shieldIcon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .protectedTitle {
+    font-size: 1.25rem;
+  }
+  
+  .featureCard {
+    padding: 1.25rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+  
+  .benefitsCard {
+    padding: 1.25rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .featureIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+  
+  .wrapper {
+    padding: 0 0.5rem;
+  }
+  
+  .pageHeader {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .iconWrapper {
+    margin-bottom: 0.75rem;
+  }
+  
+  .shieldIcon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .mainContent {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contentLeft {
+    padding: 0 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .benefitsCard {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .benefitsTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .benefitItem {
+    margin-bottom: 0.75rem;
+  }
+  
+  .benefitText {
+    font-size: 0.9rem;
+  }
+  
+  .bulletPoint {
+    width: 6px;
+    height: 6px;
+    margin-right: 0.75rem;
+    margin-top: 0.4rem;
+  }
+  
+  .guaranteeBox {
+    padding: 0.75rem;
+  }
+  
+  .guaranteeText {
+    font-size: 0.9rem;
+  }
+  
+  .visualSection {
+    padding: 0 0.5rem;
+  }
+  
+  .visualCard {
+    padding: 1rem;
+  }
+  
+  .securityDisplay {
+    padding: 0.75rem;
+  }
+  
+  .shieldIcon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .statusDot {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .protectedTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .protectedSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .featuresSection {
+    margin-bottom: 2rem;
+  }
+  
+  .featuresTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .featureCard {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .featureIconWrapper {
+    margin-bottom: 0.75rem;
+  }
+  
+  .featureIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .featureTitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .featureDescription {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .ctaSection {
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .ctaSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ctaButton {
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
   }
 }
