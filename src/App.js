@@ -51,7 +51,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/advertiser" element={<Advertiser />} />
         <Route path="/publisher" element={<Publisher />} />
-        <Route path="/aso-booster" element={<ASObooster />} />"
+        <Route path="/aso-booster" element={<ASObooster />} />
         <Route path="/fraud-detection" element={<FraudDetection />} />
       </Routes>
     </BrowserRouter>

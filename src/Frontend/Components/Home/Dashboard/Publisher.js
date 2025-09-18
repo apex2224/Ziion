@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PublisherProfile from "./PublisherProfile";
+import ASObooster from "./ASObooster";
 import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
@@ -206,13 +207,13 @@ const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
       <div className={styles.managedServices}>
         <p className={styles.navHeader}>MANAGED SERVICES</p>
         <a
-          href="#"
+          href="/aso-booster" 
           className={`${styles.navItem} ${
             activeItem === "asoBooster" ? styles.active : ""
           }`}
           onClick={(e) => {
             e.preventDefault();
-            setActiveItem("asoBooster");
+            window.location.href = '/aso-booster';
           }}
         >
           <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
@@ -515,18 +516,6 @@ const ReferralProgram = () => (
   </div>
 );
 
-// ASO Booster Component
-const ASOBooster = () => (
-  <div className={styles.asoBoosterSection}>
-    <div className={styles.sectionHeader}>
-      <h2>ASO Booster</h2>
-    </div>
-    <div className={styles.asoBoosterContent}>
-      <p>Boost your app's visibility with our ASO services.</p>
-    </div>
-  </div>
-);
-
 // Main Publisher Dashboard Component
 const Publisher = () => {
   const [activeTab, setActiveTab] = useState("publisher");
@@ -560,7 +549,7 @@ const Publisher = () => {
       case "referral":
         return <ReferralProgram />;
       case "asoBooster":
-        return <ASOBooster />;
+        return <ASObooster />;
       default:
         return <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />;
     }
