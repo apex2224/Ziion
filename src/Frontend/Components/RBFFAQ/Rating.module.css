@@ -239,64 +239,257 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 768px) {
-  .contentWrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+@media (max-width: 1200px) {
+  .ratingSection {
+    padding: 70px 4%;
   }
-
-  .trustpilotCard {
-    width: 100%;
-    max-width: 350px;
-    box-sizing: border-box;
-  }
-
-  .testimonialWrapper {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .testimonialCarousel {
-    height: 350px;
-  }
-
+  
   .title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .contentWrapper {
+    gap: 30px;
+    max-width: 1000px;
+  }
+  
+  .trustpilotCard {
+    padding: 20px;
+    width: 240px;
+  }
+  
+  .excellent {
+    font-size: 22px;
+    margin: 0 0 8px 0;
+  }
+  
+  .cardStars {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .ratingValue {
     font-size: 28px;
   }
-
-  .footer {
-    flex-direction: column;
-    gap: 20px;
+  
+  .reviewsCount {
+    font-size: 14px;
+  }
+  
+  .trustpilotLink {
+    font-size: 14px;
+    margin-top: 20px;
   }
   
   .carouselContainer {
-    position: relative;
+    max-width: 600px;
+  }
+  
+  .testimonial {
+    padding: 0 20px;
+  }
+  
+  .testimonialHeader {
+    margin-bottom: 15px;
+  }
+  
+  .testimonialName {
+    font-size: 18px;
+  }
+  
+  .testimonialText {
+    font-size: 16px;
+    line-height: 1.5;
   }
   
   .carouselButtonLeft,
   .carouselButtonRight {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
   
   .carouselButtonLeft {
-    left: 10px;
-    margin-right: 0;
+    left: 5px;
   }
   
   .carouselButtonRight {
-    right: 10px;
-    margin-left: 0;
+    right: 5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ratingSection {
+    padding: 60px 3%;
+  }
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+  
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 700px;
+  }
+  
+  .trustpilotCard {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .carouselContainer {
+    max-width: 100%;
   }
   
   .testimonial {
-    padding: 0 40px;
+    padding: 0 15px;
   }
   
   .testimonialText {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ratingSection {
+    padding: 50px 2%;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .contentWrapper {
+    gap: 25px;
+  }
+  
+  .trustpilotCard {
+    padding: 18px;
+  }
+  
+  .excellent {
+    font-size: 20px;
+  }
+  
+  .cardStars {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  
+  .ratingValue {
+    font-size: 26px;
+  }
+  
+  .reviewsCount {
+    font-size: 13px;
+  }
+  
+  .trustpilotLink {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  
+  .testimonialHeader {
+    margin-bottom: 12px;
+  }
+  
+  .testimonialName {
+    font-size: 16px;
+  }
+  
+  .testimonialRole {
+    font-size: 13px;
+  }
+  
+  .testimonialText {
+    font-size: 14px;
+  }
+  
+  .carouselButtonLeft,
+  .carouselButtonRight {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ratingSection {
+    padding: 40px 2%;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .contentWrapper {
+    gap: 20px;
+  }
+  
+  .trustpilotCard {
+    padding: 15px;
+  }
+  
+  .excellent {
+    font-size: 18px;
+  }
+  
+  .cardStars {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .ratingValue {
+    font-size: 24px;
+  }
+  
+  .reviewsCount {
+    font-size: 12px;
+  }
+  
+  .trustpilotLink {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  
+  .testimonial {
+    padding: 0 10px;
+  }
+  
+  .testimonialHeader {
+    margin-bottom: 10px;
+  }
+  
+  .testimonialName {
+    font-size: 15px;
+  }
+  
+  .testimonialRole {
+    font-size: 12px;
+  }
+  
+  .testimonialText {
+    font-size: 13px;
+  }
+  
+  .carouselButtonLeft,
+  .carouselButtonRight {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  .carouselButtonLeft {
+    left: 0;
+  }
+  
+  .carouselButtonRight {
+    right: 0;
   }
 }

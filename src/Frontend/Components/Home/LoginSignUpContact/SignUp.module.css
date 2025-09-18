@@ -420,14 +420,248 @@
 }
 
 /* --- Responsive --- */
+@media (max-width: 1200px) {
+  .signupPage {
+    grid-template-columns: 35% 65%;
+  }
+  
+  .leftPanel {
+    padding: 40px;
+  }
+  
+  .logo {
+    top: 30px;
+    left: 30px;
+    font-size: 22px;
+  }
+  
+  .testimonial {
+    max-width: 350px;
+  }
+  
+  .testimonial blockquote {
+    font-size: 1.15rem;
+  }
+  
+  .authorImage {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rightPanel {
+    padding: 40px;
+  }
+  
+  .signupForm {
+    max-width: 400px;
+  }
+  
+  .formGroup input, .formGroup textarea, .formGroup select {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .signupBtn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .successModal {
+    padding: 25px;
+    max-width: 350px;
+  }
+  
+  .successIcon {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+  
+  .successModal h2 {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+  
+  .successModal p {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  
+  .modalButton {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 992px) {
   .signupPage {
     grid-template-columns: 1fr; /* Stack columns */
   }
+  
   .leftPanel {
     display: none; /* Hide the decorative panel on smaller screens */
   }
+  
   .rightPanel {
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .signupForm {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .formTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .formGroup {
+    margin-bottom: 22px;
+  }
+  
+  .formGroup input, .formGroup textarea, .formGroup select {
+    padding: 14px 18px;
+    font-size: 16px;
+  }
+  
+  .signupBtn {
+    padding: 14px;
+    font-size: 17px;
+  }
+  
+  .loginLink {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signupPage {
+    min-height: 90vh;
+  }
+  
+  .rightPanel {
+    padding: 25px 20px;
+  }
+  
+  .signupForm {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .formTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup input, .formGroup textarea, .formGroup select {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .signupBtn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .loginLink {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .successModal {
+    padding: 20px;
+    max-width: 300px;
+    width: 85%;
+  }
+  
+  .successIcon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .successModal h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .successModal p {
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  
+  .modalButton {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signupPage {
+    min-height: 85vh;
+  }
+  
+  .rightPanel {
+    padding: 20px 15px;
+  }
+  
+  .formTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 18px;
+  }
+  
+  .formGroup input, .formGroup textarea, .formGroup select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .termsLabel {
+    font-size: 13px;
+  }
+  
+  .signupBtn {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .loginLink {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+  
+  .successModal {
+    padding: 18px;
+    max-width: 280px;
+    width: 80%;
+  }
+  
+  .successIcon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .successModal h2 {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .successModal p {
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+  
+  .modalButton {
+    padding: 6px 18px;
+    font-size: 13px;
   }
 }

@@ -582,37 +582,596 @@
   }
 }
 
-@media (max-width: 992px) {
-  .cardsContainer {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 1200px) {
+  .blueWaveBg {
+    height: 300px;
   }
   
-  .specialCardsContainer {
-    grid-template-columns: 1fr;
-  }
-  
-  .buyInstallsSection {
-    grid-template-columns: 1fr;
+  .heroSection {
+    padding: 70px 4% 50px;
+    max-width: 650px;
   }
   
   .heroSection h2 {
-    font-size: 36px;
+    font-size: 38px;
+    margin-bottom: 25px;
   }
   
-  .specialCampaignsSection h3 {
-    font-size: 28px;
+  .heroSection p {
+    font-size: 18px;
+    margin-bottom: 30px;
   }
   
-  .buyInstallCard {
-    flex-direction: column;
-    text-align: center;
+  .plansSection {
+    padding: 60px 4% 50px;
+  }
+  
+  .sectionTitle {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 18px;
+    max-width: 700px;
+  }
+  
+  .plansGrid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
+    max-width: 1100px;
+  }
+  
+  .planCard {
+    padding: 25px;
+  }
+  
+  .price {
+    font-size: 38px;
+    margin: 15px 0;
+  }
+  
+  .cardTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .featuresList li {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .planButton {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  .installComparison {
+    padding: 60px 4%;
+  }
+  
+  .comparisonGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .comparisonCard {
+    padding: 20px;
+  }
+  
+  .comparisonCard h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .comparisonCard ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .specialCampaignsSection {
+    padding: 60px 4%;
+  }
+  
+  .campaignsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .campaignCard {
+    padding: 25px;
+  }
+  
+  .campaignCard h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .campaignCard p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .campaignButton {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+  
+  .buyInstallSection {
+    padding: 60px 4%;
   }
   
   .buyInstallContent {
-    display: flex;
+    max-width: 1000px;
+  }
+  
+  .buyInstallImage {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .description h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .description p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+  
+  .description ul li {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+  
+  .faqSection {
+    padding: 60px 4%;
+  }
+  
+  .faqSection h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+  
+  .accordionItem h3 {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+  
+  .accordionItem p {
+    font-size: 16px;
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blueWaveBg {
+    height: 250px;
+  }
+  
+  .heroSection {
+    padding: 60px 3% 40px;
+    max-width: 600px;
+  }
+  
+  .heroSection h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  
+  .heroSection p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+  
+  .plansSection {
+    padding: 50px 3% 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 30px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 17px;
+  }
+  
+  .plansGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+  }
+  
+  .planCard {
+    padding: 22px;
+  }
+  
+  .price {
+    font-size: 34px;
+    margin: 12px 0;
+  }
+  
+  .cardTitle {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+  
+  .featuresList li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .planButton {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+  
+  .installComparison {
+    padding: 50px 3%;
+  }
+  
+  .comparisonGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .comparisonCard {
+    padding: 18px;
+  }
+  
+  .comparisonCard h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .comparisonCard ul li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .specialCampaignsSection {
+    padding: 50px 3%;
+  }
+  
+  .campaignsGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .campaignCard {
+    padding: 22px;
+  }
+  
+  .campaignCard h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .campaignCard p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+  
+  .campaignButton {
+    padding: 10px 22px;
+    font-size: 15px;
+  }
+  
+  .buyInstallSection {
+    padding: 50px 3%;
+  }
+  
+  .buyInstallContent {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .buyInstallImage {
+    width: 100px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  
+  .description {
+    text-align: center;
+  }
+  
+  .description h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .description p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .description ul li {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .faqSection {
+    padding: 50px 3%;
+  }
+  
+  .faqSection h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .accordionItem h3 {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+  
+  .accordionItem p {
+    font-size: 15px;
+    padding: 0 15px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blueWaveBg {
+    height: 200px;
+  }
+  
+  .heroSection {
+    padding: 50px 2% 30px;
+    max-width: 500px;
+  }
+  
+  .heroSection h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .heroSection p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .plansSection {
+    padding: 40px 2% 30px;
+  }
+  
+  .sectionTitle {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 16px;
+  }
+  
+  .plansGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 500px;
+  }
+  
+  .planCard {
+    padding: 20px;
+  }
+  
+  .price {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .featuresList li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .planButton {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .installComparison {
+    padding: 40px 2%;
+  }
+  
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+  }
+  
+  .comparisonCard {
+    padding: 15px;
+  }
+  
+  .comparisonCard h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .comparisonCard ul li {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  
+  .specialCampaignsSection {
+    padding: 40px 2%;
+  }
+  
+  .campaignCard {
+    padding: 20px;
+  }
+  
+  .campaignCard h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .campaignCard p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .campaignButton {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  
+  .buyInstallSection {
+    padding: 40px 2%;
+  }
+  
+  .buyInstallImage {
+    width: 80px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .description h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .description p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .description ul li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .faqSection {
+    padding: 40px 2%;
+  }
+  
+  .faqSection h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  
+  .accordionItem h3 {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+  
+  .accordionItem p {
+    font-size: 14px;
+    padding: 0 12px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blueWaveBg {
+    height: 150px;
+  }
+  
+  .heroSection {
+    padding: 40px 2% 20px;
+  }
+  
+  .heroSection h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  
+  .heroSection p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .plansSection {
+    padding: 30px 2% 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 22px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 15px;
+  }
+  
+  .planCard {
+    padding: 18px;
+  }
+  
+  .price {
+    font-size: 26px;
+  }
+  
+  .cardTitle {
+    font-size: 16px;
+  }
+  
+  .installComparison {
+    padding: 30px 2%;
+  }
+  
+  .specialCampaignsSection {
+    padding: 30px 2%;
+  }
+  
+  .campaignCard {
+    padding: 18px;
+  }
+  
+  .campaignCard h3 {
+    font-size: 16px;
+  }
+  
+  .campaignCard p {
+    font-size: 13px;
+  }
+  
+  .buyInstallSection {
+    padding: 30px 2%;
+  }
+  
+  .buyInstallImage {
+    width: 70px;
+    height: 105px;
+  }
+  
+  .description h3 {
+    font-size: 18px;
+  }
+  
+  .description p {
+    font-size: 14px;
+  }
+  
+  .description ul li {
+    font-size: 14px;
+  }
+  
+  .faqSection {
+    padding: 30px 2%;
+  }
+  
+  .faqSection h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .accordionItem h3 {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  
+  .accordionItem p {
+    font-size: 13px;
+    padding: 0 10px 10px;
   }
 }
 

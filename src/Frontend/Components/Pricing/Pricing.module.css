@@ -196,20 +196,237 @@
 }
 
 /* --- Responsive --- */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
+  .pricingSection {
+    padding: 70px 4%;
+  }
+  
+  .title {
+    font-size: 34px;
+    margin: 0 0 12px 0;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    margin: 0 0 40px 0;
+  }
+  
   .contentGrid {
-    grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 35px;
+    max-width: 1100px;
+  }
+  
+  .priceCard {
+    padding: 25px;
+  }
+  
+  .priceHeader h2 {
+    font-size: 28px;
+  }
+  
+  .priceHeader p {
+    font-size: 16px;
+  }
+  
+  .priceAmount {
+    font-size: 48px;
+    margin: 20px 0;
+  }
+  
+  .priceFeatures li {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .priceButton {
+    padding: 12px 25px;
+    font-size: 16px;
+    margin-top: 25px;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .featureItem h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+  }
+  
+  .featureItem p {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 576px) {
-  .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+@media (max-width: 992px) {
+  .pricingSection {
+    padding: 60px 3%;
   }
   
   .title {
     font-size: 32px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+    margin: 0 0 35px 0;
+  }
+  
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .priceCard {
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .priceHeader h2 {
+    font-size: 30px;
+  }
+  
+  .priceAmount {
+    font-size: 52px;
+    margin: 25px 0;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .featureItem {
+    padding: 20px;
+  }
+  
+  .featureItem h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingSection {
+    padding: 50px 2%;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin: 0 0 30px 0;
+  }
+  
+  .priceCard {
+    padding: 25px;
+    max-width: 450px;
+  }
+  
+  .priceHeader h2 {
+    font-size: 26px;
+  }
+  
+  .priceHeader p {
+    font-size: 15px;
+  }
+  
+  .priceAmount {
+    font-size: 46px;
+    margin: 20px 0;
+  }
+  
+  .priceFeatures li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .priceButton {
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .featureItem {
+    padding: 18px;
+  }
+  
+  .featureItem h3 {
+    font-size: 16px;
+    margin: 0 0 6px 0;
+  }
+  
+  .featureItem p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pricingSection {
+    padding: 40px 2%;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 13px;
+    margin: 0 0 25px 0;
+  }
+  
+  .contentGrid {
+    gap: 30px;
+  }
+  
+  .priceCard {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .priceHeader h2 {
+    font-size: 22px;
+  }
+  
+  .priceAmount {
+    font-size: 40px;
+    margin: 15px 0;
+  }
+  
+  .priceFeatures li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .priceButton {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .featuresGrid {
+    gap: 20px;
+  }
+  
+  .featureItem {
+    padding: 15px;
+  }
+  
+  .featureItem h3 {
+    font-size: 15px;
+  }
+  
+  .featureItem p {
+    font-size: 12px;
   }
 }

@@ -19,6 +19,8 @@ import Advertiser from "./Frontend/Components/Home/Dashboard/Advertiser";
 import Publisher from "./Frontend/Components/Home/Dashboard/Publisher";
 import ASObooster from "./Frontend/Components/Home/Dashboard/ASObooster";
 import FraudDetection from "./Frontend/Components/Home/Header/HeaderLinks/FraudDetection";
+import BoostEngagement from "./Frontend/Components/Home/Header/HeaderLinks/BoostEngagement";
+import FallingTextDemo from "./Frontend/Components/Animations/FallingTextDemo";
 
 const LandingPage = () => {
   return (
@@ -51,8 +53,10 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/advertiser" element={<Advertiser />} />
         <Route path="/publisher" element={<Publisher />} />
-        <Route path="/aso-booster" element={<ASObooster />} />"
+        <Route path="/aso-booster" element={<ASObooster />} />
         <Route path="/fraud-detection" element={<FraudDetection />} />
+        <Route path="/boost-engagement" element={<BoostEngagement />} />
+        <Route path="/falling-text-demo" element={<FallingTextDemo />} />
       </Routes>
     </BrowserRouter>
   );
