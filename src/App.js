@@ -18,7 +18,7 @@ import PromotionalBenefits from "./Frontend/Components/Home/PromotionalBenefits"
 import Advertiser from "./Frontend/Components/Home/Dashboard/Advertiser";
 import Publisher from "./Frontend/Components/Home/Dashboard/Publisher";
 import ASObooster from "./Frontend/Components/Home/Dashboard/ASObooster";
-
+import FraudDetection from "./Frontend/Components/Home/Header/HeaderLinks/FraudDetection";
 
 const LandingPage = () => {
   return (
@@ -34,7 +34,7 @@ const LandingPage = () => {
       <FAQ />
       <hr />
       <Blog />
-       
+
       <Footer />
     </>
   );
@@ -45,16 +45,16 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-
         <Route path="/all-plans" element={<ViewAllPlans />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/advertiser" element={<Advertiser />} />
         <Route path="/publisher" element={<Publisher />} />
+        <Route path="/aso-booster" element={<ASObooster />} />"
+        <Route path="/fraud-detection" element={<FraudDetection />} />
       </Routes>
     </BrowserRouter>
-   
   );
 };
 

@@ -98,6 +98,11 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleFraudDetection = () => {
+    navigate("/fraud-detection");
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.mainNav}>
@@ -119,7 +124,15 @@ const Header = () => {
                   className={`${styles.dropdown} ${styles.featuresDropdown}`}
                 >
                   {featuresData.map((item) => (
-                    <a href="#" key={item.title} className={styles.featureItem}>
+                    <a 
+                      href="#" 
+                      key={item.title} 
+                      className={styles.featureItem}
+                      onClick={item.title === "Fraud Detection" ? (e) => {
+                        e.preventDefault();
+                        navigate("/fraud-detection");
+                      } : undefined}
+                    >
                       <div className={styles.featureIcon}>{item.icon}</div>
                       <div className={styles.featureText}>
                         <h4>
@@ -233,16 +246,13 @@ const Header = () => {
           <div className={styles.authButtons}>
             {isAuthenticated ? (
               <>
-                <button 
+                <button
                   className={styles.dashboardButton}
                   onClick={handleDashboardClick}
                 >
                   DASHBOARD
                 </button>
-                <button 
-                  className={styles.logoutButton}
-                  onClick={handleLogout}
-                >
+                <button className={styles.logoutButton} onClick={handleLogout}>
                   LOGOUT
                 </button>
               </>
@@ -295,7 +305,11 @@ const Header = () => {
                     href="#"
                     key={item.title}
                     className={styles.mobileDropdownItem}
-                    onClick={toggleMobileMenu}
+                    onClick={item.title === "Fraud Detection" ? (e) => {
+                      e.preventDefault();
+                      navigate("/fraud-detection");
+                      setMobileMenuOpen(false);
+                    } : toggleMobileMenu}
                   >
                     <div className={styles.mobileDropdownIcon}>{item.icon}</div>
                     <div className={styles.mobileDropdownText}>
