@@ -25,7 +25,7 @@ import FraudDetection from "./Frontend/Components/Home/Header/HeaderLinks/FraudD
 import BoostEngagement from "./Frontend/Components/Home/Header/HeaderLinks/BoostEngagement";
 import FallingTextDemo from "./Frontend/Components/Animations/FallingTextDemo";
 
-// Import newly created components
+//  Routes Import
 import TrackingSolutions from "./Frontend/Components/Home/Header/HeaderLinks/TrackingSolutions";
 import AndroidIOSWeb from "./Frontend/Components/Home/Header/HeaderLinks/AndroidIOSWeb";
 import IncentNonIncent from "./Frontend/Components/Home/Header/HeaderLinks/IncentNonIncent";
@@ -69,18 +69,239 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/all-plans" element={<div className="route-container"><ViewAllPlans /></div>} />
-        <Route path="/login" element={<div className="route-container"><Login /></div>} />
-        <Route path="/signup" element={<div className="route-container"><SignUp /></div>} />
-        <Route path="/contact" element={<div className="route-container"><Contact /></div>} />
-        <Route path="/advertiser" element={<div className="route-container"><Advertiser /></div>} />
-        <Route path="/publisher" element={<div className="route-container"><Publisher /></div>} />
-        <Route path="/aso-booster" element={<div className="route-container"><ASObooster /></div>} />
-        <Route path="/lets-chat" element={<div className="route-container"><LetsChat /></div>} />
-        <Route path="/lets-talk" element={<div className="route-container"><LetsTalk /></div>} />
-        <Route path="/fraud-detection" element={<div className="route-container"><FraudDetection /></div>} />
-        <Route path="/boost-engagement" element={<div className="route-container"><BoostEngagement /></div>} />
-        <Route path="/falling-text-demo" element={<div className="route-container"><FallingTextDemo /></div>} />
+        <Route
+          path="/all-plans"
+          element={
+            <div className="route-container">
+              <ViewAllPlans />
+            </div>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <div className="route-container">
+              <Login />
+            </div>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <div className="route-container">
+              <SignUp />
+            </div>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <div className="route-container">
+              <Contact />
+            </div>
+          }
+        />
+        <Route
+          path="/advertiser"
+          element={
+            <div className="route-container">
+              <Advertiser />
+            </div>
+          }
+        />
+        <Route
+          path="/publisher"
+          element={
+            <div className="route-container">
+              <Publisher />
+            </div>
+          }
+        />
+        <Route
+          path="/aso-booster"
+          element={
+            <div className="route-container">
+              <ASObooster />
+            </div>
+          }
+        />
+        <Route
+          path="/lets-chat"
+          element={
+            <div className="route-container">
+              <LetsChat />
+            </div>
+          }
+        />
+        <Route
+          path="/lets-talk"
+          element={
+            <div className="route-container">
+              <LetsTalk />
+            </div>
+          }
+        />
+        <Route
+          path="/fraud-detection"
+          element={
+            <div className="route-container">
+              <FraudDetection />
+            </div>
+          }
+        />
+        <Route
+          path="/boost-engagement"
+          element={
+            <div className="route-container">
+              <BoostEngagement />
+            </div>
+          }
+        />
+        <Route
+          path="/falling-text-demo"
+          element={
+            <div className="route-container">
+              <FallingTextDemo />
+            </div>
+          }
+        />
+
+        <Route
+          path="/tracking-solutions"
+          element={
+            <div className="route-container">
+              <TrackingSolutions />
+            </div>
+          }
+        />
+        <Route
+          path="/android-ios-web"
+          element={
+            <div className="route-container">
+              <AndroidIOSWeb />
+            </div>
+          }
+        />
+        <Route
+          path="/incent-non-incent"
+          element={
+            <div className="route-container">
+              <IncentNonIncent />
+            </div>
+          }
+        />
+        <Route
+          path="/multiple-pricing-models"
+          element={
+            <div className="route-container">
+              <MultiplePricingModels />
+            </div>
+          }
+        />
+        <Route
+          path="/cpidroid-blog"
+          element={
+            <div className="route-container">
+              <CPIDroidBlog />
+            </div>
+          }
+        />
+        <Route
+          path="/cpidroid-support"
+          element={
+            <div className="route-container">
+              <CPIDroidSupport />
+            </div>
+          }
+        />
+        <Route
+          path="/contact-cpidroid"
+          element={
+            <div className="route-container">
+              <ContactCPIDroid />
+            </div>
+          }
+        />
+        <Route
+          path="/android-installs"
+          element={
+            <div className="route-container">
+              <AndroidInstalls />
+            </div>
+          }
+        />
+        <Route
+          path="/ios-installs"
+          element={
+            <div className="route-container">
+              <IOSInstalls />
+            </div>
+          }
+        />
+        <Route
+          path="/android-keyword-installs"
+          element={
+            <div className="route-container">
+              <AndroidKeywordInstalls />
+            </div>
+          }
+        />
+        <Route
+          path="/ios-keyword-installs"
+          element={
+            <div className="route-container">
+              <IOSKeywordInstalls />
+            </div>
+          }
+        />
+        <Route
+          path="/android-apk-installs"
+          element={
+            <div className="route-container">
+              <AndroidAPKInstalls />
+            </div>
+          }
+        />
+        <Route
+          path="/web-traffic"
+          element={
+            <div className="route-container">
+              <WebTraffic />
+            </div>
+          }
+        />
+        <Route
+          path="/android-booster"
+          element={
+            <div className="route-container">
+              <AndroidBooster />
+            </div>
+          }
+        />
+        <Route
+          path="/ios-booster"
+          element={
+            <div className="route-container">
+              <IOSBooster />
+            </div>
+          }
+        />
+        <Route
+          path="/offerwall-monetization"
+          element={
+            <div className="route-container">
+              <OfferwallMonetization />
+            </div>
+          }
+        />
+        <Route
+          path="/become-publisher"
+          element={
+            <div className="route-container">
+              <BecomePublisher />
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
