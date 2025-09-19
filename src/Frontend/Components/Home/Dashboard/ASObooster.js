@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../Header/Header';
 import styles from './ASObooster.module.css';
 
 // Component for the Laptop and Phone SVG illustration (Exposure)
@@ -177,6 +178,7 @@ const ASObooster = () => {
 
     return (
         <>
+            <Header />
             <div className={styles.container}>
                 <div className={styles.contentLeft}>
                     <h1 className={styles.title}>
