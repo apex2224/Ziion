@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Header.module.css";
 import {
   FaChevronDown,
   FaShieldAlt,
@@ -16,6 +15,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import styles from "./Header.module.css";
 
 const featuresData = [
   {
@@ -124,14 +124,23 @@ const Header = () => {
                   className={`${styles.dropdown} ${styles.featuresDropdown}`}
                 >
                   {featuresData.map((item) => (
-                    <a 
-                      href="#" 
-                      key={item.title} 
+                    <a
+                      href="#"
+                      key={item.title}
                       className={styles.featureItem}
-                      onClick={item.title === "Fraud Detection" ? (e) => {
-                        e.preventDefault();
-                        navigate("/fraud-detection");
-                      } : undefined}
+                      onClick={
+                        item.title === "Fraud Detection"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/fraud-detection");
+                            }
+                          : item.title === "Boost Engagements"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/boost-engagement");
+                            }
+                          : undefined
+                      }
                     >
                       <div className={styles.featureIcon}>{item.icon}</div>
                       <div className={styles.featureText}>
@@ -305,11 +314,21 @@ const Header = () => {
                     href="#"
                     key={item.title}
                     className={styles.mobileDropdownItem}
-                    onClick={item.title === "Fraud Detection" ? (e) => {
-                      e.preventDefault();
-                      navigate("/fraud-detection");
-                      setMobileMenuOpen(false);
-                    } : toggleMobileMenu}
+                    onClick={
+                      item.title === "Fraud Detection"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/fraud-detection");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "Boost Engagements"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/boost-engagement");
+                            setMobileMenuOpen(false);
+                          }
+                        : toggleMobileMenu
+                    }
                   >
                     <div className={styles.mobileDropdownIcon}>{item.icon}</div>
                     <div className={styles.mobileDropdownText}>

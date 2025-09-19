@@ -14,8 +14,6 @@ import {
   FaRocket,
   FaLink,
   FaGift,
-  FaBookOpen,
-  FaDownload,
   FaAngleDown,
   FaSearch,
   FaFacebookF,
@@ -37,7 +35,6 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 
-// Sub-component for the top header
 const DashboardHeader = ({ toggleSidebar }) => (
   <header className={styles.header}>
     <button className={styles.menuToggle} onClick={toggleSidebar}>
@@ -54,22 +51,13 @@ const DashboardHeader = ({ toggleSidebar }) => (
       </a>
       <FaBell className={styles.headerIcon} />
       <FaCog className={styles.headerIcon} />
-      <FaUserCircle size={24} className={styles.headerIcon} />
+      <FaUserCircle className={styles.headerIcon} />
     </div>
   </header>
 );
 
-// Sub-component for the dashboard selection (reused)
 const DashboardSelector = ({ activeTab, setActiveTab }) => {
   const navigate = useNavigate();
-
-  const handlePublisherClick = () => {
-    // Already on publisher page, no need to navigate
-  };
-
-  const handleAdvertiserClick = () => {
-    navigate("/advertiser");
-  };
 
   return (
     <div className={styles.dashboardSelector}>
@@ -92,7 +80,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
           className={`${styles.dashboardTab} ${
             activeTab === "publisher" ? styles.activeTab : ""
           }`}
-          onClick={handlePublisherClick}
+          onClick={() => {}}
         >
           Publisher
         </button>
@@ -100,7 +88,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
           className={`${styles.dashboardTab} ${
             activeTab === "advertiser" ? styles.activeTab : ""
           }`}
-          onClick={handleAdvertiserClick}
+          onClick={() => navigate("/advertiser")}
         >
           Advertiser
         </button>
@@ -109,9 +97,8 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
   );
 };
 
-// Sub-component for the sidebar navigation
 const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
-  <aside className={styles.sidebar}>
+  <>
     <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
     <nav className={styles.nav}>
       <p className={styles.navHeader}>MAIN MENU</p>
@@ -224,12 +211,10 @@ const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
       <a href="#">Referral Program</a>
       <FaCog />
     </div>
-  </aside>
+  </>
 );
 
-// Dashboard Home Component
 const DashboardHome = ({ setShowPublisherProfile }) => {
-  // Sub-component for the stat cards
   const StatCard = ({ title, value, icon, color }) => (
     <div className={styles.statCard}>
       <div>
@@ -245,7 +230,6 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
 
   return (
     <>
-      {/* Top Stats Section */}
       <section className={styles.statsGrid}>
         <StatCard
           title="APPROVED OFFERS"
@@ -273,7 +257,6 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
         />
       </section>
 
-      {/* Alert and Warning Sections */}
       <section className={styles.alertSection}>
         <div className={styles.alert}>
           <FaExclamationTriangle className={styles.alertIcon} />
@@ -283,10 +266,13 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
           <ul>
             <li>
               You don't have a publisher profile. -{" "}
-              <a href="#" onClick={(e) => {
-                e.preventDefault();
-                setShowPublisherProfile(true);
-              }}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowPublisherProfile(true);
+                }}
+              >
                 Apply for Publisher Profile
               </a>
             </li>
@@ -306,13 +292,12 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
         <div className={styles.warning}>
           <FaExclamationCircle className={styles.warningIcon} />
           <p>
-            IMPORTANT Going forward, publishers will have to mandatorily
-            ensure these <a href="#">Guidelines to Reduce Fraud Rate.</a>
+            IMPORTANT Going forward, publishers will have to mandatorily ensure
+            these <a href="#">Guidelines to Reduce Fraud Rate.</a>
           </p>
         </div>
       </section>
 
-      {/* Performance and Conversion Tables */}
       <section className={styles.tablesSection}>
         <div className={styles.tableBlock}>
           <h4>Recent Conversion(s)</h4>
@@ -355,96 +340,11 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
             </div>
           </div>
         </div>
-        <div className={styles.tableBlock}>
-          <h4>Recent Click(s)</h4>
-          <div className={styles.tableControls}>
-            <select>
-              <option>10</option>
-            </select>
-            <span>entries per page</span>
-            <div className={styles.tableSearch}>
-              <FaSearch />
-              <input type="text" placeholder="Search" />
-            </div>
-          </div>
-          <div className={styles.tableWrapper}>
-            <table>
-              <thead>
-                <tr>
-                  <th>PLATFORM</th>
-                  <th>OFFER</th>
-                  <th>COUNTRY</th>
-                  <th>CITY</th>
-                  <th>PAYOUT (USD)</th>
-                  <th>CREATED</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colSpan="6" className={styles.noData}>
-                    No data available in table
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className={styles.tableFooter}>
-            <span>Showing 0 to 0 of 0 entries</span>
-            <div className={styles.pagination}>
-              <button>&lt;</button>
-              <button>&gt;</button>
-            </div>
-          </div>
-        </div>
-        <div className={styles.tableBlock}>
-          <h4>Todays Performance</h4>
-          <button className={styles.createPlacementBtn}>
-            <FaPlus /> Create New Placement
-          </button>
-          <div className={styles.tableControls}>
-            <select>
-              <option>10</option>
-            </select>
-            <span>entries per page</span>
-            <div className={styles.tableSearch}>
-              <FaSearch />
-              <input type="text" placeholder="Search" />
-            </div>
-          </div>
-          <div className={styles.tableWrapper}>
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>APP / PLACEMENT / PUBLISHER</th>
-                  <th>TYPE</th>
-                  <th>CONVERSIONS / CLICKS (TODAY)</th>
-                  <th>CONVERSION RATE</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colSpan="5" className={styles.noData}>
-                    No data available in table
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className={styles.tableFooter}>
-            <span>Showing 0 to 0 of 0 entries</span>
-            <div className={styles.pagination}>
-              <button>&lt;</button>
-              <button>&gt;</button>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );
 };
 
-// Offers Component
 const Offers = () => (
   <div className={styles.offersSection}>
     <div className={styles.sectionHeader}>
@@ -456,7 +356,6 @@ const Offers = () => (
   </div>
 );
 
-// Add Placement Component
 const AddPlacement = () => (
   <div className={styles.addPlacementSection}>
     <div className={styles.sectionHeader}>
@@ -468,7 +367,6 @@ const AddPlacement = () => (
   </div>
 );
 
-// Manage Placements Component
 const ManagePlacements = () => (
   <div className={styles.managePlacementsSection}>
     <div className={styles.sectionHeader}>
@@ -480,7 +378,6 @@ const ManagePlacements = () => (
   </div>
 );
 
-// Publisher Billing Component
 const PublisherBilling = () => (
   <div className={styles.billingSection}>
     <div className={styles.sectionHeader}>
@@ -492,7 +389,6 @@ const PublisherBilling = () => (
   </div>
 );
 
-// Publisher Report Component
 const PublisherReport = () => (
   <div className={styles.reportSection}>
     <div className={styles.sectionHeader}>
@@ -504,7 +400,6 @@ const PublisherReport = () => (
   </div>
 );
 
-// Referral Program Component
 const ReferralProgram = () => (
   <div className={styles.referralSection}>
     <div className={styles.sectionHeader}>
@@ -516,7 +411,21 @@ const ReferralProgram = () => (
   </div>
 );
 
+<<<<<<< HEAD
 // Main Publisher Dashboard Component
+=======
+const ASOBooster = () => (
+  <div className={styles.asoBoosterSection}>
+    <div className={styles.sectionHeader}>
+      <h2>ASO Booster</h2>
+    </div>
+    <div className={styles.asoBoosterContent}>
+      <p>Boost your app's visibility with our ASO services.</p>
+    </div>
+  </div>
+);
+
+>>>>>>> 64dd313c31c7810920142a8bac68e6642ab2a93e
 const Publisher = () => {
   const [activeTab, setActiveTab] = useState("publisher");
   const [activeItem, setActiveItem] = useState("dashboard");
@@ -531,11 +440,12 @@ const Publisher = () => {
     setIsSidebarOpen(false);
   };
 
-  // Render the appropriate component based on the active item
   const renderActiveComponent = () => {
     switch (activeItem) {
       case "dashboard":
-        return <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />;
+        return (
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+        );
       case "offers":
         return <Offers />;
       case "addPlacement":
@@ -551,16 +461,17 @@ const Publisher = () => {
       case "asoBooster":
         return <ASObooster />;
       default:
-        return <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />;
+        return (
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+        );
     }
   };
 
-  // Show PublisherProfile page if state is set to true
   if (showPublisherProfile) {
     return (
       <div className={styles.publisherProfileLayout}>
         <div className={styles.backButtonContainer}>
-          <button 
+          <button
             className={styles.backButton}
             onClick={() => setShowPublisherProfile(false)}
           >
@@ -576,7 +487,6 @@ const Publisher = () => {
     <div className={styles.dashboardLayout}>
       <DashboardHeader toggleSidebar={toggleSidebar} />
 
-      {/* Desktop sidebar */}
       <aside className={styles.sidebar}>
         <Sidebar
           activeTab={activeTab}
@@ -588,7 +498,6 @@ const Publisher = () => {
 
       <main className={styles.mainContent}>{renderActiveComponent()}</main>
 
-      {/* Right Sidebar */}
       <aside className={styles.rightSidebar}>
         <div className={styles.widget}>
           <h4>Useful Resources</h4>
@@ -631,63 +540,31 @@ const Publisher = () => {
           </div>
         </div>
         <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
-
-        {/* Mobile sidebar overlay and content */}
-        {isSidebarOpen && (
-          <>
-            <div
-              className={styles.overlay}
-              onClick={closeSidebar}
-              style={{
-                background: "rgba(0, 0, 0, 0.5)",
-                zIndex: 999,
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-              }}
-            ></div>
-            <div
-              className={`${styles.mobileSidebar} ${styles.open}`}
-              style={{
-                background: "white",
-                zIndex: 1000,
-                position: "fixed",
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: "240px",
-                overflowY: "auto",
-              }}
-            >
-              <div className={styles.mobileSidebarHeader}>
-                <button className={styles.closeMenu} onClick={closeSidebar}>
-                  <FaTimes />
-                </button>
-              </div>
-              <div
-                className={styles.mobileSidebarContent}
-                style={{
-                  background: "white",
-                  height: "calc(100% - 60px)",
-                  overflowY: "auto",
-                }}
-              >
-                <Sidebar
-                  activeTab={activeTab}
-                  setActiveTab={setActiveTab}
-                  activeItem={activeItem}
-                  setActiveItem={(item) => {
-                    setActiveItem(item);
-                    closeSidebar(); // Close sidebar when item is selected
-                  }}
-                />
-              </div>
-            </div>
-          </>
-        )}
       </aside>
+
+      {isSidebarOpen && (
+        <>
+          <div className={styles.overlay} onClick={closeSidebar}></div>
+          <div className={styles.mobileSidebar}>
+            <div className={styles.mobileSidebarHeader}>
+              <button className={styles.closeMenu} onClick={closeSidebar}>
+                <FaTimes />
+              </button>
+            </div>
+            <div className={styles.mobileSidebarContent}>
+              <Sidebar
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                activeItem={activeItem}
+                setActiveItem={(item) => {
+                  setActiveItem(item);
+                  closeSidebar();
+                }}
+              />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

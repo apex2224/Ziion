@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import FraudDetectionIMG from "../../../../../Assets/jpeg/FraudDetection.png";
+import Header from "../Header";
 import {
   Shield,
   Globe,
@@ -83,7 +86,10 @@ const FraudDetection = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         {/* Header Section */}
-        <div className={styles.header}>
+        <div>
+          <Header />
+        </div>
+        <div className={styles.pageHeader}>
           <div className={styles.iconWrapper}>
             <Shield className={styles.shieldIcon} />
           </div>
@@ -134,6 +140,11 @@ const FraudDetection = () => {
           {/* Animated Visual */}
           <div className={styles.visualSection}>
             <div className={styles.visualCard}>
+              <img 
+                src={FraudDetectionIMG} 
+                alt="Fraud Detection" 
+                className={styles.fraudDetectionImage}
+              />
               <div className={styles.securityDisplay}>
                 <div className={styles.securityContent}>
                   <div className={styles.shieldContainer}>

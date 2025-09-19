@@ -113,10 +113,55 @@
 }
 
 /* --- Responsive --- */
+@media (max-width: 1200px) {
+  .featuresSection {
+    padding: 70px 4%;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+  
+  .contentGrid {
+    gap: 30px;
+  }
+  
+  .featureColumn {
+    gap: 40px;
+  }
+  
+  .featureItem {
+    gap: 15px;
+  }
+  
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .iconWrapper svg {
+    font-size: 24px;
+  }
+  
+  .featureItem p {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 992px) {
+  .featuresSection {
+    padding: 60px 3%;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  
   .contentGrid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
   }
   
   .illustration {
@@ -128,5 +173,106 @@
     /* Stacks left-aligned on mobile for readability */
     flex-direction: row;
     text-align: left;
+  }
+  
+  .featureColumn {
+    gap: 30px;
+  }
+  
+  .featureItem {
+    gap: 12px;
+  }
+  
+  .iconWrapper {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .iconWrapper svg {
+    font-size: 22px;
+  }
+  
+  .featureItem p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 50px 2%;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .contentGrid {
+    gap: 40px;
+  }
+  
+  .featureColumn {
+    gap: 25px;
+  }
+  
+  .featureItem {
+    gap: 10px;
+  }
+  
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .iconWrapper svg {
+    font-size: 20px;
+  }
+  
+  .featureItem p {
+    font-size: 14px;
+  }
+  
+  .illustration img {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featuresSection {
+    padding: 40px 2%;
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .contentGrid {
+    gap: 30px;
+  }
+  
+  .featureColumn {
+    gap: 20px;
+  }
+  
+  .featureItem {
+    gap: 8px;
+  }
+  
+  .iconWrapper {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .iconWrapper svg {
+    font-size: 18px;
+  }
+  
+  .featureItem p {
+    font-size: 13px;
+  }
+  
+  .illustration img {
+    min-width: 200px;
   }
 }

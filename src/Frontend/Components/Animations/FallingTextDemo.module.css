@@ -1,0 +1,113 @@
+.demoPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.animationContainer {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 3rem 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.description {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.description h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.description ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.description li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.description li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .demoPage {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .animationContainer {
+    padding: 2rem 0.5rem;
+  }
+  
+  .description {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .demoPage {
+    padding: 0.5rem;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .animationContainer {
+    padding: 1.5rem 0.25rem;
+  }
+  
+  .description {
+    padding: 1rem;
+  }
+  
+  .description h2 {
+    font-size: 1.3rem;
+  }
+}

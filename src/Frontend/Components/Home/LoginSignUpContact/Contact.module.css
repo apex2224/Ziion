@@ -152,13 +152,181 @@
 }
 
 /* --- Responsive --- */
+@media (max-width: 1200px) {
+  .contactPage {
+    padding: 30px;
+  }
+  
+  .formContainer {
+    padding: 35px;
+    max-width: 700px;
+  }
+  
+  .formHeader h1 {
+    font-size: 2.2rem;
+  }
+  
+  .formHeader p {
+    font-size: 0.95rem;
+    max-width: 450px;
+  }
+  
+  .formRow {
+    gap: 15px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .formFooter {
+    gap: 20px;
+  }
+  
+  .backButton,
+  .submitButton {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contactPage {
+    padding: 25px;
+  }
+  
+  .formContainer {
+    padding: 30px;
+    max-width: 600px;
+  }
+  
+  .formHeader {
+    margin-bottom: 25px;
+  }
+  
+  .formHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .formHeader p {
+    font-size: 0.9rem;
+    max-width: 400px;
+  }
+  
+  .formGroup label {
+    font-size: 15px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
+  .contactPage {
+    padding: 20px;
+    min-height: 90vh;
+  }
+  
+  .formContainer {
+    padding: 25px;
+    max-width: 100%;
+  }
+  
+  .formHeader {
+    margin-bottom: 20px;
+  }
+  
+  .formHeader h1 {
+    font-size: 1.8rem;
+  }
+  
+  .formHeader p {
+    font-size: 0.85rem;
+  }
+  
   .formRow {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    font-size: 14px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .formFooter {
+    gap: 15px;
+  }
+  
+  .backButton,
+  .submitButton {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 576px) {
+  .contactPage {
+    padding: 15px;
+    min-height: 85vh;
+  }
+  
+  .formContainer {
+    padding: 20px;
+  }
+  
+  .formHeader {
+    margin-bottom: 15px;
+  }
+  
+  .formHeader h1 {
+    font-size: 1.6rem;
+  }
+  
+  .formHeader p {
+    font-size: 0.8rem;
+  }
+  
+  .contactForm {
+    gap: 15px;
+  }
+  
+  .formRow {
+    gap: 10px;
+  }
+  
+  .formGroup {
+    margin-bottom: 12px;
+  }
+  
+  .formGroup label {
+    font-size: 13px;
+  }
+  
+  .formGroup input,
+  .formGroup textarea,
+  .formGroup select {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
   .formFooter {
     flex-direction: column-reverse; /* Puts submit button on top */
     gap: 15px;
@@ -167,5 +335,7 @@
   .backButton,
   .submitButton {
     width: 100%;
+    padding: 8px 15px;
+    font-size: 13px;
   }
 }
