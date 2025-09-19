@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import styles from './ASObooster.module.css';
 
-// Component for the Laptop and Phone SVG illustration (Exposure)
 const LaptopAndPhoneSVG1 = ({ laptop, phone }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 999.1 577.5" style={{ enableBackground: 'new 0 0 999.1 577.5' }} className={styles.svgIllustration}>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 999.1 577.5" style={{ enableBackground: 'new 0 0 999.1 577.5', maxWidth: '100%', height: 'auto' }} className={styles.svgIllustration}>
         <style type="text/css">
             {`.laptop-and-iphone-0{fill:#FFFFFF;stroke:#E7EAF3;}
             .laptop-and-iphone-1{fill:#F7F7F7;}
@@ -34,7 +34,7 @@ const LaptopAndPhoneSVG1 = ({ laptop, phone }) => (
                 <use xlinkHref="#SVGID_2_" style={{ overflow: 'visible' }}></use>
             </clipPath>
             <g style={{ clipPath: 'url(#SVGID_3_)' }}>
-                <image id="SVGlaptopAndIphoneImg1" style={{ overflow: 'visible' }} width="1618" height="1010" xlinkHref={laptop} transform="matrix(0.4651 0 0 0.4651 121.7472 37.9679)"></image>
+                <image id="SVGlaptopAndIphoneImg1" style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }} width="1618" height="1010" xlinkHref={laptop} transform="matrix(0.4651 0 0 0.4651 121.7472 37.9679)"></image>
             </g>
             <use xlinkHref="#SVGID_2_" style={{ overflow: 'visible', fill: 'none', stroke: '#E7EAF3', strokeMiterlimit: '10' }}></use>
         </g>
@@ -49,7 +49,7 @@ const LaptopAndPhoneSVG1 = ({ laptop, phone }) => (
                 <use xlinkHref="#SVGID_4_" style={{ overflow: 'visible' }}></use>
             </clipPath>
             <g style={{ clipPath: 'url(#SVGID_5_)' }}>
-                <image id="SVGlaptopAndIphoneImg2" style={{ overflow: 'visible' }} width="282" height="500" xlinkHref={phone} transform="matrix(0.722 0 0 0.722 782.1237 155.3553)"></image>
+                <image id="SVGlaptopAndIphoneImg2" style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }} width="282" height="500" xlinkHref={phone} transform="matrix(0.722 0 0 0.722 782.1237 155.3553)"></image>
             </g>
             <use xlinkHref="#SVGID_4_" style={{ overflow: 'visible', fill: 'none', stroke: '#E7EAF3', strokeMiterlimit: '10' }}></use>
         </g>
@@ -58,7 +58,7 @@ const LaptopAndPhoneSVG1 = ({ laptop, phone }) => (
 
 // Component for the Laptop and Phone SVG illustration (Feedback)
 const LaptopAndPhoneSVG2 = ({ laptop, phone }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 999.1 577.5" style={{ enableBackground: 'new 0 0 999.1 577.5' }} className={styles.svgIllustration}>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 999.1 577.5" style={{ enableBackground: 'new 0 0 999.1 577.5', maxWidth: '100%', height: 'auto' }} className={styles.svgIllustration}>
         <style type="text/css">
             {`.laptop-and-iphone-0{fill:#FFFFFF;stroke:#E7EAF3;}
             .laptop-and-iphone-1{fill:#F7F7F7;}
@@ -88,7 +88,7 @@ const LaptopAndPhoneSVG2 = ({ laptop, phone }) => (
                 <use xlinkHref="#SVGID_2_" style={{ overflow: 'visible' }}></use>
             </clipPath>
             <g style={{ clipPath: 'url(#SVGID_3_)' }}>
-                <image id="SVGlaptopAndIphoneImg1" style={{ overflow: 'visible' }} width="1618" height="1010" xlinkHref={laptop} transform="matrix(0.4651 0 0 0.4651 121.7472 37.9679)"></image>
+                <image id="SVGlaptopAndIphoneImg1" style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }} width="1618" height="1010" xlinkHref={laptop} transform="matrix(0.4651 0 0 0.4651 121.7472 37.9679)"></image>
             </g>
             <use xlinkHref="#SVGID_2_" style={{ overflow: 'visible', fill: 'none', stroke: '#E7EAF3', strokeMiterlimit: '10' }}></use>
         </g>
@@ -103,7 +103,7 @@ const LaptopAndPhoneSVG2 = ({ laptop, phone }) => (
                 <use xlinkHref="#SVGID_4_" style={{ overflow: 'visible' }}></use>
             </clipPath>
             <g style={{ clipPath: 'url(#SVGID_5_)' }}>
-                <image id="SVGlaptopAndIphoneImg2" style={{ overflow: 'visible' }} width="282" height="500" xlinkHref={phone} transform="matrix(0.722 0 0 0.722 782.1237 155.3553)"></image>
+                <image id="SVGlaptopAndIphoneImg2" style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }} width="282" height="500" xlinkHref={phone} transform="matrix(0.722 0 0 0.722 782.1237 155.3553)"></image>
             </g>
             <use xlinkHref="#SVGID_4_" style={{ overflow: 'visible', fill: 'none', stroke: '#E7EAF3', strokeMiterlimit: '10' }}></use>
         </g>
@@ -113,7 +113,7 @@ const LaptopAndPhoneSVG2 = ({ laptop, phone }) => (
 
 const HikerManSVG = () => (
     <div className={styles.hikerManSVGWrapper}>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1036.9 778.8" style={{ enableBackground: 'new 0 0 1036.9 778.8' }} className="injected-svg js-svg-injector" data-parent="#SVGHero">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1036.9 778.8" style={{ enableBackground: 'new 0 0 1036.9 778.8', maxWidth: '100%', height: 'auto' }} className="injected-svg js-svg-injector" data-parent="#SVGHero">
             <style type="text/css">
                 {`.hiker-man-0{fill:#E7EAF3;}
                 .hiker-man-1{fill:#F8FAFD;}
@@ -163,6 +163,7 @@ const HikerManSVG = () => (
 );
 
 const ASObooster = () => {
+    const navigate = useNavigate();
     // Define an object to hold the different content for the features section
     const featuresContent = {
         getExposure: <LaptopAndPhoneSVG1 laptop="//tswcdn.xyz/theme/front/assets/img/1618x1010/img2.jpg" phone="//tswcdn.xyz/theme/front/assets/img/282x500/img8.jpg" />,
@@ -174,6 +175,14 @@ const ASObooster = () => {
 
     const handleFeatureClick = (featureKey) => {
         setCurrentFeature(featureKey);
+    };
+
+    const handleLetsChat = () => {
+        navigate('/lets-chat');
+    };
+
+    const handleLetsTalk = () => {
+        navigate('/lets-talk');
     };
 
     return (
@@ -191,7 +200,7 @@ const ASObooster = () => {
                     </p>
                     <div className={styles.buttons}>
                         <button className={`${styles.btn} ${styles.btnPrimary}`}>View List</button>
-                        <button className={`${styles.btn} ${styles.btnOutlinePrimary}`}>Let's Chat</button>
+                        <button className={`${styles.btn} ${styles.btnOutlinePrimary}`} onClick={handleLetsChat}>Let's Chat</button>
                     </div>
                     <p className={styles.note}>
                         Get full list for free. * No credit card required.
@@ -482,7 +491,7 @@ const ASObooster = () => {
                 <div className={styles.textCenter}>
                     <div className={styles.mb3}>
                         <a className={`${styles.btn} ${styles.btnPrimary}`} href="/signup?r=L2Jvb3N0ZXIvbGlzdA==">Sign up and Start Boosting</a>
-                        <a className={`${styles.btn} ${styles.btnOutlinePrimary}`} href="javascript:void(0)" onClick={() => { if (typeof window.__cfRLUnblockHandlers !== 'undefined') return false; window.coreTSW.sendChatMessage('Service', 'I am interested in ASO Booster.', 'N/a', 1); }}>Let's Talk</a>
+                        <button className={`${styles.btn} ${styles.btnOutlinePrimary}`} onClick={handleLetsTalk}>Let's Talk</button>
                     </div>
                     <p className={styles.note}>Get full list for free. * No credit card required.</p>
                 </div>

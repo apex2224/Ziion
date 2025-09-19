@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import Blog from "./Frontend/Components/RBFFAQ/Blog";
 import Pricing from "./Frontend/Components/Pricing/Pricing";
@@ -18,6 +19,8 @@ import PromotionalBenefits from "./Frontend/Components/Home/PromotionalBenefits"
 import Advertiser from "./Frontend/Components/Home/Dashboard/Advertiser";
 import Publisher from "./Frontend/Components/Home/Dashboard/Publisher";
 import ASObooster from "./Frontend/Components/Home/Dashboard/ASObooster";
+import LetsChat from "./Frontend/Components/Home/Dashboard/LetsChat";
+import LetsTalk from "./Frontend/Components/Home/Dashboard/LetsTalk";
 import FraudDetection from "./Frontend/Components/Home/Header/HeaderLinks/FraudDetection";
 import BoostEngagement from "./Frontend/Components/Home/Header/HeaderLinks/BoostEngagement";
 import FallingTextDemo from "./Frontend/Components/Animations/FallingTextDemo";
@@ -43,7 +46,7 @@ import BecomePublisher from "./Frontend/Components/Home/Header/HeaderLinks/Becom
 
 const LandingPage = () => {
   return (
-    <>
+    <div className="route-container">
       <Header />
       <TopPage />
       <PromotionalBenefits />
@@ -57,7 +60,7 @@ const LandingPage = () => {
       <Blog />
 
       <Footer />
-    </>
+    </div>
   );
 };
 
@@ -66,35 +69,18 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/all-plans" element={<ViewAllPlans />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/advertiser" element={<Advertiser />} />
-        <Route path="/publisher" element={<Publisher />} />
-        <Route path="/aso-booster" element={<ASObooster />} />
-        <Route path="/fraud-detection" element={<FraudDetection />} />
-        <Route path="/boost-engagement" element={<BoostEngagement />} />
-        <Route path="/falling-text-demo" element={<FallingTextDemo />} />
-        
-        {/* New routes for created components */}
-        <Route path="/tracking-solutions" element={<TrackingSolutions />} />
-        <Route path="/android-ios-web" element={<AndroidIOSWeb />} />
-        <Route path="/incent-non-incent" element={<IncentNonIncent />} />
-        <Route path="/multiple-pricing-models" element={<MultiplePricingModels />} />
-        <Route path="/cpidroid-blog" element={<CPIDroidBlog />} />
-        <Route path="/cpidroid-support" element={<CPIDroidSupport />} />
-        <Route path="/contact-cpidroid" element={<ContactCPIDroid />} />
-        <Route path="/android-installs" element={<AndroidInstalls />} />
-        <Route path="/ios-installs" element={<IOSInstalls />} />
-        <Route path="/android-keyword-installs" element={<AndroidKeywordInstalls />} />
-        <Route path="/ios-keyword-installs" element={<IOSKeywordInstalls />} />
-        <Route path="/android-apk-installs" element={<AndroidAPKInstalls />} />
-        <Route path="/web-traffic" element={<WebTraffic />} />
-        <Route path="/android-booster" element={<AndroidBooster />} />
-        <Route path="/ios-booster" element={<IOSBooster />} />
-        <Route path="/offerwall-monetization" element={<OfferwallMonetization />} />
-        <Route path="/become-publisher" element={<BecomePublisher />} />
+        <Route path="/all-plans" element={<div className="route-container"><ViewAllPlans /></div>} />
+        <Route path="/login" element={<div className="route-container"><Login /></div>} />
+        <Route path="/signup" element={<div className="route-container"><SignUp /></div>} />
+        <Route path="/contact" element={<div className="route-container"><Contact /></div>} />
+        <Route path="/advertiser" element={<div className="route-container"><Advertiser /></div>} />
+        <Route path="/publisher" element={<div className="route-container"><Publisher /></div>} />
+        <Route path="/aso-booster" element={<div className="route-container"><ASObooster /></div>} />
+        <Route path="/lets-chat" element={<div className="route-container"><LetsChat /></div>} />
+        <Route path="/lets-talk" element={<div className="route-container"><LetsTalk /></div>} />
+        <Route path="/fraud-detection" element={<div className="route-container"><FraudDetection /></div>} />
+        <Route path="/boost-engagement" element={<div className="route-container"><BoostEngagement /></div>} />
+        <Route path="/falling-text-demo" element={<div className="route-container"><FallingTextDemo /></div>} />
       </Routes>
     </BrowserRouter>
   );
