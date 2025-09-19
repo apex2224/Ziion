@@ -1,81 +1,47 @@
+/* ASObooster.module.css */
+
+/* Color and Layout Variables */
+:root {
+  --primary-color: #377DFF;
+  --secondary-color: #BDC5D1;
+  --text-dark: #1E2022;
+  --text-light: #F8FAFD;
+  --bg-white: #FFFFFF;
+  --bg-gray-200: #F7F7F7;
+  --bg-gray-300: #E7EAF3;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+/* General Layout and Responsiveness */
 .container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 50px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  max-width: 1400px;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
 }
 
 .contentLeft {
   flex: 1;
-  z-index: 10;
-  padding-top: 30px;
+  text-align: center;
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #1e2022;
-}
-
-.description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: #555;
-}
-
-.buttons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.viewListButton {
-  background-color: #fff;
-  color: #377dff;
-  border: 2px solid #377dff;
-  border-radius: 30px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.viewListButton:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(55, 125, 255, 0.15);
-}
-
-.letsChatButton {
-  background-color: #377dff;
-  color: white;
-  border: 2px solid #377dff;
-  border-radius: 30px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.letsChatButton:hover {
-  background-color: #1e64f0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(55, 125, 255, 0.3);
-}
-
-.note {
-  font-size: 0.85rem;
-  color: #777;
+@media (min-width: 768px) {
+  .contentLeft {
+    text-align: left;
+  }
 }
 
 .contentRight {
@@ -86,115 +52,267 @@
   position: relative;
 }
 
-.svgIllustration {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s ease;
+/* Typography */
+.title {
+  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
 }
 
-.hikerManSVGWrapper {
-  width: 100%;
-  max-width: 500px; /* Reduced size */
-  height: auto;
-  z-index: 1; /* Behind content */
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
 }
 
-.contentRight img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+.note {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
 }
 
+.h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Buttons and Links */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    justify-content: flex-start;
+  }
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.btnPrimary {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+
+.btnPrimary:hover {
+  background-color: #2c68d1;
+}
+
+.btnOutlinePrimary {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btnOutlinePrimary:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+}
+
+/* Features Section */
 .featuresSection {
-  position: relative;
-  margin-top: 100px;
-  padding: 50px 0;
+  background-color: var(--bg-gray-200);
+  padding: 4rem 1rem;
 }
 
 .featuresContainer {
   display: flex;
-  align-items: center;
-  gap: 50px;
-  position: relative;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .featuresContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .featuresSVG {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  min-height: 400px;
+}
+
+.svgIllustration {
+  width: 100%;
+  height: auto;
 }
 
 .featuresBoxes {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  z-index: 10;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
 }
 
-.featureBoxes {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 50px;
-  position: relative;
-  z-index: 10;
+@media (min-width: 768px) {
+  .featuresBoxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuresBoxes {
+    grid-template-columns: 1fr;
+  }
 }
 
 .featureBox {
-  background: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
   cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
   border: 2px solid transparent;
-  max-width: 400px;
-}
-
-.featureBox:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  border-color: #e7eaf3;
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 .featureBox.activeFeature {
-  border-color: #377dff;
-  box-shadow: 0 10px 25px rgba(55, 125, 255, 0.2);
+  border-color: var(--primary-color);
+}
+
+.featureBox:hover {
   transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .featureIcon {
-  width: 60px;
-  height: 60px;
-  background: #f8fafd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  color: #377dff;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.featureIcon svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .featureText h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #1e2022;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
 }
 
 .featureText p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--secondary-color);
 }
 
+<<<<<<< HEAD
+/* Why ASO Booster Section */
+.whySection {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.sectionSubtitle {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.sectionHeading {
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  color: var(--text-dark);
+}
+
+.iconBlocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.iconBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.iconBlock p {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.iconWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mediaBody {
+  flex: 1;
+}
+
+.textCenter {
+  text-align: center;
+  
+}
+
+.mb3 {
+  margin-bottom: 1rem;
+
+}
+
+/* Hiker Man SVG Wrapper */
+.hikerManSVGWrapper {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.hikerManSVGWrapper svg {
+  width: 100%;
+  height: auto;
+}
+=======
 /* Responsive design */
 @media (max-width: 1200px) {
   .container {
@@ -419,3 +537,4 @@
     margin-bottom: 6px;
   }
 }
+>>>>>>> 64dd313c31c7810920142a8bac68e6642ab2a93e

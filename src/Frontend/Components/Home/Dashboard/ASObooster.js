@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../Header/Header';
 import styles from './ASObooster.module.css';
 
 // Component for the Laptop and Phone SVG illustration (Exposure)
@@ -177,6 +178,7 @@ const ASObooster = () => {
 
     return (
         <>
+            <Header />
             <div className={styles.container}>
                 <div className={styles.contentLeft}>
                     <h1 className={styles.title}>
@@ -188,13 +190,14 @@ const ASObooster = () => {
                         Save your valuable time. Starts at just $20.
                     </p>
                     <div className={styles.buttons}>
-                        <button className={styles.viewListButton}>View List</button>
-                        <button className={styles.letsChatButton}>Let's Chat</button>
+                        <button className={`${styles.btn} ${styles.btnPrimary}`}>View List</button>
+                        <button className={`${styles.btn} ${styles.btnOutlinePrimary}`}>Let's Chat</button>
                     </div>
                     <p className={styles.note}>
                         Get full list for free. * No credit card required.
                     </p>
                 </div>
+                
                 <div className={styles.contentRight}>
                     {/* Render the static HikerMan SVG */}
                     <HikerManSVG />
@@ -202,7 +205,6 @@ const ASObooster = () => {
             </div>
 
             
-
             <div className={styles.featuresSection}>
                 <div className={styles.featuresContainer}>
                     <div className={styles.featuresSVG}>
@@ -242,6 +244,247 @@ const ASObooster = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div className={styles.whySection}>
+                {/* Title */}
+                <div className={styles.sectionTitle}>
+                    <span className={styles.sectionSubtitle}>Why ASO Booster</span>
+                    <h2 className={styles.sectionHeading}>Do more with an end-to-end solution</h2>
+                </div>
+                {/* End Title */}
+
+                {/* Icon Blocks */}
+                <div className={styles.iconBlocks}>
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-29-0{fill:none;stroke:#BDC5D1;}
+                                        .icon-29-1{fill:#BDC5D1;}
+                                        .icon-29-2{fill:#377DFF;}
+                                    `}</style>
+                                    <g>
+                                        <path className="icon-29-0 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M52.9,42.5c-2.7,0-5.2,1.2-6.8,3.2v-17h-36c-5,0-9.1,4.1-9.1,9.1v36h16.7c-1.8-1.6-3-4-3-6.6 c0-4.9,3.9-8.8,8.8-8.8c4.9,0,8.8,3.9,8.8,8.8c0,2.6-1.1,5-3,6.6h16.7V56.8c1.6,2,4,3.2,6.8,3.2c4.8,0,8.7-3.9,8.7-8.7 C61.7,46.4,57.8,42.5,52.9,42.5z"></path>
+                                        <path className="icon-29-0 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M17.8,73.8H1v36c0,5,4.1,9.1,9.1,9.1h36v-16.7c-1.6,1.8-4,3-6.6,3c-4.9,0-8.8-3.9-8.8-8.8s3.9-8.8,8.8-8.8 c2.6,0,5,1.1,6.6,3V73.8H29.5"></path>
+                                        <path className="icon-29-0 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M46.2,102.3V119h36c5,0,9.1-4.1,9.1-9.1v-36H74.6c1.8,1.6,3,4,3,6.6c0,4.9-3.9,8.8-8.8,8.8s-8.8-3.9-8.8-8.8 c0-2.6,1.1-5,3-6.6H46.2v16.7"></path>
+                                        <path className="icon-29-1 fill-gray-400" opacity=".5" d="M105.9,16.1c-1.4-4.8-6.5-7.6-11.3-6.2L60,19.8l4.6,16.1c1-2.2,3-3.9,5.5-4.7c4.7-1.4,9.6,1.3,10.9,6 c1.4,4.7-1.3,9.6-6,10.9c-2.5,0.7-5.1,0.3-7.1-1l4.6,16.1l15.7-4.5c-1.1,2-1.5,4.4-0.8,6.8c1.4,4.7,6.3,7.5,11.1,6.1 c4.7-1.4,7.5-6.3,6.1-11.1c-0.7-2.4-2.3-4.3-4.3-5.4l15.6-4.5L105.9,16.1z"></path>
+                                        <path className="icon-29-2 fill-primary" d="M110,6.6c-1.4-4.8-6.5-7.6-11.3-6.2l-34.6,10l4.6,16.1c1-2.2,3-3.9,5.5-4.7c4.7-1.4,9.6,1.3,10.9,6 c1.4,4.7-1.3,9.6-6,10.9c-2.5,0.7-5.1,0.3-7.1-1l4.6,16.1l15.7-4.5c-1.1,2-1.5,4.4-0.8,6.8c1.4,4.7,6.3,7.5,11.1,6.1 c4.7-1.4,7.5-6.3,6.1-11.1c-0.7-2.4-2.3-4.3-4.3-5.4l15.6-4.5L110,6.6z"></path>
+                                    </g>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Online Report</h4>
+                            </div>
+                        </div>
+                        <p>ASO Booster's reports are available online for your team to flexibly collaborate.</p>
+                        {/* End Icon Block */}
+                    </div>
+
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-26-0{fill:#BDC5D1;}
+                                        .icon-26-1{fill:#377DFF;}
+                                        .icon-26-2{fill:none;stroke:#FFFFFF;}
+                                        .icon-26-3{fill:none;stroke:#377DFF;}
+                                        .icon-26-4{fill:none;stroke:#BDC5D1;}
+                                        .icon-26-5{fill:none;stroke:#FFFFFF;}
+                                    `}</style>
+                                    <circle className="icon-26-0 fill-gray-400" opacity=".5" cx="62.6" cy="62.7" r="23.4"></circle>
+                                    <circle className="icon-26-1 fill-primary" cx="58.6" cy="54.2" r="23.4"></circle>
+                                    <circle className="icon-26-2 fill-none stroke-white" strokeWidth="3" strokeMiterlimit="10" cx="58.6" cy="54.2" r="9.8"></circle>
+                                    <polyline className="icon-26-3 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" points="27.7,103.1 16.6,119.2 8.2,119.2 19,95.6 "></polyline>
+                                    <polyline className="icon-26-3 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" points="92.4,103.1 103.4,119.2 111.8,119.2 101,95.6 "></polyline>
+                                    <circle className="icon-26-4 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" cx="60" cy="57.2" r="40.9"></circle>
+                                    <path className="icon-26-4 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M108,28c5.2,8.5,8.2,18.5,8.2,29.2c0,31-25.1,56.1-56.1,56.1S3.8,88.2,3.8,57.2S29,1.1,60,1.1 c10.5,0,20.4,2.9,28.8,8"></path>
+                                    <polyline className="icon-26-4 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" points="58.6,54.3 97.6,15.4 99.1,13.9 "></polyline>
+                                    <polyline className="icon-26-0 fill-gray-400" opacity=".5" points="94.4,24.9 104.8,24.9 116.1,13.5 107.2,12.1 105.7,3.1 94.4,14.4 94.4,24.9 "></polyline>
+                                    <polyline className="icon-26-1 fill-primary" points="90.4,22.6 100.9,22.6 112.2,11.2 103.2,9.7 101.8,0.8 90.4,12.1 90.4,22.6 "></polyline>
+                                    <line className="icon-26-5 fill-none stroke-white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="98.2" y1="8.8" x2="97.3" y2="3.3"></line>
+                                    <path className="icon-26-3 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M39.2,13c0.6-0.3,1.2-0.5,1.8-0.8"></path>
+                                    <path className="icon-26-3 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M23.2,25.1c3.5-4,7.6-7.4,12.2-10.1"></path>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Satisfaction Guarantee</h4>
+                            </div>
+                        </div>
+                        <p>We guarantee you will have satisfaction with our delivery as offered here.</p>
+                        {/* End Icon Block */}
+                    </div>
+
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-31-0{fill:none;stroke:#377DFF;}
+                                        .icon-31-1{fill:none;stroke:#BDC5D1;}
+                                        .icon-31-2{fill:#377DFF;}
+                                        .icon-31-3{fill:none;stroke:#FFFFFF;}
+                                        .icon-31-4{fill:#BDC5D1;}
+                                        .icon-31-5{fill:#FFFFFF;stroke:#BDC5D1;}
+                                    `}</style>
+                                    <g>
+                                        <path className="icon-31-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M67.7,67.4c1.3,1.7,3.3,2.8,5.6,2.8c3.8,0,6.9-3.1,6.9-6.9c0-3.8-3.1-6.9-6.9-6.9h-0.1c-3,0-5.3-2.4-5.3-5.3 c0-3,2.4-5.3,5.3-5.3c1.8,0,3.3,0.9,4.3,2.2"></path>
+                                        <line className="icon-31-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="73.2" y1="45.7" x2="73.2" y2="42.7"></line>
+                                        <line className="icon-31-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="73.2" y1="73.2" x2="73.2" y2="70.2"></line>
+                                    </g>
+                                    <g>
+                                        <line className="icon-31-1 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="65.3" y1="23.3" x2="65.3" y2="15.1"></line>
+                                        <line className="icon-31-1 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="82.7" y1="15.1" x2="82.7" y2="23.3"></line>
+                                    </g>
+                                    <path className="icon-31-2 fill-primary" d="M59.1,0.9h29.8c0.8,0,1.3,0.8,1,1.5l-5.7,11.9c-0.2,0.4-0.6,0.6-1,0.6H64.8c-0.4,0-0.8-0.2-1-0.6L58.1,2.4 C57.8,1.7,58.3,0.9,59.1,0.9z"></path>
+                                    <path className="icon-31-1 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M101.5,88.3c1.3-2.2,2.1-4.7,2.1-7.5V51.6c0-13.3-8.8-24.6-20.9-28.3H65.3c-12.1,3.7-20.9,15-20.9,28.3v24.7"></path>
+                                    <g>
+                                        <line className="icon-31-3 fill-none stroke-white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="76.9" y1="11.7" x2="79.3" y2="5.4"></line>
+                                        <line className="icon-31-3 fill-none stroke-white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="71.1" y1="11.7" x2="68.6" y2="5.4"></line>
+                                    </g>
+                                    <g>
+                                        <line className="icon-31-1 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="86.9" y1="59.3" x2="88.7" y2="59.3"></line>
+                                        <line className="icon-31-1 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="59.3" y1="59.3" x2="61" y2="59.3"></line>
+                                    </g>
+                                    <path className="icon-31-4 fill-gray-400" opacity=".5" d="M90.7,93.8l21.3-5.8c2.6-0.7,5.3,0.7,6.2,3.3l0,0c0.7,2.3-0.2,5.1-2.6,6.2l-41.3,20.7 c-4.6,2.2-9.9,2.5-14.4,0.5L37,108.9H26.7c-0.7,0-1.3-0.6-1.3-1.3v-8L90.7,93.8z"></path>
+                                    <path className="icon-31-5 fill-white stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M77.8,86.3l34.3-7.1c2.6-0.7,5.3,0.7,6.2,3.3l0,0c0.7,2.3-0.2,5.1-2.6,6.2l-41.3,20.7 c-4.6,2.2-9.9,2.5-14.4,0.5L37,100.1H25.5"></path>
+                                    <path className="icon-31-5 fill-white stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M25.3,67.5h11.6L61.3,75h14.3c3.3,0,6,2.7,6,6l0,0c0,3.1-2.5,5.5-5.5,5.5H61.3c-3.2,0-5.8,2.6-5.8,5.8l0,0"></path>
+                                    <path className="icon-31-2 fill-primary" d="M1.9,104.2h21.7c1,0,1.7-0.7,1.7-1.7V65.1c0-1-0.7-1.7-1.7-1.7H1.9c-1,0-1.7,0.7-1.7,1.7v37.3 C0.2,103.3,0.9,104.2,1.9,104.2z"></path>
+                                    <line className="icon-31-3 fill-none stroke-white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="13.8" y1="78.8" x2="13.8" y2="82.6"></line>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Live Progress Tracker</h4>
+                            </div>
+                        </div>
+                        <p>You will get a tracker link where you can check live progress of the submission tasks.</p>
+                        {/* End Icon Block */}
+                    </div>
+
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-37-0{fill:none;stroke:#BDC5D1;}
+                                        .icon-37-1{fill:#BDC5D1;}
+                                        .icon-37-2{fill:#377DFF;}
+                                    `}</style>
+                                    <path className="icon-37-0 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M5.9,88.9c-5.3-3-5.3-8,0-11l44.4-25.7c5.3-3,13.8-3,19.1,0l44.5,25.7c5.3,3,5.3,8,0,11l-44.4,25.7 c-5.3,3-13.8,3-19.1,0L5.9,88.9z"></path>
+                                    <path className="icon-37-1 fill-gray-400" opacity=".5" d="M4.7,65.6c-5.4-3.1-5.4-8.2,0-11.3l45.5-26.2c5.4-3.1,14.2-3.1,19.5,0l45.5,26.2c5.4,3.1,5.4,8.2,0,11.3 L69.8,91.8c-5.4,3.1-14.2,3.1-19.5,0L4.7,65.6z"></path>
+                                    <path className="icon-37-2 fill-primary" d="M4.7,43c-5.4-3.1-5.4-8.2,0-11.3L50.2,5.5c5.4-3.1,14.2-3.1,19.5,0l45.5,26.2c5.4,3.1,5.4,8.2,0,11.3L69.8,69.3 c-5.4,3.1-14.2,3.1-19.5,0L4.7,43z"></path>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Save Man Hours</h4>
+                            </div>
+                        </div>
+                        <p>ASO Booster help your team focus on main work &amp; save time with our services.</p>
+                        {/* End Icon Block */}
+                    </div>
+
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-5-0{fill:#BDC5D1;}
+                                        .icon-5-1{fill:#377DFF;}
+                                        .icon-5-2{fill:#FFFFFF;}
+                                        .icon-5-3{fill:none;stroke:#BDC5D1;}
+                                        .icon-5-5{fill:none;stroke:#377DFF;}
+                                    `}</style>
+                                    <circle className="icon-5-0 fill-gray-400" opacity=".5" cx="82.2" cy="92.3" r="27.2"></circle>
+                                    <circle className="icon-5-1 fill-primary" cx="72.2" cy="83.8" r="27.2"></circle>
+                                    <g>
+                                        <path className="icon-5-2 fill-white" d="M76.4,82.9c1.3,0.4,2.3,1.1,3.2,2c0.9,1,1.5,2.1,1.8,3.3s0.2,2.6-0.2,3.9c-0.5,1.4-1.4,2.6-2.7,3.4 c-1.3,0.8-2.7,1.3-4.2,1.3v3.1c0,0.3-0.1,0.6-0.3,0.7s-0.4,0.3-0.7,0.3h-2.1c-0.3,0-0.6-0.1-0.7-0.3s-0.3-0.4-0.3-0.7v-3.1 c-2.1,0-4-0.6-5.6-1.9c-0.2-0.2-0.3-0.5-0.4-0.8c0-0.3,0.1-0.6,0.3-0.8l2.2-2.2c0.2-0.1,0.4-0.2,0.6-0.3c0.2,0,0.5,0,0.7,0.2 c0.6,0.4,1.4,0.6,2.2,0.6h4.3c0.5,0,1-0.2,1.3-0.6c0.4-0.4,0.6-0.8,0.6-1.4c0-0.4-0.1-0.8-0.4-1.1c-0.3-0.3-0.6-0.6-1-0.7L68.3,86 c-1.5-0.4-2.7-1.2-3.7-2.3c-1-1.1-1.6-2.4-1.8-3.9c-0.1-1.4,0.2-2.7,0.8-3.9s1.5-2.1,2.6-2.9c1.1-0.7,2.4-1.1,3.8-1.1h0.1v-3.1 c0-0.3,0.1-0.6,0.3-0.7s0.4-0.3,0.7-0.3h2.1c0.3,0,0.6,0.1,0.7,0.3s0.3,0.4,0.3,0.7v3.1c2.1,0,3.9,0.6,5.6,1.9 c0.3,0.2,0.4,0.5,0.5,0.8c0,0.3-0.1,0.6-0.3,0.8l-2.2,2.3c-0.2,0.1-0.4,0.2-0.6,0.3c-0.2,0-0.5,0-0.7-0.1c-0.6-0.5-1.4-0.7-2.2-0.7 h-4.3c-0.5,0-1,0.2-1.3,0.6c-0.4,0.4-0.6,0.8-0.6,1.4c0,0.4,0.1,0.8,0.4,1.1c0.3,0.3,0.6,0.6,1,0.7L76.4,82.9z"></path>
+                                    </g>
+                                    <path className="icon-5-3 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M38.4,81.7H7.1c-2.7,0-5-2.2-5-5V7.5c0-2.7,2.2-5,5-5h106c2.7,0,5,2.2,5,5v69.2c0,2.7-2.2,5-5,5l0,0"></path>
+                                    <ellipse className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" cx="35.3" cy="12.6" rx="3.1" ry="3.1"></ellipse>
+                                    <circle className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" cx="23.6" cy="12.6" r="3.1"></circle>
+                                    <circle className="icon-5-5 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" cx="12" cy="12.6" r="3.1"></circle>
+                                    <polyline className="icon-5-5 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="14.7,63.8 43.3,48.1 48.6,53.9 71.2,40.1 78.5,48.5 110.4,21.6 "></polyline>
+                                    <polyline className="icon-5-5 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="101.3,23.6 110.4,21.6 107.4,30.2 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="83.5,34.8 83.5,17.3 89.3,17.3 89.3,29.6 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="60.8,39 60.8,23.6 66.5,23.6 66.5,34.8 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="49.4,45.4 49.4,36.3 55.1,36.3 55.1,42.2 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="38,43.3 38,32 43.7,32 43.7,40.1 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="26.6,49.6 26.6,41.6 32.3,41.6 32.3,46.4 "></polyline>
+                                    <polyline className="icon-5-3 fill-none stroke-gray-400" opacity=".5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points="72.2,33.6 72.2,27.8 77.9,27.8 77.9,37.9 "></polyline>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Task Manager by ClickUp</h4>
+                            </div>
+                        </div>
+                        <p>Each directory submission will split into individual task &amp; managed via ClickUp.</p>
+                        {/* End Icon Block */}
+                    </div>
+
+                    <div className={styles.iconBlock}>
+                        {/* Icon Block */}
+                        <div className={styles.media}>
+                            <figure className={styles.iconWrapper}>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style={{enableBackground:'new 0 0 120 120'}} xmlSpace="preserve">
+                                    <style type="text/css">{`
+                                        .icon-28-0{fill:none;stroke:#377DFF;}
+                                        .icon-28-1{fill:#BDC5D1;}
+                                        .icon-28-2{fill:#FFFFFF;stroke:#BDC5D1;}
+                                        .icon-28-3{fill:#FFFFFF;}
+                                        .icon-28-4{fill:#377DFF;stroke:#377DFF;}
+                                        .icon-28-5{fill:none;stroke:#FFFFFF;}
+                                        .icon-28-6{fill:none;stroke:#BDC5D1;}
+                                        .icon-28-7{fill:#377DFF;}
+                                    `}</style>
+                                    <line className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="88.1" y1="110.7" x2="107.4" y2="110.7"></line>
+                                    <path className="icon-28-1 fill-gray-400" opacity=".3" d="M24.6,56.6h93.1c0.8,0,1.5,0.7,1.5,1.5v60.1c0,0.8-0.7,1.5-1.5,1.5H26.1c-0.8,0-1.5-0.7-1.5-1.5V56.6"></path>
+                                    <polyline className="icon-28-2 fill-white stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" points="107.7,55.3 107.7,118.4 13.2,118.4 13.2,55.3 "></polyline>
+                                    <path className="icon-28-1 fill-gray-400" opacity=".5" d="M40.8,55.4v35.2l3-3c1-1,2.5-1,3.5,0l0.9,1c1.1,1.2,2.8,1,3.8-0.3l0,0c1-1.4,2.7-1.5,3.8-0.3l2.7,2.7V55.4"></path>
+                                    <path className="icon-28-4 fill-primary stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M34.1,55.4v28.1l3-2.4c1-0.8,2.5-0.8,3.5,0l0.9,0.8c1.1,0.9,2.8,0.8,3.8-0.3l0,0c1-1.1,2.7-1.2,3.8-0.3l2.7,2.2 V55.4"></path>
+                                    <line className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="52.2" y1="105.5" x2="33.8" y2="105.5"></line>
+                                    <line className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="52.2" y1="99.5" x2="46.3" y2="99.5"></line>
+                                    <line className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="41.5" y1="99.5" x2="33.8" y2="99.5"></line>
+                                    <line className="icon-28-5 fill-none stroke-white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="38.6" y1="55.4" x2="38.6" y2="71.7"></line>
+                                    <line className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="75.3" y1="55.3" x2="75.3" y2="97.5"></line>
+                                    <line className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="75.3" y1="106.1" x2="75.3" y2="118.4"></line>
+                                    <polyline className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" points="65.9,55.3 13.2,55.3 2.4,32.2 64.4,32.2 75.2,55.3 94.5,55.3 "></polyline>
+                                    <line className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="83.8" y1="36.6" x2="66.5" y2="36.6"></line>
+                                    <line className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="60.4" y1="38.2" x2="13.5" y2="38.2"></line>
+                                    <line className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" x1="115.8" y1="38.2" x2="90.1" y2="38.2"></line>
+                                    <path className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M101,31.7c0-1.3,0.2-2.5,0.5-3.7"></path>
+                                    <path className="icon-28-6 fill-none stroke-gray-400" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M99.9,55.3c0,0,6.6,0,7.7,0l10.8-23.1H86.1L75.3,55.3"></path>
+                                    <path className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M7.6,6.6c-2-0.3-4-0.4-6.1-0.4"></path>
+                                    <path className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M28.6,25.9c-1-6.8-5.7-13-11.7-16.3"></path>
+                                    <path className="icon-28-0 fill-none stroke-primary" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M105.3,19.6c2.4-2.7,5.9-4,9.5-4"></path>
+                                    <path className="icon-28-1 fill-gray-400" opacity=".5" d="M70.1,27v-4.2c3.1-1.9,5.1-5.3,5.1-9.1c0-6-4.8-10.8-10.8-10.8S53.6,7.8,53.6,13.7c0,3.9,2,7.2,5.1,9.1V27"></path>
+                                    <path className="icon-28-7 fill-primary" d="M66.1,24.4v-4.2c3.1-1.9,5.1-5.3,5.1-9.1c0-6-4.8-10.8-10.8-10.8S49.7,5.1,49.7,11.1c0,3.9,2,7.2,5.1,9.1v4.2"></path>
+                                    <path className="icon-28-3 fill-white" d="M62.5,15.6V14c1.1-0.7,1.9-1.9,1.9-3.4c0-2.2-1.8-4-4-4c-2.2,0-4,1.8-4,4c0,1.4,0.8,2.7,1.9,3.4v1.5"></path>
+                                </svg>
+                            </figure>
+                            <div className={styles.mediaBody}>
+                                <h4 className={styles.h6}>Dedicated Order Manager</h4>
+                            </div>
+                        </div>
+                        <p>You will get dedicated order manager to ease management with your teams.</p>
+                        {/* End Icon Block */}
+                    </div>
+                </div>
+                {/* End Icon Blocks */}
+
+                <div className={styles.textCenter}>
+                    <div className={styles.mb3}>
+                        <a className={`${styles.btn} ${styles.btnPrimary}`} href="/signup?r=L2Jvb3N0ZXIvbGlzdA==">Sign up and Start Boosting</a>
+                        <a className={`${styles.btn} ${styles.btnOutlinePrimary}`} href="javascript:void(0)" onClick={() => { if (typeof window.__cfRLUnblockHandlers !== 'undefined') return false; window.coreTSW.sendChatMessage('Service', 'I am interested in ASO Booster.', 'N/a', 1); }}>Let's Talk</a>
+                    </div>
+                    <p className={styles.note}>Get full list for free. * No credit card required.</p>
                 </div>
             </div>
         </>

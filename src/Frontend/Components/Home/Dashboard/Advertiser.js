@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Advertiser.module.css";
+import ASObooster from "./ASObooster";
 import {
   FaUserCircle,
   FaBell,
@@ -210,7 +211,14 @@ const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
       </a>
       <div className={styles.managedServices}>
         <p className={styles.navHeader}>MANAGED SERVICES</p>
-        <a href="#" className={styles.navItem}>
+        <a 
+          href="/aso-booster" 
+          className={styles.navItem}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = '/aso-booster';
+          }}
+        >
           <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
         </a>
       </div>
@@ -1085,6 +1093,8 @@ const Advertiser = () => {
         return <Reports />;
       case "referral":
         return <ReferralProgram />;
+      case "aso-booster":
+        return <ASObooster />;
       default:
         return <DashboardHome />;
     }
