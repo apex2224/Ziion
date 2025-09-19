@@ -139,6 +139,26 @@ const Header = () => {
                               e.preventDefault();
                               navigate("/boost-engagement");
                             }
+                          : item.title === "Tracking Solutions"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/tracking-solutions");
+                            }
+                          : item.title === "Android / iOS / Web"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/android-ios-web");
+                            }
+                          : item.title === "Incent / Non-Incent"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/incent-non-incent");
+                            }
+                          : item.title === "Multiple Pricing Models"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/multiple-pricing-models");
+                            }
                           : undefined
                       }
                     >
@@ -179,31 +199,31 @@ const Header = () => {
                   <div className={styles.advertiseLinks}>
                     <div>
                       <h4>App Installs</h4>
-                      <a href="#">Android Installs</a>
-                      <a href="#">iOS Installs</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-installs"); }}>Android Installs</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-installs"); }}>iOS Installs</a>
                     </div>
                     <div>
                       <h4>Keyword Installs</h4>
-                      <a href="#">Android Keyword Installs</a>
-                      <a href="#">iOS Keyword Installs</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-keyword-installs"); }}>Android Keyword Installs</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-keyword-installs"); }}>iOS Keyword Installs</a>
                     </div>
                     <div>
                       <h4>
                         APK Installs{" "}
                         <span className={styles.newBadge}>New</span>
                       </h4>
-                      <a href="#">Android APK Installs</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-apk-installs"); }}>Android APK Installs</a>
                     </div>
                     <div>
                       <h4>
                         Web Traffic <span className={styles.newBadge}>New</span>
                       </h4>
-                      <a href="#">Buy Web Traffic</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/web-traffic"); }}>Buy Web Traffic</a>
                     </div>
                     <div>
                       <h4>MAM Booster</h4>
-                      <a href="#">Android Booster</a>
-                      <a href="#">iOS Booster</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-booster"); }}>Android Booster</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-booster"); }}>iOS Booster</a>
                     </div>
                   </div>
                 </div>
@@ -218,8 +238,8 @@ const Header = () => {
               </a>
               {openMenu === "monetize" && (
                 <div className={`${styles.dropdown} ${styles.simpleDropdown}`}>
-                  <a href="#">Offerwall Monetization</a>
-                  <a href="#">Become Publisher</a>
+                  <a href="#" onClick={(e) => { e.preventDefault(); navigate("/offerwall-monetization"); }}>Offerwall Monetization</a>
+                  <a href="#" onClick={(e) => { e.preventDefault(); navigate("/become-publisher"); }}>Become Publisher</a>
                 </div>
               )}
             </li>
@@ -239,6 +259,24 @@ const Header = () => {
                       href="#"
                       key={item.title}
                       className={styles.resourceItem}
+                      onClick={
+                        item.title === "CPIDroid Blog"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/cpidroid-blog");
+                            }
+                          : item.title === "CPIDroid Support"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/cpidroid-support");
+                            }
+                          : item.title === "Contact CPIDroid"
+                          ? (e) => {
+                              e.preventDefault();
+                              navigate("/contact-cpidroid");
+                            }
+                          : undefined
+                      }
                     >
                       <div className={styles.resourceIcon}>{item.icon}</div>
                       <div className={styles.resourceText}>
@@ -327,6 +365,30 @@ const Header = () => {
                             navigate("/boost-engagement");
                             setMobileMenuOpen(false);
                           }
+                        : item.title === "Tracking Solutions"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/tracking-solutions");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "Android / iOS / Web"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/android-ios-web");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "Incent / Non-Incent"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/incent-non-incent");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "Multiple Pricing Models"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/multiple-pricing-models");
+                            setMobileMenuOpen(false);
+                          }
                         : toggleMobileMenu
                     }
                   >
@@ -376,19 +438,19 @@ const Header = () => {
                 <div className={styles.mobileAdvertiseLinks}>
                   <div>
                     <h4>App Installs</h4>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-installs"); setMobileMenuOpen(false); }}>
                       Android Installs
                     </a>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-installs"); setMobileMenuOpen(false); }}>
                       iOS Installs
                     </a>
                   </div>
                   <div>
                     <h4>Keyword Installs</h4>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-keyword-installs"); setMobileMenuOpen(false); }}>
                       Android Keyword Installs
                     </a>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-keyword-installs"); setMobileMenuOpen(false); }}>
                       iOS Keyword Installs
                     </a>
                   </div>
@@ -397,7 +459,7 @@ const Header = () => {
                       APK Installs{" "}
                       <span className={styles.mobileNewBadge}>New</span>
                     </h4>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-apk-installs"); setMobileMenuOpen(false); }}>
                       Android APK Installs
                     </a>
                   </div>
@@ -406,16 +468,16 @@ const Header = () => {
                       Web Traffic{" "}
                       <span className={styles.mobileNewBadge}>New</span>
                     </h4>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/web-traffic"); setMobileMenuOpen(false); }}>
                       Buy Web Traffic
                     </a>
                   </div>
                   <div>
                     <h4>MAM Booster</h4>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-booster"); setMobileMenuOpen(false); }}>
                       Android Booster
                     </a>
-                    <a href="#" onClick={toggleMobileMenu}>
+                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-booster"); setMobileMenuOpen(false); }}>
                       iOS Booster
                     </a>
                   </div>
@@ -446,14 +508,14 @@ const Header = () => {
                 <a
                   href="#"
                   className={styles.mobileSimpleLink}
-                  onClick={toggleMobileMenu}
+                  onClick={(e) => { e.preventDefault(); navigate("/offerwall-monetization"); setMobileMenuOpen(false); }}
                 >
                   Offerwall Monetization
                 </a>
                 <a
                   href="#"
                   className={styles.mobileSimpleLink}
-                  onClick={toggleMobileMenu}
+                  onClick={(e) => { e.preventDefault(); navigate("/become-publisher"); setMobileMenuOpen(false); }}
                 >
                   Become Publisher
                 </a>
@@ -485,7 +547,27 @@ const Header = () => {
                     href="#"
                     key={item.title}
                     className={styles.mobileDropdownItem}
-                    onClick={toggleMobileMenu}
+                    onClick={
+                      item.title === "CPIDroid Blog"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/cpidroid-blog");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "CPIDroid Support"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/cpidroid-support");
+                            setMobileMenuOpen(false);
+                          }
+                        : item.title === "Contact CPIDroid"
+                        ? (e) => {
+                            e.preventDefault();
+                            navigate("/contact-cpidroid");
+                            setMobileMenuOpen(false);
+                          }
+                        : toggleMobileMenu
+                    }
                   >
                     <div className={styles.mobileDropdownIcon}>{item.icon}</div>
                     <div className={styles.mobileDropdownText}>
