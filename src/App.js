@@ -22,6 +22,25 @@ import FraudDetection from "./Frontend/Components/Home/Header/HeaderLinks/FraudD
 import BoostEngagement from "./Frontend/Components/Home/Header/HeaderLinks/BoostEngagement";
 import FallingTextDemo from "./Frontend/Components/Animations/FallingTextDemo";
 
+// Import newly created components
+import TrackingSolutions from "./Frontend/Components/Home/Header/HeaderLinks/TrackingSolutions";
+import AndroidIOSWeb from "./Frontend/Components/Home/Header/HeaderLinks/AndroidIOSWeb";
+import IncentNonIncent from "./Frontend/Components/Home/Header/HeaderLinks/IncentNonIncent";
+import MultiplePricingModels from "./Frontend/Components/Home/Header/HeaderLinks/MultiplePricingModels";
+import CPIDroidBlog from "./Frontend/Components/Home/Header/HeaderLinks/Blog";
+import CPIDroidSupport from "./Frontend/Components/Home/Header/HeaderLinks/Support";
+import ContactCPIDroid from "./Frontend/Components/Home/Header/HeaderLinks/Contact";
+import AndroidInstalls from "./Frontend/Components/Home/Header/HeaderLinks/AndroidInstalls";
+import IOSInstalls from "./Frontend/Components/Home/Header/HeaderLinks/IOSInstalls";
+import AndroidKeywordInstalls from "./Frontend/Components/Home/Header/HeaderLinks/AndroidKeywordInstalls";
+import IOSKeywordInstalls from "./Frontend/Components/Home/Header/HeaderLinks/IOSKeywordInstalls";
+import AndroidAPKInstalls from "./Frontend/Components/Home/Header/HeaderLinks/AndroidAPKInstalls";
+import WebTraffic from "./Frontend/Components/Home/Header/HeaderLinks/WebTraffic";
+import AndroidBooster from "./Frontend/Components/Home/Header/HeaderLinks/AndroidBooster";
+import IOSBooster from "./Frontend/Components/Home/Header/HeaderLinks/IOSBooster";
+import OfferwallMonetization from "./Frontend/Components/Home/Header/HeaderLinks/OfferwallMonetization";
+import BecomePublisher from "./Frontend/Components/Home/Header/HeaderLinks/BecomePublisher";
+
 const LandingPage = () => {
   return (
     <>
@@ -57,6 +76,25 @@ const App = () => {
         <Route path="/fraud-detection" element={<FraudDetection />} />
         <Route path="/boost-engagement" element={<BoostEngagement />} />
         <Route path="/falling-text-demo" element={<FallingTextDemo />} />
+        
+        {/* New routes for created components */}
+        <Route path="/tracking-solutions" element={<TrackingSolutions />} />
+        <Route path="/android-ios-web" element={<AndroidIOSWeb />} />
+        <Route path="/incent-non-incent" element={<IncentNonIncent />} />
+        <Route path="/multiple-pricing-models" element={<MultiplePricingModels />} />
+        <Route path="/cpidroid-blog" element={<CPIDroidBlog />} />
+        <Route path="/cpidroid-support" element={<CPIDroidSupport />} />
+        <Route path="/contact-cpidroid" element={<ContactCPIDroid />} />
+        <Route path="/android-installs" element={<AndroidInstalls />} />
+        <Route path="/ios-installs" element={<IOSInstalls />} />
+        <Route path="/android-keyword-installs" element={<AndroidKeywordInstalls />} />
+        <Route path="/ios-keyword-installs" element={<IOSKeywordInstalls />} />
+        <Route path="/android-apk-installs" element={<AndroidAPKInstalls />} />
+        <Route path="/web-traffic" element={<WebTraffic />} />
+        <Route path="/android-booster" element={<AndroidBooster />} />
+        <Route path="/ios-booster" element={<IOSBooster />} />
+        <Route path="/offerwall-monetization" element={<OfferwallMonetization />} />
+        <Route path="/become-publisher" element={<BecomePublisher />} />
       </Routes>
     </BrowserRouter>
   );
