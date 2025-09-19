@@ -49,6 +49,11 @@ const featuresData = [
     title: "Multiple Pricing Models",
     subtitle: "Pay for Target Goals Only",
   },
+  {
+    icon: <FaFire />,
+    title: "ASO Booster",
+    subtitle: "App Store Optimization",
+  },
 ];
 
 const resourcesData = [

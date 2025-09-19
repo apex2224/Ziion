@@ -411,21 +411,7 @@ const ReferralProgram = () => (
   </div>
 );
 
-<<<<<<< HEAD
 // Main Publisher Dashboard Component
-=======
-const ASOBooster = () => (
-  <div className={styles.asoBoosterSection}>
-    <div className={styles.sectionHeader}>
-      <h2>ASO Booster</h2>
-    </div>
-    <div className={styles.asoBoosterContent}>
-      <p>Boost your app's visibility with our ASO services.</p>
-    </div>
-  </div>
-);
-
->>>>>>> 64dd313c31c7810920142a8bac68e6642ab2a93e
 const Publisher = () => {
   const [activeTab, setActiveTab] = useState("publisher");
   const [activeItem, setActiveItem] = useState("dashboard");

@@ -14,6 +14,15 @@
   --transition-speed: 0.3s;
 }
 
+/* Ensure full width without scrollbars */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 /* General Layout and Responsiveness */
 .container {
   display: flex;
@@ -21,8 +30,10 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem 1rem;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -36,6 +47,9 @@
 .contentLeft {
   flex: 1;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -50,11 +64,14 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Typography */
 .title {
-  font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+  font-size: clamp(1.8rem, 5vw + 1rem, 3rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-dark);
@@ -62,14 +79,14 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   line-height: 1.6;
   color: var(--secondary-color);
   margin-bottom: 2rem;
 }
 
 .note {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   color: var(--secondary-color);
 }
 
@@ -86,6 +103,8 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -96,12 +115,15 @@
 
 .btn {
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: 600;
   border-radius: 9999px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: all var(--transition-speed) ease-in-out;
+  min-width: 120px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .btnPrimary {
@@ -128,14 +150,19 @@
 .featuresSection {
   background-color: var(--bg-gray-200);
   padding: 4rem 1rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .featuresContainer {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
@@ -150,12 +177,19 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  min-height: 400px;
+  min-height: 300px;
+  max-height: 500px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .svgIllustration {
   width: 100%;
   height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  box-sizing: border-box;
 }
 
 .featuresBoxes {
@@ -163,6 +197,9 @@
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -188,6 +225,9 @@
   align-items: flex-start;
   border: 2px solid transparent;
   transition: all var(--transition-speed) ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .featureBox.activeFeature {
@@ -202,32 +242,35 @@
 .featureIcon {
   color: var(--primary-color);
   flex-shrink: 0;
-}
-
-.featureIcon svg {
   width: 2rem;
   height: 2rem;
 }
 
+.featureIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .featureText h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-dark);
 }
 
 .featureText p {
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
   line-height: 1.5;
   color: var(--secondary-color);
 }
 
-<<<<<<< HEAD
 /* Why ASO Booster Section */
 .whySection {
   padding: 4rem 1rem;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .sectionTitle {
@@ -238,7 +281,7 @@
 
 .sectionSubtitle {
   display: block;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 500;
   text-transform: uppercase;
   color: var(--secondary-color);
@@ -256,6 +299,9 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .iconBlock {
@@ -263,10 +309,13 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .iconBlock p {
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
   color: var(--secondary-color);
 }
 
@@ -293,248 +342,94 @@
 
 .textCenter {
   text-align: center;
-  
 }
 
 .mb3 {
   margin-bottom: 1rem;
-
 }
 
 /* Hiker Man SVG Wrapper */
 .hikerManSVGWrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   height: auto;
+  box-sizing: border-box;
 }
 
 .hikerManSVGWrapper svg {
   width: 100%;
   height: auto;
-}
-=======
-/* Responsive design */
-@media (max-width: 1200px) {
-  .container {
-    padding: 40px 15px;
-    gap: 30px;
-    max-width: 1200px;
-  }
-  
-  .contentLeft {
-    padding-top: 25px;
-  }
-  
-  .title {
-    font-size: 2.3rem;
-    margin-bottom: 18px;
-  }
-  
-  .description {
-    font-size: 1.05rem;
-    margin-bottom: 25px;
-  }
-  
-  .buttons {
-    gap: 12px;
-    margin-bottom: 18px;
-  }
-  
-  .viewListButton, .getStartedButton {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-  
-  .imageContainer {
-    max-width: 500px;
-  }
-  
-  .featureBoxes {
-    gap: 30px;
-  }
-  
-  .featureBox {
-    padding: 25px;
-  }
-  
-  .featureBox h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-  }
-  
-  .featureBox p {
-    font-size: 1rem;
-  }
-  
-  .featureList li {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-  }
+  max-height: 500px;
+  box-sizing: border-box;
 }
 
-@media (max-width: 992px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    padding: 35px 12px;
-    gap: 25px;
-  }
-  
-  .contentLeft {
-    padding-top: 0;
-    text-align: center;
-    max-width: 600px;
-  }
-  
-  .title {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-  
-  .buttons {
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .viewListButton, .getStartedButton {
-    padding: 8px 18px;
-    font-size: 0.9rem;
-  }
-  
-  .imageContainer {
-    max-width: 100%;
-    margin-top: 20px;
-  }
-  
-  .featureBoxes {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 25px;
-  }
-  
-  .featureBox {
-    width: 100%;
-    max-width: 550px;
-    padding: 22px;
-  }
-  
-  .featureBox h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-  
-  .featureBox p {
-    font-size: 0.95rem;
-  }
-  
-  .featureList li {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
+/* SVG Illustration improvements */
+.svgIllustration {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 30px 10px;
-    gap: 20px;
+  .featuresSVG {
+    min-height: 250px;
+    max-height: 400px;
   }
   
-  .title {
-    font-size: 2rem;
-  }
-  
-  .description {
-    font-size: 0.95rem;
-  }
-  
-  .buttons {
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  
-  .viewListButton, .getStartedButton {
-    padding: 6px 15px;
-    font-size: 0.85rem;
-  }
-  
-  .featureBoxes {
-    gap: 20px;
-  }
-  
-  .featureBox {
-    padding: 20px;
-    max-width: 500px;
-  }
-  
-  .featureBox h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .featureBox p {
-    font-size: 0.9rem;
-  }
-  
-  .featureList li {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
+  .svgIllustration {
+    max-height: 400px;
   }
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding: 25px 8px;
-    gap: 15px;
+  .featuresSVG {
+    min-height: 200px;
+    max-height: 300px;
   }
   
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 12px;
+  .svgIllustration {
+    max-height: 300px;
   }
   
-  .description {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+  .hikerManSVGWrapper svg {
+    max-height: 300px;
   }
   
   .buttons {
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
+    align-items: center;
   }
   
-  .viewListButton, .getStartedButton {
+  .btn {
     width: 100%;
     max-width: 250px;
-    margin: 0 auto;
-    padding: 8px 15px;
-    font-size: 0.9rem;
+  }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(1.5rem, 5vw + 1rem, 2.5rem);
+  }
+  
+  .description {
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
   
   .featureBox {
-    padding: 18px;
-    max-width: 100%;
+    padding: 1.2rem;
   }
   
-  .featureBox h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
+  .featureText h3 {
+    font-size: clamp(1rem, 2vw, 1.1rem);
   }
   
-  .featureBox p {
-    font-size: 0.85rem;
+  .featureText p {
+    font-size: clamp(0.75rem, 2vw, 0.8rem);
   }
   
-  .featureList li {
-    font-size: 0.8rem;
-    margin-bottom: 6px;
+  .iconBlocks {
+    grid-template-columns: 1fr;
   }
 }
->>>>>>> 64dd313c31c7810920142a8bac68e6642ab2a93e
