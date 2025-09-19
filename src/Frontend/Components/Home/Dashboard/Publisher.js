@@ -194,13 +194,13 @@ const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
       <div className={styles.managedServices}>
         <p className={styles.navHeader}>MANAGED SERVICES</p>
         <a
-          href="/aso-booster" 
+          href="/aso-booster"
           className={`${styles.navItem} ${
             activeItem === "asoBooster" ? styles.active : ""
           }`}
           onClick={(e) => {
             e.preventDefault();
-            window.location.href = '/aso-booster';
+            window.location.href = "/aso-booster";
           }}
         >
           <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
