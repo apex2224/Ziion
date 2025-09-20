@@ -43,7 +43,6 @@ import AndroidBooster from "./components/layout/header/links/Advertise/Boosters/
 import IOSBooster from "./components/layout/header/links/Advertise/Boosters/IOSBooster";
 import OfferwallMonetization from "./components/layout/header/links/OfferwallMonetization";
 import BecomePublisher from "./components/layout/header/links/BecomePublisher";
-
 const LandingPage = () => {
   return (
     <div className="route-container">
