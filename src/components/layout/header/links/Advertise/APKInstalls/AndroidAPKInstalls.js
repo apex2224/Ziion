@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../../header/Header";
 import Footer from "../../../../footer/Footer";
 import styles from "./AndroidAPKInstalls.module.css";
 import { FaAndroid, FaDownload, FaFileAlt, FaChartLine, FaBolt } from "react-icons/fa";
 
 const AndroidAPKInstalls = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const benefits = [
     {
       icon: <FaDownload className={styles.benefitIcon} />,
@@ -37,6 +40,22 @@ const AndroidAPKInstalls = () => {
     "24/7 customer support"
   ];
 
+  const handleGetStarted = (planName) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedPlan} plan! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -68,7 +87,10 @@ const AndroidAPKInstalls = () => {
                 <ul className={styles.features}>
                   {features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
-                      <FaBolt className={styles.featureIcon} /> {feature}
+                      <div className={styles.iconWrapper}>
+                        <FaBolt className={styles.icon} />
+                      </div>
+                      {feature}
                     </li>
                   ))}
                 </ul>
@@ -77,11 +99,12 @@ const AndroidAPKInstalls = () => {
           </div>
           <div className={styles.visualContent}>
             <div className={styles.svgContainer}>
-              <svg viewBox="0 0 300 300" className={styles.decorativeSvg}>
-                <rect x="50" y="50" width="200" height="200" rx="20" fill="#3DDC84" />
-                <rect x="100" y="100" width="100" height="100" rx="10" fill="#FFFFFF" />
-                <text x="150" y="155" textAnchor="middle" fill="#3DDC84" fontSize="30" fontWeight="bold">APK</text>
-              </svg>
+              <div className={styles.decorativeSvg}>
+                {/* SVG content would go here */}
+                <div style={{width: '100%', height: '100%', backgroundColor: '#e9f7fe', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <FaAndroid style={{fontSize: '4rem', color: '#007bff'}} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -129,34 +152,50 @@ const AndroidAPKInstalls = () => {
           <h2 className={styles.pricingTitle}>Flexible Pricing Options</h2>
           <div className={styles.pricingCards}>
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Starter</h3>
-              <div className={styles.pricingPrice}>$0.40</div>
-              <div className={styles.pricingDescription}>per install</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Starter</h3>
+                <div className={styles.pricingPrice}>$0.40</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>100MB max APK size</li>
                 <li>1,000+ daily installs</li>
                 <li>Basic analytics</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Starter')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Professional</h3>
-              <div className={styles.pricingPrice}>$0.35</div>
-              <div className={styles.pricingDescription}>per install</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Professional</h3>
+                <div className={styles.pricingPrice}>$0.35</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>500MB max APK size</li>
                 <li>10,000+ daily installs</li>
                 <li>Advanced analytics</li>
                 <li>A/B testing</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Professional')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Enterprise</h3>
-              <div className={styles.pricingPrice}>Custom</div>
-              <div className={styles.pricingDescription}>volume discounts</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Enterprise</h3>
+                <div className={styles.pricingPrice}>Custom</div>
+                <div className={styles.pricingDescription}>volume discounts</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>Unlimited APK size</li>
                 <li>100,000+ daily installs</li>
@@ -164,7 +203,12 @@ const AndroidAPKInstalls = () => {
                 <li>Dedicated manager</li>
                 <li>API access</li>
               </ul>
-              <button className={styles.pricingButton}>Contact Sales</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Enterprise')}
+              >
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -174,11 +218,48 @@ const AndroidAPKInstalls = () => {
           <p className={styles.ctaSubtitle}>
             Start driving direct APK installs for your Android app today
           </p>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleGetStarted('Custom')}
+          >
             Create APK Campaign
           </button>
         </div>
       </div>
+      
+      {/* Modal for getting started */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Get Started with {selectedPlan} Plan</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedPlan} plan for APK installs`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );

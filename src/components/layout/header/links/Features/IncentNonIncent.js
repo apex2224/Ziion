@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../header/Header";
 import Footer from "../../../footer/Footer";
 import styles from "./IncentNonIncent.module.css";
 import { FaGift, FaStar, FaChartLine, FaUsers, FaBolt, FaDollarSign, FaMedal, FaUserCheck } from "react-icons/fa";
 
 const IncentNonIncent = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const incentOptions = [
     {
       icon: <FaGift className={styles.optionIcon} />,
@@ -41,6 +44,22 @@ const IncentNonIncent = () => {
     }
   ];
 
+  const handleConsult = (optionName) => {
+    setSelectedOption(optionName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedOption(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedOption} option! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -64,6 +83,36 @@ const IncentNonIncent = () => {
                 Incent campaigns can drive rapid user acquisition and engagement, while non-incent campaigns 
                 typically deliver higher quality users with better long-term retention.
               </p>
+              
+              <div className={styles.featuresList}>
+                <h3 className={styles.featuresTitle}>Key Considerations:</h3>
+                <ul className={styles.features}>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaBolt className={styles.featureIcon} />
+                    </div>
+                    Incent campaigns for rapid user acquisition
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaChartLine className={styles.featureIcon} />
+                    </div>
+                    Non-incent campaigns for higher quality users
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaUsers className={styles.featureIcon} />
+                    </div>
+                    Hybrid approaches for balanced results
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaStar className={styles.featureIcon} />
+                    </div>
+                    Custom solutions based on your specific goals
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className={styles.visualContent}>
@@ -150,16 +199,152 @@ const IncentNonIncent = () => {
           </div>
         </div>
 
+        <div className={styles.benefitsSection}>
+          <h2 className={styles.benefitsTitle}>Hybrid Approach Benefits</h2>
+          <div className={styles.benefitsGrid}>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <FaGift className={styles.benefitIcon} />
+              </div>
+              <h3 className={styles.benefitTitle}>Balanced Acquisition</h3>
+              <p className={styles.benefitDescription}>Combine rapid user acquisition with quality retention</p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <FaChartLine className={styles.benefitIcon} />
+              </div>
+              <h3 className={styles.benefitTitle}>Optimized Performance</h3>
+              <p className={styles.benefitDescription}>Fine-tune campaigns for maximum ROI</p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <FaUsers className={styles.benefitIcon} />
+              </div>
+              <h3 className={styles.benefitTitle}>Flexible Strategy</h3>
+              <p className={styles.benefitDescription}>Adapt to changing market conditions and goals</p>
+            </div>
+            <div className={styles.benefitCard}>
+              <div className={styles.benefitIconWrapper}>
+                <FaStar className={styles.benefitIcon} />
+              </div>
+              <h3 className={styles.benefitTitle}>Custom Solutions</h3>
+              <p className={styles.benefitDescription}>Tailor campaigns to your specific requirements</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.pricingSection}>
+          <h2 className={styles.pricingTitle}>Flexible Pricing Options</h2>
+          <div className={styles.pricingCards}>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Incent-Focused</h3>
+                <div className={styles.pricingPrice}>$0.30</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>Reward-based campaigns</li>
+                <li>Fast user acquisition</li>
+                <li>Basic analytics</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleConsult('Incent-Focused')}
+              >
+                Get Started
+              </button>
+            </div>
+            
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Non-Incent</h3>
+                <div className={styles.pricingPrice}>$0.80</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>Organic engagement</li>
+                <li>High-quality users</li>
+                <li>Advanced analytics</li>
+                <li>A/B testing</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleConsult('Non-Incent')}
+              >
+                Get Started
+              </button>
+            </div>
+            
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Hybrid Solution</h3>
+                <div className={styles.pricingPrice}>Custom</div>
+                <div className={styles.pricingDescription}>mixed approach</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>Combination campaigns</li>
+                <li>Optimized acquisition</li>
+                <li>Premium analytics</li>
+                <li>Dedicated manager</li>
+                <li>API access</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleConsult('Hybrid Solution')}
+              >
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.ctaSection}>
           <h2 className={styles.ctaTitle}>Ready to Choose Your Campaign Type?</h2>
           <p className={styles.ctaSubtitle}>
             Our experts can help you determine the best approach for your specific goals
           </p>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleConsult('Custom')}
+          >
             Consult With Us
           </button>
         </div>
       </div>
+      
+      {/* Modal for consultation */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Consultation for {selectedOption} Option</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedOption} campaign type`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );

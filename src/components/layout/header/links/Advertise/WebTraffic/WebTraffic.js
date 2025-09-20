@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../../header/Header";
 import Footer from "../../../../footer/Footer";
 import styles from "./WebTraffic.module.css";
 import { FaGlobe, FaChartLine, FaBolt, FaUsers, FaDesktop, FaMobileAlt } from "react-icons/fa";
 
 const WebTraffic = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const benefits = [
     {
       icon: <FaUsers className={styles.benefitIcon} />,
@@ -37,6 +40,22 @@ const WebTraffic = () => {
     "24/7 customer support"
   ];
 
+  const handleGetStarted = (planName) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedPlan} plan! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -67,7 +86,10 @@ const WebTraffic = () => {
                 <ul className={styles.features}>
                   {features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
-                      <FaBolt className={styles.featureIcon} /> {feature}
+                      <div className={styles.iconWrapper}>
+                        <FaBolt className={styles.icon} />
+                      </div>
+                      {feature}
                     </li>
                   ))}
                 </ul>
@@ -127,34 +149,50 @@ const WebTraffic = () => {
           <h2 className={styles.pricingTitle}>Flexible Pricing Options</h2>
           <div className={styles.pricingCards}>
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Starter</h3>
-              <div className={styles.pricingPrice}>$0.05</div>
-              <div className={styles.pricingDescription}>per visit</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Starter</h3>
+                <div className={styles.pricingPrice}>$0.05</div>
+                <div className={styles.pricingDescription}>per visit</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>1,000+ daily visits</li>
                 <li>Basic targeting</li>
                 <li>Email support</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Starter')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Professional</h3>
-              <div className={styles.pricingPrice}>$0.04</div>
-              <div className={styles.pricingDescription}>per visit</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Professional</h3>
+                <div className={styles.pricingPrice}>$0.04</div>
+                <div className={styles.pricingDescription}>per visit</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>10,000+ daily visits</li>
                 <li>Advanced targeting</li>
                 <li>Real-time analytics</li>
                 <li>Priority support</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Professional')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Enterprise</h3>
-              <div className={styles.pricingPrice}>Custom</div>
-              <div className={styles.pricingDescription}>volume discounts</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Enterprise</h3>
+                <div className={styles.pricingPrice}>Custom</div>
+                <div className={styles.pricingDescription}>volume discounts</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>100,000+ daily visits</li>
                 <li>Premium targeting</li>
@@ -162,7 +200,12 @@ const WebTraffic = () => {
                 <li>API access</li>
                 <li>24/7 phone support</li>
               </ul>
-              <button className={styles.pricingButton}>Contact Sales</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Enterprise')}
+              >
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -172,11 +215,48 @@ const WebTraffic = () => {
           <p className={styles.ctaSubtitle}>
             Start attracting high-quality visitors to your website today
           </p>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleGetStarted('Custom')}
+          >
             Create Web Traffic Campaign
           </button>
         </div>
       </div>
+      
+      {/* Modal for getting started */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Get Started with {selectedPlan} Plan</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedPlan} plan for Web Traffic`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );

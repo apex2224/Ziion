@@ -70,8 +70,9 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   border-top: 3px solid #007bff;
+  z-index: 1001;
 }
 
 .navLinks > li:hover .dropdown {
@@ -87,6 +88,7 @@
   gap: 15px;
   left: 50%;
   transform: translateX(-50%);
+  will-change: transform;
 }
 
 .featureItem {
