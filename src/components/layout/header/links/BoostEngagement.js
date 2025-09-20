@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header";
 import Footer from "../../footer/Footer";
 import styles from "./BoostEngagement.module.css";
 import { FaBolt, FaChartLine, FaUsers, FaMobileAlt, FaTrophy, FaFire } from "react-icons/fa";
 
 const BoostEngagement = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const features = [
     {
       icon: <FaBolt className={styles.featureIcon} />,
@@ -36,6 +39,22 @@ const BoostEngagement = () => {
     "Reduced churn rates"
   ];
 
+  const handleGetStarted = (planName) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedPlan} plan! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -47,8 +66,8 @@ const BoostEngagement = () => {
               Drive meaningful interactions with your app users through our advanced engagement platform
             </p>
             <div className={styles.heroButtons}>
-              <button className={styles.primaryButton}>Start Free Trial</button>
-              <button className={styles.secondaryButton}>Schedule Demo</button>
+              <button className={styles.primaryButton} onClick={() => handleGetStarted('Free Trial')}>Start Free Trial</button>
+              <button className={styles.secondaryButton} onClick={() => handleGetStarted('Demo')}>Schedule Demo</button>
             </div>
           </div>
           <div className={styles.heroVisual}>
@@ -82,7 +101,10 @@ const BoostEngagement = () => {
               <ul className={styles.benefits}>
                 {benefits.map((benefit, index) => (
                   <li key={index} className={styles.benefitItem}>
-                    <FaTrophy className={styles.benefitIcon} /> {benefit}
+                    <div className={styles.iconWrapper}>
+                      <FaTrophy className={styles.benefitIcon} />
+                    </div>
+                    {benefit}
                   </li>
                 ))}
               </ul>
@@ -107,7 +129,12 @@ const BoostEngagement = () => {
                 <li>Email support</li>
                 <li>3 engagement campaigns</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Starter')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
@@ -122,7 +149,12 @@ const BoostEngagement = () => {
                 <li>10 engagement campaigns</li>
                 <li>A/B testing capabilities</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Professional')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
@@ -138,7 +170,12 @@ const BoostEngagement = () => {
                 <li>Custom integrations</li>
                 <li>Dedicated account manager</li>
               </ul>
-              <button className={styles.pricingButton}>Contact Sales</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Enterprise')}
+              >
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -148,11 +185,48 @@ const BoostEngagement = () => {
           <p className={styles.ctaSubtitle}>
             Join thousands of apps using our platform to drive meaningful user interactions
           </p>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleGetStarted('Custom')}
+          >
             <FaFire className={styles.ctaIcon} /> Start Engaging Users Now
           </button>
         </div>
       </div>
+      
+      {/* Modal for getting started */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Get Started with {selectedPlan} Plan</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedPlan} plan for User Engagement`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );

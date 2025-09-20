@@ -1,3 +1,4 @@
+/* Become Publisher Component Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Header Section */
 .header {
   margin-bottom: 2rem;
   text-align: center;
@@ -26,6 +28,7 @@
   margin: 0 auto 2rem;
 }
 
+/* Content Layout */
 .contentWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +40,10 @@
 .textContent {
   flex: 1;
   min-width: 300px;
+}
+
+.textSection {
+  margin-bottom: 1.5rem;
 }
 
 .sectionTitle {
@@ -52,6 +59,7 @@
   margin-bottom: 1rem;
 }
 
+/* Features List */
 .featuresList {
   margin-top: 1.5rem;
 }
@@ -75,12 +83,30 @@
   color: #666;
 }
 
+/* Professional Icon Styling */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #e9f7fe;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: #007bff;
+  font-size: 0.75rem;
+}
+
 .featureIcon {
   color: #007bff;
   margin-top: 0.25rem;
   font-size: 0.75rem;
 }
 
+/* Visual Content */
 .visualContent {
   flex: 1;
   min-width: 300px;
@@ -105,6 +131,7 @@
   height: 100%;
 }
 
+/* Benefits Section */
 .benefitsSection {
   margin: 3rem 0;
 }
@@ -129,6 +156,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  border: 1px solid #eee;
 }
 
 .benefitCard:hover {
@@ -160,12 +188,13 @@
   line-height: 1.6;
 }
 
+/* Requirements Section */
 .requirementsSection {
   margin: 3rem 0;
+  text-align: center;
 }
 
 .requirementsTitle {
-  text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 2rem;
@@ -173,8 +202,10 @@
 
 .requirementsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .requirementCard {
@@ -183,11 +214,11 @@
   padding: 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid #007bff;
+  border: 1px solid #eee;
 }
 
 .requirementCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -200,9 +231,9 @@
 .requirementCard p {
   color: #666;
   line-height: 1.6;
-  margin: 0;
 }
 
+/* Pricing Section */
 .pricingSection {
   margin: 3rem 0;
   text-align: center;
@@ -226,24 +257,12 @@
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #f0f0f0;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid #eee;
 }
 
 .pricingCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-color: #007bff;
-}
-
-.pricingCard:nth-child(2) {
-  border-color: #28a745;
-  transform: scale(1.05);
-}
-
-.pricingCard:nth-child(2):hover {
-  transform: scale(1.05) translateY(-5px);
 }
 
 .pricingName {
@@ -299,6 +318,7 @@
   background: #0056b3;
 }
 
+/* CTA Section */
 .ctaSection {
   text-align: center;
   padding: 3rem 0;
@@ -320,6 +340,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .ctaButton {
@@ -332,9 +353,6 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .ctaButton:hover {
@@ -342,7 +360,119 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive styles */
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.formGroup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background: #0056b3;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
@@ -385,12 +515,8 @@
     grid-template-columns: 1fr;
   }
   
-  .pricingCard:nth-child(2) {
-    transform: scale(1);
-  }
-  
-  .pricingCard:nth-child(2):hover {
-    transform: scale(1) translateY(-5px);
+  .requirementsGrid {
+    grid-template-columns: 1fr;
   }
   
   .ctaTitle {
@@ -404,6 +530,14 @@
   .ctaButton {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+  }
+  
+  .modal {
+    margin: 1rem;
+  }
+  
+  .modalHeader h2 {
+    font-size: 1.25rem;
   }
 }
 
@@ -420,11 +554,18 @@
     grid-template-columns: 1fr;
   }
   
-  .requirementsGrid {
-    grid-template-columns: 1fr;
+  .featureItem {
+    font-size: 0.9rem;
   }
   
-  .featureItem {
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .submitButton {
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
 }

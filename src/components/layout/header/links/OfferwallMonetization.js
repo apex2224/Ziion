@@ -36,6 +36,18 @@ const OfferwallMonetization = () => {
     "Dedicated account management and 24/7 support"
   ];
 
+  const handleGetStarted = () => {
+    alert("Thank you for your interest! Our team will contact you shortly to get you started with our offerwall monetization solution.");
+  };
+
+  const handleViewDocumentation = () => {
+    alert("Documentation would open in a new tab. For now, our team will provide you with all the necessary information.");
+  };
+
+  const handlePricingClick = (plan) => {
+    alert(`You've selected the ${plan} plan. Our team will contact you to set up your account.`);
+  };
+
   return (
     <div>
       <Header />
@@ -47,8 +59,8 @@ const OfferwallMonetization = () => {
               Maximize your revenue with our comprehensive offerwall solution that connects your users with relevant offers
             </p>
             <div className={styles.heroButtons}>
-              <button className={styles.primaryButton}>Get Started</button>
-              <button className={styles.secondaryButton}>View Documentation</button>
+              <button className={styles.primaryButton} onClick={handleGetStarted}>Get Started</button>
+              <button className={styles.secondaryButton} onClick={handleViewDocumentation}>View Documentation</button>
             </div>
           </div>
           <div className={styles.heroVisual}>
@@ -134,7 +146,7 @@ const OfferwallMonetization = () => {
                 <li>Email support</li>
                 <li>Monthly payments</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button className={styles.pricingButton} onClick={() => handlePricingClick("Starter")}>Get Started</button>
             </div>
             
             <div className={styles.pricingCard}>
@@ -150,7 +162,7 @@ const OfferwallMonetization = () => {
                 <li>Bi-weekly payments</li>
                 <li>A/B testing tools</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button className={styles.pricingButton} onClick={() => handlePricingClick("Professional")}>Get Started</button>
             </div>
             
             <div className={styles.pricingCard}>
@@ -167,7 +179,7 @@ const OfferwallMonetization = () => {
                 <li>Custom integrations</li>
                 <li>Dedicated account manager</li>
               </ul>
-              <button className={styles.pricingButton}>Contact Sales</button>
+              <button className={styles.pricingButton} onClick={() => handlePricingClick("Enterprise")}>Contact Sales</button>
             </div>
           </div>
         </div>
@@ -177,7 +189,7 @@ const OfferwallMonetization = () => {
           <p className={styles.ctaSubtitle}>
             Join thousands of publishers earning revenue through our offerwall platform
           </p>
-          <button className={styles.ctaButton}>
+          <button className={styles.ctaButton} onClick={handleGetStarted}>
             <FaBolt className={styles.ctaIcon} /> Start Earning Now
           </button>
         </div>

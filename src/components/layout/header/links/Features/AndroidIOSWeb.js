@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../header/Header";
 import Footer from "../../../footer/Footer";
 import styles from "./AndroidIOSWeb.module.css";
 import { FaAndroid, FaApple, FaDesktop, FaMobileAlt, FaGlobe, FaTabletAlt } from "react-icons/fa";
 
 const AndroidIOSWeb = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const platforms = [
     {
       icon: <FaAndroid className={styles.platformIcon} />,
@@ -41,6 +44,22 @@ const AndroidIOSWeb = () => {
     }
   ];
 
+  const handleGetStarted = (planName) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedPlan} plan! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -65,6 +84,48 @@ const AndroidIOSWeb = () => {
                 We provide specialized optimization for each platform to ensure the best 
                 possible performance and user experience.
               </p>
+              
+              <div className={styles.featuresList}>
+                <h3 className={styles.featuresTitle}>Key Features:</h3>
+                <ul className={styles.features}>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaGlobe className={styles.featureIcon} />
+                    </div>
+                    Global platform coverage
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaMobileAlt className={styles.featureIcon} />
+                    </div>
+                    Device-specific optimization
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaDesktop className={styles.featureIcon} />
+                    </div>
+                    Cross-platform campaign management
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaAndroid className={styles.featureIcon} />
+                    </div>
+                    Android-specific targeting
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaApple className={styles.featureIcon} />
+                    </div>
+                    iOS-specific optimization
+                  </li>
+                  <li className={styles.featureItem}>
+                    <div className={styles.iconWrapper}>
+                      <FaTabletAlt className={styles.featureIcon} />
+                    </div>
+                    Tablet and smartphone targeting
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className={styles.visualContent}>
@@ -111,20 +172,85 @@ const AndroidIOSWeb = () => {
           <h2 className={styles.benefitsTitle}>Cross-Platform Advantages</h2>
           <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
-              <h3>Unified Dashboard</h3>
-              <p>Manage all your campaigns from a single interface</p>
+              <h3 className={styles.benefitTitle}>Unified Dashboard</h3>
+              <p className={styles.benefitDescription}>Manage all your campaigns from a single interface</p>
             </div>
             <div className={styles.benefitCard}>
-              <h3>Consistent Branding</h3>
-              <p>Maintain your brand identity across all platforms</p>
+              <h3 className={styles.benefitTitle}>Consistent Branding</h3>
+              <p className={styles.benefitDescription}>Maintain your brand identity across all platforms</p>
             </div>
             <div className={styles.benefitCard}>
-              <h3>Optimized Performance</h3>
-              <p>Platform-specific optimization for better results</p>
+              <h3 className={styles.benefitTitle}>Optimized Performance</h3>
+              <p className={styles.benefitDescription}>Platform-specific optimization for better results</p>
             </div>
             <div className={styles.benefitCard}>
-              <h3>Global Reach</h3>
-              <p>Access users worldwide on any device</p>
+              <h3 className={styles.benefitTitle}>Global Reach</h3>
+              <p className={styles.benefitDescription}>Access users worldwide on any device</p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.pricingSection}>
+          <h2 className={styles.pricingTitle}>Flexible Pricing Options</h2>
+          <div className={styles.pricingCards}>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Starter</h3>
+                <div className={styles.pricingPrice}>$0.50</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>1 platform</li>
+                <li>1,000+ daily installs</li>
+                <li>Basic analytics</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Starter')}
+              >
+                Get Started
+              </button>
+            </div>
+            
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Professional</h3>
+                <div className={styles.pricingPrice}>$0.40</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>2 platforms</li>
+                <li>10,000+ daily installs</li>
+                <li>Advanced analytics</li>
+                <li>A/B testing</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Professional')}
+              >
+                Get Started
+              </button>
+            </div>
+            
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Enterprise</h3>
+                <div className={styles.pricingPrice}>Custom</div>
+                <div className={styles.pricingDescription}>volume discounts</div>
+              </div>
+              <ul className={styles.pricingFeatures}>
+                <li>All platforms</li>
+                <li>100,000+ daily installs</li>
+                <li>Premium analytics</li>
+                <li>Dedicated manager</li>
+                <li>API access</li>
+              </ul>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Enterprise')}
+              >
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -134,11 +260,48 @@ const AndroidIOSWeb = () => {
           <p className={styles.ctaSubtitle}>
             Launch campaigns across Android, iOS, and Web with a single setup
           </p>
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleGetStarted('Custom')}
+          >
             Start Campaign Now
           </button>
         </div>
       </div>
+      
+      {/* Modal for getting started */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Get Started with {selectedPlan} Plan</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedPlan} plan for Android, iOS & Web`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );

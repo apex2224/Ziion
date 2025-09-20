@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header";
 import Footer from "../../footer/Footer";
 import styles from "./Blog.module.css";
 import { FaBook, FaCalendar, FaTag, FaUser, FaSearch, FaRss, FaPen } from "react-icons/fa";
 
 const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedTag, setSelectedTag] = useState(null);
+
   const blogPosts = [
     {
       id: 1,
@@ -68,6 +72,32 @@ const Blog = () => {
     "Cross-Platform", "Android", "iOS", "Web", "Traffic Quality"
   ];
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    alert(`Searching for: ${searchTerm}`);
+  };
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      alert(`Thank you for subscribing with: ${email}`);
+      setEmail("");
+    }
+  };
+
+  const handleTagClick = (tag) => {
+    setSelectedTag(tag);
+    alert(`Filtering posts by tag: ${tag}`);
+  };
+
+  const handleReadMore = (postId) => {
+    alert(`Reading full article for post ID: ${postId}`);
+  };
+
+  const handleLoadMore = () => {
+    alert("Loading more articles...");
+  };
+
   return (
     <div>
       <Header />
@@ -104,7 +134,9 @@ const Blog = () => {
                   Discover how artificial intelligence is transforming the way we approach mobile app user acquisition, 
                   with predictive analytics and personalized targeting that delivers unprecedented results.
                 </p>
-                <button className={styles.readMoreButton}>Read Full Article</button>
+                <button className={styles.readMoreButton} onClick={() => handleReadMore('featured')}>
+                  Read Full Article
+                </button>
               </div>
             </div>
 
@@ -128,7 +160,11 @@ const Blog = () => {
                     <div className={styles.postFooter}>
                       <div className={styles.postTags}>
                         {post.tags.slice(0, 2).map((tag, index) => (
-                          <span key={index} className={styles.tag}>
+                          <span 
+                            key={index} 
+                            className={styles.tag}
+                            onClick={() => handleTagClick(tag)}
+                          >
                             <FaTag className={styles.tagIcon} /> {tag}
                           </span>
                         ))}
@@ -141,7 +177,9 @@ const Blog = () => {
             </div>
 
             <div className={styles.loadMoreSection}>
-              <button className={styles.loadMoreButton}>Load More Articles</button>
+              <button className={styles.loadMoreButton} onClick={handleLoadMore}>
+                Load More Articles
+              </button>
             </div>
           </div>
 
@@ -151,12 +189,16 @@ const Blog = () => {
                 <FaSearch className={styles.widgetIcon} /> Search Blog
               </h3>
               <div className={styles.searchBox}>
-                <input 
-                  type="text" 
-                  placeholder="Search articles..." 
-                  className={styles.searchInput}
-                />
-                <button className={styles.searchButton}>Search</button>
+                <form onSubmit={handleSearch}>
+                  <input 
+                    type="text" 
+                    placeholder="Search articles..." 
+                    className={styles.searchInput}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <button type="submit" className={styles.searchButton}>Search</button>
+                </form>
               </div>
             </div>
 
@@ -168,12 +210,16 @@ const Blog = () => {
                 Get the latest articles delivered directly to your inbox.
               </p>
               <div className={styles.subscribeForm}>
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className={styles.emailInput}
-                />
-                <button className={styles.subscribeButton}>Subscribe</button>
+                <form onSubmit={handleSubscribe}>
+                  <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    className={styles.emailInput}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button type="submit" className={styles.subscribeButton}>Subscribe</button>
+                </form>
               </div>
             </div>
 
@@ -183,7 +229,11 @@ const Blog = () => {
               </h3>
               <div className={styles.tagsList}>
                 {popularTags.map((tag, index) => (
-                  <span key={index} className={styles.tag}>
+                  <span 
+                    key={index} 
+                    className={`${styles.tag} ${selectedTag === tag ? styles.selectedTag : ''}`}
+                    onClick={() => handleTagClick(tag)}
+                  >
                     {tag}
                   </span>
                 ))}

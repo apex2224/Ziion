@@ -1,3 +1,4 @@
+/* Web Traffic Component Styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Header Section */
 .header {
   margin-bottom: 2rem;
   text-align: center;
@@ -26,6 +28,7 @@
   margin: 0 auto 2rem;
 }
 
+/* Content Layout */
 .contentWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +40,10 @@
 .textContent {
   flex: 1;
   min-width: 300px;
+}
+
+.textSection {
+  margin-bottom: 1.5rem;
 }
 
 .sectionTitle {
@@ -52,6 +59,7 @@
   margin-bottom: 1rem;
 }
 
+/* Features List */
 .featuresList {
   margin-top: 1.5rem;
 }
@@ -75,12 +83,30 @@
   color: #666;
 }
 
+/* Professional Icon Styling */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #e9f7fe;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  color: #007bff;
+  font-size: 0.75rem;
+}
+
 .featureIcon {
-  color: #4285F4;
+  color: #007bff;
   margin-top: 0.25rem;
   font-size: 0.75rem;
 }
 
+/* Visual Content */
 .visualContent {
   flex: 1;
   min-width: 300px;
@@ -105,6 +131,7 @@
   height: 100%;
 }
 
+/* Benefits Section */
 .benefitsSection {
   margin: 3rem 0;
 }
@@ -129,6 +156,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  border: 1px solid #eee;
 }
 
 .benefitCard:hover {
@@ -145,7 +173,7 @@
 .benefitIcon {
   width: 40px;
   height: 40px;
-  color: #4285F4;
+  color: #007bff;
 }
 
 .benefitTitle {
@@ -160,12 +188,13 @@
   line-height: 1.6;
 }
 
+/* Targeting Section */
 .targetingSection {
   margin: 3rem 0;
+  text-align: center;
 }
 
 .targetingTitle {
-  text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 2rem;
@@ -173,8 +202,10 @@
 
 .targetingGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .targetingCard {
@@ -183,11 +214,11 @@
   padding: 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid #4285F4;
+  border: 1px solid #eee;
 }
 
 .targetingCard:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -200,9 +231,9 @@
 .targetingCard p {
   color: #666;
   line-height: 1.6;
-  margin: 0;
 }
 
+/* Pricing Section */
 .pricingSection {
   margin: 3rem 0;
   text-align: center;
@@ -226,24 +257,12 @@
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #f0f0f0;
-  position: relative;
-  overflow: hidden;
+  border: 1px solid #eee;
 }
 
 .pricingCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-color: #4285F4;
-}
-
-.pricingCard:nth-child(2) {
-  border-color: #007bff;
-  transform: scale(1.05);
-}
-
-.pricingCard:nth-child(2):hover {
-  transform: scale(1.05) translateY(-5px);
 }
 
 .pricingName {
@@ -256,7 +275,7 @@
 .pricingPrice {
   font-size: 2rem;
   font-weight: 700;
-  color: #4285F4;
+  color: #007bff;
   margin-bottom: 0.25rem;
 }
 
@@ -283,7 +302,7 @@
 }
 
 .pricingButton {
-  background: #4285F4;
+  background: #007bff;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -296,13 +315,14 @@
 }
 
 .pricingButton:hover {
-  background: #3367d6;
+  background: #0056b3;
 }
 
+/* CTA Section */
 .ctaSection {
   text-align: center;
   padding: 3rem 0;
-  background: linear-gradient(135deg, #4285F4, #3367d6);
+  background: linear-gradient(135deg, #007bff, #0056b3);
   border-radius: 12px;
   color: white;
   margin: 3rem 0;
@@ -320,11 +340,12 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .ctaButton {
   background-color: white;
-  color: #4285F4;
+  color: #007bff;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -332,9 +353,6 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .ctaButton:hover {
@@ -342,7 +360,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
@@ -383,14 +401,6 @@
   
   .pricingCards {
     grid-template-columns: 1fr;
-  }
-  
-  .pricingCard:nth-child(2) {
-    transform: scale(1);
-  }
-  
-  .pricingCard:nth-child(2):hover {
-    transform: scale(1) translateY(-5px);
   }
   
   .ctaTitle {

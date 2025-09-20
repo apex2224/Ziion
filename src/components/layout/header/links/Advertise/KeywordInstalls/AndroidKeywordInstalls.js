@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../../header/Header";
 import Footer from "../../../../footer/Footer";
 import styles from "./AndroidKeywordInstalls.module.css";
-import { FaAndroid, FaSearch, FaChartLine, FaBolt, FaTags, FaRocket, FaUsers, FaStar } from "react-icons/fa";
+import { 
+  FaAndroid, 
+  FaSearch, 
+  FaChartLine, 
+  FaBolt, 
+  FaTags, 
+  FaRocket, 
+  FaUsers, 
+  FaStar 
+} from "react-icons/fa";
 
 const AndroidKeywordInstalls = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const benefits = [
     {
       icon: <FaSearch className={styles.benefitIcon} />,
@@ -37,6 +49,22 @@ const AndroidKeywordInstalls = () => {
     "24/7 customer support"
   ];
 
+  const handleGetStarted = (planName) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for your interest in the ${selectedPlan} plan! Our team will contact you shortly.`);
+    handleCloseModal();
+  };
+
   return (
     <div>
       <Header />
@@ -67,7 +95,10 @@ const AndroidKeywordInstalls = () => {
                 <ul className={styles.features}>
                   {features.map((feature, index) => (
                     <li key={index} className={styles.featureItem}>
-                      <FaBolt className={styles.featureIcon} /> {feature}
+                      <div className={styles.iconWrapper}>
+                        <FaBolt className={styles.icon} />
+                      </div>
+                      {feature}
                     </li>
                   ))}
                 </ul>
@@ -76,18 +107,17 @@ const AndroidKeywordInstalls = () => {
           </div>
           <div className={styles.visualContent}>
             <div className={styles.svgContainer}>
-              <svg viewBox="0 0 300 300" className={styles.decorativeSvg}>
-                <rect x="50" y="50" width="200" height="200" rx="20" fill="#3DDC84" />
-                <circle cx="150" cy="120" r="30" fill="#FFFFFF" />
-                <path d="M130 160 L170 160 L150 200 Z" fill="#FFFFFF" />
-                <text x="150" y="125" textAnchor="middle" fill="#3DDC84" fontSize="20" fontWeight="bold">KW</text>
-              </svg>
+              <div className={styles.decorativeSvg}>
+                <div style={{width: '100%', height: '100%', backgroundColor: '#e9f7fe', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <FaAndroid style={{fontSize: '4rem', color: '#007bff'}} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div className={styles.benefitsSection}>
-          <h2 className={styles.benefitsTitle}>Benefits of Keyword Targeting</h2>
+          <h2 className={styles.benefitsTitle}>Keyword Targeting Benefits</h2>
           <div className={styles.benefitsGrid}>
             {benefits.map((benefit, index) => (
               <div key={index} className={styles.benefitCard}>
@@ -129,42 +159,63 @@ const AndroidKeywordInstalls = () => {
           <h2 className={styles.pricingTitle}>Flexible Pricing Options</h2>
           <div className={styles.pricingCards}>
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Starter</h3>
-              <div className={styles.pricingPrice}>$0.60</div>
-              <div className={styles.pricingDescription}>per install</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Starter</h3>
+                <div className={styles.pricingRate}>$0.60</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>5 keywords</li>
-                <li>500+ daily installs</li>
+                <li>2,500+ daily installs</li>
                 <li>Basic analytics</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Starter')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Professional</h3>
-              <div className={styles.pricingPrice}>$0.50</div>
-              <div className={styles.pricingDescription}>per install</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Professional</h3>
+                <div className={styles.pricingRate}>$0.50</div>
+                <div className={styles.pricingDescription}>per install</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>20 keywords</li>
-                <li>5,000+ daily installs</li>
+                <li>15,000+ daily installs</li>
                 <li>Advanced analytics</li>
                 <li>A/B testing</li>
               </ul>
-              <button className={styles.pricingButton}>Get Started</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Professional')}
+              >
+                Get Started
+              </button>
             </div>
             
             <div className={styles.pricingCard}>
-              <h3 className={styles.pricingName}>Enterprise</h3>
-              <div className={styles.pricingPrice}>Custom</div>
-              <div className={styles.pricingDescription}>volume discounts</div>
+              <div className={styles.pricingHeader}>
+                <h3 className={styles.pricingName}>Enterprise</h3>
+                <div className={styles.pricingRate}>Custom</div>
+                <div className={styles.pricingDescription}>volume discounts</div>
+              </div>
               <ul className={styles.pricingFeatures}>
                 <li>Unlimited keywords</li>
-                <li>50,000+ daily installs</li>
+                <li>75,000+ daily installs</li>
                 <li>Premium analytics</li>
                 <li>Dedicated manager</li>
                 <li>API access</li>
               </ul>
-              <button className={styles.pricingButton}>Contact Sales</button>
+              <button 
+                className={styles.pricingButton} 
+                onClick={() => handleGetStarted('Enterprise')}
+              >
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
@@ -174,11 +225,48 @@ const AndroidKeywordInstalls = () => {
           <p className={styles.ctaSubtitle}>
             Start driving keyword-targeted installs for your Android app today
           </p>
-          <button className={styles.ctaButton}>
-            Create Keyword Campaign
+          <button 
+            className={styles.ctaButton} 
+            onClick={() => handleGetStarted('Custom')}
+          >
+            <FaTags className={styles.ctaIcon} /> Create Keyword Campaign
           </button>
         </div>
       </div>
+      
+      {/* Modal for getting started */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Get Started with {selectedPlan} Plan</h2>
+              <button className={styles.closeButton} onClick={handleCloseModal}>×</button>
+            </div>
+            <div className={styles.modalBody}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name:</label>
+                  <input type="text" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Email:</label>
+                  <input type="email" required />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Company:</label>
+                  <input type="text" />
+                </div>
+                <div className={styles.formGroup}>
+                  <label>Message:</label>
+                  <textarea placeholder={`Interested in ${selectedPlan} plan for Android Keyword Installs`} />
+                </div>
+                <button type="submit" className={styles.submitButton}>Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );
