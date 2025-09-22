@@ -8,15 +8,18 @@
 
 /* Hero Section */
 .heroSection {
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  color: #007bff;
+  border-radius: 12px;
   padding: 3rem 2rem;
   margin-bottom: 3rem;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
 }
 
 .heroContent {
@@ -29,6 +32,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #007bff;
 }
 
 .heroSubtitle {
@@ -36,6 +40,7 @@
   opacity: 0.9;
   line-height: 1.6;
   margin-bottom: 2rem;
+  color: #333333;
 }
 
 .heroButtons {
@@ -45,9 +50,9 @@
 }
 
 .primaryButton {
-  background: white;
+  background: rgba(0, 123, 255, 0.1);
   color: #007bff;
-  border: none;
+  border: 1px solid #007bff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -57,15 +62,15 @@
 }
 
 .primaryButton:hover {
-  background: #f0f8ff;
+  background: rgba(0, 123, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
 }
 
 .secondaryButton {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #007bff;
+  border: 1px solid #007bff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -75,7 +80,7 @@
 }
 
 .secondaryButton:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 123, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -90,18 +95,20 @@
 .visualPlaceholder {
   width: 100%;
   height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .visualPlaceholder::before {
   content: "Offerwall Preview";
   font-size: 1.5rem;
   font-weight: 600;
+  color: #007bff;
 }
 
 /* Features Section */
@@ -111,7 +118,7 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: #333;
+  color: #007bff;
   text-align: center;
   margin-bottom: 2rem;
   position: relative;
@@ -134,18 +141,20 @@
 }
 
 .featureCard {
-  background: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
   transition: all 0.3s ease;
   text-align: center;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .featureCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 /* Professional Icon Styling */
@@ -163,12 +172,12 @@
 .featureTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
+  color: #007bff;
   margin-bottom: 0.75rem;
 }
 
 .featureDescription {
-  color: #666;
+  color: #333333;
   line-height: 1.6;
 }
 
@@ -188,26 +197,28 @@
 
 .contentTitle {
   font-size: 2rem;
-  color: #333;
+  color: #007bff;
   margin-bottom: 1.5rem;
 }
 
 .contentText {
-  color: #666;
+  color: #333333;
   line-height: 1.7;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
 
 .benefitsList {
-  background: #f8f9fa;
-  border-radius: 8px;
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 12px;
   padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 .benefitsTitle {
   font-size: 1.25rem;
-  color: #333;
+  color: #007bff;
   margin-bottom: 1rem;
 }
 
@@ -221,7 +232,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 1rem;
-  color: #666;
+  color: #333333;
 }
 
 .benefitItem:last-child {
@@ -235,7 +246,7 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background-color: #e9f7fe;
+  background-color: rgba(0, 123, 255, 0.1);
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 0.25rem;
@@ -257,14 +268,16 @@
 .chartPlaceholder {
   width: 100%;
   height: 300px;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  border-radius: 8px;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #007bff;
   font-size: 1.5rem;
   font-weight: 600;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
 }
 
 /* Integration Section */
@@ -275,7 +288,7 @@
 
 .integrationTitle {
   font-size: 2rem;
-  color: #333;
+  color: #007bff;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -332,12 +345,12 @@
 
 .stepTitle {
   font-size: 1.25rem;
-  color: #333;
+  color: #007bff;
   margin-bottom: 0.75rem;
 }
 
 .stepDescription {
-  color: #666;
+  color: #333333;
   line-height: 1.6;
 }
 
@@ -349,7 +362,7 @@
 
 .pricingTitle {
   font-size: 2rem;
-  color: #333;
+  color: #007bff;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -371,19 +384,21 @@
 }
 
 .pricingCard {
-  background: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0, 123, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
 
 .pricingCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .pricingCard:nth-child(2) {
@@ -416,7 +431,7 @@
 .pricingName {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #007bff;
   margin-bottom: 1rem;
   position: relative;
 }
@@ -429,7 +444,7 @@
 }
 
 .pricingDescription {
-  color: #666;
+  color: #333333;
   font-size: 0.9rem;
 }
 
@@ -442,8 +457,8 @@
 
 .pricingFeatures li {
   padding: 0.75rem 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #666;
+  border-bottom: 1px solid rgba(0, 123, 255, 0.1);
+  color: #333333;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -460,7 +475,7 @@
   justify-content: center;
   width: 16px;
   height: 16px;
-  background-color: #e9f7fe;
+  background-color: rgba(0, 123, 255, 0.1);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -471,9 +486,9 @@
 }
 
 .pricingButton {
-  background: #007bff;
-  color: white;
-  border: none;
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border: 1px solid #007bff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -484,19 +499,22 @@
 }
 
 .pricingButton:hover {
-  background: #0056b3;
+  background: rgba(0, 123, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
 }
 
 /* CTA Section */
 .ctaSection {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  border-radius: 8px;
-  color: white;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  color: #007bff;
   margin: 3rem 0;
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
 }
 
 .ctaTitle {
@@ -513,12 +531,13 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  color: #333333;
 }
 
 .ctaButton {
-  background-color: white;
+  background-color: rgba(0, 123, 255, 0.1);
   color: #007bff;
-  border: none;
+  border: 1px solid #007bff;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
@@ -531,9 +550,13 @@
 }
 
 .ctaButton:hover {
-  background-color: #f0f8ff;
+  background-color: rgba(0, 123, 255, 0.2);
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.ctaIcon {
+  color: #007bff;
 }
 
 /* Responsive styles */

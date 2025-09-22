@@ -32,16 +32,6 @@
   overflow: hidden;
 }
 
-/* --- JavaScript Typing Animation --- */
-.cursor {
-  display: inline-block;
-  width: 3px;
-  height: 1.2em;
-  background-color: #ffffff;
-  margin-left: 2px;
-  transition: opacity 0.1s;
-}
-
 .subHeading {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: #ccd6f6;
@@ -155,11 +145,6 @@
     padding: 10px 20px;
     font-size: 0.9rem;
   }
-
-  .cursor {
-    width: 2px;
-    height: 1.1em;
-  }
 }
 
 @media (max-width: 768px) {
@@ -205,11 +190,6 @@
     padding: 8px 16px;
     font-size: 0.85rem;
   }
-
-  .cursor {
-    width: 2px;
-    height: 1em;
-  }
 }
 
 @media (max-width: 480px) {
@@ -240,10 +220,5 @@
   .cardButton {
     padding: 6px 12px;
     font-size: 0.8rem;
-  }
-
-  .cursor {
-    width: 1px;
-    height: 0.9em;
   }
 }

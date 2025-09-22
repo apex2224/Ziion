@@ -473,7 +473,8 @@ const Publisher = () => {
     <div className={styles.dashboardLayout}>
       <DashboardHeader toggleSidebar={toggleSidebar} />
 
-      <aside className={styles.sidebar}>
+      {/* Only one sidebar at a time */}
+      <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.mobileOpen : ''}`}>
         <Sidebar
           activeTab={activeTab}
           setActiveTab={setActiveTab}
@@ -528,28 +529,9 @@ const Publisher = () => {
         <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
       </aside>
 
+      {/* Mobile sidebar overlay and content */}
       {isSidebarOpen && (
-        <>
-          <div className={styles.overlay} onClick={closeSidebar}></div>
-          <div className={styles.mobileSidebar}>
-            <div className={styles.mobileSidebarHeader}>
-              <button className={styles.closeMenu} onClick={closeSidebar}>
-                <FaTimes />
-              </button>
-            </div>
-            <div className={styles.mobileSidebarContent}>
-              <Sidebar
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-                activeItem={activeItem}
-                setActiveItem={(item) => {
-                  setActiveItem(item);
-                  closeSidebar();
-                }}
-              />
-            </div>
-          </div>
-        </>
+        <div className={styles.overlay} onClick={closeSidebar}></div>
       )}
     </div>
   );

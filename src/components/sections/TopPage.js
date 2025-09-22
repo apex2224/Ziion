@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import AwesomeTextAnimation from "../ui/AwesomeTextAnimation";
 import styles from "./TopPage.module.css";
 
 const TopPage = () => {
@@ -18,9 +19,9 @@ const TopPage = () => {
 
   return (
     <div className={styles.topPageContainer}>
-      <h1 className={styles.mainHeading}>
-        <TypingText />
-      </h1>
+      <div className={styles.mainHeading}>
+        <AwesomeTextAnimation />
+      </div>
       <p className={styles.subHeading}>
         Helping Partners Around The World in Their Business Growth Online
       </p>
@@ -52,43 +53,6 @@ const TopPage = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-const TypingText = () => {
-  const fullText = "Global Performance Marketing Company";
-  const [displayText, setDisplayText] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
-
-  useEffect(() => {
-    let index = 0;
-    
-    // Type out the text once
-    const typeTimer = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayText(prev => prev + fullText.charAt(index));
-        index++;
-      } else {
-        clearInterval(typeTimer);
-        // Keep cursor blinking after typing is complete
-        const cursorTimer = setInterval(() => {
-          setShowCursor(prev => !prev);
-        }, 500);
-        
-        // Clean up cursor timer when component unmounts
-        return () => clearInterval(cursorTimer);
-      }
-    }, 100);
-
-    // Clean up typing timer
-    return () => clearInterval(typeTimer);
-  }, []);
-
-  return (
-    <span>
-      {displayText}
-      <span className={styles.cursor} style={{ opacity: showCursor ? 1 : 0 }}>|</span>
-    </span>
   );
 };
 
