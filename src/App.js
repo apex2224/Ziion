@@ -33,7 +33,7 @@ import MultiplePricingModels from "./components/layout/header/links/Features/Mul
 import CPIDroidBlog from "./components/layout/header/links/Blog";
 import CPIDroidSupport from "./components/layout/header/links/Support";
 import ContactCPIDroid from "./components/layout/header/links/Contact";
-import AndroidInstalls from "./components/layout/header/links/Advertise/AppInstalls/AndroidInstalls";
+import CPIDroidBlogPage from "./components/layout/header/links/Advertise/AppInstalls/CPIDroidBlog";
 import IOSInstalls from "./components/layout/header/links/Advertise/AppInstalls/IOSInstalls";
 import AndroidKeywordInstalls from "./components/layout/header/links/Advertise/KeywordInstalls/AndroidKeywordInstalls";
 import IOSKeywordInstalls from "./components/layout/header/links/Advertise/KeywordInstalls/IOSKeywordInstalls";
@@ -224,7 +224,7 @@ const App = () => {
           path="/android-installs"
           element={
             <div className="route-container">
-              <AndroidInstalls />
+              <CPIDroidBlogPage />
             </div>
           }
         />

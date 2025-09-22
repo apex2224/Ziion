@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Header from "../../../../header/Header";
 import Footer from "../../../../footer/Footer";
-import styles from "./AndroidInstalls.module.css";
-import { FaAndroid, FaDownload, FaMobileAlt, FaChartLine, FaBolt, FaUsers, FaGlobe } from "react-icons/fa";
+import styles from "./CPIDroidBlog.module.css";
+import { FaAndroid, FaDownload, FaMobileAlt, FaChartLine, FaBolt, FaUsers, FaGlobe, FaInfoCircle, FaHeadset } from "react-icons/fa";
 
-const AndroidInstalls = () => {
+const CPIDroidBlog = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const AndroidInstalls = () => {
     "Flexible budget control and bidding options",
     "Comprehensive analytics dashboard",
     "A/B testing capabilities",
-    "24/7 customer support"
+    "24/7 CPI Droid Support"
   ];
 
   const handleGetStarted = (planName) => {
@@ -61,7 +61,7 @@ const AndroidInstalls = () => {
       <Header />
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Android App Installs</h1>
+          <h1 className={styles.title}>CPIDroid Blog</h1>
           <p className={styles.description}>
             Drive high-quality installs for your Android app with our targeted campaign solutions
           </p>
@@ -263,4 +263,4 @@ const AndroidInstalls = () => {
   );
 };
 
-export default AndroidInstalls;
+export default CPIDroidBlog;
