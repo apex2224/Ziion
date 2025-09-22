@@ -23,7 +23,6 @@ import LetsChat from "./components/pages/dashboard/LetsChat";
 import LetsTalk from "./components/pages/dashboard/LetsTalk";
 import FraudDetection from "./components/layout/header/links/FraudDetection";
 import BoostEngagement from "./components/layout/header/links/BoostEngagement";
-import FallingTextDemo from "./components/ui/FallingTextDemo";
 
 //  Routes Import
 import TrackingSolutions from "./components/layout/header/links/Features/TrackingSolutions";
@@ -43,6 +42,9 @@ import AndroidBooster from "./components/layout/header/links/Advertise/Boosters/
 import IOSBooster from "./components/layout/header/links/Advertise/Boosters/IOSBooster";
 import OfferwallMonetization from "./components/layout/header/links/OfferwallMonetization";
 import BecomePublisher from "./components/layout/header/links/BecomePublisher";
+
+// Awesome Text Animation Demo
+import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
 const LandingPage = () => {
   return (
     <div className="route-container">
@@ -157,10 +159,10 @@ const App = () => {
           }
         />
         <Route
-          path="/falling-text-demo"
+          path="/awesome-text-demo"
           element={
             <div className="route-container">
-              <FallingTextDemo />
+              <AwesomeTextDemo />
             </div>
           }
         />

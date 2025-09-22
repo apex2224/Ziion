@@ -46,6 +46,20 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  position: relative;
+  z-index: 101;
+}
+
+.sidebar.mobileOpen {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--mobile-sidebar-width);
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
 .mainContent {
@@ -714,6 +728,17 @@ th {
   background-color: var(--bg-light);
 }
 
+/* --- Mobile Sidebar Overlay --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 /* --- Responsive Styles --- */
 @media (max-width: 1200px) {
   :root {
@@ -729,10 +754,6 @@ th {
     padding: 0 15px;
   }
 
-  .sidebar {
-    padding: 15px;
-  }
-
   .mainContent {
     padding: 15px;
   }
@@ -744,10 +765,6 @@ th {
 
   .statCard {
     padding: 15px;
-  }
-
-  .statCard h3 {
-    font-size: 1.8rem;
   }
 
   .rightSidebar {
@@ -771,10 +788,6 @@ th {
     display: none;
   }
 
-  .sidebar {
-    padding: 12px;
-  }
-
   .mainContent {
     padding: 12px;
   }
@@ -786,10 +799,6 @@ th {
 
   .statCard {
     padding: 12px;
-  }
-
-  .statCard h3 {
-    font-size: 1.6rem;
   }
 
   .tableBlock h4 {
@@ -812,6 +821,10 @@ th {
   
   .sidebar {
     display: none;
+  }
+  
+  .sidebar.mobileOpen {
+    display: flex;
   }
   
   .rightSidebar {
@@ -851,16 +864,12 @@ th {
   }
   
   .statsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
   
   .statCard {
     padding: 15px;
-  }
-  
-  .statCard h3 {
-    font-size: 1.5rem;
   }
   
   .alertSection .alert,
@@ -870,16 +879,12 @@ th {
   
   .alertActions {
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .alertActions {
-    flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
   
   .chatBtn, .ticketBtn {
+    width: 100%;
     justify-content: center;
   }
   
@@ -898,83 +903,6 @@ th {
   .createPlacementBtn {
     width: 100%;
     justify-content: center;
-  }
-  
-  /* Mobile sidebar styles */
-  .mobileSidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: var(--mobile-sidebar-width);
-    z-index: 1000;
-    background: var(--white);
-    border-right: 1px solid var(--border-color);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-  }
-  
-  .mobileSidebar.open {
-    transform: translateX(0);
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-  
-  .mobileSidebarHeader {
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px;
-    border-bottom: 1px solid var(--border-color);
-    background: var(--white);
-  }
-  
-  .closeMenu {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text-primary);
-    padding: 5px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-  
-  .closeMenu:hover {
-    background-color: var(--bg-light);
-  }
-  
-  .mobileSidebarContent {
-    height: calc(100% - 60px);
-    overflow-y: auto;
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .mobileSidebarContent .dashboardSelector {
-    padding: 15px;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 0;
-  }
-  
-  .mobileSidebarContent .nav {
-    padding: 10px 0;
-    flex: 1;
-  }
-  
-  .mobileSidebarContent .sidebarFooter {
-    padding: 15px 20px;
-    margin-top: auto;
   }
 }
 
@@ -1001,16 +929,17 @@ th {
     font-size: 16px;
   }
   
+  .mainContent {
+    padding: 12px;
+  }
+  
   .statsGrid {
+    grid-template-columns: 1fr;
     gap: 12px;
   }
   
   .statCard {
     padding: 12px;
-  }
-  
-  .statCard h3 {
-    font-size: 1.4rem;
   }
   
   .alert {
@@ -1048,5 +977,15 @@ th {
   .backButton {
     padding: 8px 12px;
     font-size: 14px;
+  }
+  
+  .shareButtons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .shareButtons button {
+    width: 40px;
+    height: 40px;
   }
 }

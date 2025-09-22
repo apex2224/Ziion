@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Advertiser.module.css";
-import ASObooster from "./ASObooster";
+import styles from "./NewAdvertiser.module.css";
 import {
   FaUserCircle,
   FaBell,
@@ -13,7 +12,6 @@ import {
   FaRocket,
   FaLink,
   FaGift,
-  FaBookOpen,
   FaDownload,
   FaAngleDown,
   FaSearch,
@@ -26,25 +24,20 @@ import {
   FaTrash,
   FaEye,
   FaFilter,
-  FaSort,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
   FaGlobe,
-  FaMobileAlt,
-  FaDesktop,
+  FaCalendarAlt,
   FaChartLine,
   FaChartPie,
   FaChartArea,
   FaUsers,
   FaDollarSign,
-  FaCopy,
   FaCheck,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
 
-// Sub-component for the top header
-const DashboardHeader = ({ toggleSidebar }) => (
+// Header Component
+const Header = ({ toggleSidebar }) => (
   <header className={styles.header}>
     <button className={styles.menuToggle} onClick={toggleSidebar}>
       <FaBars />
@@ -65,7 +58,7 @@ const DashboardHeader = ({ toggleSidebar }) => (
   </header>
 );
 
-// New sub-component for the dashboard selection
+// Dashboard Selector Component
 const DashboardSelector = ({ activeTab, setActiveTab }) => {
   const navigate = useNavigate();
 
@@ -74,7 +67,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
   };
 
   const handleAdvertiserClick = () => {
-    // Already on advertiser page, no need to navigate
+    // Already on advertiser page
   };
 
   return (
@@ -115,7 +108,7 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
   );
 };
 
-// Sub-component for the sidebar navigation
+// Sidebar Navigation Component
 const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
   <aside className={styles.sidebar}>
     <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -176,11 +169,11 @@ const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
       <a
         href="#"
         className={`${styles.navItem} ${
-          activeItem === "reports" ? styles.active : ""
+          activeItem === "billing" ? styles.active : ""
         }`}
         onClick={(e) => {
           e.preventDefault();
-          setActiveItem("reports");
+          setActiveItem("billing");
         }}
       >
         <FaDollarSign /> Advertiser Billing
@@ -216,7 +209,7 @@ const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
           className={styles.navItem}
           onClick={(e) => {
             e.preventDefault();
-            window.location.href = '/aso-booster';
+            // In a real app, this would navigate to the ASO Booster page
           }}
         >
           <FaRocket /> ASO Booster <span className={styles.badge}>NEW</span>
@@ -228,6 +221,20 @@ const Sidebar = ({ activeItem, setActiveItem, activeTab, setActiveTab }) => (
       <FaCog />
     </div>
   </aside>
+);
+
+// Stat Card Component
+const StatCard = ({ title, value, icon, color, onClick }) => (
+  <div className={styles.statCard} onClick={onClick}>
+    <div>
+      <p>{title}</p>
+      <h3>{value}</h3>
+      <a href="#">
+        {title} Campaigns <FaAngleDown size={12} />
+      </a>
+    </div>
+    <div className={`${styles.statIcon} ${styles[color]}`}>{icon}</div>
+  </div>
 );
 
 // Dashboard Home Component
@@ -272,22 +279,8 @@ const DashboardHome = () => {
     },
   ];
 
-  // Sub-component for the stat cards (Running, Paused, etc.)
-  const StatCard = ({ title, value, icon, color, onClick }) => (
-    <div className={styles.statCard} onClick={onClick}>
-      <div>
-        <p>{title}</p>
-        <h3>{value}</h3>
-        <a href="#">
-          {title} Campaigns <FaAngleDown size={12} />
-        </a>
-      </div>
-      <div className={`${styles.statIcon} ${styles[color]}`}>{icon}</div>
-    </div>
-  );
-
   return (
-    <>
+    <div className={styles.dashboardHome}>
       {/* Top Stats Section */}
       <section className={styles.statsGrid}>
         <StatCard
@@ -360,7 +353,11 @@ const DashboardHome = () => {
                     <td>{campaign.conversions}</td>
                     <td>{campaign.cr}</td>
                     <td>{campaign.progress}</td>
-                    <td>{campaign.status}</td>
+                    <td>
+                      <span className={`${styles.status} ${styles[campaign.status.toLowerCase()]}`}>
+                        {campaign.status}
+                      </span>
+                    </td>
                   </tr>
                 ))
               ) : (
@@ -387,7 +384,7 @@ const DashboardHome = () => {
           <FaDownload /> Manage All Campaigns
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -776,7 +773,7 @@ const Applications = () => {
           <div className={styles.appCard} key={app.id}>
             <div className={styles.appHeader}>
               <div className={styles.appIcon}>
-                <FaMobileAlt />
+                <FaChartBar />
               </div>
               <div className={styles.appInfo}>
                 <h3>{app.name}</h3>
@@ -1008,7 +1005,7 @@ const ReferralProgram = () => {
           <p>Share your referral link with friends to start earning.</p>
           <div className={styles.referralLink} onClick={copyReferralLink}>
             <span>https://cpidroid.com/?ref=K12345</span>
-            <FaCopy />
+            <FaLink />
           </div>
           <div className={styles.shareButtons}>
             <span>SHARE</span>
@@ -1065,7 +1062,7 @@ const ReferralProgram = () => {
 };
 
 // Main Advertiser Dashboard Component
-const Advertiser = () => {
+const NewAdvertiser = () => {
   const [activeTab, setActiveTab] = useState("advertiser");
   const [activeItem, setActiveItem] = useState("dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -1089,12 +1086,12 @@ const Advertiser = () => {
         return <Tracking />;
       case "applications":
         return <Applications />;
+      case "billing":
+        return <div>Billing Content</div>;
       case "reports":
         return <Reports />;
       case "referral":
         return <ReferralProgram />;
-      case "aso-booster":
-        return <ASObooster />;
       default:
         return <DashboardHome />;
     }
@@ -1102,10 +1099,10 @@ const Advertiser = () => {
 
   return (
     <div className={styles.dashboardLayout}>
-      <DashboardHeader toggleSidebar={toggleSidebar} />
+      <Header toggleSidebar={toggleSidebar} />
 
-      {/* Only one sidebar at a time */}
-      <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.mobileOpen : ''}`}>
+      {/* Desktop Sidebar */}
+      <aside className={`${styles.sidebar} ${styles.desktopSidebar}`}>
         <Sidebar
           activeItem={activeItem}
           setActiveItem={setActiveItem}
@@ -1114,10 +1111,13 @@ const Advertiser = () => {
         />
       </aside>
 
-      <main className={styles.mainContent}>{renderActiveComponent()}</main>
+      {/* Main Content Area */}
+      <main className={styles.mainContent}>
+        {renderActiveComponent()}
+      </main>
 
       {/* Right Sidebar - Hidden on mobile */}
-      <aside className={styles.rightSidebar}>
+      <aside className={`${styles.rightSidebar} ${styles.desktopRightSidebar}`}>
         <div className={styles.widget}>
           <h4>Our Services</h4>
           <div className={styles.serviceItem}>
@@ -1186,12 +1186,32 @@ const Advertiser = () => {
         </div>
       </aside>
 
-      {/* Mobile sidebar overlay and content */}
+      {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
-        <div className={styles.overlay} onClick={closeSidebar}></div>
+        <>
+          <div className={styles.overlay} onClick={closeSidebar}></div>
+          <div className={styles.mobileSidebar}>
+            <div className={styles.mobileSidebarHeader}>
+              <button className={styles.closeMenu} onClick={closeSidebar}>
+                <FaTimes />
+              </button>
+            </div>
+            <div className={styles.mobileSidebarContent}>
+              <Sidebar
+                activeItem={activeItem}
+                setActiveItem={(item) => {
+                  setActiveItem(item);
+                  closeSidebar();
+                }}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
 };
 
-export default Advertiser;
+export default NewAdvertiser;
