@@ -45,6 +45,7 @@ import BecomePublisher from "./components/layout/header/links/BecomePublisher";
 
 // Awesome Text Animation Demo
 import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
+
 const LandingPage = () => {
   return (
     <div className="route-container">

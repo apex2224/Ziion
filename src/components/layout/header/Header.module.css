@@ -59,6 +59,22 @@
   color: #007bff;
 }
 
+.navLink {
+  padding: 0 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
 .dropdown {
   position: absolute;
   top: 100%;
