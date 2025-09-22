@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PublisherProfile from "./PublisherProfile";
 import ASObooster from "./ASObooster";
@@ -35,9 +35,9 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 
-const DashboardHeader = ({ toggleSidebar }) => (
+const DashboardHeader = ({ onMenuToggle }) => (
   <header className={styles.header}>
-    <button className={styles.menuToggle} onClick={toggleSidebar}>
+    <button className={styles.menuToggle} onClick={onMenuToggle}>
       <FaBars />
     </button>
     <div className={styles.logo}>CPIDroid</div>
@@ -97,8 +97,13 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
   );
 };
 
-const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem }) => (
+const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem, onMenuToggle }) => (
   <>
+    <div className={styles.sidebarHeader}>
+        <button className={styles.menuToggle} onClick={onMenuToggle}>
+            <FaTimes />
+        </button>
+    </div>
     <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
     <nav className={styles.nav}>
       <p className={styles.navHeader}>MAIN MENU</p>
@@ -260,33 +265,35 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
       <section className={styles.alertSection}>
         <div className={styles.alert}>
           <FaExclamationTriangle className={styles.alertIcon} />
-          <p className={styles.alertText}>
-            Kindly check & fix following errors:
-          </p>
-          <ul>
-            <li>
-              You don't have a publisher profile. -{" "}
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowPublisherProfile(true);
-                }}
-              >
-                Apply for Publisher Profile
-              </a>
-            </li>
-          </ul>
-          <div className={styles.alertActions}>
-            <div className={styles.needHelp}>
-              <FaQuestionCircle /> Need help?
+          <div>
+            <p className={styles.alertText}>
+              Kindly check & fix following errors:
+            </p>
+            <ul>
+              <li>
+                You don't have a publisher profile. -{" "}
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowPublisherProfile(true);
+                  }}
+                >
+                  Apply for Publisher Profile
+                </a>
+              </li>
+            </ul>
+            <div className={styles.alertActions}>
+              <div className={styles.needHelp}>
+                <FaQuestionCircle /> Need help?
+              </div>
+              <button className={styles.chatBtn}>
+                <FaComments /> Chat with Support
+              </button>
+              <button className={styles.ticketBtn}>
+                <FaTicketAlt /> Create Support Ticket
+              </button>
             </div>
-            <button className={styles.chatBtn}>
-              <FaComments /> Chat with Support
-            </button>
-            <button className={styles.ticketBtn}>
-              <FaTicketAlt /> Create Support Ticket
-            </button>
           </div>
         </div>
         <div className={styles.warning}>
@@ -415,16 +422,22 @@ const ReferralProgram = () => (
 const Publisher = () => {
   const [activeTab, setActiveTab] = useState("publisher");
   const [activeItem, setActiveItem] = useState("dashboard");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [showPublisherProfile, setShowPublisherProfile] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsSidebarOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const renderActiveComponent = () => {
     switch (activeItem) {
@@ -470,70 +483,71 @@ const Publisher = () => {
   }
 
   return (
-    <div className={styles.dashboardLayout}>
-      <DashboardHeader toggleSidebar={toggleSidebar} />
+    <>
+      <div
+        className={`${styles.overlay} ${isSidebarOpen ? styles.show : ""}`}
+        onClick={toggleSidebar}
+      ></div>
+      <div className={styles.dashboardLayout}>
+        <DashboardHeader onMenuToggle={toggleSidebar} />
 
-      {/* Only one sidebar at a time */}
-      <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.mobileOpen : ''}`}>
-        <Sidebar
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          activeItem={activeItem}
-          setActiveItem={setActiveItem}
-        />
-      </aside>
+        <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.mobileOpen : ""}`}>
+          <Sidebar
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            activeItem={activeItem}
+            setActiveItem={setActiveItem}
+            onMenuToggle={toggleSidebar}
+          />
+        </aside>
 
-      <main className={styles.mainContent}>{renderActiveComponent()}</main>
+        <main className={styles.mainContent}>{renderActiveComponent()}</main>
 
-      <aside className={styles.rightSidebar}>
-        <div className={styles.widget}>
-          <h4>Useful Resources</h4>
-          <a href="#">Understanding various Campaign Types (Overview)</a>
-        </div>
-
-        <div className={`${styles.widget} ${styles.referWidget}`}>
-          <h4>Refer & Earn UNLIMITED 🤑</h4>
-          <p>Share your referral link with friends to start earning.</p>
-          <div className={styles.referralLink}>
-            <span>https://cpidroid.com/?ref=13084</span>
-            <FaLink />
+        <aside className={styles.rightSidebar}>
+          <div className={styles.widget}>
+            <h4>Useful Resources</h4>
+            <a href="#">Understanding various Campaign Types (Overview)</a>
           </div>
-          <div className={styles.shareButtons}>
-            <span>SHARE</span>
-            <button>
-              <FaFacebookF />
-            </button>
-            <button>
-              <FaTwitter />
-            </button>
-            <button>
-              <FaWhatsapp />
-            </button>
-            <button>
-              <FaShareAlt />
-            </button>
-          </div>
-        </div>
-        <div className={styles.widget}>
-          <h4>Membership</h4>
-          <div className={styles.membershipInfo}>
-            <div className={styles.membershipIcon}>
-              <FaFlag />
+
+          <div className={`${styles.widget} ${styles.referWidget}`}>
+            <h4>Refer & Earn UNLIMITED 🤑</h4>
+            <p>Share your referral link with friends to start earning.</p>
+            <div className={styles.referralLink}>
+              <span>https://cpidroid.com/?ref=13084</span>
+              <FaLink />
             </div>
-            <div>
-              <p>FREE</p>
-              <a href="#">Manage Membership</a>
+            <div className={styles.shareButtons}>
+              <span>SHARE</span>
+              <button>
+                <FaFacebookF />
+              </button>
+              <button>
+                <FaTwitter />
+              </button>
+              <button>
+                <FaWhatsapp />
+              </button>
+              <button>
+                <FaShareAlt />
+              </button>
             </div>
           </div>
-        </div>
-        <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
-      </aside>
-
-      {/* Mobile sidebar overlay and content */}
-      {isSidebarOpen && (
-        <div className={styles.overlay} onClick={closeSidebar}></div>
-      )}
-    </div>
+          <div className={styles.widget}>
+            <h4>Membership</h4>
+            <div className={styles.membershipInfo}>
+              <div className={styles.membershipIcon}>
+                <FaFlag />
+              </div>
+              <div>
+                <p>FREE</p>
+                <a href="#">Manage Membership</a>
+              </div>
+            </div>
+          </div>
+          <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
+        </aside>
+      </div>
+    </>
   );
 };
 
