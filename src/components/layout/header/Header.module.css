@@ -136,27 +136,49 @@
 }
 
 .advertisePromo {
-  background: #f0f6ff;
+  background: linear-gradient(135deg, #e9f7fe, #d1edff);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .advertisePromo h3 {
   margin: 0 0 10px 0;
   font-size: 18px;
+  color: #212529;
+  position: relative;
+  font-weight: 700;
+}
+.advertisePromo h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 8px 0 0;
+  border-radius: 2px;
 }
 .advertisePromo p {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #495057;
 }
 .advertisePromo button {
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+.advertisePromo button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 .advertiseLinks {
   display: grid;
@@ -167,11 +189,33 @@
 .advertiseLinks h4 {
   margin: 0 0 10px 0;
   font-size: 15px;
+  color: #212529;
+  position: relative;
+  font-weight: 600;
+}
+.advertiseLinks h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 5px 0 0;
+  border-radius: 1px;
 }
 .advertiseLinks a {
   display: block;
-  padding: 5px 0;
-  color: #555;
+  padding: 8px 0;
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+.advertiseLinks a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+  transform: translateX(3px);
 }
 .newBadge {
   background-color: #28a745;
@@ -374,32 +418,56 @@
 }
 
 .mobileAdvertisePromo {
-  background: #f0f6ff;
+  background: linear-gradient(135deg, #e9f7fe, #d1edff);
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: left;
   margin-bottom: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .mobileAdvertisePromo h3 {
   margin: 0 0 10px 0;
   font-size: 16px;
+  color: #212529;
+  position: relative;
+  font-weight: 700;
+}
+
+.mobileAdvertisePromo h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 8px 0 0;
+  border-radius: 2px;
 }
 
 .mobileAdvertisePromo p {
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 15px;
+  color: #495057;
 }
 
 .mobileAdvertisePromo button {
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
   border: none;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.mobileAdvertisePromo button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
 .mobileAdvertiseLinks {
@@ -413,14 +481,36 @@
 .mobileAdvertiseLinks h4 {
   margin: 0 0 10px 0;
   font-size: 14px;
+  color: #212529;
+  position: relative;
+  font-weight: 600;
+}
+
+.mobileAdvertiseLinks h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 5px 0 0;
+  border-radius: 1px;
 }
 
 .mobileAdvertiseLinks a {
   display: block;
-  padding: 5px 0;
-  color: #555;
+  padding: 8px 12px;
+  color: #007bff;
   text-decoration: none;
   font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.mobileAdvertiseLinks a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+  transform: translateX(3px);
 }
 
 .mobileNewBadge {
