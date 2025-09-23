@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-  position: absolute;
+  position: relative; /* Changed from absolute to relative to contain absolutely positioned children */
   top: 0;
   left: 0;
   width: 100%;
@@ -36,15 +36,23 @@ body {
   height: 80px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: #007bff;
-  text-decoration: none;
+.logoImage {
+  height: 40px;
+  width: auto;
 }
 
-.logo span {
-  color: #28a745;
+/* Tablets */
+@media (max-width: 768px) {
+  .logoImage {
+    height: 35px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .logoImage {
+    height: 30px;
+  }
 }
 
 .navLinks {
@@ -358,16 +366,17 @@ body {
 }
 
 .mobileNav {
-  display: none; /* Hide by default, show with JS */
+  display: flex; /* Ensure it's visible when rendered */
   flex-direction: column;
   background: #fff;
   padding: 20px 5%;
   position: absolute;
-  top: 80px;
+  top: 100%; /* Position below the header */
   left: 0;
   right: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  overflow: visible; /* Ensure content is not clipped */
 }
 
 .mobileMenuItem {
@@ -647,10 +656,6 @@ body {
     height: 70px;
   }
 
-  .logo {
-    font-size: 24px;
-  }
-
   .featuresDropdown {
     width: 400px;
     grid-template-columns: 1fr;
@@ -735,11 +740,8 @@ body {
     height: 60px;
     padding: 0 2%;
   }
-  .logo {
-    font-size: 20px;
-  }
   .mobileNav {
-    top: 60px;
+    top: 100%; /* Position below the header */
     padding: 15px 3%;
   }
 }
