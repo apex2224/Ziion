@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
+// Import ScrollReveal hook
+import useScrollReveal from "./hooks/useScrollReveal";
+
 import Blog from "./components/sections/rbf-faq/Blog";
 import Pricing from "./components/pages/pricing/Pricing";
 import FAQ from "./components/sections/rbf-faq/FAQ";
@@ -46,9 +49,29 @@ import BecomePublisher from "./components/layout/header/links/BecomePublisher";
 // Awesome Text Animation Demo
 import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
 
+// ScrollReveal Demo
+import ScrollRevealDemo from "./components/pages/ScrollRevealDemo";
+
+// Define which routes should NOT have ScrollReveal
+const DASHBOARD_ROUTES = [
+  '/advertiser',
+  '/publisher',
+  '/aso-booster',
+  '/lets-chat',
+  '/lets-talk'
+];
+
+const MainLayout = ({ children, pathname }) => {
+  // Enable ScrollReveal only if current path is not in dashboard routes
+  const shouldReveal = !DASHBOARD_ROUTES.includes(pathname);
+  useScrollReveal(shouldReveal);
+
+  return <div className="route-container">{children}</div>;
+};
+
 const LandingPage = () => {
   return (
-    <div className="route-container">
+    <MainLayout pathname="/">
       <Header />
       <TopPage />
       <PromotionalBenefits />
@@ -60,9 +83,8 @@ const LandingPage = () => {
       <FAQ />
       <hr />
       <Blog />
-
       <Footer />
-    </div>
+    </MainLayout>
   );
 };
 
@@ -74,234 +96,244 @@ const App = () => {
         <Route
           path="/all-plans"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/all-plans">
               <ViewAllPlans />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/login"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/login">
               <Login />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/signup"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/signup">
               <SignUp />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/contact"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/contact">
               <Contact />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/advertiser"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/advertiser">
               <Advertiser />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/publisher"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/publisher">
               <Publisher />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/aso-booster"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/aso-booster">
               <ASObooster />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/lets-chat"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/lets-chat">
               <LetsChat />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/lets-talk"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/lets-talk">
               <LetsTalk />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/fraud-detection"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/fraud-detection">
               <FraudDetection />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/boost-engagement"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/boost-engagement">
               <BoostEngagement />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/awesome-text-demo"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/awesome-text-demo">
               <AwesomeTextDemo />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/tracking-solutions"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/tracking-solutions">
               <TrackingSolutions />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/android-ios-web"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/android-ios-web">
               <AndroidIOSWeb />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/incent-non-incent"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/incent-non-incent">
               <IncentNonIncent />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/multiple-pricing-models"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/multiple-pricing-models">
               <MultiplePricingModels />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/cpidroid-blog"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/cpidroid-blog">
               <CPIDroidBlog />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/cpidroid-support"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/cpidroid-support">
               <CPIDroidSupport />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/contact-cpidroid"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/contact-cpidroid">
               <ContactCPIDroid />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/android-installs"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/android-installs">
               <CPIDroidBlogPage />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/ios-installs"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/ios-installs">
               <IOSInstalls />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/android-keyword-installs"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/android-keyword-installs">
               <AndroidKeywordInstalls />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/ios-keyword-installs"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/ios-keyword-installs">
               <IOSKeywordInstalls />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/android-apk-installs"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/android-apk-installs">
               <AndroidAPKInstalls />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/web-traffic"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/web-traffic">
               <WebTraffic />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/android-booster"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/android-booster">
               <AndroidBooster />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/ios-booster"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/ios-booster">
               <IOSBooster />
-            </div>
+            </MainLayout>
           }
         />
         <Route
           path="/offerwall-monetization"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/offerwall-monetization">
               <OfferwallMonetization />
-            </div>
+            </MainLayout>
           }
         />
 
         <Route
           path="/become-publisher"
           element={
-            <div className="route-container">
+            <MainLayout pathname="/become-publisher">
               <BecomePublisher />
-            </div>
+            </MainLayout>
+          }
+        />
+        
+        {/* ScrollReveal Demo Route */}
+        <Route
+          path="/scroll-reveal-demo"
+          element={
+            <MainLayout pathname="/scroll-reveal-demo">
+              <ScrollRevealDemo />
+            </MainLayout>
           }
         />
       </Routes>

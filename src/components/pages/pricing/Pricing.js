@@ -11,15 +11,15 @@ import { Link } from "react-router-dom";
 
 const Pricing = () => {
   return (
-    <section className={styles.pricingSection}>
-      <h2 className={styles.title}>Pricing</h2>
-      <p className={styles.subtitle}>
+    <section className={`${styles.pricingSection} reveal`}>
+      <h2 className={`${styles.title} reveal-top`}>Pricing</h2>
+      <p className={`${styles.subtitle} reveal`}>
         No additional costs. Pay for what matters to you.
       </p>
 
-      <div className={styles.contentGrid}>
+      <div className={`${styles.contentGrid} reveal-bottom`}>
         <div
-          className={styles.priceCard}
+          className={`${styles.priceCard} reveal-left`}
         >
           <div className={styles.priceHeader}>
             <span className={styles.from}>from</span>
@@ -49,8 +49,8 @@ const Pricing = () => {
           <div className={`${styles.wave} ${styles.wave2}`}></div>
         </div>
 
-        <div className={styles.featuresGrid}>
-          <div className={styles.featureItem}>
+        <div className={`${styles.featuresGrid} reveal-right`}>
+          <div className={`${styles.featureItem} reveal-delay-1`}>
             <FaBullhorn className={styles.featureIcon} />
             <h3>Variety of campaigns</h3>
             <p>
@@ -58,7 +58,7 @@ const Pricing = () => {
               CPC | CPI | CPA campaigns as per your goals.
             </p>
           </div>
-          <div className={styles.featureItem}>
+          <div className={`${styles.featureItem} reveal-delay-2`}>
             <FaChartLine className={styles.featureIcon} />
             <h3>Variety of traffic</h3>
             <p>
@@ -66,7 +66,7 @@ const Pricing = () => {
               options. Just choose which suites your needs.
             </p>
           </div>
-          <div className={styles.featureItem}>
+          <div className={`${styles.featureItem} reveal-delay-3`}>
             <FaTimesCircle className={styles.featureIcon} />
             <h3>Terminate anytime</h3>
             <p>
@@ -74,7 +74,7 @@ const Pricing = () => {
               refunded back to balance, no hidden costs or fees.
             </p>
           </div>
-          <div className={styles.featureItem}>
+          <div className={`${styles.featureItem} reveal-delay-4`}>
             <FaCheckCircle className={styles.featureIcon} />
             <h3>Real conversions</h3>
             <p>

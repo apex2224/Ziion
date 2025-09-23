@@ -96,7 +96,7 @@ const rightColumnFaqs = [
 // A reusable component for each FAQ item
 const FaqItem = ({ faq, isOpen, onToggle }) => {
   return (
-    <div className={styles.faqItem}>
+    <div className={`${styles.faqItem} ${isOpen ? 'reveal' : ''}`}>
       <h3>
         <button
           className={styles.questionButton}
@@ -128,8 +128,8 @@ const FAQ = () => {
   };
 
   return (
-    <section className={styles.faqSection}>
-      <div className={styles.header}>
+    <section className={`${styles.faqSection} reveal`}>
+      <div className={`${styles.header} reveal-top`}>
         <span className={styles.tag}>FAQ</span>
         <h2 className={styles.title}>App Marketing Services FAQs</h2>
         <p className={styles.subtitle}>
@@ -137,8 +137,8 @@ const FAQ = () => {
         </p>
       </div>
 
-      <div className={styles.faqGrid}>
-        <div className={styles.faqColumn}>
+      <div className={`${styles.faqGrid} reveal-bottom`}>
+        <div className={`${styles.faqColumn} reveal-left`}>
           {leftColumnFaqs.map((faq) => (
             <FaqItem
               key={faq.id}
@@ -148,7 +148,7 @@ const FAQ = () => {
             />
           ))}
         </div>
-        <div className={styles.faqColumn}>
+        <div className={`${styles.faqColumn} reveal-right`}>
           {rightColumnFaqs.map((faq) => (
             <FaqItem
               key={faq.id}
@@ -160,7 +160,7 @@ const FAQ = () => {
         </div>
       </div>
 
-      <div className={styles.footer}>
+      <div className={`${styles.footer} reveal`}>
         <p>
           Want more FAQs? <a href="/">Explore more faqs</a>
         </p>
