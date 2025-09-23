@@ -55,10 +55,16 @@
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow-y: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
   position: relative;
   z-index: 101;
   transition: transform 0.3s ease-in-out;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 .mainContent {

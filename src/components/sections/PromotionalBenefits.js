@@ -29,15 +29,15 @@ const benefitsData = [
 
 const PromotionalBenefits = () => {
   return (
-    <section className={styles.benefitsSection}>
-      <div className={styles.topText}>
+    <section className={`${styles.benefitsSection} reveal`}>
+      <div className={`${styles.topText} reveal-top`}>
         <p className={styles.eyebrowText}>Our Promotional Benefits</p>
         <h1>ZiionTechnology makes app marketing easy and fast.</h1>
       </div>
 
-      <div className={styles.cardsContainer}>
-        {benefitsData.map((benefit) => (
-          <div key={benefit.title} className={styles.card}>
+      <div className={`${styles.cardsContainer} reveal-bottom`}>
+        {benefitsData.map((benefit, index) => (
+          <div key={benefit.title} className={`${styles.card} reveal-delay-${index + 1}`}>
             <div className={`${styles.iconContainer} ${styles[benefit.theme]}`}>
               {benefit.icon}
             </div>
@@ -47,7 +47,7 @@ const PromotionalBenefits = () => {
         ))}
       </div>
 
-      <p className={styles.footerText}>
+      <p className={`${styles.footerText} reveal`}>
         It is fast and easy. Create your first and ongoing campaign with Ziion
         Technology.
       </p>

@@ -94,8 +94,8 @@ const Blog = () => {
   };
 
   return (
-    <section className={styles.blogSection}>
-      <div className={styles.header}>
+    <section className={`${styles.blogSection} reveal`}>
+      <div className={`${styles.header} reveal-top`}>
         <span className={styles.tag}>CPIDROID NEWS</span>
         <h2 className={styles.title}>
           Read our <span className={styles.highlight}>news & blogs</span>
@@ -106,9 +106,9 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className={styles.postGrid}>
-        {currentPosts.map((post) => (
-          <article key={post.id} className={styles.postCard}>
+      <div className={`${styles.postGrid} reveal-bottom`}>
+        {currentPosts.map((post, index) => (
+          <article key={post.id} className={`${styles.postCard} reveal-delay-${index + 1}`}>
             <div className={styles.cardImageContainer}>
               <a href={post.url}>
                 <img
@@ -144,7 +144,7 @@ const Blog = () => {
       </div>
 
       {/* Pagination Controls */}
-      <div className={styles.paginationControls}>
+      <div className={`${styles.paginationControls} reveal`}>
         <button 
           className={`${styles.paginationButton} ${currentPage === 1 ? styles.disabled : ''}`}
           onClick={handlePrevPage}
