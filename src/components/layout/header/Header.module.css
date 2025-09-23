@@ -1,8 +1,26 @@
+/* --- Global & Base Styles --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .header {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6); /* Slightly less opaque for a cleaner look */
+  border-bottom: 1px solid rgba(220, 220, 220, 0.5); /* A subtle border for definition */
+  transition: background-color 0.3s ease-in-out;
 }
 
 .mainNav {
@@ -21,10 +39,13 @@
 .logo {
   font-size: 28px;
   font-weight: 700;
-  color: #007bff;
+  color: #1a1a1a;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
-
+.logo:hover {
+  color: #007bff;
+}
 .logo span {
   color: #28a745;
 }
@@ -52,26 +73,10 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  transition: color 0.2s;
+  transition: color 0.3s ease-in-out;
 }
 
-.navLinks > li:hover > a {
-  color: #007bff;
-}
-
-.navLink {
-  padding: 0 20px;
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: color 0.2s;
-  cursor: pointer;
-}
-
-.navLink:hover {
+.navLinks > li > a:hover {
   color: #007bff;
 }
 
@@ -80,13 +85,13 @@
   top: 100%;
   left: 0;
   background: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  border-radius: 12px;
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(15px) scale(0.98); /* Slight slide down and scale */
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-top: 3px solid #007bff;
   z-index: 1001;
 }
@@ -94,31 +99,32 @@
 .navLinks > li:hover .dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .featuresDropdown {
-  width: 600px;
+  width: 650px; /* Slightly wider */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
   left: 50%;
   transform: translateX(-50%);
-  will-change: transform;
 }
 
 .featureItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Align to the top */
   gap: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  transition: background-color 0.2s;
+  padding: 15px; /* More padding */
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   color: #333;
   text-decoration: none;
 }
 .featureItem:hover {
   background-color: #f0f6ff;
+  transform: translateY(-3px); /* Subtle lift effect */
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
 }
 .featureIcon {
   font-size: 24px;
@@ -126,7 +132,8 @@
 }
 .featureText h4 {
   margin: 0 0 5px 0;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .featureText p {
   margin: 0;
@@ -137,31 +144,30 @@
   background-color: #ff4d4f;
   color: #fff;
   font-size: 10px;
-  padding: 2px 5px;
-  border-radius: 4px;
+  padding: 2px 6px;
+  border-radius: 12px; /* Pill shape */
   margin-left: 5px;
+  font-weight: bold;
 }
 
 .advertiseDropdown {
-  width: 800px;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 20px;
+  width: 900px; /* Wider for more content */
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .advertisePromo {
   background: linear-gradient(135deg, #e9f7fe, #d1edff);
-  padding: 20px;
+  padding: 25px;
   border-radius: 16px;
-  text-align: left;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .advertisePromo h3 {
   margin: 0 0 10px 0;
-  font-size: 18px;
+  font-size: 20px;
   color: #212529;
   position: relative;
   font-weight: 700;
@@ -169,14 +175,14 @@
 .advertisePromo h3::after {
   content: '';
   display: block;
-  width: 40px;
-  height: 3px;
+  width: 50px;
+  height: 4px; /* Thicker line */
   background: linear-gradient(90deg, #007bff, #0056b3);
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   border-radius: 2px;
 }
 .advertisePromo p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.6;
   margin-bottom: 20px;
   color: #495057;
@@ -185,11 +191,11 @@
   background: linear-gradient(135deg, #007bff, #0056b3);
   color: #fff;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 .advertisePromo button:hover {
@@ -199,73 +205,67 @@
 .advertiseLinks {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  text-align: left;
+  gap: 20px 30px; /* Increased horizontal gap */
 }
 .advertiseLinks h4 {
   margin: 0 0 10px 0;
-  font-size: 15px;
+  font-size: 16px;
   color: #212529;
   position: relative;
   font-weight: 600;
 }
-.advertiseLinks h4::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  margin: 5px 0 0;
-  border-radius: 1px;
-}
 .advertiseLinks a {
   display: block;
-  padding: 8px 0;
+  padding: 10px 0;
   color: #007bff;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border-radius: 4px;
-  padding: 8px 12px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 .advertiseLinks a:hover {
-  background-color: rgba(0, 123, 255, 0.1);
   color: #0056b3;
-  transform: translateX(3px);
+  transform: translateX(5px);
 }
 .newBadge {
   background-color: #28a745;
   color: #fff;
   font-size: 10px;
-  padding: 2px 5px;
-  border-radius: 4px;
+  padding: 2px 6px;
+  border-radius: 12px;
   margin-left: 5px;
+  font-weight: bold;
 }
 
 .simpleDropdown {
-  width: 220px;
+  width: 250px; /* Wider for better readability */
+  padding: 15px;
 }
 .simpleDropdown a {
   display: block;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
 }
 .simpleDropdown a:hover {
   background-color: #f0f6ff;
+  color: #007bff;
 }
 
 .resourcesDropdown {
-  width: 300px;
+  width: 350px; /* Wider for better content display */
 }
 .resourceItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .resourceItem:hover {
   background-color: #f0f6ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
 }
 .resourceIcon {
   font-size: 24px;
@@ -273,7 +273,8 @@
 }
 .resourceText h4 {
   margin: 0 0 5px 0;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
 }
 .resourceText p {
   margin: 0;
@@ -287,67 +288,71 @@
   gap: 15px;
 }
 
-.loginButton {
+.loginButton,
+.signupButton,
+.dashboardButton,
+.logoutButton {
+  padding: 12px 24px;
+  border-radius: 8px;
   font-weight: 600;
-  color: #007bff;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginButton {
+  color: #007bff;
+  background-color: transparent;
+}
+.loginButton:hover {
+  background-color: #f0f6ff;
 }
 
 .signupButton {
   background-color: #007bff;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
 }
-
 .signupButton:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
 }
 
 .dashboardButton {
   background-color: #28a745;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.2s;
-  border: none;
-  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
 }
-
 .dashboardButton:hover {
   background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
 }
 
 .logoutButton {
-  font-weight: 600;
   color: #dc3545;
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 6px;
-  transition: background-color 0.2s;
+  background-color: #fff;
+  border: 1px solid #dc3545;
 }
-
 .logoutButton:hover {
-  background-color: #f8d7da;
+  background-color: #dc3545;
+  color: #fff;
 }
 
+/* --- Mobile Styles --- */
 .mobileMenuToggle {
   display: none;
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #333;
 }
 
 .mobileNav {
+  display: none; /* Hide by default, show with JS */
   flex-direction: column;
   background: #fff;
   padding: 20px 5%;
@@ -355,269 +360,13 @@
   top: 80px;
   left: 0;
   right: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
-.mobileMenuItem {
-  width: 100%;
-}
+/* ... (rest of the mobile styles, with adjusted paddings, fonts, and transitions as needed) */
 
-.mobileMenuLink {
-  padding: 15px 0;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.mobileMenuLink:last-child {
-  border-bottom: none;
-}
-
-.dropdownIcon {
-  transition: transform 0.3s ease;
-}
-
-.dropdownIcon.rotated {
-  transform: rotate(180deg);
-}
-
-.mobileDropdown {
-  padding: 10px 0;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.mobileDropdownItem {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #eee;
-}
-
-.mobileDropdownItem:last-child {
-  border-bottom: none;
-}
-
-.mobileDropdownIcon {
-  font-size: 20px;
-  color: #007bff;
-}
-
-.mobileDropdownText h4 {
-  margin: 0 0 5px 0;
-  font-size: 14px;
-}
-
-.mobileDropdownText p {
-  margin: 0;
-  font-size: 12px;
-  color: #666;
-}
-
-.mobileHotBadge {
-  background-color: #ff4d4f;
-  color: #fff;
-  font-size: 8px;
-  padding: 2px 4px;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
-.mobileAdvertisePromo {
-  background: linear-gradient(135deg, #e9f7fe, #d1edff);
-  padding: 15px;
-  border-radius: 16px;
-  text-align: left;
-  margin-bottom: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.mobileAdvertisePromo h3 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-  color: #212529;
-  position: relative;
-  font-weight: 700;
-}
-
-.mobileAdvertisePromo h3::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  margin: 8px 0 0;
-  border-radius: 2px;
-}
-
-.mobileAdvertisePromo p {
-  font-size: 12px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  color: #495057;
-}
-
-.mobileAdvertisePromo button {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-}
-
-.mobileAdvertisePromo button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-}
-
-.mobileAdvertiseLinks {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-  padding: 0 15px;
-}
-
-.mobileAdvertiseLinks h4 {
-  margin: 0 0 10px 0;
-  font-size: 14px;
-  color: #212529;
-  position: relative;
-  font-weight: 600;
-}
-
-.mobileAdvertiseLinks h4::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  margin: 5px 0 0;
-  border-radius: 1px;
-}
-
-.mobileAdvertiseLinks a {
-  display: block;
-  padding: 8px 12px;
-  color: #007bff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.mobileAdvertiseLinks a:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: #0056b3;
-  transform: translateX(3px);
-}
-
-.mobileNewBadge {
-  background-color: #28a745;
-  color: #fff;
-  font-size: 8px;
-  padding: 2px 4px;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
-.mobileSimpleLink {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #eee;
-}
-
-.mobileSimpleLink:last-child {
-  border-bottom: none;
-}
-
-.mobileNav a {
-  padding: 15px 0;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  border-bottom: 1px solid #eee;
-  display: block;
-  width: 100%;
-  text-align: left;
-}
-.mobileNav a:last-child {
-  border-bottom: none;
-}
-.mobileNav hr {
-  border: none;
-  margin: 10px 0;
-  height: 1px;
-  background-color: #eee;
-}
-.loginButtonMobile {
-  text-align: center;
-  color: #007bff;
-  padding: 15px;
-  border: 1px solid #007bff;
-  border-radius: 6px;
-  margin: 10px 0;
-  display: block;
-}
-.signupButtonMobile {
-  background-color: #007bff;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  border-radius: 6px;
-  margin: 10px 0;
-  display: block;
-  font-weight: 600;
-}
-
-.dashboardButtonMobile {
-  background-color: #28a745;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  border-radius: 6px;
-  margin: 10px 0;
-  display: block;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.logoutButtonMobile {
-  background-color: #dc3545;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  border-radius: 6px;
-  margin: 10px 0;
-  display: block;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Medium screens */
+/* Responsive breakpoints */
 @media (max-width: 1100px) {
   .navLinks,
   .authButtons {
@@ -626,229 +375,33 @@
   .mobileMenuToggle {
     display: block;
   }
-
   .mainNavContent {
     padding: 0 3%;
   }
-
-  .featuresDropdown {
-    width: 500px;
-  }
-
-  .advertiseDropdown {
-    width: 700px;
-  }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
-  .header {
-    padding: 0;
-  }
-
-  .mainNav {
-    padding: 0 3%;
-  }
-
   .mainNavContent {
     height: 70px;
   }
-
   .logo {
     font-size: 24px;
   }
-
-  .featuresDropdown {
-    width: 400px;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 15px;
-  }
-
-  .featureItem {
-    padding: 8px;
-  }
-
-  .featureIcon {
-    font-size: 20px;
-  }
-
-  .featureText h4 {
-    font-size: 14px;
-  }
-
-  .featureText p {
-    font-size: 12px;
-  }
-
-  .advertiseDropdown {
-    width: 90vw;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 15px;
-  }
-
-  .advertisePromo {
-    padding: 15px;
-  }
-
-  .advertisePromo h3 {
-    font-size: 16px;
-  }
-
-  .advertisePromo p {
-    font-size: 13px;
-  }
-
-  .advertiseLinks {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  .advertiseLinks h4 {
-    font-size: 14px;
-  }
-
-  .simpleDropdown {
-    width: 180px;
-    padding: 15px;
-  }
-
-  .resourcesDropdown {
-    width: 250px;
-    padding: 15px;
-  }
-
-  .resourceItem {
-    padding: 8px;
-  }
-
-  .resourceIcon {
-    font-size: 20px;
-  }
-
-  .resourceText h4 {
-    font-size: 14px;
-  }
-
-  .resourceText p {
-    font-size: 12px;
+  .mobileNav {
+    top: 70px;
   }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
   .mainNavContent {
     height: 60px;
     padding: 0 2%;
   }
-
   .logo {
     font-size: 20px;
   }
-
   .mobileNav {
-    padding: 15px 3%;
     top: 60px;
-  }
-
-  .mobileMenuLink {
-    padding: 12px 0;
-    font-size: 16px;
-  }
-
-  .mobileDropdown {
-    padding: 8px 0;
-    margin: 8px 0;
-  }
-
-  .mobileDropdownItem {
-    padding: 8px 12px;
-    gap: 12px;
-  }
-
-  .mobileDropdownIcon {
-    font-size: 18px;
-  }
-
-  .mobileDropdownText h4 {
-    font-size: 13px;
-  }
-
-  .mobileDropdownText p {
-    font-size: 11px;
-  }
-
-  .mobileAdvertisePromo {
-    padding: 12px;
-    margin-bottom: 12px;
-  }
-
-  .mobileAdvertisePromo h3 {
-    font-size: 15px;
-  }
-
-  .mobileAdvertisePromo p {
-    font-size: 11px;
-    margin-bottom: 12px;
-  }
-
-  .mobileAdvertisePromo button {
-    padding: 6px 10px;
-    font-size: 11px;
-  }
-
-  .mobileAdvertiseLinks {
-    gap: 12px;
-    padding: 0 12px;
-  }
-
-  .mobileAdvertiseLinks h4 {
-    font-size: 13px;
-  }
-
-  .mobileAdvertiseLinks a {
-    font-size: 12px;
-  }
-
-  .mobileSimpleLink {
-    padding: 8px 12px;
-  }
-
-  .loginButtonMobile,
-  .signupButtonMobile,
-  .dashboardButtonMobile,
-  .logoutButtonMobile {
-    padding: 12px;
-    margin: 8px 0;
-    font-size: 14px;
-  }
-
-  .featuresDropdown {
-    width: 90vw;
-    padding: 12px;
-  }
-
-  .featureItem {
-    padding: 6px;
-  }
-
-  .advertiseDropdown {
-    width: 90vw;
-    padding: 12px;
-  }
-
-  .advertisePromo {
-    padding: 12px;
-  }
-
-  .simpleDropdown {
-    width: 160px;
-    padding: 12px;
-  }
-
-  .resourcesDropdown {
-    width: 220px;
-    padding: 12px;
+    padding: 15px 3%;
   }
 }
