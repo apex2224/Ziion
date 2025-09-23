@@ -39,13 +39,10 @@ body {
 .logo {
   font-size: 28px;
   font-weight: 700;
-  color: #1a1a1a;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-.logo:hover {
   color: #007bff;
+  text-decoration: none;
 }
+
 .logo span {
   color: #28a745;
 }
@@ -173,7 +170,7 @@ body {
   font-weight: 700;
 }
 .advertisePromo h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 50px;
   height: 4px; /* Thicker line */
@@ -213,6 +210,15 @@ body {
   color: #212529;
   position: relative;
   font-weight: 600;
+}
+.advertiseLinks h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 5px 0 0;
+  border-radius: 1px;
 }
 .advertiseLinks a {
   display: block;
@@ -364,9 +370,265 @@ body {
   z-index: 999;
 }
 
-/* ... (rest of the mobile styles, with adjusted paddings, fonts, and transitions as needed) */
+.mobileMenuItem {
+  width: 100%;
+}
 
-/* Responsive breakpoints */
+.mobileMenuLink {
+  padding: 15px 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobileMenuLink:last-child {
+  border-bottom: none;
+}
+
+.dropdownIcon {
+  transition: transform 0.3s ease;
+}
+
+.dropdownIcon.rotated {
+  transform: rotate(180deg);
+}
+
+.mobileDropdown {
+  padding: 10px 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.mobileDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileDropdownItem:last-child {
+  border-bottom: none;
+}
+
+.mobileDropdownIcon {
+  font-size: 20px;
+  color: #007bff;
+}
+
+.mobileDropdownText h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.mobileDropdownText p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.mobileHotBadge {
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 8px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.mobileAdvertisePromo {
+  background: linear-gradient(135deg, #e9f7fe, #d1edff);
+  padding: 15px;
+  border-radius: 16px;
+  text-align: left;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobileAdvertisePromo h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #212529;
+  position: relative;
+  font-weight: 700;
+}
+
+.mobileAdvertisePromo h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 8px 0 0;
+  border-radius: 2px;
+}
+
+.mobileAdvertisePromo p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.mobileAdvertisePromo button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.mobileAdvertisePromo button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.mobileAdvertiseLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  padding: 0 15px;
+}
+
+.mobileAdvertiseLinks h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #212529;
+  position: relative;
+  font-weight: 600;
+}
+
+.mobileAdvertiseLinks h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  margin: 5px 0 0;
+  border-radius: 1px;
+}
+
+.mobileAdvertiseLinks a {
+  display: block;
+  padding: 8px 12px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.mobileAdvertiseLinks a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+  transform: translateX(3px);
+}
+
+.mobileNewBadge {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 8px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.mobileSimpleLink {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileSimpleLink:last-child {
+  border-bottom: none;
+}
+
+.mobileNav a {
+  padding: 15px 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.mobileNav a:last-child {
+  border-bottom: none;
+}
+.mobileNav hr {
+  border: none;
+  margin: 10px 0;
+  height: 1px;
+  background-color: #eee;
+}
+.loginButtonMobile {
+  text-align: center;
+  color: #007bff;
+  padding: 15px;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+}
+.signupButtonMobile {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+  font-weight: 600;
+}
+
+.dashboardButtonMobile {
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.logoutButtonMobile {
+  background-color: #dc3545;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+  display: block;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Medium screens */
 @media (max-width: 1100px) {
   .navLinks,
   .authButtons {
@@ -384,14 +646,90 @@ body {
   .mainNavContent {
     height: 70px;
   }
+
   .logo {
     font-size: 24px;
   }
-  .mobileNav {
-    top: 70px;
+
+  .featuresDropdown {
+    width: 400px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .featureItem {
+    padding: 8px;
+  }
+
+  .featureIcon {
+    font-size: 20px;
+  }
+
+  .featureText h4 {
+    font-size: 14px;
+  }
+
+  .featureText p {
+    font-size: 12px;
+  }
+
+  .advertiseDropdown {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .advertisePromo {
+    padding: 15px;
+  }
+
+  .advertisePromo h3 {
+    font-size: 16px;
+  }
+
+  .advertisePromo p {
+    font-size: 13px;
+  }
+
+  .advertiseLinks {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .advertiseLinks h4 {
+    font-size: 14px;
+  }
+
+  .simpleDropdown {
+    width: 180px;
+    padding: 15px;
+  }
+
+  .resourcesDropdown {
+    width: 250px;
+    padding: 15px;
+  }
+
+  .resourceItem {
+    padding: 8px;
+  }
+
+  .resourceIcon {
+    font-size: 20px;
+  }
+
+  .resourceText h4 {
+    font-size: 14px;
+  }
+
+  .resourceText p {
+    font-size: 12px;
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
   .mainNavContent {
     height: 60px;

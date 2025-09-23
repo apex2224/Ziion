@@ -6,16 +6,17 @@ import {
   FaTrophy,
   FaSyncAlt,
   FaMobileAlt,
+  FaFire,
   FaBullseye,
   FaChartBar,
   FaBlog,
   FaLifeRing,
   FaPhoneAlt,
-  FaFire,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
 import styles from "./Header.module.css";
+import ZIION from "../../../assets/images/ZIION.png";
 
 const featuresData = [
   {
@@ -75,7 +76,21 @@ const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isScrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Check authentication status on component mount and when localStorage changes
   useEffect(() => {
@@ -144,9 +159,9 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={styles.mainNav}>
         <div className={styles.mainNavContent}>
-          <a href="/" className={styles.logo}>
-            ⚡️ CPIDroid
-          </a>
+          <Link to="/">
+            <img src={ZIION} alt="Ziion Logo" className={styles.logoImage} />
+          </Link>
 
           <ul className={styles.navLinks}>
             <li
@@ -236,31 +251,95 @@ const Header = () => {
                   <div className={styles.advertiseLinks}>
                     <div>
                       <h4>App Installs</h4>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-installs"); }}>Android Installs</a>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-installs"); }}>iOS Installs</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/android-installs");
+                        }}
+                      >
+                        Android Installs
+                      </a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/ios-installs");
+                        }}
+                      >
+                        iOS Installs
+                      </a>
                     </div>
                     <div>
                       <h4>Keyword Installs</h4>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-keyword-installs"); }}>Android Keyword Installs</a>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-keyword-installs"); }}>iOS Keyword Installs</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/android-keyword-installs");
+                        }}
+                      >
+                        Android Keyword Installs
+                      </a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/ios-keyword-installs");
+                        }}
+                      >
+                        iOS Keyword Installs
+                      </a>
                     </div>
                     <div>
                       <h4>
                         APK Installs{" "}
                         <span className={styles.newBadge}>New</span>
                       </h4>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-apk-installs"); }}>Android APK Installs</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/android-apk-installs");
+                        }}
+                      >
+                        Android APK Installs
+                      </a>
                     </div>
                     <div>
                       <h4>
                         Web Traffic <span className={styles.newBadge}>New</span>
                       </h4>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/web-traffic"); }}>Buy Web Traffic</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/web-traffic");
+                        }}
+                      >
+                        Buy Web Traffic
+                      </a>
                     </div>
                     <div>
                       <h4>MAM Booster</h4>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-booster"); }}>Android Booster</a>
-                      <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-booster"); }}>iOS Booster</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/android-booster");
+                        }}
+                      >
+                        Android Booster
+                      </a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate("/ios-booster");
+                        }}
+                      >
+                        iOS Booster
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -275,8 +354,24 @@ const Header = () => {
               </a>
               {openMenu === "monetize" && (
                 <div className={`${styles.dropdown} ${styles.simpleDropdown}`}>
-                  <a href="#" onClick={(e) => { e.preventDefault(); navigate("/offerwall-monetization"); }}>Offerwall Monetization</a>
-                  <a href="#" onClick={(e) => { e.preventDefault(); navigate("/become-publisher"); }}>Become Publisher</a>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/offerwall-monetization");
+                    }}
+                  >
+                    Offerwall Monetization
+                  </a>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/become-publisher");
+                    }}
+                  >
+                    Become Publisher
+                  </a>
                 </div>
               )}
             </li>
@@ -475,19 +570,47 @@ const Header = () => {
                 <div className={styles.mobileAdvertiseLinks}>
                   <div>
                     <h4>App Installs</h4>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-installs"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/android-installs");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       Android Installs
                     </a>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-installs"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/ios-installs");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       iOS Installs
                     </a>
                   </div>
                   <div>
                     <h4>Keyword Installs</h4>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-keyword-installs"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/android-keyword-installs");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       Android Keyword Installs
                     </a>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-keyword-installs"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/ios-keyword-installs");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       iOS Keyword Installs
                     </a>
                   </div>
@@ -496,7 +619,14 @@ const Header = () => {
                       APK Installs{" "}
                       <span className={styles.mobileNewBadge}>New</span>
                     </h4>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-apk-installs"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/android-apk-installs");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       Android APK Installs
                     </a>
                   </div>
@@ -505,16 +635,37 @@ const Header = () => {
                       Web Traffic{" "}
                       <span className={styles.mobileNewBadge}>New</span>
                     </h4>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/web-traffic"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/web-traffic");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       Buy Web Traffic
                     </a>
                   </div>
                   <div>
                     <h4>MAM Booster</h4>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/android-booster"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/android-booster");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       Android Booster
                     </a>
-                    <a href="#" onClick={(e) => { e.preventDefault(); navigate("/ios-booster"); setMobileMenuOpen(false); }}>
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate("/ios-booster");
+                        setMobileMenuOpen(false);
+                      }}
+                    >
                       iOS Booster
                     </a>
                   </div>
@@ -545,14 +696,22 @@ const Header = () => {
                 <a
                   href="#"
                   className={styles.mobileSimpleLink}
-                  onClick={(e) => { e.preventDefault(); navigate("/offerwall-monetization"); setMobileMenuOpen(false); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/offerwall-monetization");
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   Offerwall Monetization
                 </a>
                 <a
                   href="#"
                   className={styles.mobileSimpleLink}
-                  onClick={(e) => { e.preventDefault(); navigate("/become-publisher"); setMobileMenuOpen(false); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/become-publisher");
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   Become Publisher
                 </a>
@@ -658,4 +817,3 @@ const Header = () => {
 };
 
 export default Header;
-
