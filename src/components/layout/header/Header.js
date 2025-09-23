@@ -77,10 +77,42 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
-  // Check authentication status on component mount
+  // Check authentication status on component mount and when localStorage changes
   useEffect(() => {
-    const authStatus = localStorage.getItem("isAuthenticated") === "true";
-    setIsAuthenticated(authStatus);
+    const checkAuthStatus = () => {
+      const authStatus = localStorage.getItem("isAuthenticated") === "true";
+      setIsAuthenticated(authStatus);
+    };
+
+    // Check initial status
+    checkAuthStatus();
+
+    // Listen for storage changes (in case of login/logout in other tabs)
+    const handleStorageChange = (e) => {
+      if (e.key === "isAuthenticated") {
+        checkAuthStatus();
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    // Cleanup listener
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  // Also check auth status with polling as a backup
+  useEffect(() => {
+    const checkAuthStatus = () => {
+      const authStatus = localStorage.getItem("isAuthenticated") === "true";
+      setIsAuthenticated(authStatus);
+    };
+
+    // Poll for changes every second
+    const interval = setInterval(checkAuthStatus, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleMouseEnter = (menu) => setOpenMenu(menu);
@@ -606,14 +638,14 @@ const Header = () => {
               <Link
                 to="/login"
                 className={styles.loginButtonMobile}
-                onClick={toggleMobileMenu}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 LOGIN
               </Link>
               <Link
                 to="/signup"
                 className={styles.signupButtonMobile}
-                onClick={toggleMobileMenu}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 FREE SIGNUP
               </Link>
@@ -626,3 +658,4 @@ const Header = () => {
 };
 
 export default Header;
+

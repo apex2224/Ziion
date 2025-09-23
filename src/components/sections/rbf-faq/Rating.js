@@ -63,15 +63,15 @@ const Rating = () => {
   };
 
   return (
-    <section className={styles.ratingSection}>
-      <h2 className={styles.title}>
+    <section className={`${styles.ratingSection} reveal`}>
+      <h2 className={`${styles.title} reveal-top`}>
         Everyone's talking about{" "}
         <span className={styles.highlight}>CPIDroid</span>
       </h2>
 
-      <div className={styles.contentWrapper}>
+      <div className={`${styles.contentWrapper} reveal-bottom`}>
         {/* Left Card: Trustpilot Summary */}
-        <div className={styles.trustpilotCard}>
+        <div className={`${styles.trustpilotCard} reveal-left`}>
           <p className={styles.excellent}>Excellent</p>
           <div className={styles.cardStars}>
             {/* This simulates the 5-star graphic from Trustpilot */}
@@ -82,7 +82,7 @@ const Rating = () => {
         </div>
 
         {/* Right Card: Testimonial Carousel */}
-        <div className={styles.testimonialWrapper}>
+        <div className={`${styles.testimonialWrapper} reveal-right`}>
           <div className={styles.carouselContainer}>
             <button className={styles.carouselButtonLeft} onClick={goToPrevious}>
               <FaChevronLeft />
@@ -92,7 +92,7 @@ const Rating = () => {
               {testimonials.map((testimonial, index) => (
                 <div 
                   key={testimonial.id} 
-                  className={`${styles.testimonial} ${index === currentIndex ? styles.active : ''}`}
+                  className={`${styles.testimonial} ${index === currentIndex ? styles.active : ''} ${index === currentIndex ? 'reveal' : ''}`}
                 >
                   <div className={styles.testimonialStars}>
                     <StarRating count={5} />
@@ -128,7 +128,7 @@ const Rating = () => {
       </div>
 
       {/* Footer */}
-      <div className={styles.footer}>
+      <div className={`${styles.footer} reveal`}>
         <span className={styles.footerText}>See our 67+ reviews on</span>
         <TrustpilotLogo className={styles.footerLogo} />
         <Link to="/signup" className={styles.ctaButton}>Get Started</Link>
