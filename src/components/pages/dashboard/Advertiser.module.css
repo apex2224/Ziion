@@ -56,7 +56,7 @@
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
   z-index: 101;
   transition: transform 0.3s ease-in-out;

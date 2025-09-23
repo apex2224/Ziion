@@ -55,7 +55,7 @@
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
   z-index: 101;
   transition: transform 0.3s ease-in-out;
@@ -65,6 +65,12 @@
   grid-area: main;
   padding: 32px;
   overflow-y: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.mainContent::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 .rightSidebar {
