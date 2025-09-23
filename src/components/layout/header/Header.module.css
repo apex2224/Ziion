@@ -18,15 +18,9 @@
   height: 80px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.logo span {
-  color: #28a745;
+.logoImage {
+  height: 40px;
+  width: auto;
 }
 
 .navLinks {
@@ -167,7 +161,7 @@
   font-weight: 700;
 }
 .advertisePromo h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 40px;
   height: 3px;
@@ -210,7 +204,7 @@
   font-weight: 600;
 }
 .advertiseLinks h4::after {
-  content: '';
+  content: "";
   display: block;
   width: 30px;
   height: 2px;
@@ -452,7 +446,7 @@
 }
 
 .mobileAdvertisePromo h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 40px;
   height: 3px;
@@ -503,7 +497,7 @@
 }
 
 .mobileAdvertiseLinks h4::after {
-  content: '';
+  content: "";
   display: block;
   width: 30px;
   height: 2px;
@@ -652,10 +646,6 @@
 
   .mainNavContent {
     height: 70px;
-  }
-
-  .logo {
-    font-size: 24px;
   }
 
   .featuresDropdown {
