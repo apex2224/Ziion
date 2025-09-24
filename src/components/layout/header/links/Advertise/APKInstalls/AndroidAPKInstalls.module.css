@@ -266,6 +266,7 @@
   transform: scaleX(1);
 }
 
+/* Professional Icon Styling */
 .benefitIconWrapper {
   display: flex;
   justify-content: center;
@@ -464,7 +465,7 @@
   margin-bottom: 1rem;
 }
 
-.pricingRate {
+.pricingPrice {
   font-size: 2.5rem;
   font-weight: 800;
   color: #007bff;
@@ -545,6 +546,15 @@
   height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
   animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .ctaTitle {
@@ -705,15 +715,6 @@
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Responsive Styles */
 @media (max-width: 992px) {
   .pricingCards {
@@ -772,6 +773,21 @@
     padding: 2rem 1.5rem;
   }
   
+  .benefitIcon,
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .benefitTitle,
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+  
+  .pricingCard {
+    padding: 2rem 1.5rem;
+  }
+  
   .ctaSection {
     padding: 3rem 1.5rem;
     margin: 3rem 0;
@@ -785,9 +801,25 @@
     font-size: 1.1rem;
   }
   
-  .benefitsGrid,
-  .steps {
-    grid-template-columns: 1fr;
+  .benefitIcon,
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .benefitTitle,
+  .stepTitle,
+  .pricingName {
+    font-size: 1.2rem;
+  }
+  
+  .pricingPrice {
+    font-size: 2rem;
+  }
+  
+  .pricingButton {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -843,7 +875,7 @@
     font-size: 1.1rem;
   }
   
-  .pricingRate {
+  .pricingPrice {
     font-size: 2rem;
   }
   
@@ -876,5 +908,9 @@
   .modalHeader,
   .modalBody {
     padding: 1.5rem;
+  }
+  
+  .pricingFeatures li {
+    font-size: 0.9rem;
   }
 }
