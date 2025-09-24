@@ -19,7 +19,6 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .header::before {
@@ -42,7 +41,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: slideInDown 0.5s ease-out;
 }
 
 .description {
@@ -52,7 +50,6 @@
   max-width: 700px;
   margin: 0 auto 2rem;
   font-weight: 400;
-  animation: fadeIn 0.8s ease-out;
 }
 
 /* Content Layout */
@@ -76,7 +73,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: slideInLeft 0.7s ease-out;
 }
 
 .textSection:hover {
@@ -147,7 +143,6 @@
   color: #495057;
   line-height: 1.6;
   font-weight: 400;
-  animation: fadeInUp 0.4s ease-out;
 }
 
 /* Professional Icon Styling */
@@ -162,11 +157,6 @@
   flex-shrink: 0;
   margin-top: 0.25rem;
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.iconWrapper:hover {
-  transform: scale(1.1);
 }
 
 .iconWrapper svg {
@@ -190,7 +180,6 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  animation: slideInRight 0.7s ease-out;
 }
 
 .svgContainer {
@@ -210,11 +199,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.decorativeSvg:hover {
-  transform: scale(1.02);
 }
 
 /* Benefits Section */
@@ -230,7 +214,6 @@
   margin-bottom: 2.5rem;
   position: relative;
   font-weight: 700;
-  animation: fadeIn 0.6s ease-out;
 }
 
 .benefitsTitle::after {
@@ -259,7 +242,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 0.5s ease-out;
 }
 
 .benefitCard::before {
@@ -284,6 +266,7 @@
   transform: scaleX(1);
 }
 
+/* Professional Icon Styling */
 .benefitIconWrapper {
   display: flex;
   justify-content: center;
@@ -295,11 +278,6 @@
   height: 60px;
   color: #007bff;
   filter: drop-shadow(0 4px 8px rgba(0, 123, 255, 0.2));
-  transition: transform 0.3s ease;
-}
-
-.benefitCard:hover .benefitIcon {
-  transform: scale(1.1);
 }
 
 .benefitTitle {
@@ -327,7 +305,6 @@
   margin-bottom: 2.5rem;
   position: relative;
   font-weight: 700;
-  animation: fadeIn 0.6s ease-out;
 }
 
 .howItWorksTitle::after {
@@ -361,7 +338,6 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 0.4s ease-out;
 }
 
 .step::before {
@@ -399,11 +375,6 @@
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.step:hover .stepNumber {
-  transform: scale(1.1);
 }
 
 .stepTitle {
@@ -431,7 +402,6 @@
   margin-bottom: 2.5rem;
   position: relative;
   font-weight: 700;
-  animation: fadeIn 0.6s ease-out;
 }
 
 .pricingTitle::after {
@@ -459,7 +429,6 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 0.5s ease-out;
 }
 
 .pricingCard:hover {
@@ -470,7 +439,6 @@
 .pricingCard:nth-child(2) {
   border: 2px solid #007bff;
   box-shadow: 0 12px 40px rgba(0, 123, 255, 0.15);
-  animation: pulse 2s infinite;
 }
 
 .pricingCard:nth-child(2)::before {
@@ -497,7 +465,7 @@
   margin-bottom: 1rem;
 }
 
-.pricingRate {
+.pricingPrice {
   font-size: 2.5rem;
   font-weight: 800;
   color: #007bff;
@@ -552,7 +520,7 @@
 }
 
 .pricingButton:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
@@ -567,7 +535,6 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 86, 179, 0.3);
-  animation: fadeIn 0.8s ease-out;
 }
 
 .ctaSection::before {
@@ -579,6 +546,15 @@
   height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
   animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .ctaTitle {
@@ -610,13 +586,11 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  animation: pulse 2s infinite;
 }
 
 .ctaButton:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-  animation: none;
 }
 
 /* Modal Styles */
@@ -632,7 +606,6 @@
   align-items: center;
   z-index: 10000;
   padding: 1rem;
-  animation: fadeIn 0.3s ease-out;
 }
 
 .modal {
@@ -645,7 +618,6 @@
   overflow-y: auto;
   position: relative;
   z-index: 10001;
-  animation: slideInUp 0.4s ease-out;
 }
 
 .modalHeader {
@@ -743,92 +715,6 @@
   box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Responsive Styles */
 @media (max-width: 992px) {
   .pricingCards {
@@ -887,6 +773,21 @@
     padding: 2rem 1.5rem;
   }
   
+  .benefitIcon,
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .benefitTitle,
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+  
+  .pricingCard {
+    padding: 2rem 1.5rem;
+  }
+  
   .ctaSection {
     padding: 3rem 1.5rem;
     margin: 3rem 0;
@@ -900,9 +801,25 @@
     font-size: 1.1rem;
   }
   
-  .benefitsGrid,
-  .steps {
-    grid-template-columns: 1fr;
+  .benefitIcon,
+  .stepNumber {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .benefitTitle,
+  .stepTitle,
+  .pricingName {
+    font-size: 1.2rem;
+  }
+  
+  .pricingPrice {
+    font-size: 2rem;
+  }
+  
+  .pricingButton {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -958,7 +875,7 @@
     font-size: 1.1rem;
   }
   
-  .pricingRate {
+  .pricingPrice {
     font-size: 2rem;
   }
   
@@ -991,5 +908,9 @@
   .modalHeader,
   .modalBody {
     padding: 1.5rem;
+  }
+  
+  .pricingFeatures li {
+    font-size: 0.9rem;
   }
 }
