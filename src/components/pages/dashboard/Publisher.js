@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PublisherProfile from "./PublisherProfile";
 import ASObooster from "./ASObooster";
+import LetsChat from "./LetsChat";
 import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
@@ -225,7 +226,7 @@ const Sidebar = ({
   </>
 );
 
-const DashboardHome = ({ setShowPublisherProfile }) => {
+const DashboardHome = ({ setShowPublisherProfile, openChat }) => {
   const StatCard = ({ title, value, icon, color }) => (
     <div className={styles.statCard}>
       <div>
@@ -293,10 +294,10 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
               <div className={styles.needHelp}>
                 <FaQuestionCircle /> Need help?
               </div>
-              <button className={styles.chatBtn}>
+              <button className={styles.chatBtn} onClick={openChat}>
                 <FaComments /> Chat with Support
               </button>
-              <button className={styles.ticketBtn}>
+              <button className={styles.ticketBtn} onClick={openChat}>
                 <FaTicketAlt /> Create Support Ticket
               </button>
             </div>
@@ -430,6 +431,7 @@ const Publisher = () => {
   const [activeItem, setActiveItem] = useState("dashboard");
   const [showPublisherProfile, setShowPublisherProfile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -445,11 +447,15 @@ const Publisher = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const openChat = () => {
+    navigate("/lets-chat");
+  };
+
   const renderActiveComponent = () => {
     switch (activeItem) {
       case "dashboard":
         return (
-          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} openChat={openChat} />
         );
       case "offers":
         return <Offers />;
@@ -467,7 +473,7 @@ const Publisher = () => {
         return <ASObooster />;
       default:
         return (
-          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} openChat={openChat} />
         );
     }
   };
