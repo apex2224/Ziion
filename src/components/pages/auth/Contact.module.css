@@ -1,28 +1,26 @@
 /* --- Main Page Container --- */
 .contactPage {
   display: flex;
-  align-items: center;
+  margin-top: 2rem;
+  align-items: flex-start;
   justify-content: center;
   min-height: calc(100vh - 80px); /* Adjust for header height */
-  padding: 0; /* Remove padding to fit full width */
+  padding: 20px; /* Add padding around the form */
   background-color: #f8fafd; /* Light blue background */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   box-sizing: border-box;
-  width: 100%; /* Ensure full width */
-  overflow: hidden; /* Prevent scrollbar */
+  width: 100%;
 }
 
 /* --- Form Container Card --- */
 .formContainer {
   background-color: #ffffff;
-  padding: 40px;
-  border-radius: 0; /* Remove rounded corners for full width */
+  padding: 30px;
+  border-radius: 8px; /* Add rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Full width */
-  max-width: 100%; /* Remove max-width restriction */
-  margin-top: 0; /* Remove top margin */
-  box-sizing: border-box;
-  overflow: hidden; /* Prevent scrollbar */
+  width: 100%;
+  max-width: 800px; /* Limit the maximum width */
+  margin-top: 20px; /* Add some top margin */
 }
 
 .formHeader {
