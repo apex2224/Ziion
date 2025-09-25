@@ -40,7 +40,7 @@ const DashboardHeader = ({ onMenuToggle }) => (
     <button className={styles.menuToggle} onClick={onMenuToggle}>
       <FaBars />
     </button>
-    <div className={styles.logo}>CPIDroid</div>
+    <div className={styles.logo}>Ziion</div>
     <div className={styles.searchBar}>
       <FaSearch />
       <input type="text" placeholder="Search in Knowledge Base" />
@@ -97,12 +97,18 @@ const DashboardSelector = ({ activeTab, setActiveTab }) => {
   );
 };
 
-const Sidebar = ({ activeTab, setActiveTab, activeItem, setActiveItem, onMenuToggle }) => (
+const Sidebar = ({
+  activeTab,
+  setActiveTab,
+  activeItem,
+  setActiveItem,
+  onMenuToggle,
+}) => (
   <>
     <div className={styles.sidebarHeader}>
-        <button className={styles.menuToggle} onClick={onMenuToggle}>
-            <FaTimes />
-        </button>
+      <button className={styles.menuToggle} onClick={onMenuToggle}>
+        <FaTimes />
+      </button>
     </div>
     <DashboardSelector activeTab={activeTab} setActiveTab={setActiveTab} />
     <nav className={styles.nav}>
@@ -491,7 +497,11 @@ const Publisher = () => {
       <div className={styles.dashboardLayout}>
         <DashboardHeader onMenuToggle={toggleSidebar} />
 
-        <aside className={`${styles.sidebar} ${isSidebarOpen ? styles.mobileOpen : ""}`}>
+        <aside
+          className={`${styles.sidebar} ${
+            isSidebarOpen ? styles.mobileOpen : ""
+          }`}
+        >
           <Sidebar
             activeTab={activeTab}
             setActiveTab={setActiveTab}
@@ -513,7 +523,7 @@ const Publisher = () => {
             <h4>Refer & Earn UNLIMITED 🤑</h4>
             <p>Share your referral link with friends to start earning.</p>
             <div className={styles.referralLink}>
-              <span>https://cpidroid.com/?ref=13084</span>
+              <span>https://Ziion.com/?ref=13084</span>
               <FaLink />
             </div>
             <div className={styles.shareButtons}>
@@ -544,7 +554,7 @@ const Publisher = () => {
               </div>
             </div>
           </div>
-          <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
+          <p className={styles.copyright}>© Ziion. 2025 SmartKaaS LLP.</p>
         </aside>
       </div>
     </>

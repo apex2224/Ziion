@@ -14,8 +14,8 @@ import {
 } from "react-icons/fa";
 
 const Login = () => {
-  const [email, setEmail] = useState("Siddahnat2107");
-  const [password, setPassword] = useState("**********");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Login = () => {
     <div className={styles.loginPage}>
       <div className={styles.leftPanel}>
         <a href="/" className={styles.logo}>
-          CPIDroid
+          Ziion
         </a>
         <TestimonialCarousel />
       </div>
@@ -136,24 +136,24 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       title: "You can't find a better company.",
-      text: "You can't find a better company. We tried a lot of Install Providers and non of them gave us such service like CPIDroid. We inte tracebility. Also their support works during normal working hours AND out of that, they also support urgent matters. :) Very use thousands here and moving ahead for more!",
+      text: "You can't find a better company. We tried a lot of Install Providers and non of them gave us such service like Ziion. We inte tracebility. Also their support works during normal working hours AND out of that, they also support urgent matters. :) Very use thousands here and moving ahead for more!",
       author: "Gustavo De Metrio",
-      date: "September 11, 2020"
+      date: "September 11, 2020",
     },
     {
       id: 2,
       title: "Outstanding service and support",
-      text: "The team at CPIDroid went above and beyond to help us with our installation needs. Their attention to detail and quick response times made all the difference in our project timeline.",
+      text: "The team at Ziion went above and beyond to help us with our installation needs. Their attention to detail and quick response times made all the difference in our project timeline.",
       author: "Sarah Johnson",
-      date: "August 15, 2020"
+      date: "August 15, 2020",
     },
     {
       id: 3,
       title: "Reliable and professional",
-      text: "We've been working with CPIDroid for over a year now, and their service has been consistently excellent. They're reliable, professional, and always deliver on time.",
+      text: "We've been working with Ziion for over a year now, and their service has been consistently excellent. They're reliable, professional, and always deliver on time.",
       author: "Michael Chen",
-      date: "July 3, 2020"
-    }
+      date: "July 3, 2020",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -180,20 +180,20 @@ const TestimonialCarousel = () => {
         <button className={styles.carouselButtonLeft} onClick={goToPrevious}>
           <FaChevronLeft />
         </button>
-        
+
         <div className={styles.carouselContent}>
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={testimonial.id} 
-              className={`${styles.carouselItem} ${index === currentIndex ? styles.active : ''}`}
+            <div
+              key={testimonial.id}
+              className={`${styles.carouselItem} ${
+                index === currentIndex ? styles.active : ""
+              }`}
             >
               <FaQuoteLeft size={32} className={styles.quoteIcon} />
               <div className={styles.testimonialStars}>
                 <StarRating count={5} />
               </div>
-              <h3 className={styles.testimonialTitle}>
-                {testimonial.title}
-              </h3>
+              <h3 className={styles.testimonialTitle}>{testimonial.title}</h3>
               <blockquote className={styles.testimonialText}>
                 {testimonial.text}
               </blockquote>
@@ -202,18 +202,20 @@ const TestimonialCarousel = () => {
             </div>
           ))}
         </div>
-        
+
         <button className={styles.carouselButtonRight} onClick={goToNext}>
           <FaChevronRight />
         </button>
       </div>
-      
+
       {/* Carousel Indicators */}
       <div className={styles.carouselIndicators}>
         {testimonials.map((_, index) => (
-          <div 
+          <div
             key={index}
-            className={`${styles.indicator} ${index === currentIndex ? styles.active : ''}`}
+            className={`${styles.indicator} ${
+              index === currentIndex ? styles.active : ""
+            }`}
             onClick={() => goToSlide(index)}
           ></div>
         ))}

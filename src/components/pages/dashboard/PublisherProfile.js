@@ -70,7 +70,7 @@ const PublisherProfile = () => {
       {/* Hero section inspired by the Monetization Solutions page */}
       <header className={styles.hero}>
         <h1>Monetization Solutions</h1>
-        <p>Monetize Web & Mobile Traffic with CPIDroid Offerwall Solution.</p>
+        <p>Monetize Web & Mobile Traffic with Ziion Offerwall Solution.</p>
       </header>
 
       <main className={styles.mainContent}>
@@ -92,7 +92,7 @@ const PublisherProfile = () => {
           </div>
           
           <div className={styles.demoSection}>
-            <h2>Live CPIDroid Offerwall Example</h2>
+            <h2>Live Ziion Offerwall Example</h2>
             <p className={styles.demoSubtitle}>Feel free to play around.</p>
             <div className={styles.demoGrid}>
               <div className={styles.qrCodeSide}>
@@ -128,7 +128,7 @@ const PublisherProfile = () => {
         {/* Profile Application Form */}
         <div className={styles.formWrapper}>
           <div className={styles.formHeader}>
-            <span className={styles.tag}>JOIN CPIDROID'S PUBLISHER CLUB</span>
+            <span className={styles.tag}>JOIN Ziion'S PUBLISHER CLUB</span>
             <h2>Apply to Become Publisher</h2>
             <p>(Profile Application)</p>
           </div>
@@ -202,7 +202,7 @@ const PublisherProfile = () => {
                 type="url"
                 id="appLink"
                 name="appLink"
-                placeholder="Enter your primary application or website link where you will integrate CPIDroid's monetization solutions"
+                placeholder="Enter your primary application or website link where you will integrate Ziion's monetization solutions"
                 value={formData.appLink}
                 onChange={handleChange}
                 required
@@ -214,7 +214,7 @@ const PublisherProfile = () => {
               {
                 name: "monetization",
                 label: "INVENTORY : MONETIZATION *",
-                placeholder: "How'd you use CPIDroid's monetization solutions?",
+                placeholder: "How'd you use Ziion's monetization solutions?",
               },
               {
                 name: "dau",

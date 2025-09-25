@@ -17,18 +17,18 @@ const useScrollReveal = (shouldReveal = true) => {
     // Initialize ScrollReveal if not already initialized
     if (!sr) {
       sr = ScrollReveal({
-        distance: "50px",
+        distance: "30px",
         duration: 800,
         easing: "ease-out",
         origin: "bottom",
-        reset: false,
-        delay: 100,
+        reset: true,
+        delay: 50,
       });
     }
 
     // Reveal common elements
     sr.reveal(".reveal", {
-      interval: 100,
+      interval: 50,
     });
 
     sr.reveal(".reveal-left", {
@@ -51,9 +51,9 @@ const useScrollReveal = (shouldReveal = true) => {
       distance: "100px",
     });
 
-    sr.reveal(".reveal-delay-1", { delay: 300 });
-    sr.reveal(".reveal-delay-2", { delay: 500 });
-    sr.reveal(".reveal-delay-3", { delay: 700 });
+    sr.reveal(".reveal-delay-1", { delay: 200 });
+    sr.reveal(".reveal-delay-2", { delay: 400 });
+    sr.reveal(".reveal-delay-3", { delay: 600 });
 
     // Cleanup function
     return () => {

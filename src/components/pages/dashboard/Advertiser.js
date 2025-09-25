@@ -61,7 +61,7 @@ const DashboardHeader = ({ onMenuToggle }) => (
     <button className={styles.menuToggle} onClick={onMenuToggle}>
       <FaBars />
     </button>
-    <div className={styles.logo}>CPIDroid</div>
+    <div className={styles.logo}>Ziion</div>
     <div className={styles.searchBar}>
       <FaSearch />
       <input type="text" placeholder="Search in Knowledge Base" />
@@ -552,7 +552,7 @@ const ReferralProgram = () => {
 
   const copyReferralLink = () => {
     navigator.clipboard
-      .writeText("https://cpidroid.com/?ref=K12345")
+      .writeText("https://Ziion.com/?ref=K12345")
       .then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -570,7 +570,7 @@ const ReferralProgram = () => {
         <h4>Refer & Earn UNLIMITED 🤑</h4>
         <p>Share your referral link with friends to start earning.</p>
         <div className={styles.referralLink} onClick={copyReferralLink}>
-          <span>https://cpidroid.com/?ref=K12345</span>
+          <span>https://Ziion.com/?ref=K12345</span>
           {copied ? <FaCheck color="green" /> : <FaCopy />}
         </div>
         <div className={styles.shareButtons}>
@@ -688,7 +688,7 @@ const Advertiser = () => {
             <h4>Refer & Earn UNLIMITED 🤑</h4>
             <p>Share your referral link with friends to start earning.</p>
             <div className={styles.referralLink}>
-              <span>https://cpidroid.com/?ref=13084</span>
+              <span>https://Ziion.com/?ref=13084</span>
               <FaLink />
             </div>
             <div className={styles.shareButtons}>
@@ -719,7 +719,7 @@ const Advertiser = () => {
               </div>
             </div>
           </div>
-          <p className={styles.copyright}>© CPIDroid. 2025 SmartKaaS LLP.</p>
+          <p className={styles.copyright}>© Ziion. 2025 SmartKaaS LLP.</p>
         </aside>
       </div>
     </>

@@ -458,73 +458,247 @@
 
 @media (max-width: 768px) {
   .loginPage {
-    min-height: 90vh;
+    min-height: 100vh;
   }
   
   .rightPanel {
-    padding: 25px 20px;
+    padding: 30px 20px;
   }
   
   .loginForm {
     max-width: 100%;
+    width: 100%;
     padding: 0 10px;
   }
   
-  .formTitle {
-    font-size: 24px;
-    margin-bottom: 25px;
+  .loginForm h2 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
   }
   
-  .formGroup {
+  .subtitle {
+    font-size: 0.85rem;
+    margin: 10px 0 20px 0;
+  }
+  
+  .socialLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .socialLogin button {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .separator {
+    margin: 20px 0;
+  }
+  
+  .inputGroup {
+    margin-bottom: 16px;
+  }
+  
+  .inputGroup label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  
+  .inputGroup input {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .passwordWrapper {
+    position: relative;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+  
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
     margin-bottom: 20px;
   }
   
-  .formGroup input, .formGroup textarea {
-    padding: 12px 15px;
-    font-size: 15px;
+  .rememberMe {
+    gap: 8px;
   }
   
-  .signinBtn {
+  .forgotLink {
+    font-size: 13px;
+  }
+  
+  .submitGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .submitGroup button {
     padding: 12px;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .signupLink {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginPage {
+    min-height: 100vh;
+  }
+  
+  .rightPanel {
+    padding: 25px 15px;
+  }
+  
+  .loginForm {
+    padding: 0 5px;
+  }
+  
+  .loginForm h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 10px 0 20px 0;
+  }
+  
+  .socialLogin {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .socialLogin button {
+    padding: 11px;
+    font-size: 13px;
+  }
+  
+  .separator {
+    font-size: 11px;
+    margin: 20px 0;
+  }
+  
+  .inputGroup {
+    margin-bottom: 14px;
+  }
+  
+  .inputGroup label {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .inputGroup input {
+    padding: 9px;
+    font-size: 13px;
+  }
+  
+  .eyeIcon {
+    right: 8px;
+    font-size: 13px;
+  }
+  
+  .options {
+    font-size: 12px;
+    gap: 10px;
+  }
+  
+  .rememberMe {
+    gap: 6px;
+  }
+  
+  .forgotLink {
+    font-size: 12px;
+  }
+  
+  .submitGroup {
+    gap: 10px;
+  }
+  
+  .submitGroup button {
+    padding: 11px;
+    font-size: 13px;
+  }
+  
+  .signupLink {
+    margin-top: 18px;
+    font-size: 12px;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .loginPage {
-    min-height: 85vh;
+    min-height: 100vh;
   }
   
   .rightPanel {
-    padding: 20px 15px;
+    padding: 20px 12px;
   }
   
-  .formTitle {
-    font-size: 22px;
-    margin-bottom: 20px;
+  .loginForm h2 {
+    font-size: 1.3rem;
   }
   
-  .formGroup {
-    margin-bottom: 18px;
+  .subtitle {
+    font-size: 0.75rem;
   }
   
-  .formGroup input, .formGroup textarea {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-  
-  .signinBtn {
+  .socialLogin button {
     padding: 10px;
-    font-size: 15px;
+    font-size: 12px;
+  }
+  
+  .separator {
+    font-size: 10px;
+  }
+  
+  .inputGroup label {
+    font-size: 9px;
+  }
+  
+  .inputGroup input {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .eyeIcon {
+    right: 7px;
+    font-size: 12px;
+  }
+  
+  .options {
+    font-size: 11px;
+  }
+  
+  .rememberMe {
+    gap: 5px;
+  }
+  
+  .forgotLink {
+    font-size: 11px;
+  }
+  
+  .submitGroup button {
+    padding: 10px;
+    font-size: 12px;
   }
   
   .signupLink {
-    margin-top: 18px;
-    font-size: 13px;
+    font-size: 11px;
   }
 }

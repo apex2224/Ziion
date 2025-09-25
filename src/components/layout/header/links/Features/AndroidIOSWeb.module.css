@@ -8,6 +8,13 @@
   min-height: 100vh;
 }
 
+/* Add top margin on mobile to prevent content from sticking to header */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 30px;
+  }
+}
+
 /* Header Section */
 .header {
   margin-bottom: 3rem;

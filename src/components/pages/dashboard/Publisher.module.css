@@ -621,6 +621,16 @@ tbody tr { transition: background-color 0.2s; }
   .searchBar { display: none; }
 }
 
+@media (max-width: 992px) {
+  .dashboardLayout { grid-template-columns: var(--sidebar-width) 1fr; grid-template-areas: "header header" "sidebar main"; }
+  .rightSidebar { display: none; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .searchBar { display: none; }
+  .sectionHeader { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .tableControls { flex-wrap: wrap; gap: 12px; }
+  .tableSearch { width: 100%; }
+}
+
 @media (max-width: 768px) {
   .dashboardLayout { grid-template-columns: 1fr; grid-template-areas: "header" "main"; }
   .header { justify-content: space-between; padding: 0 16px; }
@@ -630,11 +640,95 @@ tbody tr { transition: background-color 0.2s; }
   .sidebar { position: fixed; top: 0; left: 0; height: 100%; width: var(--mobile-sidebar-width); transform: translateX(-100%); z-index: 1000; box-shadow: 0 0 20px rgba(0,0,0,0.2); border-right: none; }
   .sidebar.mobileOpen { transform: translateX(0); }
   .statsGrid { grid-template-columns: 1fr; }
-  .alertActions { flex-direction: column; align-items: stretch; }
-  .chatBtn, .ticketBtn { justify-content: center; }
+  .alertActions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .chatBtn, .ticketBtn { justify-content: center; width: 100%; }
   .tableControls { flex-direction: column; align-items: stretch; }
   .tableSearch { margin-left: 0; width: 100%; }
   .tableFooter { flex-direction: column; align-items: center; }
-  .mainContent, .rightSidebar { padding: 24px 16px; }
-  .sectionHeader h2 { font-size: 22px; }
+  .mainContent, .rightSidebar { padding: 20px 16px; }
+  .sectionHeader h2 { font-size: 20px; }
+  .sectionHeader { gap: 10px; }
+  .alert, .warning { padding: 14px; gap: 10px; }
+  .alertIcon, .warningIcon { font-size: 18px; }
+  .alert ul { margin: 10px 0 0; }
+  .alert li { margin-bottom: 6px; }
+  .tableBlock h4 { padding: 16px 20px; font-size: 16px; }
+  th, td { padding: 12px 16px; font-size: 13px; }
+}
+
+@media (max-width: 576px) {
+  .dashboardLayout { grid-template-columns: 1fr; grid-template-areas: "header" "main"; }
+  .header { padding: 0 12px; }
+  .logo { font-size: 18px; }
+  .searchBar { display: none; }
+  .userMenu { gap: 10px; }
+  .headerIcon { font-size: 18px; width: 32px; height: 32px; }
+  .dashboardSelector { padding: 20px; }
+  .selectorText { font-size: 14px; }
+  .profileAmounts { gap: 6px; }
+  .advertiserAmount, .publisherAmount { padding: 6px 10px; font-size: 13px; }
+  .dashboardTabs { gap: 6px; margin-top: 16px; }
+  .dashboardTab { padding: 8px; font-size: 13px; }
+  .nav { padding: 12px; }
+  .navHeader { padding: 0 10px; font-size: 11px; margin: 12px 0 6px 0; }
+  .navItem { padding: 8px 10px; font-size: 13px; }
+  .mainContent, .rightSidebar { padding: 16px 12px; }
+  .sectionHeader h2 { font-size: 18px; }
+  .statsGrid { gap: 16px; margin-bottom: 24px; }
+  .statCard { padding: 14px; }
+  .statCard h3 { font-size: 22px; }
+  .alert, .warning { padding: 12px; gap: 8px; font-size: 13px; }
+  .alertIcon, .warningIcon { font-size: 16px; margin-top: 2px; }
+  .alertActions { gap: 8px; }
+  .chatBtn, .ticketBtn { padding: 7px 12px; font-size: 12px; }
+  .tableBlock h4 { padding: 12px 16px; font-size: 15px; }
+  .tableControls { padding: 14px 16px; gap: 8px; }
+  .tableSearch { padding: 6px 10px; margin-left: 0; width: 100%; }
+  .tableSearch input { font-size: 13px; min-width: 150px; }
+  th, td { padding: 10px 14px; font-size: 12px; }
+  .tableFooter { padding: 12px 16px; font-size: 12px; }
+  .pagination button { padding: 6px; min-width: 32px; font-size: 12px; }
+  .noData { padding: 40px; font-size: 13px; }
+  .backButton { font-size: 13px; padding: 8px 12px; }
+}
+
+@media (max-width: 480px) {
+  .dashboardLayout { grid-template-columns: 1fr; grid-template-areas: "header" "main"; }
+  .header { padding: 0 10px; }
+  .logo { font-size: 16px; }
+  .menuToggle { font-size: 20px; margin-right: 10px; }
+  .userMenu { gap: 8px; }
+  .headerIcon { font-size: 16px; width: 28px; height: 28px; }
+  .dashboardSelector { padding: 16px; }
+  .selectorText { font-size: 13px; }
+  .profileAmounts { gap: 4px; }
+  .advertiserAmount, .publisherAmount { padding: 5px 8px; font-size: 12px; }
+  .dashboardTab { padding: 6px; font-size: 12px; }
+  .nav { padding: 10px; }
+  .navHeader { font-size: 10px; margin: 10px 0 5px 0; }
+  .navItem { padding: 6px 8px; font-size: 12px; gap: 8px; }
+  .mainContent, .rightSidebar { padding: 12px 10px; }
+  .sectionHeader h2 { font-size: 16px; }
+  .statsGrid { gap: 12px; margin-bottom: 20px; }
+  .statCard { padding: 12px; }
+  .statCard h3 { font-size: 20px; }
+  .alert, .warning { padding: 10px; gap: 6px; font-size: 12px; }
+  .alertIcon, .warningIcon { font-size: 14px; }
+  .chatBtn, .ticketBtn { padding: 6px 10px; font-size: 11px; }
+  .tableBlock h4 { padding: 10px 12px; font-size: 14px; }
+  .tableControls { padding: 10px 12px; }
+  .tableSearch { padding: 5px 8px; }
+  .tableSearch input { font-size: 12px; min-width: 120px; }
+  th, td { padding: 8px 10px; font-size: 11px; white-space: nowrap; }
+  .tableFooter { padding: 10px 12px; font-size: 11px; }
+  .pagination button { padding: 5px; min-width: 28px; font-size: 11px; }
+  .noData { padding: 30px; font-size: 12px; }
+  .rightSidebar { padding: 20px 10px; }
+  .widget h4 { font-size: 15px; margin-bottom: 14px; }
+  .referralLink { padding: 8px; }
+  .referralLink span { font-size: 12px; }
+  .shareButtons button { width: 32px; height: 32px; font-size: 12px; }
+  .membershipInfo { gap: 12px; padding: 14px; }
+  .copyright { font-size: 11px; }
+  .backButton { font-size: 12px; padding: 5px 8px; gap: 6px; }
 }
