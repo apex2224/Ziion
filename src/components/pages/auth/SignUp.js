@@ -23,6 +23,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simulate signup process
+
     setShowSuccessModal(true);
   };
 
@@ -38,14 +39,14 @@ const SignUp = () => {
     <div className={styles.signupPage}>
       <div className={styles.leftPanel}>
         <a href="/" className={styles.logo}>
-          CPIDroid
+          Ziion
         </a>
         <TestimonialCarousel />
       </div>
 
       <div className={styles.rightPanel}>
         <div className={styles.signupForm}>
-          <h2>Welcome to CPIDroid</h2>
+          <h2>Welcome to Ziion</h2>
           <p className={styles.subtitle}>
             Fill out the form to get started <FaInfoCircle />
           </p>
@@ -119,9 +120,8 @@ const SignUp = () => {
             <div className={styles.checkboxGroup}>
               <input type="checkbox" id="terms" defaultChecked />
               <label htmlFor="terms">
-                You agree to CPIDroid's{" "}
-                <Link to="/terms">Terms and Policy</Link> by creating this
-                account.
+                You agree to Ziion <Link to="/terms">Terms and Policy</Link> by
+                creating this account.
               </label>
             </div>
 
@@ -152,11 +152,10 @@ const SignUp = () => {
             <div className={styles.modalContent}>
               <FaCheckCircle className={styles.successIcon} />
               <h2>Signup Successful!</h2>
-              <p>Welcome to CPIDroid. Your account has been created successfully.</p>
-              <button 
-                className={styles.modalButton}
-                onClick={handleModalClose}
-              >
+              <p>
+                Welcome to Ziion. Your account has been created successfully.
+              </p>
+              <button className={styles.modalButton} onClick={handleModalClose}>
                 Continue to Dashboard
               </button>
             </div>
@@ -183,21 +182,21 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       title: "You can't find a better company.",
-      text: "You can't find a better company. We tried a lot of Install Providers and non of them gave us such service like CPIDroid. We inte tracebility. Also their support works during normal working hours AND out of that, they also support urgent matters. :) Very use thousands here and moving ahead for more!",
+      text: "You can't find a better company. We tried a lot of Install Providers and non of them gave us such service like Ziion. We inte tracebility. Also their support works during normal working hours AND out of that, they also support urgent matters. :) Very use thousands here and moving ahead for more!",
       author: "Gustavo De Metrio",
       date: "September 11, 2020",
     },
     {
       id: 2,
       title: "Outstanding service and support",
-      text: "The team at CPIDroid went above and beyond to help us with our installation needs. Their attention to detail and quick response times made all the difference in our project timeline.",
+      text: "The team at Ziion went above and beyond to help us with our installation needs. Their attention to detail and quick response times made all the difference in our project timeline.",
       author: "Sarah Johnson",
       date: "August 15, 2020",
     },
     {
       id: 3,
       title: "Reliable and professional",
-      text: "We've been working with CPIDroid for over a year now, and their service has been consistently excellent. They're reliable, professional, and always deliver on time.",
+      text: "We've been working with Ziion for over a year now, and their service has been consistently excellent. They're reliable, professional, and always deliver on time.",
       author: "Michael Chen",
       date: "July 3, 2020",
     },

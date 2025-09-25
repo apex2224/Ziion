@@ -3,9 +3,17 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
+}
+
+/* Add top margin on mobile to prevent content from sticking to header */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 30px;
+  }
 }
 
 /* Header Section */
@@ -22,7 +30,7 @@
 }
 
 .header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -90,7 +98,7 @@
 }
 
 .sectionTitle::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 4px;
@@ -121,7 +129,7 @@
 }
 
 .featuresTitle::after {
-  content: '';
+  content: "";
   display: block;
   width: 40px;
   height: 3px;
@@ -217,7 +225,7 @@
 }
 
 .benefitsTitle::after {
-  content: '';
+  content: "";
   display: block;
   width: 70px;
   height: 4px;
@@ -245,7 +253,7 @@
 }
 
 .benefitCard::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -308,7 +316,7 @@
 }
 
 .howItWorksTitle::after {
-  content: '';
+  content: "";
   display: block;
   width: 70px;
   height: 4px;
@@ -341,7 +349,7 @@
 }
 
 .step::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -405,7 +413,7 @@
 }
 
 .pricingTitle::after {
-  content: '';
+  content: "";
   display: block;
   width: 70px;
   height: 4px;
@@ -442,7 +450,7 @@
 }
 
 .pricingCard:nth-child(2)::before {
-  content: 'POPULAR';
+  content: "POPULAR";
   position: absolute;
   top: 15px;
   right: -30px;
@@ -496,7 +504,7 @@
 }
 
 .pricingFeatures li::before {
-  content: '✓';
+  content: "✓";
   color: #28a745;
   font-weight: bold;
 }
@@ -538,13 +546,17 @@
 }
 
 .ctaSection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   animation: rotate 10s linear infinite;
 }
 
@@ -720,7 +732,7 @@
   .pricingCards {
     grid-template-columns: 1fr;
   }
-  
+
   .pricingCard:nth-child(2) {
     order: -1;
   }
@@ -730,93 +742,93 @@
   .container {
     padding: 1.25rem;
   }
-  
+
   .header {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .description {
     font-size: 1.1rem;
   }
-  
+
   .contentWrapper {
     flex-direction: column;
   }
-  
+
   .textContent,
   .visualContent {
     width: 100%;
   }
-  
+
   .textSection {
     padding: 2rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.75rem;
   }
-  
+
   .benefitsTitle,
   .howItWorksTitle,
   .pricingTitle {
     font-size: 1.75rem;
   }
-  
+
   .benefitCard,
   .step,
   .pricingCard {
     padding: 2rem 1.5rem;
   }
-  
+
   .benefitIcon,
   .stepNumber {
     width: 50px;
     height: 50px;
   }
-  
+
   .benefitTitle,
   .stepTitle {
     font-size: 1.2rem;
   }
-  
+
   .pricingCard {
     padding: 2rem 1.5rem;
   }
-  
+
   .ctaSection {
     padding: 3rem 1.5rem;
     margin: 3rem 0;
   }
-  
+
   .ctaTitle {
     font-size: 2rem;
   }
-  
+
   .ctaSubtitle {
     font-size: 1.1rem;
   }
-  
+
   .benefitIcon,
   .stepNumber {
     width: 50px;
     height: 50px;
   }
-  
+
   .benefitTitle,
   .stepTitle,
   .pricingName {
     font-size: 1.2rem;
   }
-  
+
   .pricingPrice {
     font-size: 2rem;
   }
-  
+
   .pricingButton {
     padding: 0.85rem 1.5rem;
     font-size: 1rem;
@@ -827,89 +839,89 @@
   .container {
     padding: 1rem;
   }
-  
+
   .header {
     padding: 1.5rem 0.75rem;
   }
-  
+
   .title {
     font-size: 1.75rem;
   }
-  
+
   .description {
     font-size: 1rem;
   }
-  
+
   .textSection {
     padding: 1.5rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.5rem;
   }
-  
+
   .benefitsTitle,
   .howItWorksTitle,
   .pricingTitle {
     font-size: 1.5rem;
   }
-  
+
   .featureItem {
     font-size: 0.9rem;
   }
-  
+
   .benefitCard,
   .step,
   .pricingCard {
     padding: 1.5rem;
   }
-  
+
   .benefitIcon,
   .stepNumber {
     width: 40px;
     height: 40px;
   }
-  
+
   .benefitTitle,
   .stepTitle {
     font-size: 1.1rem;
   }
-  
+
   .pricingPrice {
     font-size: 2rem;
   }
-  
+
   .pricingButton {
     padding: 0.85rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   .ctaSection {
     padding: 2rem 1rem;
   }
-  
+
   .ctaTitle {
     font-size: 1.75rem;
   }
-  
+
   .ctaSubtitle {
     font-size: 1rem;
   }
-  
+
   .ctaButton {
     padding: 1rem 1.75rem;
     font-size: 1.1rem;
   }
-  
+
   .modal {
-    margin: 1rem;
+    margin: 2rem;
   }
-  
+
   .modalHeader,
   .modalBody {
     padding: 1.5rem;
   }
-  
+
   .pricingFeatures li {
     font-size: 0.9rem;
   }

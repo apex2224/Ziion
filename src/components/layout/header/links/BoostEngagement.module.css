@@ -8,6 +8,13 @@
   min-height: 100vh;
 }
 
+/* Add top margin on mobile to prevent content from sticking to header */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 30px;
+  }
+}
+
 /* Hero Section */
 .heroSection {
   background: linear-gradient(135deg, #007bff, #0056b3);
