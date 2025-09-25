@@ -1,11 +1,12 @@
 /* Boost Engagement Component Styles */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 6rem auto 0;
   padding: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
+  
 }
 
 /* Add top margin on mobile to prevent content from sticking to header */
