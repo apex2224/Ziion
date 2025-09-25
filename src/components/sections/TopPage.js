@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./TopPage.module.css";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
+import robotanimate from "../../assets/images/robotanimate.svg";
 
 const TopPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -65,7 +66,10 @@ const TopPage = () => {
         </p>
         <div className={`${styles.heroButtons} reveal-delay-2`}>
           {isAuthenticated ? (
-            <button className={styles.primaryButton} onClick={handleDashboardClick}>
+            <button
+              className={styles.primaryButton}
+              onClick={handleDashboardClick}
+            >
               DASHBOARD <FaArrowRight />
             </button>
           ) : (
@@ -93,9 +97,7 @@ const TopPage = () => {
         </div>
       </div>
       <div className={`${styles.heroImage} reveal-right`}>
-        <div className={styles.imagePlaceholder}>
-          <span>Hero Image</span>
-        </div>
+        <div className={styles.imagePlaceholder}></div>
       </div>
     </section>
   );

@@ -613,12 +613,552 @@ tbody tr { transition: background-color 0.2s; }
   border: 1px solid var(--border-color);
 }
 
+/* --- Placement Form Styles --- */
+.formContainer {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.placementForm {
+  width: 100%;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* --- Additional Classes Needed --- */
+.createBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--primary-blue);
+  padding: 9px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.createBtn:hover {
+  background: var(--primary-blue-dark);
+  border-color: var(--primary-blue-dark);
+}
+
+.saveBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: 1px solid var(--primary-blue);
+  padding: 9px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.saveBtn:hover {
+  background: var(--primary-blue-dark);
+  border-color: var(--primary-blue-dark);
+}
+
+.cancelBtn {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 9px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.requestPayoutBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.requestPayoutBtn:hover {
+  background: var(--primary-blue-dark);
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  background-color: var(--bg-card);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px var(--primary-blue-light);
+}
+
+.formActions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* --- Manage Placements Table Styles --- */
+.tableControls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  padding: 9px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.filterGroup select, .filterGroup input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.placementsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.placementsTable th, .placementsTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.placementsTable thead th {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.status {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.status.active { background-color: #D1FAE5; color: #065F46; }
+.status.paused { background-color: #FEF3C7; color: #92400E; }
+.status.inactive { background-color: #FEE2E2; color: #991B1B; }
+.status.completed { background-color: #EDE9FE; color: #5B21B6; }
+
+.amountPositive {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.amountNegative {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.actionButtons { display: flex; gap: 8px; }
+
+.iconBtn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.iconBtn:hover { background: var(--bg-main); color: var(--text-primary); }
+
+/* --- Missing Classes --- */
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  color: var(--white);
+  margin-left: auto;
+  font-weight: 500;
+  background-color: var(--orange);
+}
+
+.statCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.statCard h4 {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* --- Publisher Billing Styles --- */
+.billingSummary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.balanceCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.balanceCard h3 {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.balanceAmount {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.balanceDesc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --- Table Styles --- */
+.placementsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.placementsTable th, .placementsTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.placementsTable thead th {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.status {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  min-width: 80px;
+}
+
+.status.active { background-color: #D1FAE5; color: #065F46; }
+.status.paused { background-color: #FEF3C7; color: #92400E; }
+.status.inactive { background-color: #FEE2E2; color: #991B1B; }
+.status.completed { background-color: #EDE9FE; color: #5B21B6; }
+
+/* --- Referral Program Styles --- */
+.referralOverview {
+  margin-bottom: 32px;
+}
+
+.referralStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.commissionTiers {
+  margin: 32px 0;
+}
+
+.commissionTiers h3 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.tierCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.tierCard h4 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.refs, .commission {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.refs {
+  color: var(--text-secondary);
+}
+
+.commission {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.myReferrals {
+  margin-top: 32px;
+}
+
+.myReferrals h3 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.requestPayoutBtn {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.requestPayoutBtn:hover {
+  background: var(--primary-blue-dark);
+}
+
+.paymentSettings {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border-color);
+}
+
+.paymentSettings h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.paymentForm {
+  display: grid;
+  gap: 16px;
+}
+
+.transactionHistory {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.transactionHistory h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+/* --- Referral Program Styles --- */
+.referralOverview {
+  margin-bottom: 32px;
+}
+
+.referralStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.statCard h4 {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.commissionTiers {
+  margin: 32px 0;
+}
+
+.commissionTiers h3 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.tiersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.tierCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.tierCard h4 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.refs, .commission {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.refs {
+  color: var(--text-secondary);
+}
+
+.commission {
+  font-weight: 600;
+  color: var(--green);
+}
+
+.myReferrals {
+  margin-top: 32px;
+}
+
+.myReferrals h3 {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
 /* --- Responsive Styles --- */
 @media (max-width: 1200px) {
   .dashboardLayout { grid-template-columns: var(--sidebar-width) 1fr; grid-template-areas: "header header" "sidebar main"; }
   .rightSidebar { display: none; }
   .statsGrid { grid-template-columns: repeat(2, 1fr); }
   .searchBar { display: none; }
+  .alertActions { flex-direction: column; align-items: stretch; }
+  .chatBtn, .ticketBtn { justify-content: center; }
+  .tableControls { flex-direction: column; align-items: stretch; }
+  .tableSearch { margin-left: 0; width: 100%; }
+  .tableFooter { flex-direction: column; align-items: center; }
+  .mainContent, .rightSidebar { padding: 24px 16px; }
+  .sectionHeader h2 { font-size: 22px; }
+  
+  .billingSummary { grid-template-columns: repeat(2, 1fr); }
+  .referralStats { grid-template-columns: repeat(2, 1fr); }
+  .tiersGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 992px) {
@@ -629,6 +1169,11 @@ tbody tr { transition: background-color 0.2s; }
   .sectionHeader { flex-direction: column; align-items: flex-start; gap: 12px; }
   .tableControls { flex-wrap: wrap; gap: 12px; }
   .tableSearch { width: 100%; }
+  
+  .formRow { grid-template-columns: 1fr; }
+  .billingSummary { grid-template-columns: 1fr; }
+  .referralStats { grid-template-columns: 1fr; }
+  .tiersGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -654,6 +1199,11 @@ tbody tr { transition: background-color 0.2s; }
   .alert li { margin-bottom: 6px; }
   .tableBlock h4 { padding: 16px 20px; font-size: 16px; }
   th, td { padding: 12px 16px; font-size: 13px; }
+  
+  .placementsTable { min-width: 600px; }
+  .billingSummary { grid-template-columns: 1fr; }
+  .referralStats { grid-template-columns: 1fr; }
+  .tiersGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 576px) {
@@ -690,6 +1240,11 @@ tbody tr { transition: background-color 0.2s; }
   .pagination button { padding: 6px; min-width: 32px; font-size: 12px; }
   .noData { padding: 40px; font-size: 13px; }
   .backButton { font-size: 13px; padding: 8px 12px; }
+  
+  .formRow { grid-template-columns: 1fr; }
+  .balanceAmount { font-size: 24px; }
+  .billingSummary { gap: 16px; }
+  .statValue { font-size: 20px; }
 }
 
 @media (max-width: 480px) {
@@ -731,4 +1286,9 @@ tbody tr { transition: background-color 0.2s; }
   .membershipInfo { gap: 12px; padding: 14px; }
   .copyright { font-size: 11px; }
   .backButton { font-size: 12px; padding: 5px 8px; gap: 6px; }
+  
+  .placementsTable { min-width: 500px; }
+  .balanceCard { padding: 16px; }
+  .balanceAmount { font-size: 20px; }
+  .statValue { font-size: 18px; }
 }

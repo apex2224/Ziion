@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PublisherProfile from "./PublisherProfile";
 import ASObooster from "./ASObooster";
+import LetsChat from "./LetsChat";
 import styles from "./Publisher.module.css";
 import {
   FaUserCircle,
@@ -33,6 +34,11 @@ import {
   FaBars,
   FaTimes,
   FaArrowLeft,
+  FaFilter,
+  FaEdit,
+  FaEye,
+  FaTrash,
+  FaCopy,
 } from "react-icons/fa";
 
 const DashboardHeader = ({ onMenuToggle }) => (
@@ -225,7 +231,7 @@ const Sidebar = ({
   </>
 );
 
-const DashboardHome = ({ setShowPublisherProfile }) => {
+const DashboardHome = ({ setShowPublisherProfile, openChat }) => {
   const StatCard = ({ title, value, icon, color }) => (
     <div className={styles.statCard}>
       <div>
@@ -293,10 +299,10 @@ const DashboardHome = ({ setShowPublisherProfile }) => {
               <div className={styles.needHelp}>
                 <FaQuestionCircle /> Need help?
               </div>
-              <button className={styles.chatBtn}>
+              <button className={styles.chatBtn} onClick={openChat}>
                 <FaComments /> Chat with Support
               </button>
-              <button className={styles.ticketBtn}>
+              <button className={styles.ticketBtn} onClick={openChat}>
                 <FaTicketAlt /> Create Support Ticket
               </button>
             </div>
@@ -369,38 +375,420 @@ const Offers = () => (
   </div>
 );
 
-const AddPlacement = () => (
-  <div className={styles.addPlacementSection}>
-    <div className={styles.sectionHeader}>
-      <h2>Add New Placement</h2>
-    </div>
-    <div className={styles.addPlacementContent}>
-      <p>Add a new placement for your apps.</p>
-    </div>
-  </div>
-);
+const AddPlacement = () => {
+  const [placementData, setPlacementData] = useState({
+    name: '',
+    platform: 'Android',
+    app: '',
+    placementType: 'Banner',
+    dimensions: '',
+    position: 'Top',
+    status: 'Active',
+    description: ''
+  });
 
-const ManagePlacements = () => (
-  <div className={styles.managePlacementsSection}>
-    <div className={styles.sectionHeader}>
-      <h2>Manage Placements</h2>
-    </div>
-    <div className={styles.managePlacementsContent}>
-      <p>View and manage your existing placements.</p>
-    </div>
-  </div>
-);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setPlacementData({ ...placementData, [name]: value });
+  };
 
-const PublisherBilling = () => (
-  <div className={styles.billingSection}>
-    <div className={styles.sectionHeader}>
-      <h2>Publisher Billing</h2>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // In a real app, this would send data to backend
+    alert('Placement created successfully!');
+    setPlacementData({
+      name: '',
+      platform: 'Android',
+      app: '',
+      placementType: 'Banner',
+      dimensions: '',
+      position: 'Top',
+      status: 'Active',
+      description: ''
+    });
+  };
+
+  return (
+    <div className={styles.addPlacementSection}>
+      <div className={styles.sectionHeader}>
+        <h2>Add New Placement</h2>
+      </div>
+      <div className={styles.formContainer}>
+        <form onSubmit={handleSubmit} className={styles.placementForm}>
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label htmlFor="name">Placement Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={placementData.name}
+                onChange={handleInputChange}
+                placeholder="Enter placement name"
+                required
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="platform">Platform *</label>
+              <select
+                id="platform"
+                name="platform"
+                value={placementData.platform}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="Android">Android</option>
+                <option value="iOS">iOS</option>
+                <option value="Web">Web</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label htmlFor="app">App *</label>
+              <select
+                id="app"
+                name="app"
+                value={placementData.app}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Select App</option>
+                <option value="App 1">App 1</option>
+                <option value="App 2">App 2</option>
+                <option value="App 3">App 3</option>
+              </select>
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="placementType">Placement Type *</label>
+              <select
+                id="placementType"
+                name="placementType"
+                value={placementData.placementType}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="Banner">Banner</option>
+                <option value="Interstitial">Interstitial</option>
+                <option value="Native">Native</option>
+                <option value="Video">Video</option>
+                <option value="Rewarded">Rewarded</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label htmlFor="dimensions">Dimensions</label>
+              <input
+                type="text"
+                id="dimensions"
+                name="dimensions"
+                value={placementData.dimensions}
+                onChange={handleInputChange}
+                placeholder="e.g., 320x50"
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="position">Position</label>
+              <select
+                id="position"
+                name="position"
+                value={placementData.position}
+                onChange={handleInputChange}
+              >
+                <option value="Top">Top</option>
+                <option value="Bottom">Bottom</option>
+                <option value="Center">Center</option>
+                <option value="Interstitial">Interstitial</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              value={placementData.description}
+              onChange={handleInputChange}
+              placeholder="Describe the placement"
+              rows="3"
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="status">Status</label>
+            <select
+              id="status"
+              name="status"
+              value={placementData.status}
+              onChange={handleInputChange}
+            >
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Paused">Paused</option>
+            </select>
+          </div>
+
+          <div className={styles.formActions}>
+            <button type="submit" className={styles.createBtn}>
+              <FaPlus /> Create Placement
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div className={styles.billingContent}>
-      <p>View your billing information and payment history.</p>
+  );
+};
+
+const ManagePlacements = () => {
+  const [placements, setPlacements] = useState([
+    { id: 1, name: 'Homepage Banner', platform: 'Android', app: 'App 1', type: 'Banner', status: 'Active', impressions: 12500, ctr: '2.3%', revenue: '$234.50' },
+    { id: 2, name: 'Video Ad Unit', platform: 'iOS', app: 'App 2', type: 'Video', status: 'Active', impressions: 8900, ctr: '1.8%', revenue: '$187.20' },
+    { id: 3, name: 'Interstitial', platform: 'Android', app: 'App 3', type: 'Interstitial', status: 'Paused', impressions: 5400, ctr: '3.1%', revenue: '$95.30' },
+    { id: 4, name: 'Rewarded Video', platform: 'Android', app: 'App 1', type: 'Rewarded', status: 'Active', impressions: 15600, ctr: '4.2%', revenue: '$320.75' },
+    { id: 5, name: 'Native Ad', platform: 'iOS', app: 'App 2', type: 'Native', status: 'Active', impressions: 7200, ctr: '1.9%', revenue: '$145.60' },
+  ]);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('All');
+
+  const filteredPlacements = placements.filter(placement => {
+    const matchesSearch = placement.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          placement.app.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = statusFilter === 'All' || placement.status === statusFilter;
+    return matchesSearch && matchesStatus;
+  });
+
+  const toggleStatus = (id) => {
+    setPlacements(prev => prev.map(placement => 
+      placement.id === id 
+        ? { ...placement, status: placement.status === 'Active' ? 'Paused' : 'Active' } 
+        : placement
+    ));
+  };
+
+  return (
+    <div className={styles.managePlacementsSection}>
+      <div className={styles.sectionHeader}>
+        <h2>Manage Placements</h2>
+      </div>
+
+      <div className={styles.tableControls}>
+        <div className={styles.filterGroup}>
+          <FaSearch />
+          <input
+            type="text"
+            placeholder="Search placements..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div className={styles.filterGroup}>
+          <FaFilter />
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="All">All Status</option>
+            <option value="Active">Active</option>
+            <option value="Paused">Paused</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+      </div>
+
+      <div className={styles.tableWrapper}>
+        <table className={styles.placementsTable}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Platform</th>
+              <th>App</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Impressions</th>
+              <th>CTR</th>
+              <th>Revenue</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredPlacements.length > 0 ? (
+              filteredPlacements.map(placement => (
+                <tr key={placement.id}>
+                  <td>{placement.id}</td>
+                  <td>{placement.name}</td>
+                  <td>{placement.platform}</td>
+                  <td>{placement.app}</td>
+                  <td>{placement.type}</td>
+                  <td>
+                    <span 
+                      className={`${styles.status} ${styles[placement.status.toLowerCase()]}`}
+                      onClick={() => toggleStatus(placement.id)}
+                      style={{ cursor: 'pointer' }}
+                    >
+                      {placement.status}
+                    </span>
+                  </td>
+                  <td>{placement.impressions.toLocaleString()}</td>
+                  <td>{placement.ctr}</td>
+                  <td>{placement.revenue}</td>
+                  <td>
+                    <div className={styles.actionButtons}>
+                      <button className={styles.iconBtn}>
+                        <FaEdit />
+                      </button>
+                      <button className={styles.iconBtn}>
+                        <FaEye />
+                      </button>
+                      <button className={styles.iconBtn}>
+                        <FaTrash />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="10" className={styles.noData}>
+                  No placements found.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className={styles.tableFooter}>
+        <span>
+          Showing {filteredPlacements.length} of {placements.length} placements
+        </span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+const PublisherBilling = () => {
+  const [paymentMethod, setPaymentMethod] = useState('paypal');
+  const [paymentDetails, setPaymentDetails] = useState({
+    paypal: 'publisher@example.com',
+    bank: '****1234 - Bank of America'
+  });
+
+  const transactions = [
+    { id: 1, date: '2025-09-01', description: 'Monthly earnings', amount: '$1,234.50', status: 'Completed' },
+    { id: 2, date: '2025-08-01', description: 'Monthly earnings', amount: '$987.25', status: 'Completed' },
+    { id: 3, date: '2025-07-01', description: 'Monthly earnings', amount: '$1,450.00', status: 'Completed' },
+    { id: 4, date: '2025-06-01', description: 'Monthly earnings', amount: '$875.75', status: 'Completed' },
+  ];
+
+  const currentBalance = 1234.50;
+  const pendingAmount = 456.75;
+  const lifetimeEarnings = 8750.25;
+
+  return (
+    <div className={styles.billingSection}>
+      <div className={styles.sectionHeader}>
+        <h2>Publisher Billing</h2>
+      </div>
+
+      <div className={styles.billingSummary}>
+        <div className={styles.balanceCard}>
+          <h3>Current Balance</h3>
+          <p className={styles.balanceAmount}>${currentBalance.toFixed(2)}</p>
+          <button className={styles.requestPayoutBtn}>Request Payout</button>
+        </div>
+        
+        <div className={styles.balanceCard}>
+          <h3>Pending Amount</h3>
+          <p className={styles.balanceAmount}>${pendingAmount.toFixed(2)}</p>
+          <p className={styles.balanceDesc}>Will be available on Oct 1, 2025</p>
+        </div>
+        
+        <div className={styles.balanceCard}>
+          <h3>Lifetime Earnings</h3>
+          <p className={styles.balanceAmount}>${lifetimeEarnings.toFixed(2)}</p>
+          <p className={styles.balanceDesc}>Total earnings to date</p>
+        </div>
+      </div>
+
+      <div className={styles.paymentSettings}>
+        <h3>Payment Settings</h3>
+        <div className={styles.paymentForm}>
+          <div className={styles.formGroup}>
+            <label>Preferred Payment Method</label>
+            <select 
+              value={paymentMethod} 
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            >
+              <option value="paypal">PayPal</option>
+              <option value="bank">Bank Transfer</option>
+              <option value="check">Check</option>
+            </select>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label>Payment Details</label>
+            <input
+              type="text"
+              value={paymentMethod === 'paypal' 
+                ? paymentDetails.paypal 
+                : paymentDetails.bank}
+              onChange={(e) => {
+                if (paymentMethod === 'paypal') {
+                  setPaymentDetails({...paymentDetails, paypal: e.target.value});
+                } else {
+                  setPaymentDetails({...paymentDetails, bank: e.target.value});
+                }
+              }}
+              placeholder={paymentMethod === 'paypal' 
+                ? 'Enter PayPal email' 
+                : 'Enter bank account details'}
+            />
+          </div>
+
+          <div className={styles.formActions}>
+            <button className={styles.saveBtn}>Update Payment Info</button>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.transactionHistory}>
+        <h3>Transaction History</h3>
+        <div className={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transactions.map(transaction => (
+                <tr key={transaction.id}>
+                  <td>{transaction.date}</td>
+                  <td>{transaction.description}</td>
+                  <td className={styles.amountPositive}>{transaction.amount}</td>
+                  <td>
+                    <span className={`${styles.status} ${styles[transaction.status.toLowerCase()]}`}>
+                      {transaction.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const PublisherReport = () => (
   <div className={styles.reportSection}>
@@ -413,16 +801,129 @@ const PublisherReport = () => (
   </div>
 );
 
-const ReferralProgram = () => (
-  <div className={styles.referralSection}>
-    <div className={styles.sectionHeader}>
-      <h2>Referral Program</h2>
+const ReferralProgram = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyReferralLink = () => {
+    navigator.clipboard
+      .writeText("https://Ziion.com/?ref=K12345")
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+  };
+
+  const commissionTiers = [
+    { tier: 'Tier 1', refs: '1-10', commission: '10%' },
+    { tier: 'Tier 2', refs: '11-50', commission: '15%' },
+    { tier: 'Tier 3', refs: '51-100', commission: '20%' },
+    { tier: 'Tier 4', refs: '100+', commission: '25%' },
+  ];
+
+  const myReferrals = [
+    { id: 1, name: 'John Doe', status: 'Active', earned: '$23.50' },
+    { id: 2, name: 'Jane Smith', status: 'Active', earned: '$18.75' },
+    { id: 3, name: 'Bob Johnson', status: 'Pending', earned: '$0.00' },
+  ];
+
+  return (
+    <div className={styles.referralSection}>
+      <div className={styles.sectionHeader}>
+        <h2>
+          Referral Program <span className={styles.badge}>NEW</span>
+        </h2>
+      </div>
+
+      <div className={styles.referralOverview}>
+        <div className={styles.referralStats}>
+          <div className={styles.statCard}>
+            <h4>Total Referrals</h4>
+            <p className={styles.statValue}>24</p>
+          </div>
+          <div className={styles.statCard}>
+            <h4>Active Referrals</h4>
+            <p className={styles.statValue}>18</p>
+          </div>
+          <div className={styles.statCard}>
+            <h4>Total Earned</h4>
+            <p className={styles.statValue}>$425.50</p>
+          </div>
+          <div className={styles.statCard}>
+            <h4>This Month</h4>
+            <p className={styles.statValue}>$78.25</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.referralWidget}>
+        <h3>Share Your Referral Link</h3>
+        <p>Invite new publishers and earn up to 25% commission!</p>
+        <div className={styles.referralLink} onClick={copyReferralLink}>
+          <span>https://Ziion.com/?ref=K12345</span>
+          {copied ? <FaCheck color="green" /> : <FaCopy />}
+        </div>
+        <div className={styles.shareButtons}>
+          <span>SHARE</span>
+          <button>
+            <FaFacebookF />
+          </button>
+          <button>
+            <FaTwitter />
+          </button>
+          <button>
+            <FaWhatsapp />
+          </button>
+          <button>
+            <FaShareAlt />
+          </button>
+        </div>
+      </div>
+
+      <div className={styles.commissionTiers}>
+        <h3>Commission Tiers</h3>
+        <div className={styles.tiersGrid}>
+          {commissionTiers.map((tier, index) => (
+            <div key={index} className={styles.tierCard}>
+              <h4>{tier.tier}</h4>
+              <p className={styles.refs}>{tier.refs} referrals</p>
+              <p className={styles.commission}>{tier.commission} commission</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.myReferrals}>
+        <h3>My Referrals</h3>
+        <div className={styles.tableWrapper}>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Amount Earned</th>
+                <th>Joined</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myReferrals.map(referral => (
+                <tr key={referral.id}>
+                  <td>{referral.name}</td>
+                  <td>
+                    <span className={`${styles.status} ${styles[referral.status.toLowerCase()]}`}>
+                      {referral.status}
+                    </span>
+                  </td>
+                  <td>{referral.earned}</td>
+                  <td>2025-09-15</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div className={styles.referralContent}>
-      <p>Refer friends and earn rewards.</p>
-    </div>
-  </div>
-);
+  );
+};
 
 // Main Publisher Dashboard Component
 const Publisher = () => {
@@ -430,6 +931,7 @@ const Publisher = () => {
   const [activeItem, setActiveItem] = useState("dashboard");
   const [showPublisherProfile, setShowPublisherProfile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -445,11 +947,15 @@ const Publisher = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const openChat = () => {
+    navigate("/lets-chat");
+  };
+
   const renderActiveComponent = () => {
     switch (activeItem) {
       case "dashboard":
         return (
-          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} openChat={openChat} />
         );
       case "offers":
         return <Offers />;
@@ -467,7 +973,7 @@ const Publisher = () => {
         return <ASObooster />;
       default:
         return (
-          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} />
+          <DashboardHome setShowPublisherProfile={setShowPublisherProfile} openChat={openChat} />
         );
     }
   };

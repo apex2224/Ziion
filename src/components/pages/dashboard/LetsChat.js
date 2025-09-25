@@ -33,10 +33,9 @@ const LetsChat = () => {
       <div className={styles.contactPage}>
         <div className={styles.formContainer}>
           <header className={styles.formHeader}>
-            <h1>Let's Chat</h1>
+            <h1>Support Request</h1>
             <p>
-              Have questions about ASO Booster? Want to discuss how we can help your app get more exposure? 
-              Fill out the form below and our team will get back to you shortly.
+              Have questions or need assistance? Fill out the form below and our support team will get back to you shortly.
             </p>
           </header>
 
@@ -96,8 +95,8 @@ const LetsChat = () => {
             </div>
 
             <div className={styles.formFooter}>
-              <Link to="/aso-booster" className={styles.backButton}>
-                BACK TO ASO BOOSTER
+              <Link to="/publisher" className={styles.backButton}>
+                BACK TO DASHBOARD
               </Link>
               <button type="submit" className={styles.submitButton}>
                 SEND MESSAGE
