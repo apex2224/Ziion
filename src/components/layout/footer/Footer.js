@@ -6,6 +6,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoGlobeOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -48,31 +49,31 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>For Advertisers</h3>
             <ul>
               <li>
-                <a href="#">Promote Android App</a>
+                <Link to="/android-installs">Promote Android App</Link>
               </li>
               <li>
-                <a href="#">Promote iOS App</a>
+                <Link to="/ios-installs">Promote iOS App</Link>
               </li>
               <li>
-                <a href="#">Promote Web App</a>
+                <Link to="/web-traffic">Promote Web App</Link>
               </li>
               <li>
-                <a href="#">Promote ASO App</a>
+                <Link to="/aso-booster">Promote ASO App</Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/web-traffic">
                   Buy Web Traffic{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">Campaigns & Pricing</a>
+                <Link to="/all-plans">Campaigns & Pricing</Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/contact">
                   Advertiser API{" "}
                   <span className={`${styles.badge} ${styles.live}`}>Live</span>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -81,22 +82,22 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">Monetization Solutions</a>
+                <Link to="/boost-engagement">Monetization Solutions</Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/offerwall-monetization">
                   Offerwall Monetization{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">Become Publisher</a>
+                <Link to="/become-publisher">Become Publisher</Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/contact">
                   Publisher API{" "}
                   <span className={`${styles.badge} ${styles.live}`}>Live</span>
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -105,10 +106,10 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">
+                <Link to="/contact">
                   Referral Program{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -163,7 +164,7 @@ const Footer = () => {
                 <a href="#">Developer</a>
               </li>
               <li>
-                <a href="#">CPIDroid Blog</a>
+                <Link to="/cpidroid-blog">CPIDroid Blog</Link>
               </li>
               <li>
                 <a href="#">Mobile App Marketing</a>
@@ -217,19 +218,19 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>Need Help?</h3>
             <ul>
               <li>
-                <a href="#">Live Chat</a>
+                <Link to="/cpidroid-support">Live Chat</Link>
               </li>
               <li>
-                <a href="#">Help Center</a>
+                <Link to="/cpidroid-support">Help Center</Link>
               </li>
               <li>
                 <a href="#">Help Center (Zendesk)</a>
               </li>
               <li>
-                <a href="#">Support</a>
+                <Link to="/cpidroid-support">Support</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to="/contact-cpidroid">Contact</Link>
               </li>
               <li>
                 <a href="#">Overseas Requests</a>

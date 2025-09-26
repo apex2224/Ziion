@@ -868,6 +868,210 @@ tbody tr { transition: background-color 0.2s; }
   margin: 0;
 }
 
+/* --- Offers Page Styles --- */
+.offersTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.offersTable th, .offersTable td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.offersTable thead th {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: none;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.offerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.offerName {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.offerDescription {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.payout {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.country, .category {
+  padding: 2px 6px;
+  border-radius: 12px;
+  background-color: var(--bg-main);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* --- Publisher Report Styles --- */
+.reportsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.reportBlock {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.reportsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+
+.reportsTable th, .reportsTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.reportsTable thead th {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.chartSection {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid var(--border-color);
+}
+
+.chartPlaceholder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-main);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--border-color);
+}
+
+.chartLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.chartLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.metricCard {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.metricCard h4 {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.metricValue {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.trend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.positiveTrend {
+  color: var(--green);
+}
+
+.negativeTrend {
+  color: var(--red);
+}
+
+.reportControls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* --- Status Classes for Different Offer Statuses --- */
+.status.pending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.status.active {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.status.paused {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.status.completed {
+  background-color: #EDE9FE;
+  color: #5B21B6;
+}
+
 /* --- Publisher Billing Styles --- */
 .billingSummary {
   display: grid;

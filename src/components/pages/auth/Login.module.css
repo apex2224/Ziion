@@ -5,7 +5,14 @@
   width: 100%;
 }
 
+.loginPage {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .leftPanel {
+  flex: 1;
   background: linear-gradient(160deg, #1e3a8a 0%, #3a86ff 100%);
   color: #ffffff;
   display: flex;
@@ -14,6 +21,247 @@
   align-items: center;
   padding: 50px;
   position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.testimonial {
+  max-width: 400px;
+  position: relative;
+}
+
+.quoteIcon {
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.author {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.avatars {
+  display: flex;
+  gap: -10px;
+  margin-top: 30px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  border: 3px solid #3a86ff;
+}
+
+.avatar1 {
+  background: #ff6b6b;
+}
+
+.avatar2 {
+  background: #f06595;
+}
+
+.avatar3 {
+  background: #748ffc;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.loginForm {
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginForm h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.loginForm h2 span {
+  color: #007bff;
+}
+
+.subtitle {
+  color: #666;
+  margin: 10px 0 30px 0;
+}
+
+.socialLogin {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.socialLogin button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s;
+}
+.googleBtn {
+  background-color: #fff;
+  color: #DB4437;
+  border-color: #DB4437;
+}
+.emailBtn {
+  background-color: #fff;
+  color: #4285F4;
+  border-color: #4285F4;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+  margin: 25px 0;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+.separator span {
+  padding: 0 10px;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+.inputGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 5px;
+}
+.inputGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.forgotLink {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.submitGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.submitGroup button {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.otpBtn {
+  background-color: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+.otpBtn:hover {
+  background-color: #f0f6ff;
+}
+
+.signinBtn {
+  background-color: #007bff;
+  color: #fff;
+}
+.signinBtn:hover {
+  background-color: #0056b3;
+}
+
+.signupLink {
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+.signupLink a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .leftPanel {
+    display: none;
+  }
 }
 
 .logo {
@@ -69,9 +317,15 @@
   border: 3px solid #3a86ff;
 }
 
-.avatar1 { background: #ff6b6b; }
-.avatar2 { background: #f06595; }
-.avatar3 { background: #748ffc; }
+.avatar1 {
+  background: #ff6b6b;
+}
+.avatar2 {
+  background: #f06595;
+}
+.avatar3 {
+  background: #748ffc;
+}
 
 .testimonialCarouselContainer {
   width: 100%;
@@ -193,7 +447,6 @@
   display: flex;
 }
 
-
 .rightPanel {
   display: flex;
   align-items: center;
@@ -268,11 +521,13 @@
 }
 .separator::before,
 .separator::after {
-  content: '';
+  content: "";
   flex: 1;
   border-bottom: 1px solid #ddd;
 }
-.separator span { padding: 0 10px; }
+.separator span {
+  padding: 0 10px;
+}
 
 .inputGroup {
   margin-bottom: 20px;
@@ -372,43 +627,44 @@
   .loginPage {
     grid-template-columns: 35% 65%;
   }
-  
+
   .leftPanel {
     padding: 40px;
   }
-  
+
   .logo {
     top: 30px;
     left: 30px;
     font-size: 22px;
   }
-  
+
   .testimonial {
     max-width: 350px;
   }
-  
+
   .testimonial blockquote {
     font-size: 1.15rem;
   }
-  
+
   .authorImage {
     width: 50px;
     height: 50px;
   }
-  
+
   .rightPanel {
     padding: 40px;
   }
-  
+
   .loginForm {
     max-width: 400px;
   }
-  
-  .formGroup input, .formGroup textarea {
+
+  .formGroup input,
+  .formGroup textarea {
     padding: 12px 15px;
     font-size: 15px;
   }
-  
+
   .signinBtn {
     padding: 12px;
     font-size: 16px;
@@ -419,38 +675,39 @@
   .loginPage {
     grid-template-columns: 1fr;
   }
-  
+
   .leftPanel {
     display: none;
   }
-  
+
   .rightPanel {
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .loginForm {
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .formTitle {
     font-size: 28px;
     margin-bottom: 30px;
   }
-  
-  .formGroup input, .formGroup textarea {
+
+  .formGroup input,
+  .formGroup textarea {
     padding: 14px 18px;
     font-size: 16px;
   }
-  
+
   .signinBtn {
     padding: 14px;
     font-size: 17px;
   }
-  
+
   .signupLink {
     margin-top: 25px;
   }
@@ -460,60 +717,60 @@
   .loginPage {
     min-height: 100vh;
   }
-  
+
   .rightPanel {
     padding: 30px 20px;
   }
-  
+
   .loginForm {
     max-width: 100%;
     width: 100%;
     padding: 0 10px;
   }
-  
+
   .loginForm h2 {
     font-size: 1.5rem;
     margin: 0 0 10px 0;
   }
-  
+
   .subtitle {
     font-size: 0.85rem;
     margin: 10px 0 20px 0;
   }
-  
+
   .socialLogin {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .socialLogin button {
     padding: 12px;
     font-size: 14px;
   }
-  
+
   .separator {
     margin: 20px 0;
   }
-  
+
   .inputGroup {
     margin-bottom: 16px;
   }
-  
+
   .inputGroup label {
     font-size: 11px;
     margin-bottom: 6px;
   }
-  
+
   .inputGroup input {
     padding: 10px;
     font-size: 14px;
   }
-  
+
   .passwordWrapper {
     position: relative;
   }
-  
+
   .eyeIcon {
     position: absolute;
     top: 50%;
@@ -521,33 +778,33 @@
     transform: translateY(-50%);
     font-size: 14px;
   }
-  
+
   .options {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     margin-bottom: 20px;
   }
-  
+
   .rememberMe {
     gap: 8px;
   }
-  
+
   .forgotLink {
     font-size: 13px;
   }
-  
+
   .submitGroup {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .submitGroup button {
     padding: 12px;
     font-size: 14px;
   }
-  
+
   .signupLink {
     margin-top: 20px;
     font-size: 13px;
@@ -558,82 +815,82 @@
   .loginPage {
     min-height: 100vh;
   }
-  
+
   .rightPanel {
     padding: 25px 15px;
   }
-  
+
   .loginForm {
     padding: 0 5px;
   }
-  
+
   .loginForm h2 {
     font-size: 1.4rem;
     text-align: center;
   }
-  
+
   .subtitle {
     font-size: 0.8rem;
     text-align: center;
     margin: 10px 0 20px 0;
   }
-  
+
   .socialLogin {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .socialLogin button {
     padding: 11px;
     font-size: 13px;
   }
-  
+
   .separator {
     font-size: 11px;
     margin: 20px 0;
   }
-  
+
   .inputGroup {
     margin-bottom: 14px;
   }
-  
+
   .inputGroup label {
     font-size: 10px;
     margin-bottom: 5px;
   }
-  
+
   .inputGroup input {
     padding: 9px;
     font-size: 13px;
   }
-  
+
   .eyeIcon {
     right: 8px;
     font-size: 13px;
   }
-  
+
   .options {
     font-size: 12px;
     gap: 10px;
   }
-  
+
   .rememberMe {
     gap: 6px;
   }
-  
+
   .forgotLink {
     font-size: 12px;
   }
-  
+
   .submitGroup {
     gap: 10px;
   }
-  
+
   .submitGroup button {
     padding: 11px;
     font-size: 13px;
   }
-  
+
   .signupLink {
     margin-top: 18px;
     font-size: 12px;
@@ -645,59 +902,59 @@
   .loginPage {
     min-height: 100vh;
   }
-  
+
   .rightPanel {
     padding: 20px 12px;
   }
-  
+
   .loginForm h2 {
     font-size: 1.3rem;
   }
-  
+
   .subtitle {
     font-size: 0.75rem;
   }
-  
+
   .socialLogin button {
     padding: 10px;
     font-size: 12px;
   }
-  
+
   .separator {
     font-size: 10px;
   }
-  
+
   .inputGroup label {
     font-size: 9px;
   }
-  
+
   .inputGroup input {
     padding: 8px;
     font-size: 12px;
   }
-  
+
   .eyeIcon {
     right: 7px;
     font-size: 12px;
   }
-  
+
   .options {
     font-size: 11px;
   }
-  
+
   .rememberMe {
     gap: 5px;
   }
-  
+
   .forgotLink {
     font-size: 11px;
   }
-  
+
   .submitGroup button {
     padding: 10px;
     font-size: 12px;
   }
-  
+
   .signupLink {
     font-size: 11px;
   }
