@@ -34,6 +34,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  margin-top: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -188,7 +189,7 @@ body {
   width: 100%;
   height: auto;
   max-height: 500px;
-  object-fit: contain;
+  object-fit: contain;  
   box-sizing: border-box;
 }
 
