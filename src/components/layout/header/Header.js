@@ -16,6 +16,7 @@ import {
   FaTimes,
   FaCoins,
   FaUserPlus,
+  FaUser,
 } from "react-icons/fa";
 import styles from "./Header.module.css";
 
@@ -42,7 +43,7 @@ const useAuthStatus = () => {
   return isAuthenticated;
 };
 
-// --- DATA ---
+// --- DATA (UNCHANGED) ---
 const featuresData = [
   {
     icon: <FaShieldAlt />,
@@ -129,9 +130,9 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.setItem("isAuthenticated", "false");
-    handleLinkClick("/");
+    navigate('/'); // Navigate to home after logout
   };
-
+  
   const renderFeaturesDropdown = (isMobile) => (
     <div className={isMobile ? styles.mobileDropdown : `${styles.dropdown} ${styles.featuresDropdown}`}>
       {featuresData.map((item) => (
@@ -239,6 +240,7 @@ const Header = () => {
     </div>
   );
 
+
   return (
     <header className={styles.header}>
       <nav className={styles.mainNav}>
@@ -247,7 +249,6 @@ const Header = () => {
             ⚡️ CPIDroid
           </Link>
 
-          {/* --- Desktop Nav Links --- */}
           <ul className={styles.navLinks}>
             <li onMouseEnter={() => handleMouseEnter("features")} onMouseLeave={handleMouseLeave}>
               <a href="#">
@@ -275,17 +276,11 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* --- Desktop Auth Buttons --- */}
           <div className={styles.authButtons}>
             {isAuthenticated ? (
-              <>
-                <button className={styles.dashboardButton} onClick={() => handleLinkClick("/advertiser")}>
-                  DASHBOARD
-                </button>
-                <button className={styles.logoutButton} onClick={handleLogout}>
-                  LOGOUT
-                </button>
-              </>
+              <button className={styles.profileButton} onClick={() => handleLinkClick("/profile")}>
+                <FaUser /> 
+              </button>
             ) : (
               <>
                 <Link to="/login" className={styles.loginButton} onClick={() => handleLinkClick("/login")}>
@@ -298,14 +293,12 @@ const Header = () => {
             )}
           </div>
 
-          {/* --- Mobile Menu Toggle --- */}
           <button className={styles.mobileMenuToggle} onClick={toggleMobileMenu}>
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </nav>
 
-      {/* --- Mobile Menu Drawer --- */}
       {isMobileMenuOpen && (
         <div className={styles.mobileNav}>
           <div className={styles.mobileMenuItem}>
@@ -344,9 +337,9 @@ const Header = () => {
 
           {isAuthenticated ? (
             <>
-              <button className={styles.dashboardButtonMobile} onClick={() => handleLinkClick("/advertiser")}>
-                DASHBOARD
-              </button>
+              <Link to="/profile" className={styles.profileButtonMobile} onClick={() => handleLinkClick("/profile")}>
+                <FaUser style={{ marginRight: '8px' }} /> PROFILE
+              </Link>
               <button className={styles.logoutButtonMobile} onClick={handleLogout}>
                 LOGOUT
               </button>
