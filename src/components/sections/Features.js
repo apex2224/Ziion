@@ -33,14 +33,18 @@ const Features = () => {
   return (
     <section className={`${styles.featuresSection} reveal`}>
       <div className={styles.container}>
-        <h2 className={`${styles.title} reveal-top`}>Interesting Figures About Us</h2>
+        <h2 className={`${styles.title} reveal-top`}>
+          Interesting Figures About Us
+        </h2>
 
         <div className={`${styles.contentGrid} reveal-bottom`}>
           <div className={`${styles.featureColumn} reveal-left`}>
             {leftFeatures.map((item, index) => (
               <div
                 key={index}
-                className={`${styles.featureItem} ${styles.alignLeft} reveal-delay-${index + 1}`}
+                className={`${styles.featureItem} ${
+                  styles.alignLeft
+                } reveal-delay-${index + 1}`}
               >
                 <div className={styles.iconWrapper}>{item.icon}</div>
                 <p>{item.text}</p>
@@ -49,17 +53,16 @@ const Features = () => {
           </div>
 
           <div className={`${styles.illustration} reveal`}>
-            <img
-              src={FeaturesImg}
-              alt="About Us Illustration"
-            />
+            <img src={FeaturesImg} alt="About Us Illustration" />
           </div>
 
           <div className={`${styles.featureColumn} reveal-right`}>
             {rightFeatures.map((item, index) => (
               <div
                 key={index}
-                className={`${styles.featureItem} ${styles.alignRight} reveal-delay-${index + 1}`}
+                className={`${styles.featureItem} ${
+                  styles.alignRight
+                } reveal-delay-${index + 1}`}
               >
                 <p>{item.text}</p>
                 <div className={styles.iconWrapper}>{item.icon}</div>

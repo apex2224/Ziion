@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Footer.module.css";
 import { FaFacebookF, FaLinkedinIn, FaHeart } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -8,6 +9,12 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { BsCircleFill } from "react-icons/bs";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleLinkClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.mainContent}>
@@ -48,28 +55,97 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>For Advertisers</h3>
             <ul>
               <li>
-                <a href="#">Promote Android App</a>
+                <a href="/promote-android-app" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/promote-android-app");
+                }}>Promote Android App</a>
               </li>
               <li>
-                <a href="#">Promote iOS App</a>
+                <a href="/promote-ios-app" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/promote-ios-app");
+                }}>Promote iOS App</a>
               </li>
               <li>
-                <a href="#">Promote Web App</a>
+                <a href="/promote-web-app" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/promote-web-app");
+                }}>Promote Web App</a>
               </li>
               <li>
-                <a href="#">Promote ASO App</a>
+                <a href="/promote-aso-app" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/promote-aso-app");
+                }}>Promote ASO App</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/android-installs" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/android-installs");
+                }}>Android Installs</a>
+              </li>
+              <li>
+                <a href="/ios-installs" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/ios-installs");
+                }}>iOS Installs</a>
+              </li>
+              <li>
+                <a href="/android-keyword-installs" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/android-keyword-installs");
+                }}>Android Keyword Installs</a>
+              </li>
+              <li>
+                <a href="/ios-keyword-installs" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/ios-keyword-installs");
+                }}>iOS Keyword Installs</a>
+              </li>
+              <li>
+                <a href="/android-apk-installs" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/android-apk-installs");
+                }}>Android APK Installs</a>
+              </li>
+              <li>
+                <a href="/web-traffic" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/web-traffic");
+                }}>Web Traffic</a>
+              </li>
+              <li>
+                <a href="/buy-web-traffic" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/buy-web-traffic");
+                }}>
                   Buy Web Traffic{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
                 </a>
               </li>
               <li>
-                <a href="#">Campaigns & Pricing</a>
+                <a href="/android-booster" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/android-booster");
+                }}>Android Booster</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/ios-booster" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/ios-booster");
+                }}>iOS Booster</a>
+              </li>
+              <li>
+                <a href="/campaigns-pricing" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/campaigns-pricing");
+                }}>Campaigns & Pricing</a>
+              </li>
+              <li>
+                <a href="/advertiser-api" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/advertiser-api");
+                }}>
                   Advertiser API{" "}
                   <span className={`${styles.badge} ${styles.live}`}>Live</span>
                 </a>
@@ -81,19 +157,37 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">Monetization Solutions</a>
+                <a href="/monetization-solutions" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/monetization-solutions");
+                }}>Monetization Solutions</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/offerwall-monetization-footer" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/offerwall-monetization-footer");
+                }}>
                   Offerwall Monetization{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
                 </a>
               </li>
               <li>
-                <a href="#">Become Publisher</a>
+                <a href="/offerwall-monetization" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/offerwall-monetization");
+                }}>Offerwall Monetization</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/become-publisher" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/become-publisher");
+                }}>Become Publisher</a>
+              </li>
+              <li>
+                <a href="/publisher-api" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/publisher-api");
+                }}>
                   Publisher API{" "}
                   <span className={`${styles.badge} ${styles.live}`}>Live</span>
                 </a>
@@ -105,10 +199,61 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">
+                <a href="/referral-program" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/referral-program");
+                }}>
                   Referral Program{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
                 </a>
+              </li>
+            </ul>
+
+            <h3 className={`${styles.footerHeading} ${styles.subHeading}`}>
+              Features
+            </h3>
+            <ul>
+              <li>
+                <a href="/fraud-detection" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/fraud-detection");
+                }}>Fraud Detection</a>
+              </li>
+              <li>
+                <a href="/boost-engagement" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/boost-engagement");
+                }}>Boost Engagement</a>
+              </li>
+              <li>
+                <a href="/tracking-solutions" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/tracking-solutions");
+                }}>Tracking Solutions</a>
+              </li>
+              <li>
+                <a href="/android-ios-web" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/android-ios-web");
+                }}>Android / iOS / Web</a>
+              </li>
+              <li>
+                <a href="/incent-non-incent" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/incent-non-incent");
+                }}>Incent / Non-Incent</a>
+              </li>
+              <li>
+                <a href="/multiple-pricing-models" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/multiple-pricing-models");
+                }}>Multiple Pricing Models</a>
+              </li>
+              <li>
+                <a href="/aso-booster" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/aso-booster");
+                }}>ASO Booster</a>
               </li>
             </ul>
           </div>
@@ -118,22 +263,40 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>Company</h3>
             <ul>
               <li>
-                <a href="#">Pitch Deck</a>
+                <a href="/pitch-deck" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/pitch-deck");
+                }}>Pitch Deck</a>
               </li>
               <li>
-                <a href="#">Our Clients</a>
+                <a href="/our-clients" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/our-clients");
+                }}>Our Clients</a>
               </li>
               <li>
-                <a href="#">Testimonials</a>
+                <a href="/testimonials" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/testimonials");
+                }}>Testimonials</a>
               </li>
               <li>
-                <a href="#">About Us: The Team</a>
+                <a href="/about-us-the-team" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/about-us-the-team");
+                }}>About Us: The Team</a>
               </li>
               <li>
-                <a href="#">The Brand</a>
+                <a href="/the-brand" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/the-brand");
+                }}>The Brand</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/careers" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/careers");
+                }}>
                   Careers{" "}
                   <span className={`${styles.badge} ${styles.hiring}`}>
                     We're Hiring
@@ -141,16 +304,28 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="/privacy-policy" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/privacy-policy");
+                }}>Privacy Policy</a>
               </li>
               <li>
-                <a href="#">Refund Policy</a>
+                <a href="/refund-policy" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/refund-policy");
+                }}>Refund Policy</a>
               </li>
               <li>
-                <a href="#">Cancellation Policy</a>
+                <a href="/cancellation-policy" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/cancellation-policy");
+                }}>Cancellation Policy</a>
               </li>
               <li>
-                <a href="#">Infringement Policy</a>
+                <a href="/infringement-policy" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/infringement-policy");
+                }}>Infringement Policy</a>
               </li>
             </ul>
           </div>
@@ -160,28 +335,67 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>Resources</h3>
             <ul>
               <li>
-                <a href="#">Developer</a>
+                <a href="/developer" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/developer");
+                }}>Developer</a>
               </li>
               <li>
-                <a href="#">CPIDroid Blog</a>
+                <a href="/cpidroid-blog-footer" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/cpidroid-blog-footer");
+                }}>CPIDroid Blog</a>
               </li>
               <li>
-                <a href="#">Mobile App Marketing</a>
+                <a href="/cpidroid-blog" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/cpidroid-blog");
+                }}>CPIDroid Blog (Header)</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/cpidroid-support" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/cpidroid-support");
+                }}>CPIDroid Support</a>
+              </li>
+              <li>
+                <a href="/contact-cpidroid" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/contact-cpidroid");
+                }}>Contact CPIDroid</a>
+              </li>
+              <li>
+                <a href="/mobile-app-marketing" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/mobile-app-marketing");
+                }}>Mobile App Marketing</a>
+              </li>
+              <li>
+                <a href="/glossary" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/glossary");
+                }}>
                   Glossary{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
                 </a>
               </li>
               <li>
-                <a href="#">CPIDroid Alternatives</a>
+                <a href="/cpidroid-alternatives" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/cpidroid-alternatives");
+                }}>CPIDroid Alternatives</a>
               </li>
               <li>
-                <a href="#">Terms of Service</a>
+                <a href="/terms-of-service" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/terms-of-service");
+                }}>Terms of Service</a>
               </li>
               <li>
-                <a href="#">EULA</a>
+                <a href="/eula" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/eula");
+                }}>EULA</a>
               </li>
             </ul>
 
@@ -190,16 +404,25 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="#">Getting Started</a>
+                <a href="/getting-started" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/getting-started");
+                }}>Getting Started</a>
               </li>
               <li>
-                <a href="#">
+                <a href="/free-cpi-money" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/free-cpi-money");
+                }}>
                   Free CPI Money{" "}
                   <span className={`${styles.badge} ${styles.new}`}>New</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/voucher" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/voucher");
+                }}>
                   Voucher{" "}
                   <span className={`${styles.badge} ${styles.redeem}`}>
                     Redeem
@@ -207,7 +430,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#">Startup Program</a>
+                <a href="/startup-program" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/startup-program");
+                }}>Startup Program</a>
               </li>
             </ul>
           </div>
@@ -217,34 +443,64 @@ const Footer = () => {
             <h3 className={styles.footerHeading}>Need Help?</h3>
             <ul>
               <li>
-                <a href="#">Live Chat</a>
+                <a href="/live-chat" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/live-chat");
+                }}>Live Chat</a>
               </li>
               <li>
-                <a href="#">Help Center</a>
+                <a href="/help-center" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/help-center");
+                }}>Help Center</a>
               </li>
               <li>
-                <a href="#">Help Center (Zendesk)</a>
+                <a href="/help-center-zendesk" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/help-center-zendesk");
+                }}>Help Center (Zendesk)</a>
               </li>
               <li>
-                <a href="#">Support</a>
+                <a href="/support" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/support");
+                }}>Support</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="/contact-footer" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/contact-footer");
+                }}>Contact</a>
               </li>
               <li>
-                <a href="#">Overseas Requests</a>
+                <a href="/overseas-requests" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/overseas-requests");
+                }}>Overseas Requests</a>
               </li>
               <li>
-                <a href="#">Request Feature</a>
+                <a href="/request-feature" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/request-feature");
+                }}>Request Feature</a>
               </li>
               <li>
-                <a href="#">Report Bug</a>
+                <a href="/report-bug" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/report-bug");
+                }}>Report Bug</a>
               </li>
               <li>
-                <a href="#">Status Page</a>
+                <a href="/status-page" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/status-page");
+                }}>Status Page</a>
               </li>
               <li>
-                <a href="#" className={styles.supportLink}>
+                <a href="/support" onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick("/support");
+                }} className={styles.supportLink}>
                   <BsCircleFill className={styles.onlineIcon} />
                   Support
                   <span className={styles.onlineBadge}>Online</span>

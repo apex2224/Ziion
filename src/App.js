@@ -52,13 +52,56 @@ import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
 // ScrollReveal Demo
 import ScrollRevealDemo from "./components/pages/ScrollRevealDemo";
 
+// Footer Link Components
+import AboutUsTheTeam from "./components/layout/footer/links/AboutUsTheTeam";
+import AdvertiserApi from "./components/layout/footer/links/AdvertiserApi";
+import BuyWebTraffic from "./components/layout/footer/links/BuyWebTraffic";
+import CPIDroidAlternatives from "./components/layout/footer/links/CPIDroidAlternatives";
+import CPIDroidBlogFooter from "./components/layout/footer/links/CPIDroidBlog";
+import CampaignsPricing from "./components/layout/footer/links/CampaignsPricing";
+import CancellationPolicy from "./components/layout/footer/links/CancellationPolicy";
+import Careers from "./components/layout/footer/links/Careers";
+import ContactFooter from "./components/layout/footer/links/Contact";
+import Developer from "./components/layout/footer/links/Developer";
+import EULA from "./components/layout/footer/links/EULA";
+import FreeCPIMoney from "./components/layout/footer/links/FreeCPIMoney";
+import GettingStarted from "./components/layout/footer/links/GettingStarted";
+import Glossary from "./components/layout/footer/links/Glossary";
+import HelpCenter from "./components/layout/footer/links/HelpCenter";
+import HelpCenterZendesk from "./components/layout/footer/links/HelpCenterZendesk";
+import InfringementPolicy from "./components/layout/footer/links/InfringementPolicy";
+import LiveChat from "./components/layout/footer/links/LiveChat";
+import MobileAppMarketing from "./components/layout/footer/links/MobileAppMarketing";
+import MonetizationSolutions from "./components/layout/footer/links/MonetizationSolutions";
+import OfferwallMonetizationFooter from "./components/layout/footer/links/OfferwallMonetization";
+import OurClients from "./components/layout/footer/links/OurClients";
+import OverseasRequests from "./components/layout/footer/links/OverseasRequests";
+import PitchDeck from "./components/layout/footer/links/PitchDeck";
+import PrivacyPolicy from "./components/layout/footer/links/PrivacyPolicy";
+import PromoteAndroidApp from "./components/layout/footer/links/PromoteAndroidApp";
+import PromoteAsoApp from "./components/layout/footer/links/PromoteAsoApp";
+import PromoteIosApp from "./components/layout/footer/links/PromoteIosApp";
+import PromoteWebApp from "./components/layout/footer/links/PromoteWebApp";
+import PublisherApi from "./components/layout/footer/links/PublisherApi";
+import ReferralProgram from "./components/layout/footer/links/ReferralProgram";
+import RefundPolicy from "./components/layout/footer/links/RefundPolicy";
+import ReportBug from "./components/layout/footer/links/ReportBug";
+import RequestFeature from "./components/layout/footer/links/RequestFeature";
+import StartupProgram from "./components/layout/footer/links/StartupProgram";
+import StatusPage from "./components/layout/footer/links/StatusPage";
+import Support from "./components/layout/footer/links/Support";
+import TermsOfService from "./components/layout/footer/links/TermsOfService";
+import Testimonials from "./components/layout/footer/links/Testimonials";
+import TheBrand from "./components/layout/footer/links/TheBrand";
+import Voucher from "./components/layout/footer/links/Voucher";
+
 // Define which routes should NOT have ScrollReveal
 const DASHBOARD_ROUTES = [
-  '/advertiser',
-  '/publisher',
-  '/aso-booster',
-  '/lets-chat',
-  '/lets-talk'
+  "/advertiser",
+  "/publisher",
+  "/aso-booster",
+  "/lets-chat",
+  "/lets-talk",
 ];
 
 const MainLayout = ({ children, pathname }) => {
@@ -326,13 +369,343 @@ const App = () => {
             </MainLayout>
           }
         />
-        
+
         {/* ScrollReveal Demo Route */}
         <Route
           path="/scroll-reveal-demo"
           element={
             <MainLayout pathname="/scroll-reveal-demo">
               <ScrollRevealDemo />
+            </MainLayout>
+          }
+        />
+
+        {/* Footer Link Routes */}
+        <Route
+          path="/about-us-the-team"
+          element={
+            <MainLayout pathname="/about-us-the-team">
+              <AboutUsTheTeam />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/advertiser-api"
+          element={
+            <MainLayout pathname="/advertiser-api">
+              <AdvertiserApi />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/buy-web-traffic"
+          element={
+            <MainLayout pathname="/buy-web-traffic">
+              <BuyWebTraffic />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/cpidroid-alternatives"
+          element={
+            <MainLayout pathname="/cpidroid-alternatives">
+              <CPIDroidAlternatives />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/cpidroid-blog-footer"
+          element={
+            <MainLayout pathname="/cpidroid-blog-footer">
+              <CPIDroidBlogFooter />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/campaigns-pricing"
+          element={
+            <MainLayout pathname="/campaigns-pricing">
+              <CampaignsPricing />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/cancellation-policy"
+          element={
+            <MainLayout pathname="/cancellation-policy">
+              <CancellationPolicy />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/careers"
+          element={
+            <MainLayout pathname="/careers">
+              <Careers />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/contact-footer"
+          element={
+            <MainLayout pathname="/contact-footer">
+              <ContactFooter />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/developer"
+          element={
+            <MainLayout pathname="/developer">
+              <Developer />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/eula"
+          element={
+            <MainLayout pathname="/eula">
+              <EULA />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/free-cpi-money"
+          element={
+            <MainLayout pathname="/free-cpi-money">
+              <FreeCPIMoney />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/getting-started"
+          element={
+            <MainLayout pathname="/getting-started">
+              <GettingStarted />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/glossary"
+          element={
+            <MainLayout pathname="/glossary">
+              <Glossary />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/help-center"
+          element={
+            <MainLayout pathname="/help-center">
+              <HelpCenter />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/help-center-zendesk"
+          element={
+            <MainLayout pathname="/help-center-zendesk">
+              <HelpCenterZendesk />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/infringement-policy"
+          element={
+            <MainLayout pathname="/infringement-policy">
+              <InfringementPolicy />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/live-chat"
+          element={
+            <MainLayout pathname="/live-chat">
+              <LiveChat />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/mobile-app-marketing"
+          element={
+            <MainLayout pathname="/mobile-app-marketing">
+              <MobileAppMarketing />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/monetization-solutions"
+          element={
+            <MainLayout pathname="/monetization-solutions">
+              <MonetizationSolutions />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/offerwall-monetization-footer"
+          element={
+            <MainLayout pathname="/offerwall-monetization-footer">
+              <OfferwallMonetizationFooter />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/our-clients"
+          element={
+            <MainLayout pathname="/our-clients">
+              <OurClients />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/overseas-requests"
+          element={
+            <MainLayout pathname="/overseas-requests">
+              <OverseasRequests />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/pitch-deck"
+          element={
+            <MainLayout pathname="/pitch-deck">
+              <PitchDeck />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <MainLayout pathname="/privacy-policy">
+              <PrivacyPolicy />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/promote-android-app"
+          element={
+            <MainLayout pathname="/promote-android-app">
+              <PromoteAndroidApp />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/promote-aso-app"
+          element={
+            <MainLayout pathname="/promote-aso-app">
+              <PromoteAsoApp />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/promote-ios-app"
+          element={
+            <MainLayout pathname="/promote-ios-app">
+              <PromoteIosApp />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/promote-web-app"
+          element={
+            <MainLayout pathname="/promote-web-app">
+              <PromoteWebApp />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/publisher-api"
+          element={
+            <MainLayout pathname="/publisher-api">
+              <PublisherApi />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/referral-program"
+          element={
+            <MainLayout pathname="/referral-program">
+              <ReferralProgram />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/refund-policy"
+          element={
+            <MainLayout pathname="/refund-policy">
+              <RefundPolicy />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/report-bug"
+          element={
+            <MainLayout pathname="/report-bug">
+              <ReportBug />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/request-feature"
+          element={
+            <MainLayout pathname="/request-feature">
+              <RequestFeature />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/startup-program"
+          element={
+            <MainLayout pathname="/startup-program">
+              <StartupProgram />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/status-page"
+          element={
+            <MainLayout pathname="/status-page">
+              <StatusPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/support"
+          element={
+            <MainLayout pathname="/support">
+              <Support />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/terms-of-service"
+          element={
+            <MainLayout pathname="/terms-of-service">
+              <TermsOfService />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/testimonials"
+          element={
+            <MainLayout pathname="/testimonials">
+              <Testimonials />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/the-brand"
+          element={
+            <MainLayout pathname="/the-brand">
+              <TheBrand />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/voucher"
+          element={
+            <MainLayout pathname="/voucher">
+              <Voucher />
             </MainLayout>
           }
         />
