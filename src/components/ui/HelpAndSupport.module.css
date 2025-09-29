@@ -1,0 +1,80 @@
+.container {
+    padding: 20px 15px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color-secondary);
+    margin-right: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+.backButton:hover {
+    color: var(--text-color-primary);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color-primary);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    margin-bottom: 15px;
+}
+
+.contactButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid var(--divider-color);
+    background-color: var(--settings-button-bg);
+    color: var(--settings-button-text-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.contactButton:hover {
+    background-color: var(--settings-button-hover-bg);
+}
+
+.contactIcon {
+    margin-right: 8px;
+    font-size: 14px;
+}

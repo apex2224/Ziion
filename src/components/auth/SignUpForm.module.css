@@ -1,0 +1,61 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.inputField {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.submitButton {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 14px;
+    text-align: center;
+    background-color: #f8d7da;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.switchFormLink {
+    text-align: center;
+    font-size: 14px;
+}
+
+.switchFormLink button {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.searchContainer {
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 15px;
+    padding-left: 40px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: var(--settings-button-bg);
+    color: var(--text-color-primary);
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--text-color-secondary);
+}

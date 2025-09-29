@@ -110,7 +110,7 @@ const resourcesData = [
 ];
 
 // --- COMPONENT ---
-const Header = () => {
+const Header = ({ onProfileClick }) => {
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
@@ -131,6 +131,11 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.setItem("isAuthenticated", "false");
     navigate('/'); // Navigate to home after logout
+  };
+
+  const handleProfileClick = () => {
+    setMobileMenuOpen(false);
+    onProfileClick();
   };
   
   const renderFeaturesDropdown = (isMobile) => (
@@ -278,7 +283,7 @@ const Header = () => {
 
           <div className={styles.authButtons}>
             {isAuthenticated ? (
-              <button className={styles.profileButton} onClick={() => handleLinkClick("/profile")}>
+              <button className={styles.profileButton} onClick={handleProfileClick}>
                 <FaUser /> 
               </button>
             ) : (
@@ -337,9 +342,9 @@ const Header = () => {
 
           {isAuthenticated ? (
             <>
-              <Link to="/profile" className={styles.profileButtonMobile} onClick={() => handleLinkClick("/profile")}>
+              <button className={styles.profileButtonMobile} onClick={handleProfileClick}>
                 <FaUser style={{ marginRight: '8px' }} /> PROFILE
-              </Link>
+              </button>
               <button className={styles.logoutButtonMobile} onClick={handleLogout}>
                 LOGOUT
               </button>
