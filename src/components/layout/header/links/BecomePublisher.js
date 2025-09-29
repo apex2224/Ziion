@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./BecomePublisher.module.css";
 import {
   FaUserPlus,
@@ -90,7 +88,6 @@ const BecomePublisher = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Become a Publisher</h1>
@@ -384,7 +381,6 @@ const BecomePublisher = () => {
         </div>
       )}
 
-      <Footer />
     </div>
   );
 };

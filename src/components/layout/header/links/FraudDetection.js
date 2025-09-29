@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./FraudDetection.module.css";
 import { 
   Shield, 
@@ -108,7 +106,6 @@ const FraudDetection = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.pageHeader}>
@@ -370,7 +367,6 @@ const FraudDetection = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../header/Header";
-import Footer from "../../../footer/Footer";
 import styles from "./MultiplePricingModels.module.css";
 import { FaChartBar, FaDollarSign, FaPercentage, FaCoins, FaBolt, FaUsers, FaBullseye, FaMedal } from "react-icons/fa";
 
@@ -65,7 +63,6 @@ const MultiplePricingModels = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Multiple Pricing Models</h1>
@@ -315,7 +312,6 @@ const MultiplePricingModels = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

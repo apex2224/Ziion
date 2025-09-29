@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../header/Header";
-import Footer from "../../../footer/Footer";
 import styles from "./AndroidIOSWeb.module.css";
 import { FaAndroid, FaApple, FaDesktop, FaMobileAlt, FaGlobe, FaTabletAlt } from "react-icons/fa";
 
@@ -62,7 +60,6 @@ const AndroidIOSWeb = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Android, iOS & Web Solutions</h1>
@@ -302,7 +299,6 @@ const AndroidIOSWeb = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../header/Header";
-import Footer from "../../../footer/Footer";
 import styles from "./TrackingSolutions.module.css";
 import { FaChartLine, FaEye, FaMapMarkerAlt, FaFingerprint, FaBolt, FaCrosshairs, FaMobileAlt, FaGlobe, FaShieldAlt, FaUsers } from "react-icons/fa";
 
@@ -61,7 +59,6 @@ const TrackingSolutions = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Advanced Tracking Solutions</h1>
@@ -327,7 +324,6 @@ const TrackingSolutions = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

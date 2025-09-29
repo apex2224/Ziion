@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./AndroidAPKInstalls.module.css";
 import { FaAndroid, FaDownload, FaFileAlt, FaChartLine, FaBolt } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const AndroidAPKInstalls = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Android APK Installs</h1>
@@ -260,7 +257,6 @@ const AndroidAPKInstalls = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

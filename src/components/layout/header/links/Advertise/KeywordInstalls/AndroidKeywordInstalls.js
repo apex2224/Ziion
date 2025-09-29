@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./AndroidKeywordInstalls.module.css";
 import { 
   FaAndroid, 
@@ -67,7 +65,6 @@ const AndroidKeywordInstalls = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Android Keyword Installs</h1>
@@ -267,7 +264,6 @@ const AndroidKeywordInstalls = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };
