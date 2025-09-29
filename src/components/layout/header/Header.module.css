@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -21,6 +21,7 @@ body {
   background-color: rgba(255, 255, 255, 0.75); /* More opaque */
   border-bottom: 1px solid rgba(220, 220, 220, 0.5);
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 80px;
 }
 
 /* Add a shadow on scroll to make it pop */

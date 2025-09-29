@@ -6,7 +6,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,17 +13,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide scrollbars for Webkit browsers (Chrome, Safari, newer Edge) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+body {
+  scrollbar-width: none;
+}
+
 #root {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* Hide scrollbars for Webkit browsers (Chrome, Safari, newer Edge) */
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+#root {
+  scrollbar-width: none;
 }
 
 /* Ensure routes don't cause horizontal overflow */
 .route-container {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* Hide scrollbars for Webkit browsers (Chrome, Safari, newer Edge) */
+.route-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+.route-container {
+  scrollbar-width: none;
 }
 
 /* Base responsive styles */

@@ -1,10 +1,11 @@
 /* --- Blog Section --- */
 .blogSection {
   width: 100%;
-  padding: 80px 5%;
+  padding: 80px 5% 40px 5%; /* Reduced bottom padding to prevent overflow */
   background-color: #ffffff;
   text-align: center;
   box-sizing: border-box; /* Ensures padding doesn't affect width */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
 }
 
 /* --- Header --- */
