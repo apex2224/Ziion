@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiGrid, FiLogOut, FiSettings } from 'react-icons/fi';
+import { FiGrid, FiLogOut, FiSettings, FiSliders } from 'react-icons/fi';
 import styles from './AuthUserPanel.module.css';
 import animStyles from './AuthUserPanelAnimations.module.css';
 
@@ -39,11 +39,15 @@ const AuthUserPanel = ({ onClose, isOpen, username, onManageAccount }) => {
                 </button>
             </div>
 
-            
+            <hr className={styles.divider} />
 
             <button onClick={onManageAccount} className={styles.settingsButton}>
                 <FiSettings className={styles.icon} />
                 Manage Account
+            </button>
+            <button className={styles.settingsButton}>
+                <FiSliders className={styles.icon} />
+                Settings
             </button>
         </div>
     );
