@@ -91,22 +91,71 @@ const featuresData = [
 ];
 
 const advertiseData = [
-  { category: "App Installs", links: [{ title: "Android Installs", path: "/android-installs" }, { title: "iOS Installs", path: "/ios-installs" }] },
-  { category: "Keyword Installs", links: [{ title: "Android Keyword Installs", path: "/android-keyword-installs" }, { title: "iOS Keyword Installs", path: "/ios-keyword-installs" }] },
-  { category: "APK Installs", links: [{ title: "Android APK Installs", path: "/android-apk-installs" }] },
-  { category: "Web Traffic", links: [{ title: "Buy Web Traffic", path: "/web-traffic" }] },
-  { category: "MAM Booster", links: [{ title: "Android Booster", path: "/android-booster" }, { title: "iOS Booster", path: "/ios-booster" }] },
+  {
+    category: "App Installs",
+    links: [
+      { title: "Android Installs", path: "/android-installs" },
+      { title: "iOS Installs", path: "/ios-installs" },
+    ],
+  },
+  {
+    category: "Keyword Installs",
+    links: [
+      { title: "Android Keyword Installs", path: "/android-keyword-installs" },
+      { title: "iOS Keyword Installs", path: "/ios-keyword-installs" },
+    ],
+  },
+  {
+    category: "APK Installs",
+    links: [{ title: "Android APK Installs", path: "/android-apk-installs" }],
+  },
+  {
+    category: "Web Traffic",
+    links: [{ title: "Buy Web Traffic", path: "/web-traffic" }],
+  },
+  {
+    category: "MAM Booster",
+    links: [
+      { title: "Android Booster", path: "/android-booster" },
+      { title: "iOS Booster", path: "/ios-booster" },
+    ],
+  },
 ];
 
 const monetizeData = [
-  { icon: <FaCoins />, title: "Offerwall Monetization", subtitle: "Earn Revenue with User Engagement", path: "/offerwall-monetization" },
-  { icon: <FaUserPlus />, title: "Become Publisher", subtitle: "Join Our Publisher Network", path: "/become-publisher" },
+  {
+    icon: <FaCoins />,
+    title: "Offerwall Monetization",
+    subtitle: "Earn Revenue with User Engagement",
+    path: "/offerwall-monetization",
+  },
+  {
+    icon: <FaUserPlus />,
+    title: "Become Publisher",
+    subtitle: "Join Our Publisher Network",
+    path: "/become-publisher",
+  },
 ];
 
 const resourcesData = [
-  { icon: <FaBlog />, title: "CPIDroid Blog", subtitle: "Official Blog", path: "/cpidroid-blog" },
-  { icon: <FaLifeRing />, title: "CPIDroid Support", subtitle: "Knowledge Base", path: "/cpidroid-support" },
-  { icon: <FaPhoneAlt />, title: "Contact CPIDroid", subtitle: "Account Manager", path: "/contact-cpidroid" },
+  {
+    icon: <FaBlog />,
+    title: "CPIDroid Blog",
+    subtitle: "Official Blog",
+    path: "/cpidroid-blog",
+  },
+  {
+    icon: <FaLifeRing />,
+    title: "CPIDroid Support",
+    subtitle: "Knowledge Base",
+    path: "/cpidroid-support",
+  },
+  {
+    icon: <FaPhoneAlt />,
+    title: "Contact CPIDroid",
+    subtitle: "Account Manager",
+    path: "/contact-cpidroid",
+  },
 ];
 
 // --- COMPONENT ---
@@ -120,7 +169,8 @@ const Header = () => {
   const handleMouseEnter = (menu) => setOpenMenu(menu);
   const handleMouseLeave = () => setOpenMenu(null);
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
-  const toggleMobileDropdown = (menu) => setMobileDropdown(mobileDropdown === menu ? null : menu);
+  const toggleMobileDropdown = (menu) =>
+    setMobileDropdown(mobileDropdown === menu ? null : menu);
 
   const handleLinkClick = (path) => {
     navigate(path);
@@ -130,11 +180,17 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.setItem("isAuthenticated", "false");
-    navigate('/'); // Navigate to home after logout
+    navigate("/"); // Navigate to home after logout
   };
-  
+
   const renderFeaturesDropdown = (isMobile) => (
-    <div className={isMobile ? styles.mobileDropdown : `${styles.dropdown} ${styles.featuresDropdown}`}>
+    <div
+      className={
+        isMobile
+          ? styles.mobileDropdown
+          : `${styles.dropdown} ${styles.featuresDropdown}`
+      }
+    >
       {featuresData.map((item) => (
         <a
           href={item.path}
@@ -145,10 +201,27 @@ const Header = () => {
             handleLinkClick(item.path);
           }}
         >
-          <div className={isMobile ? styles.mobileDropdownIcon : styles.featureIcon}>{item.icon}</div>
-          <div className={isMobile ? styles.mobileDropdownText : styles.featureText}>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownIcon : styles.featureIcon
+            }
+          >
+            {item.icon}
+          </div>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownText : styles.featureText
+            }
+          >
             <h4>
-              {item.title} {item.isHot && <span className={isMobile ? styles.mobileHotBadge : styles.hotBadge}>Hot</span>}
+              {item.title}{" "}
+              {item.isHot && (
+                <span
+                  className={isMobile ? styles.mobileHotBadge : styles.hotBadge}
+                >
+                  Hot
+                </span>
+              )}
             </h4>
             <p>{item.subtitle}</p>
           </div>
@@ -158,37 +231,65 @@ const Header = () => {
   );
 
   const renderAdvertiseDropdown = (isMobile) => (
-    <div className={isMobile ? styles.mobileDropdown : `${styles.dropdown} ${styles.advertiseDropdown}`}>
+    <div
+      className={
+        isMobile
+          ? styles.mobileDropdown
+          : `${styles.dropdown} ${styles.advertiseDropdown}`
+      }
+    >
       {advertiseData.map((category, index) => {
         // Determine icon based on category
-        const categoryIcon = 
-          category.category.startsWith("App Installs") ? <FaMobileAlt /> : 
-          category.category.startsWith("Keyword Installs") ? <FaBullseye /> : 
-          category.category.startsWith("APK Installs") ? <FaShieldAlt /> : 
-          category.category.startsWith("Web Traffic") ? <FaChartBar /> : 
-          <FaFire />; // Default icon
+        const categoryIcon = category.category.startsWith("App Installs") ? (
+          <FaMobileAlt />
+        ) : category.category.startsWith("Keyword Installs") ? (
+          <FaBullseye />
+        ) : category.category.startsWith("APK Installs") ? (
+          <FaShieldAlt />
+        ) : category.category.startsWith("Web Traffic") ? (
+          <FaChartBar />
+        ) : (
+          <FaFire />
+        ); // Default icon
 
         return (
           <a
             href={category.links[0]?.path || "#"}
             key={category.category}
-            className={isMobile ? styles.mobileDropdownItem : styles.featureItem}
+            className={
+              isMobile ? styles.mobileDropdownItem : styles.featureItem
+            }
             onClick={(e) => {
               e.preventDefault();
               handleLinkClick(category.links[0]?.path || "#");
             }}
           >
-            <div className={isMobile ? styles.mobileDropdownIcon : styles.featureIcon}>
+            <div
+              className={
+                isMobile ? styles.mobileDropdownIcon : styles.featureIcon
+              }
+            >
               {categoryIcon}
             </div>
-            <div className={isMobile ? styles.mobileDropdownText : styles.featureText}>
+            <div
+              className={
+                isMobile ? styles.mobileDropdownText : styles.featureText
+              }
+            >
               <h4>
                 {category.category}{" "}
-                {(category.category === "APK Installs" || category.category === "Web Traffic") && <span className={isMobile ? styles.mobileNewBadge : styles.newBadge}>New</span>}
+                {(category.category === "APK Installs" ||
+                  category.category === "Web Traffic") && (
+                  <span
+                    className={
+                      isMobile ? styles.mobileNewBadge : styles.newBadge
+                    }
+                  >
+                    New
+                  </span>
+                )}
               </h4>
-              <p>
-                {category.links.map(link => link.title).join(", ")}
-              </p>
+              <p>{category.links.map((link) => link.title).join(", ")}</p>
             </div>
           </a>
         );
@@ -197,7 +298,13 @@ const Header = () => {
   );
 
   const renderMonetizeDropdown = (isMobile) => (
-    <div className={isMobile ? styles.mobileDropdown : `${styles.dropdown} ${styles.simpleDropdown}`}>
+    <div
+      className={
+        isMobile
+          ? styles.mobileDropdown
+          : `${styles.dropdown} ${styles.simpleDropdown}`
+      }
+    >
       {monetizeData.map((item) => (
         <a
           key={item.title}
@@ -208,8 +315,18 @@ const Header = () => {
             handleLinkClick(item.path);
           }}
         >
-          <div className={isMobile ? styles.mobileDropdownIcon : styles.featureIcon}>{item.icon}</div>
-          <div className={isMobile ? styles.mobileDropdownText : styles.featureText}>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownIcon : styles.featureIcon
+            }
+          >
+            {item.icon}
+          </div>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownText : styles.featureText
+            }
+          >
             <h4>{item.title}</h4>
             <p>{item.subtitle}</p>
           </div>
@@ -219,7 +336,13 @@ const Header = () => {
   );
 
   const renderResourcesDropdown = (isMobile) => (
-    <div className={isMobile ? styles.mobileDropdown : `${styles.dropdown} ${styles.resourcesDropdown}`}>
+    <div
+      className={
+        isMobile
+          ? styles.mobileDropdown
+          : `${styles.dropdown} ${styles.resourcesDropdown}`
+      }
+    >
       {resourcesData.map((item) => (
         <a
           key={item.title}
@@ -230,8 +353,18 @@ const Header = () => {
             handleLinkClick(item.path);
           }}
         >
-          <div className={isMobile ? styles.mobileDropdownIcon : styles.resourceIcon}>{item.icon}</div>
-          <div className={isMobile ? styles.mobileDropdownText : styles.resourceText}>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownIcon : styles.resourceIcon
+            }
+          >
+            {item.icon}
+          </div>
+          <div
+            className={
+              isMobile ? styles.mobileDropdownText : styles.resourceText
+            }
+          >
             <h4>{item.title}</h4>
             <p>{item.subtitle}</p>
           </div>
@@ -239,7 +372,6 @@ const Header = () => {
       ))}
     </div>
   );
-
 
   return (
     <header className={styles.header}>
@@ -250,25 +382,37 @@ const Header = () => {
           </Link>
 
           <ul className={styles.navLinks}>
-            <li onMouseEnter={() => handleMouseEnter("features")} onMouseLeave={handleMouseLeave}>
+            <li
+              onMouseEnter={() => handleMouseEnter("features")}
+              onMouseLeave={handleMouseLeave}
+            >
               <a href="#">
                 Features <FaChevronDown />
               </a>
               {openMenu === "features" && renderFeaturesDropdown(false)}
             </li>
-            <li onMouseEnter={() => handleMouseEnter("advertise")} onMouseLeave={handleMouseLeave}>
+            <li
+              onMouseEnter={() => handleMouseEnter("advertise")}
+              onMouseLeave={handleMouseLeave}
+            >
               <a href="#">
                 Advertise <FaChevronDown />
               </a>
               {openMenu === "advertise" && renderAdvertiseDropdown(false)}
             </li>
-            <li onMouseEnter={() => handleMouseEnter("monetize")} onMouseLeave={handleMouseLeave}>
+            <li
+              onMouseEnter={() => handleMouseEnter("monetize")}
+              onMouseLeave={handleMouseLeave}
+            >
               <a href="#">
                 Monetize <FaChevronDown />
               </a>
               {openMenu === "monetize" && renderMonetizeDropdown(false)}
             </li>
-            <li onMouseEnter={() => handleMouseEnter("resources")} onMouseLeave={handleMouseLeave}>
+            <li
+              onMouseEnter={() => handleMouseEnter("resources")}
+              onMouseLeave={handleMouseLeave}
+            >
               <a href="#">
                 Resources <FaChevronDown />
               </a>
@@ -278,22 +422,36 @@ const Header = () => {
 
           <div className={styles.authButtons}>
             {isAuthenticated ? (
-              <button className={styles.profileButton} onClick={() => handleLinkClick("/profile")}>
-                <FaUser /> 
+              <button
+                className={styles.profileButton}
+                onClick={() => handleLinkClick("/profile")}
+              >
+                <FaUser />
               </button>
             ) : (
               <>
-                <Link to="/login" className={styles.loginButton} onClick={() => handleLinkClick("/login")}>
+                <Link
+                  to="/login"
+                  className={styles.loginButton}
+                  onClick={() => handleLinkClick("/login")}
+                >
                   LOGIN
                 </Link>
-                <Link to="/signup" className={styles.signupButton} onClick={() => handleLinkClick("/signup")}>
+                <Link
+                  to="/signup"
+                  className={styles.signupButton}
+                  onClick={() => handleLinkClick("/signup")}
+                >
                   FREE SIGNUP
                 </Link>
               </>
             )}
           </div>
 
-          <button className={styles.mobileMenuToggle} onClick={toggleMobileMenu}>
+          <button
+            className={styles.mobileMenuToggle}
+            onClick={toggleMobileMenu}
+          >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -302,33 +460,77 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className={styles.mobileNav}>
           <div className={styles.mobileMenuItem}>
-            <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileDropdown("features"); }} className={styles.mobileMenuLink}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleMobileDropdown("features");
+              }}
+              className={styles.mobileMenuLink}
+            >
               Features{" "}
-              <FaChevronDown className={`${styles.dropdownIcon} ${mobileDropdown === "features" ? styles.rotated : ""}`} />
+              <FaChevronDown
+                className={`${styles.dropdownIcon} ${
+                  mobileDropdown === "features" ? styles.rotated : ""
+                }`}
+              />
             </a>
             {mobileDropdown === "features" && renderFeaturesDropdown(true)}
           </div>
 
           <div className={styles.mobileMenuItem}>
-            <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileDropdown("advertise"); }} className={styles.mobileMenuLink}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleMobileDropdown("advertise");
+              }}
+              className={styles.mobileMenuLink}
+            >
               Advertise{" "}
-              <FaChevronDown className={`${styles.dropdownIcon} ${mobileDropdown === "advertise" ? styles.rotated : ""}`} />
+              <FaChevronDown
+                className={`${styles.dropdownIcon} ${
+                  mobileDropdown === "advertise" ? styles.rotated : ""
+                }`}
+              />
             </a>
             {mobileDropdown === "advertise" && renderAdvertiseDropdown(true)}
           </div>
 
           <div className={styles.mobileMenuItem}>
-            <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileDropdown("monetize"); }} className={styles.mobileMenuLink}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleMobileDropdown("monetize");
+              }}
+              className={styles.mobileMenuLink}
+            >
               Monetize{" "}
-              <FaChevronDown className={`${styles.dropdownIcon} ${mobileDropdown === "monetize" ? styles.rotated : ""}`} />
+              <FaChevronDown
+                className={`${styles.dropdownIcon} ${
+                  mobileDropdown === "monetize" ? styles.rotated : ""
+                }`}
+              />
             </a>
             {mobileDropdown === "monetize" && renderMonetizeDropdown(true)}
           </div>
 
           <div className={styles.mobileMenuItem}>
-            <a href="#" onClick={(e) => { e.preventDefault(); toggleMobileDropdown("resources"); }} className={styles.mobileMenuLink}>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleMobileDropdown("resources");
+              }}
+              className={styles.mobileMenuLink}
+            >
               Resources{" "}
-              <FaChevronDown className={`${styles.dropdownIcon} ${mobileDropdown === "resources" ? styles.rotated : ""}`} />
+              <FaChevronDown
+                className={`${styles.dropdownIcon} ${
+                  mobileDropdown === "resources" ? styles.rotated : ""
+                }`}
+              />
             </a>
             {mobileDropdown === "resources" && renderResourcesDropdown(true)}
           </div>
@@ -337,19 +539,34 @@ const Header = () => {
 
           {isAuthenticated ? (
             <>
-              <Link to="/profile" className={styles.profileButtonMobile} onClick={() => handleLinkClick("/profile")}>
-                <FaUser style={{ marginRight: '8px' }} /> PROFILE
+              <Link
+                to="/profile"
+                className={styles.profileButtonMobile}
+                onClick={() => handleLinkClick("/profile")}
+              >
+                <FaUser style={{ marginRight: "8px" }} /> PROFILE
               </Link>
-              <button className={styles.logoutButtonMobile} onClick={handleLogout}>
+              <button
+                className={styles.logoutButtonMobile}
+                onClick={handleLogout}
+              >
                 LOGOUT
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className={styles.loginButtonMobile} onClick={() => handleLinkClick("/login")}>
+              <Link
+                to="/login"
+                className={styles.loginButtonMobile}
+                onClick={() => handleLinkClick("/login")}
+              >
                 LOGIN
               </Link>
-              <Link to="/signup" className={styles.signupButtonMobile} onClick={() => handleLinkClick("/signup")}>
+              <Link
+                to="/signup"
+                className={styles.signupButtonMobile}
+                onClick={() => handleLinkClick("/signup")}
+              >
                 FREE SIGNUP
               </Link>
             </>

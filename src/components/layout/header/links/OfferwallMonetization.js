@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./OfferwallMonetization.module.css";
 import { FaGift, FaCoins, FaChartLine, FaMobileAlt, FaUsers, FaTrophy, FaBolt } from "react-icons/fa";
 
@@ -50,7 +48,6 @@ const OfferwallMonetization = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.heroSection}>
           <div className={styles.heroContent}>
@@ -194,7 +191,6 @@ const OfferwallMonetization = () => {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./Support.module.css";
 import { FaBook, FaLifeRing, FaComments, FaGraduationCap, FaTools, FaRocket, FaChartLine, FaUsers, FaMobileAlt, FaShieldAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
@@ -86,7 +84,6 @@ const Support = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.heroSection}>
           <div className={styles.heroContent}>
@@ -168,7 +165,6 @@ const Support = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

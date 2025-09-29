@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./IOSBooster.module.css";
 import { FaApple, FaRocket, FaChartLine, FaBolt, FaFire, FaTrophy, FaUsers, FaTachometerAlt } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const IOSBooster = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>iOS App Booster</h1>
@@ -258,7 +255,6 @@ const IOSBooster = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

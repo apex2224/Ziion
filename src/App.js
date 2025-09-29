@@ -106,11 +106,8 @@ const LandingPage = () => (
     <PromotionalBenefits />
     <Features />
     <Pricing />
-    <hr />
     <Rating />
-    <hr />
     <FAQ />
-    <hr />
     <Blog />
   </>
 );

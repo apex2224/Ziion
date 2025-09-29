@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./CPIDroidBlog.module.css";
 import { FaAndroid, FaDownload, FaMobileAlt, FaChartLine, FaBolt, FaUsers, FaGlobe, FaInfoCircle, FaHeadset } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const CPIDroidBlog = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>CPIDroid Blog</h1>
@@ -258,7 +255,6 @@ const CPIDroidBlog = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

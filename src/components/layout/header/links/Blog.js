@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./Blog.module.css";
 import { FaBook, FaCalendar, FaTag, FaUser, FaSearch, FaRss, FaPen } from "react-icons/fa";
 
@@ -100,7 +98,6 @@ const Blog = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>CPIDroid Blog</h1>
@@ -260,7 +257,6 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

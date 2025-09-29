@@ -5,12 +5,11 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 /* --- Main Content Area (Links) --- */
 .mainContent {
-  padding: 60px 5%;
+  padding: 80px 5%;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -18,16 +17,16 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 40px 20px;
+  gap: 60px 30px;
 }
 
 .footerColumn {
-  min-width: 180px;
+  min-width: 200px;
 }
 
 .footerHeading {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0 0 20px 0;
 }
@@ -38,7 +37,7 @@
 
 .footerText {
   margin: 0 0 20px 0;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .footerColumn ul {
@@ -55,6 +54,7 @@
   color: #a9b8d6;
   text-decoration: none;
   transition: color 0.2s;
+  font-size: 14px;
 }
 
 .footerColumn a:hover {
@@ -65,7 +65,7 @@
 /* Badges */
 .badge {
   margin-left: 8px;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 4px;
   font-size: 10px;
   font-weight: 700;
@@ -118,7 +118,7 @@
 }
 
 .languageSelector svg {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Support Link */
@@ -130,7 +130,7 @@
 
 .onlineIcon {
   color: #4caf50;
-  font-size: 9px;
+  font-size: 10px;
   margin-right: 2px;
 }
 
@@ -147,7 +147,7 @@
 /* --- Payment Methods --- */
 .paymentMethods {
   background-color: #0e2d6b;
-  padding: 25px 5%;
+  padding: 20px 5%;
 }
 
 .paymentIconsContainer {
@@ -155,10 +155,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .paymentIcon {
@@ -179,7 +179,7 @@
 /* --- Credits --- */
 .credits {
   background-color: #0a255f;
-  padding: 40px 5%;
+  padding: 30px 5%;
   border-top: 1px solid #1c3a77;
 }
 
@@ -199,7 +199,7 @@
 
 .creditsContainer p {
   margin: 8px 0;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .heartIcon {
@@ -211,7 +211,7 @@
 /* --- Disclaimer --- */
 .disclaimer {
   background-color: #040c1a;
-  padding: 30px 5%;
+  padding: 20px 5%;
 }
 
 .disclaimerContainer {
@@ -230,54 +230,12 @@
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .mainContent {
-    padding: 40px 3%;
-  }
-  
-  .gridContainer {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px 15px;
-  }
-  
-  .footerColumn {
-    min-width: 150px;
-  }
-  
-  .footerHeading {
-    font-size: 15px;
-    margin: 0 0 15px 0;
-  }
-  
-  .footerText {
-    font-size: 12px;
-    margin: 0 0 15px 0;
-  }
-  
-  .footerColumn li {
-    margin-bottom: 10px;
-  }
-  
-  .footerColumn a {
-    font-size: 12px;
-  }
-  
-  .socialIcons {
-    margin: 20px 0;
-  }
-  
-  .paymentIconsContainer {
-    font-size: 20px;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .mainContent {
-    padding: 30px 2%;
+    padding: 30px 3%;
   }
   
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px 12px;
+    gap: 20px 12px;
   }
   
   .footerColumn {
@@ -291,6 +249,11 @@
   
   .footerText {
     font-size: 11px;
+    margin: 0 0 12px 0;
+  }
+  
+  .footerColumn li {
+    margin-bottom: 8px;
   }
   
   .footerColumn a {
@@ -302,31 +265,64 @@
   }
   
   .paymentIconsContainer {
-    font-size: 18px;
+    font-size: 16px;
     gap: 15px;
-  }
-  
-  .copyright {
-    font-size: 11px;
-  }
-  
-  .disclaimer {
-    padding: 20px 3%;
-  }
-  
-  .disclaimerContainer p {
-    font-size: 11px;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 768px) {
   .mainContent {
     padding: 20px 2%;
   }
   
   .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+  }
+  
+  .footerColumn {
+    min-width: 110px;
+  }
+  
+  .footerHeading {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+  
+  .footerText {
+    font-size: 10px;
+  }
+  
+  .footerColumn a {
+    font-size: 10px;
+  }
+  
+  .socialIcons {
+    margin: 12px 0;
+  }
+  
+  .paymentIconsContainer {
+    font-size: 14px;
+    gap: 12px;
+  }
+  
+  .disclaimer {
+    padding: 12px 3%;
+  }
+  
+  .disclaimerContainer p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 540px) {
+  .mainContent {
+    padding: 15px 2%;
+  }
+  
+  .gridContainer {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
   
   .footerColumn {
@@ -339,20 +335,15 @@
   
   .paymentIconsContainer {
     justify-content: center;
-    gap: 12px;
-    font-size: 16px;
-  }
-  
-  .copyright {
-    font-size: 10px;
-    text-align: center;
+    gap: 10px;
+    font-size: 12px;
   }
   
   .disclaimer {
-    padding: 15px 2%;
+    padding: 10px 2%;
   }
   
   .disclaimerContainer p {
-    font-size: 10px;
+    font-size: 9px;
   }
 }
