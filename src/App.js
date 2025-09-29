@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
+
 
 // Import ScrollReveal hook
 import useScrollReveal from "./hooks/useScrollReveal";
@@ -40,6 +41,9 @@ import OfferwallMonetization from "./components/layout/header/links/OfferwallMon
 import BecomePublisher from "./components/layout/header/links/BecomePublisher";
 import ScrollRevealDemo from "./components/pages/ScrollRevealDemo";
 import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
+import SlideInPanel from "./components/ui/SlideInPanel";
+import AuthManager from "./components/auth/AuthManager";
+import Backdrop from "./components/ui/Backdrop";
 
 // --- Private (Dashboard) Components ---
 import Advertiser from "./components/pages/dashboard/Advertiser";
@@ -56,18 +60,17 @@ const DASHBOARD_ROUTES = [
   '/aso-booster',
   '/lets-chat',
   '/lets-talk',
-  '/profile', // ADDED: Profile page is also part of dashboard
 ];
 
 // Reusable Layout for public-facing routes
-const PublicLayout = ({ children }) => {
+const PublicLayout = ({ children, onProfileClick }) => {
   const location = useLocation();
   const shouldReveal = !DASHBOARD_ROUTES.includes(location.pathname);
   useScrollReveal(shouldReveal);
 
   return (
     <>
-      <Header />
+      <Header onProfileClick={onProfileClick} />
       <div className="route-container">{children}</div>
       <Footer />
     </>
@@ -113,36 +116,43 @@ const LandingPage = () => (
 );
 
 const App = () => {
+  const [isProfileOpen, setProfileOpen] = useState(false);
+
+  const toggleProfilePanel = () => {
+    setProfileOpen(!isProfileOpen);
+  };
+
   return (
     <BrowserRouter>
+      <Backdrop isOpen={isProfileOpen} onClick={toggleProfilePanel} />
       <Routes>
         {/* Public Routes with Header and Footer */}
-        <Route path="/" element={<PublicLayout><LandingPage /></PublicLayout>} />
-        <Route path="/all-plans" element={<PublicLayout><ViewAllPlans /></PublicLayout>} />
+        <Route path="/" element={<PublicLayout onProfileClick={toggleProfilePanel}><LandingPage /></PublicLayout>} />
+        <Route path="/all-plans" element={<PublicLayout onProfileClick={toggleProfilePanel}><ViewAllPlans /></PublicLayout>} />
         <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
         <Route path="/signup" element={<AuthLayout><SignUp /></AuthLayout>} />
-        <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
-        <Route path="/fraud-detection" element={<PublicLayout><FraudDetection /></PublicLayout>} />
-        <Route path="/boost-engagement" element={<PublicLayout><BoostEngagement /></PublicLayout>} />
-        <Route path="/awesome-text-demo" element={<PublicLayout><AwesomeTextDemo /></PublicLayout>} />
-        <Route path="/tracking-solutions" element={<PublicLayout><TrackingSolutions /></PublicLayout>} />
-        <Route path="/android-ios-web" element={<PublicLayout><AndroidIOSWeb /></PublicLayout>} />
-        <Route path="/incent-non-incent" element={<PublicLayout><IncentNonIncent /></PublicLayout>} />
-        <Route path="/multiple-pricing-models" element={<PublicLayout><MultiplePricingModels /></PublicLayout>} />
-        <Route path="/cpidroid-blog" element={<PublicLayout><CPIDroidBlog /></PublicLayout>} />
-        <Route path="/cpidroid-support" element={<PublicLayout><CPIDroidSupport /></PublicLayout>} />
-        <Route path="/contact-cpidroid" element={<PublicLayout><ContactCPIDroid /></PublicLayout>} />
-        <Route path="/android-installs" element={<PublicLayout><CPIDroidBlogPage /></PublicLayout>} />
-        <Route path="/ios-installs" element={<PublicLayout><IOSInstalls /></PublicLayout>} />
-        <Route path="/android-keyword-installs" element={<PublicLayout><AndroidKeywordInstalls /></PublicLayout>} />
-        <Route path="/ios-keyword-installs" element={<PublicLayout><IOSKeywordInstalls /></PublicLayout>} />
-        <Route path="/android-apk-installs" element={<PublicLayout><AndroidAPKInstalls /></PublicLayout>} />
-        <Route path="/web-traffic" element={<PublicLayout><WebTraffic /></PublicLayout>} />
-        <Route path="/android-booster" element={<PublicLayout><AndroidBooster /></PublicLayout>} />
-        <Route path="/ios-booster" element={<PublicLayout><IOSBooster /></PublicLayout>} />
-        <Route path="/offerwall-monetization" element={<PublicLayout><OfferwallMonetization /></PublicLayout>} />
-        <Route path="/become-publisher" element={<PublicLayout><BecomePublisher /></PublicLayout>} />
-        <Route path="/scroll-reveal-demo" element={<PublicLayout><ScrollRevealDemo /></PublicLayout>} />
+        <Route path="/contact" element={<PublicLayout onProfileClick={toggleProfilePanel}><Contact /></PublicLayout>} />
+        <Route path="/fraud-detection" element={<PublicLayout onProfileClick={toggleProfilePanel}><FraudDetection /></PublicLayout>} />
+        <Route path="/boost-engagement" element={<PublicLayout onProfileClick={toggleProfilePanel}><BoostEngagement /></PublicLayout>} />
+        <Route path="/awesome-text-demo" element={<PublicLayout onProfileClick={toggleProfilePanel}><AwesomeTextDemo /></PublicLayout>} />
+        <Route path="/tracking-solutions" element={<PublicLayout onProfileClick={toggleProfilePanel}><TrackingSolutions /></PublicLayout>} />
+        <Route path="/android-ios-web" element={<PublicLayout onProfileClick={toggleProfilePanel}><AndroidIOSWeb /></PublicLayout>} />
+        <Route path="/incent-non-incent" element={<PublicLayout onProfileClick={toggleProfilePanel}><IncentNonIncent /></PublicLayout>} />
+        <Route path="/multiple-pricing-models" element={<PublicLayout onProfileClick={toggleProfilePanel}><MultiplePricingModels /></PublicLayout>} />
+        <Route path="/cpidroid-blog" element={<PublicLayout onProfileClick={toggleProfilePanel}><CPIDroidBlog /></PublicLayout>} />
+        <Route path="/cpidroid-support" element={<PublicLayout onProfileClick={toggleProfilePanel}><CPIDroidSupport /></PublicLayout>} />
+        <Route path="/contact-cpidroid" element={<PublicLayout onProfileClick={toggleProfilePanel}><ContactCPIDroid /></PublicLayout>} />
+        <Route path="/android-installs" element={<PublicLayout onProfileClick={toggleProfilePanel}><CPIDroidBlogPage /></PublicLayout>} />
+        <Route path="/ios-installs" element={<PublicLayout onProfileClick={toggleProfilePanel}><IOSInstalls /></PublicLayout>} />
+        <Route path="/android-keyword-installs" element={<PublicLayout onProfileClick={toggleProfilePanel}><AndroidKeywordInstalls /></PublicLayout>} />
+        <Route path="/ios-keyword-installs" element={<PublicLayout onProfileClick={toggleProfilePanel}><IOSKeywordInstalls /></PublicLayout>} />
+        <Route path="/android-apk-installs" element={<PublicLayout onProfileClick={toggleProfilePanel}><AndroidAPKInstalls /></PublicLayout>} />
+        <Route path="/web-traffic" element={<PublicLayout onProfileClick={toggleProfilePanel}><WebTraffic /></PublicLayout>} />
+        <Route path="/android-booster" element={<PublicLayout onProfileClick={toggleProfilePanel}><AndroidBooster /></PublicLayout>} />
+        <Route path="/ios-booster" element={<PublicLayout onProfileClick={toggleProfilePanel}><IOSBooster /></PublicLayout>} />
+        <Route path="/offerwall-monetization" element={<PublicLayout onProfileClick={toggleProfilePanel}><OfferwallMonetization /></PublicLayout>} />
+        <Route path="/become-publisher" element={<PublicLayout onProfileClick={toggleProfilePanel}><BecomePublisher /></PublicLayout>} />
+        <Route path="/scroll-reveal-demo" element={<PublicLayout onProfileClick={toggleProfilePanel}><ScrollRevealDemo /></PublicLayout>} />
 
         {/* Private Dashboard Routes without public Header */}
         <Route path="/advertiser" element={<DashboardLayout><Advertiser /></DashboardLayout>} />
@@ -150,8 +160,10 @@ const App = () => {
         <Route path="/aso-booster" element={<DashboardLayout><ASObooster /></DashboardLayout>} />
         <Route path="/lets-chat" element={<DashboardLayout><LetsChat /></DashboardLayout>} />
         <Route path="/lets-talk" element={<DashboardLayout><LetsTalk /></DashboardLayout>} />
-        <Route path="/profile" element={<DashboardLayout><ProfilePage /></DashboardLayout>} />
       </Routes>
+      <SlideInPanel isOpen={isProfileOpen} onClose={toggleProfilePanel}>
+        <AuthManager onClose={toggleProfilePanel} />
+      </SlideInPanel>
     </BrowserRouter>
   );
 };

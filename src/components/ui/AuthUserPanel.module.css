@@ -1,0 +1,106 @@
+:root {
+    --text-color-primary: #333;
+    --text-color-secondary: #6c757d;
+    --button-dashboard-bg: linear-gradient(to right, #28a745, #218838, #28a745);
+    --button-logout-bg: linear-gradient(to right, #dc3545, #c82333, #dc3545);
+    --button-text-color: #fff;
+    --divider-color: #e9ecef;
+    --settings-button-bg: #f8f9fa;
+    --settings-button-text-color: #495057;
+    --settings-button-hover-bg: #e9ecef;
+}
+
+.panelContent {
+    padding: 20px 15px;
+    text-align: center;
+    font-family: 'Figtree', sans-serif;
+}
+
+.welcomeMessage {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color-primary);
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dashboardButton,
+.logoutButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    color: var(--button-text-color);
+    background-size: 200% 100%;
+}
+
+.dashboardButton {
+    background-image: var(--button-dashboard-bg);
+}
+
+.logoutButton {
+    background-image: var(--button-logout-bg);
+}
+
+.dashboardButton:hover,
+.logoutButton:hover {
+    background-position: right center;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardButton:active,
+.logoutButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: var(--divider-color);
+    margin: 20px 0;
+}
+
+.settingsButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid var(--divider-color);
+    background-color: var(--settings-button-bg);
+    color: var(--settings-button-text-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.settingsButton:hover {
+    background-color: var(--settings-button-hover-bg);
+}
+
+@media (max-width: 768px) {
+    .logoutButton {
+        display: none;
+    }
+}

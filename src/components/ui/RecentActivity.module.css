@@ -1,0 +1,35 @@
+.container {
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.activityList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activityItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--panel-border-color);
+    font-size: 14px;
+    color: var(--text-color-secondary);
+}
+
+.activityItem:last-child {
+    border-bottom: none;
+}
+
+.activityIcon {
+    margin-right: 15px;
+    font-size: 18px;
+}
