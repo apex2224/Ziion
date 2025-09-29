@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
 // Import ScrollReveal hook
 import useScrollReveal from "./hooks/useScrollReveal";
 
+// --- Public Components ---
 import Blog from "./components/sections/rbf-faq/Blog";
 import Pricing from "./components/pages/pricing/Pricing";
 import FAQ from "./components/sections/rbf-faq/FAQ";
@@ -15,19 +16,11 @@ import Header from "./components/layout/header/Header";
 import Login from "./components/pages/auth/Login";
 import SignUp from "./components/pages/auth/SignUp";
 import Contact from "./components/pages/auth/Contact";
-
 import ViewAllPlans from "./components/pages/pricing/ViewAllPlans";
 import TopPage from "./components/sections/TopPage";
 import PromotionalBenefits from "./components/sections/PromotionalBenefits";
-import Advertiser from "./components/pages/dashboard/Advertiser";
-import Publisher from "./components/pages/dashboard/Publisher";
-import ASObooster from "./components/pages/dashboard/ASObooster";
-import LetsChat from "./components/pages/dashboard/LetsChat";
-import LetsTalk from "./components/pages/dashboard/LetsTalk";
 import FraudDetection from "./components/layout/header/links/FraudDetection";
 import BoostEngagement from "./components/layout/header/links/BoostEngagement";
-
-//  Routes Import
 import TrackingSolutions from "./components/layout/header/links/Features/TrackingSolutions";
 import AndroidIOSWeb from "./components/layout/header/links/Features/AndroidIOSWeb";
 import IncentNonIncent from "./components/layout/header/links/Features/IncentNonIncent";
@@ -45,297 +38,122 @@ import AndroidBooster from "./components/layout/header/links/Advertise/Boosters/
 import IOSBooster from "./components/layout/header/links/Advertise/Boosters/IOSBooster";
 import OfferwallMonetization from "./components/layout/header/links/OfferwallMonetization";
 import BecomePublisher from "./components/layout/header/links/BecomePublisher";
-
-// Awesome Text Animation Demo
+import ScrollRevealDemo from "./components/pages/ScrollRevealDemo";
 import AwesomeTextDemo from "./components/pages/dashboard/AwesomeTextDemo";
 
-// ScrollReveal Demo
-import ScrollRevealDemo from "./components/pages/ScrollRevealDemo";
+// --- Private (Dashboard) Components ---
+import Advertiser from "./components/pages/dashboard/Advertiser";
+import Publisher from "./components/pages/dashboard/Publisher";
+import ASObooster from "./components/pages/dashboard/ASObooster";
+import LetsChat from "./components/pages/dashboard/LetsChat";
+import LetsTalk from "./components/pages/dashboard/LetsTalk";
+import ProfilePage from './components/pages/dashboard/ProfilePage'; // NEW: Assuming you'll create a profile page here
 
-// Define which routes should NOT have ScrollReveal
+// Define which routes should NOT have ScrollReveal (already provided)
 const DASHBOARD_ROUTES = [
   '/advertiser',
   '/publisher',
   '/aso-booster',
   '/lets-chat',
-  '/lets-talk'
+  '/lets-talk',
+  '/profile', // ADDED: Profile page is also part of dashboard
 ];
 
-const MainLayout = ({ children, pathname }) => {
-  // Enable ScrollReveal only if current path is not in dashboard routes
-  const shouldReveal = !DASHBOARD_ROUTES.includes(pathname);
+// Reusable Layout for public-facing routes
+const PublicLayout = ({ children }) => {
+  const location = useLocation();
+  const shouldReveal = !DASHBOARD_ROUTES.includes(location.pathname);
   useScrollReveal(shouldReveal);
 
-  return <div className="route-container">{children}</div>;
-};
-
-const LandingPage = () => {
   return (
-    <MainLayout pathname="/">
+    <>
       <Header />
-      <TopPage />
-      <PromotionalBenefits />
-      <Features />
-      <Pricing />
-      <hr />
-      <Rating />
-      <hr />
-      <FAQ />
-      <hr />
-      <Blog />
+      <div className="route-container">{children}</div>
       <Footer />
-    </MainLayout>
+    </>
   );
 };
+
+// Layout for authentication pages (no Header, no Footer)
+const AuthLayout = ({ children }) => {
+  const shouldReveal = false;
+  useScrollReveal(shouldReveal);
+
+  return (
+    <div className="route-container">{children}</div>
+  );
+};
+
+// Reusable Layout for dashboard routes
+const DashboardLayout = ({ children }) => {
+  useScrollReveal(false); // Disable ScrollReveal for all dashboard pages
+
+  // This is where you would place a dedicated DashboardHeader or Sidebar
+  // For now, it will be a minimal layout to demonstrate the concept.
+  // The logout button would be here, or within the children.
+  return (
+    <div className="dashboard-container">
+      {/* Example of a simple dashboard header. This replaces the main Header. */}
+      {/* <DashboardHeader /> */}
+      <main>{children}</main>
+    </div>
+  );
+};
+
+const LandingPage = () => (
+  <>
+    <TopPage />
+    <PromotionalBenefits />
+    <Features />
+    <Pricing />
+    <hr />
+    <Rating />
+    <hr />
+    <FAQ />
+    <hr />
+    <Blog />
+  </>
+);
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route
-          path="/all-plans"
-          element={
-            <MainLayout pathname="/all-plans">
-              <ViewAllPlans />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <MainLayout pathname="/login">
-              <Login />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <MainLayout pathname="/signup">
-              <SignUp />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <MainLayout pathname="/contact">
-              <Contact />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/advertiser"
-          element={
-            <MainLayout pathname="/advertiser">
-              <Advertiser />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/publisher"
-          element={
-            <MainLayout pathname="/publisher">
-              <Publisher />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/aso-booster"
-          element={
-            <MainLayout pathname="/aso-booster">
-              <ASObooster />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/lets-chat"
-          element={
-            <MainLayout pathname="/lets-chat">
-              <LetsChat />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/lets-talk"
-          element={
-            <MainLayout pathname="/lets-talk">
-              <LetsTalk />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/fraud-detection"
-          element={
-            <MainLayout pathname="/fraud-detection">
-              <FraudDetection />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/boost-engagement"
-          element={
-            <MainLayout pathname="/boost-engagement">
-              <BoostEngagement />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/awesome-text-demo"
-          element={
-            <MainLayout pathname="/awesome-text-demo">
-              <AwesomeTextDemo />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/tracking-solutions"
-          element={
-            <MainLayout pathname="/tracking-solutions">
-              <TrackingSolutions />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/android-ios-web"
-          element={
-            <MainLayout pathname="/android-ios-web">
-              <AndroidIOSWeb />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/incent-non-incent"
-          element={
-            <MainLayout pathname="/incent-non-incent">
-              <IncentNonIncent />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/multiple-pricing-models"
-          element={
-            <MainLayout pathname="/multiple-pricing-models">
-              <MultiplePricingModels />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/cpidroid-blog"
-          element={
-            <MainLayout pathname="/cpidroid-blog">
-              <CPIDroidBlog />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/cpidroid-support"
-          element={
-            <MainLayout pathname="/cpidroid-support">
-              <CPIDroidSupport />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/contact-cpidroid"
-          element={
-            <MainLayout pathname="/contact-cpidroid">
-              <ContactCPIDroid />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/android-installs"
-          element={
-            <MainLayout pathname="/android-installs">
-              <CPIDroidBlogPage />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/ios-installs"
-          element={
-            <MainLayout pathname="/ios-installs">
-              <IOSInstalls />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/android-keyword-installs"
-          element={
-            <MainLayout pathname="/android-keyword-installs">
-              <AndroidKeywordInstalls />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/ios-keyword-installs"
-          element={
-            <MainLayout pathname="/ios-keyword-installs">
-              <IOSKeywordInstalls />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/android-apk-installs"
-          element={
-            <MainLayout pathname="/android-apk-installs">
-              <AndroidAPKInstalls />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/web-traffic"
-          element={
-            <MainLayout pathname="/web-traffic">
-              <WebTraffic />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/android-booster"
-          element={
-            <MainLayout pathname="/android-booster">
-              <AndroidBooster />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/ios-booster"
-          element={
-            <MainLayout pathname="/ios-booster">
-              <IOSBooster />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/offerwall-monetization"
-          element={
-            <MainLayout pathname="/offerwall-monetization">
-              <OfferwallMonetization />
-            </MainLayout>
-          }
-        />
+        {/* Public Routes with Header and Footer */}
+        <Route path="/" element={<PublicLayout><LandingPage /></PublicLayout>} />
+        <Route path="/all-plans" element={<PublicLayout><ViewAllPlans /></PublicLayout>} />
+        <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
+        <Route path="/signup" element={<AuthLayout><SignUp /></AuthLayout>} />
+        <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
+        <Route path="/fraud-detection" element={<PublicLayout><FraudDetection /></PublicLayout>} />
+        <Route path="/boost-engagement" element={<PublicLayout><BoostEngagement /></PublicLayout>} />
+        <Route path="/awesome-text-demo" element={<PublicLayout><AwesomeTextDemo /></PublicLayout>} />
+        <Route path="/tracking-solutions" element={<PublicLayout><TrackingSolutions /></PublicLayout>} />
+        <Route path="/android-ios-web" element={<PublicLayout><AndroidIOSWeb /></PublicLayout>} />
+        <Route path="/incent-non-incent" element={<PublicLayout><IncentNonIncent /></PublicLayout>} />
+        <Route path="/multiple-pricing-models" element={<PublicLayout><MultiplePricingModels /></PublicLayout>} />
+        <Route path="/cpidroid-blog" element={<PublicLayout><CPIDroidBlog /></PublicLayout>} />
+        <Route path="/cpidroid-support" element={<PublicLayout><CPIDroidSupport /></PublicLayout>} />
+        <Route path="/contact-cpidroid" element={<PublicLayout><ContactCPIDroid /></PublicLayout>} />
+        <Route path="/android-installs" element={<PublicLayout><CPIDroidBlogPage /></PublicLayout>} />
+        <Route path="/ios-installs" element={<PublicLayout><IOSInstalls /></PublicLayout>} />
+        <Route path="/android-keyword-installs" element={<PublicLayout><AndroidKeywordInstalls /></PublicLayout>} />
+        <Route path="/ios-keyword-installs" element={<PublicLayout><IOSKeywordInstalls /></PublicLayout>} />
+        <Route path="/android-apk-installs" element={<PublicLayout><AndroidAPKInstalls /></PublicLayout>} />
+        <Route path="/web-traffic" element={<PublicLayout><WebTraffic /></PublicLayout>} />
+        <Route path="/android-booster" element={<PublicLayout><AndroidBooster /></PublicLayout>} />
+        <Route path="/ios-booster" element={<PublicLayout><IOSBooster /></PublicLayout>} />
+        <Route path="/offerwall-monetization" element={<PublicLayout><OfferwallMonetization /></PublicLayout>} />
+        <Route path="/become-publisher" element={<PublicLayout><BecomePublisher /></PublicLayout>} />
+        <Route path="/scroll-reveal-demo" element={<PublicLayout><ScrollRevealDemo /></PublicLayout>} />
 
-        <Route
-          path="/become-publisher"
-          element={
-            <MainLayout pathname="/become-publisher">
-              <BecomePublisher />
-            </MainLayout>
-          }
-        />
-        
-        {/* ScrollReveal Demo Route */}
-        <Route
-          path="/scroll-reveal-demo"
-          element={
-            <MainLayout pathname="/scroll-reveal-demo">
-              <ScrollRevealDemo />
-            </MainLayout>
-          }
-        />
+        {/* Private Dashboard Routes without public Header */}
+        <Route path="/advertiser" element={<DashboardLayout><Advertiser /></DashboardLayout>} />
+        <Route path="/publisher" element={<DashboardLayout><Publisher /></DashboardLayout>} />
+        <Route path="/aso-booster" element={<DashboardLayout><ASObooster /></DashboardLayout>} />
+        <Route path="/lets-chat" element={<DashboardLayout><LetsChat /></DashboardLayout>} />
+        <Route path="/lets-talk" element={<DashboardLayout><LetsTalk /></DashboardLayout>} />
+        <Route path="/profile" element={<DashboardLayout><ProfilePage /></DashboardLayout>} />
       </Routes>
     </BrowserRouter>
   );
