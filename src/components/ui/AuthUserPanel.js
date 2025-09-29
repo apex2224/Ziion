@@ -41,14 +41,16 @@ const AuthUserPanel = ({ onClose, isOpen, username, onManageAccount }) => {
 
             <hr className={styles.divider} />
 
-            <button onClick={onManageAccount} className={styles.settingsButton}>
-                <FiSettings className={styles.icon} />
-                Manage Account
-            </button>
-            <button className={styles.settingsButton}>
-                <FiSliders className={styles.icon} />
-                Settings
-            </button>
+            <div className={styles.settingsButtons}>
+                <button onClick={onManageAccount} className={styles.settingsButton}>
+                    <FiSettings className={styles.icon} />
+                    Manage Account
+                </button>
+                <button className={styles.settingsButton}>
+                    <FiSliders className={styles.icon} />
+                    Settings
+                </button>
+            </div>
         </div>
     );
 };
