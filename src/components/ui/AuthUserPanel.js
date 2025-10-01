@@ -46,10 +46,6 @@ const AuthUserPanel = ({ onClose, isOpen, username, onManageAccount }) => {
                     <FiSettings className={styles.icon} />
                     Manage Account
                 </button>
-                <button className={styles.settingsButton}>
-                    <FiSliders className={styles.icon} />
-                    Settings
-                </button>
             </div>
         </div>
     );
