@@ -233,7 +233,7 @@ body {
 .authButtons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .loginButton,

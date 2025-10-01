@@ -76,7 +76,13 @@
     border: none;
     height: 1px;
     background-color: var(--divider-color);
-    margin: 20px 0;
+    margin: 40px 0;
+}
+
+.settingsButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .settingsButton {
@@ -94,6 +100,7 @@
     color: var(--settings-button-text-color);
     transition: all 0.2s ease-in-out;
 }
+
 
 .settingsButton:hover {
     background-color: var(--settings-button-hover-bg);

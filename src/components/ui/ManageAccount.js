@@ -25,10 +25,7 @@ const ManageAccount = ({ onBack, username, email }) => {
                 <ChangePasswordForm />
             </div>
 
-            <div className={styles.section}>
-                <h4 className={styles.sectionTitle}>Notification Preferences</h4>
-                <NotificationPreferences />
-            </div>
+
         </div>
     );
 };

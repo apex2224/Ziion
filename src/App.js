@@ -51,7 +51,7 @@ import Publisher from "./components/pages/dashboard/Publisher";
 import ASObooster from "./components/pages/dashboard/ASObooster";
 import LetsChat from "./components/pages/dashboard/LetsChat";
 import LetsTalk from "./components/pages/dashboard/LetsTalk";
-import ProfilePage from './components/pages/dashboard/ProfilePage'; // NEW: Assuming you'll create a profile page here
+
 
 // Define which routes should NOT have ScrollReveal (already provided)
 const DASHBOARD_ROUTES = [
