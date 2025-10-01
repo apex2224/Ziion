@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./Contact.module.css";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaUser, FaBuilding, FaPencilAlt, FaPaperPlane } from "react-icons/fa";
 
@@ -65,7 +63,6 @@ const Contact = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Contact CPIDroid</h1>
@@ -233,7 +230,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

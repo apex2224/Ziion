@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./WebTraffic.module.css";
 import { FaGlobe, FaChartLine, FaBolt, FaUsers, FaDesktop, FaMobileAlt } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const WebTraffic = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Web Traffic</h1>
@@ -257,7 +254,6 @@ const WebTraffic = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

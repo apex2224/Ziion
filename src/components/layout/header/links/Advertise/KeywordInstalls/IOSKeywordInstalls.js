@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./IOSKeywordInstalls.module.css";
 import { FaApple, FaSearch, FaChartLine, FaBolt, FaTags, FaRocket, FaUsers, FaStar } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const IOSKeywordInstalls = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>iOS Keyword Installs</h1>
@@ -259,7 +256,6 @@ const IOSKeywordInstalls = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

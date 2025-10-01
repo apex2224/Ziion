@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../Header";
-import Footer from "../../footer/Footer";
 import styles from "./BoostEngagement.module.css";
 import { FaBolt, FaChartLine, FaUsers, FaMobileAlt, FaTrophy, FaFire } from "react-icons/fa";
 
@@ -57,7 +55,6 @@ const BoostEngagement = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.heroSection}>
           <div className={styles.heroContent}>
@@ -227,7 +224,6 @@ const BoostEngagement = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

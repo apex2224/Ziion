@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ViewAllPlans.module.css";
 import FAQ from "../../sections/rbf-faq/FAQ";
-import Footer from "../../layout/footer/Footer";
 import { FaCheckCircle, FaFire, FaArrowRight } from "react-icons/fa";
 
 const pricingPlans = [
@@ -263,7 +262,6 @@ const ViewAllPlans = () => {
 
       {/* Imported Components */}
       <FAQ />
-      <Footer />
     </div>
   );
 };

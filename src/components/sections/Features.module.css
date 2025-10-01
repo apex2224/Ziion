@@ -1,283 +1,146 @@
-/* --- Features Section --- */
 .featuresSection {
-  /* White background to match content */
-  background: #ffffff;
-  color: #333333;
-  padding: 80px 5%;
-  position: relative;
-  overflow: hidden; /* Important for the wave effect */
-}
-
-/* These pseudo-elements create the wave effect at the bottom */
-.featuresSection::before,
-.featuresSection::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: rgba(0, 0, 0, 0.05);
-  border-top-left-radius: 100% 50px;
-  border-top-right-radius: 100% 50px;
-}
-
-.featuresSection::after {
-  height: 120px;
-  background: rgba(0, 0, 0, 0.07);
-  bottom: -30px;
-  transform: scaleX(1.3);
-  z-index: 0;
+  padding: 40px 5%; /* Reduced padding */
+  background: #f8f9fa;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2; /* Sits on top of the waves */
 }
 
 .title {
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 70px;
-  color: #2a2a72;
+  font-size: 2rem; /* Reduced font size */
+  margin-bottom: 2rem; /* Reduced margin */
+  color: #2c3e50;
 }
 
-/* --- Content Grid --- */
 .contentGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Reduced middle column */
+  gap: 1.5rem; /* Reduced gap */
   align-items: center;
-  gap: 40px;
 }
 
 .featureColumn {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 1rem; /* Reduced gap */
 }
 
-/* --- Feature Item --- */
 .featureItem {
+  background: white;
+  padding: 1rem; /* Reduced padding */
+  border-radius: 6px; /* Reduced border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow */
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 0.75rem; /* Reduced gap */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-3px); /* Reduced transform */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
 }
 
 .alignLeft {
-  text-align: left;
+  align-self: flex-start;
 }
 
 .alignRight {
-  flex-direction: row-reverse;
-  text-align: right;
+  align-self: flex-end;
 }
 
 .iconWrapper {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  /* Semi-transparent blue background */
-  background: rgba(42, 42, 114, 0.1); 
-  /* Darker border for better contrast on white */
-  border: 2px solid #2a2a72;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.25rem; /* Reduced size */
+  color: #3498db;
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(42, 42, 114, 0.3);
 }
 
-.iconWrapper svg {
-  color: #2a2a72;
-  font-size: 26px;
-}
-
-.featureItem p {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-  margin: 0;
-  color: #333333;
-}
-
-/* --- Illustration --- */
 .illustration {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .illustration img {
-  max-width: 100%;
-  min-width: 280px;
+  max-width: 80%; /* Reduced size */
   height: auto;
-  /* Ensure the SVG is visible */
-  display: block;
-  margin: 0 auto;
 }
 
-/* --- Responsive --- */
-@media (max-width: 1200px) {
-  .featuresSection {
-    padding: 70px 4%;
-  }
-  
-  .title {
-    font-size: 32px;
-    margin-bottom: 60px;
-  }
-  
-  .contentGrid {
-    gap: 30px;
-  }
-  
-  .featureColumn {
-    gap: 40px;
-  }
-  
-  .featureItem {
-    gap: 15px;
-  }
-  
-  .iconWrapper {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .iconWrapper svg {
-    font-size: 24px;
-  }
-  
-  .featureItem p {
-    font-size: 16px;
-  }
+.featureItem p {
+  margin: 0;
+  font-size: 1rem; /* Reduced font size */
+  color: #34495e;
+  font-weight: 500;
 }
 
 @media (max-width: 992px) {
-  .featuresSection {
-    padding: 60px 3%;
-  }
-  
-  .title {
-    font-size: 28px;
-    margin-bottom: 50px;
-  }
-  
   .contentGrid {
     grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  
-  .illustration {
-    /* Moves the illustration to the top on mobile */
-    order: -1; 
+    gap: 2rem; /* Reduced gap */
   }
 
-  .alignRight {
-    /* Stacks left-aligned on mobile for readability */
-    flex-direction: row;
-    text-align: left;
-  }
-  
   .featureColumn {
-    gap: 30px;
+    width: 100%;
   }
-  
-  .featureItem {
-    gap: 12px;
+
+  .alignLeft,
+  .alignRight {
+    align-self: center;
   }
-  
-  .iconWrapper {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .iconWrapper svg {
-    font-size: 22px;
-  }
-  
-  .featureItem p {
-    font-size: 15px;
+
+  .illustration {
+    order: -1;
   }
 }
 
 @media (max-width: 768px) {
   .featuresSection {
-    padding: 50px 2%;
+    padding: 30px 3%; /* Reduced padding */
   }
-  
+
   .title {
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 1.75rem; /* Reduced font size */
+    margin-bottom: 1.5rem; /* Reduced margin */
   }
-  
-  .contentGrid {
-    gap: 40px;
-  }
-  
-  .featureColumn {
-    gap: 25px;
-  }
-  
+
   .featureItem {
-    gap: 10px;
+    padding: 0.875rem; /* Reduced padding */
+    flex-direction: column;
+    text-align: center;
   }
-  
+
   .iconWrapper {
-    width: 50px;
-    height: 50px;
+    font-size: 1.1rem; /* Reduced size */
   }
-  
-  .iconWrapper svg {
-    font-size: 20px;
-  }
-  
+
   .featureItem p {
-    font-size: 14px;
-  }
-  
-  .illustration img {
-    min-width: 250px;
+    font-size: 0.95rem; /* Reduced font size */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .featuresSection {
-    padding: 40px 2%;
+    padding: 25px 2%; /* Reduced padding */
   }
-  
+
   .title {
-    font-size: 20px;
-    margin-bottom: 30px;
+    font-size: 1.5rem; /* Reduced font size */
+    margin-bottom: 1.25rem; /* Reduced margin */
   }
-  
+
   .contentGrid {
-    gap: 30px;
+    gap: 1.5rem; /* Reduced gap */
   }
-  
-  .featureColumn {
-    gap: 20px;
-  }
-  
+
   .featureItem {
-    gap: 8px;
+    padding: 0.75rem; /* Reduced padding */
   }
-  
-  .iconWrapper {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .iconWrapper svg {
-    font-size: 18px;
-  }
-  
+
   .featureItem p {
-    font-size: 13px;
-  }
-  
-  .illustration img {
-    min-width: 200px;
+    font-size: 0.9rem; /* Reduced font size */
   }
 }

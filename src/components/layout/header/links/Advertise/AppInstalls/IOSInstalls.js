@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../../header/Header";
-import Footer from "../../../../footer/Footer";
 import styles from "./IOSInstalls.module.css";
 import { FaApple, FaDownload, FaMobileAlt, FaChartLine, FaBolt, FaUsers, FaGlobe } from "react-icons/fa";
 
@@ -58,7 +56,6 @@ const IOSInstalls = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>iOS App Installs</h1>
@@ -259,7 +256,6 @@ const IOSInstalls = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };

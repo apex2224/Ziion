@@ -1,16 +1,17 @@
 /* --- Blog Section --- */
 .blogSection {
   width: 100%;
-  padding: 80px 5%;
+  padding: 40px 5% 20px 5%; /* Reduced padding to prevent overflow */
   background-color: #ffffff;
   text-align: center;
   box-sizing: border-box; /* Ensures padding doesn't affect width */
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
 }
 
 /* --- Header --- */
 .header {
   max-width: 650px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 30px auto;
 }
 
 .tag {
@@ -47,9 +48,9 @@
 .postGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px; /* Reduced gap to prevent overflow */
   max-width: 1200px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 30px auto; /* Reduced margin */
   text-align: left;
 }
 
@@ -92,7 +93,7 @@
 }
 
 .cardContent {
-  padding: 25px;
+  padding: 20px; /* Reduced padding */
 }
 
 .cardCategory {
@@ -124,7 +125,7 @@
 .cardExcerpt {
   font-size: 15px;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduced margin */
   line-height: 1.5;
 }
 
@@ -133,7 +134,7 @@
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid #f0f0f0;
-  padding-top: 15px;
+  padding-top: 12px; /* Reduced padding */
 }
 
 .authorAvatar {
@@ -154,8 +155,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 15px; /* Reduced gap */
+  margin-top: 20px; /* Reduced margin */
 }
 
 .paginationButton {
@@ -163,7 +164,7 @@
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
+  padding: 6px 12px; /* Reduced padding */
   cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s ease;
@@ -180,12 +181,12 @@
 
 .paginationNumbers {
   display: flex;
-  gap: 8px;
+  gap: 6px; /* Reduced gap */
 }
 
 .pageNumber {
-  width: 36px;
-  height: 36px;
+  width: 32px; /* Reduced size */
+  height: 32px; /* Reduced size */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,12 +211,12 @@
 /* --- Responsive --- */
 @media (max-width: 1200px) {
   .blogSection {
-    padding: 70px 4%;
+    padding: 35px 4%;
   }
   
   .header {
     max-width: 600px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 25px auto;
   }
   
   .tag {
@@ -234,65 +235,33 @@
   
   .postGrid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 20px; /* Reduced gap */
     max-width: 1100px;
     margin: 0 auto;
   }
   
   .postCard {
-    padding: 20px;
-  }
-  
-  .postImage {
-    height: 180px;
-    margin-bottom: 15px;
-  }
-  
-  .postTag {
-    padding: 4px 8px;
-    font-size: 11px;
-    margin-bottom: 12px;
-  }
-  
-  .postTitle {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .postExcerpt {
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-  
-  .readMore {
-    font-size: 14px;
-    padding: 8px 15px;
+    padding: 18px;
   }
   
   .paginationControls {
-    margin-top: 40px;
-    gap: 20px;
+    margin-top: 25px;
+    gap: 15px;
   }
   
   .paginationButton {
-    padding: 8px 15px;
+    padding: 6px 12px;
     font-size: 14px;
-  }
-  
-  .paginationNumbers button {
-    padding: 8px 12px;
-    font-size: 14px;
-    margin: 0 3px;
   }
 }
 
 @media (max-width: 992px) {
   .blogSection {
-    padding: 60px 3%;
+    padding: 30px 3%;
   }
   
   .header {
-    margin: 0 auto 35px auto;
+    margin: 0 auto 20px auto;
   }
   
   .title {
@@ -310,60 +279,23 @@
   }
   
   .postCard {
-    padding: 18px;
-  }
-  
-  .postImage {
-    height: 160px;
-    margin-bottom: 12px;
-  }
-  
-  .postTag {
-    padding: 3px 6px;
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .postTitle {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  
-  .postExcerpt {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-  
-  .readMore {
-    font-size: 13px;
-    padding: 6px 12px;
+    padding: 16px;
   }
   
   .paginationControls {
-    margin-top: 35px;
-    gap: 15px;
-  }
-  
-  .paginationButton {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-  
-  .paginationNumbers button {
-    padding: 6px 10px;
-    font-size: 13px;
-    margin: 0 2px;
+    margin-top: 25px;
+    gap: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .blogSection {
-    padding: 50px 2%;
+    padding: 25px 2%;
   }
   
   .header {
     max-width: 500px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
   }
   
   .tag {
@@ -382,79 +314,27 @@
   
   .postGrid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
     max-width: 500px;
   }
   
   .postCard {
-    padding: 15px;
-  }
-  
-  .postImage {
-    height: 200px;
-    margin-bottom: 10px;
-  }
-  
-  .postTag {
-    padding: 3px 6px;
-    font-size: 9px;
-    margin-bottom: 8px;
-  }
-  
-  .postTitle {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-  
-  .postExcerpt {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  
-  .readMore {
-    font-size: 12px;
-    padding: 5px 10px;
+    padding: 14px;
   }
   
   .paginationControls {
-    margin-top: 30px;
-    gap: 15px;
-  }
-  
-  .paginationButton {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-  
-  .paginationNumbers {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .paginationNumbers button {
-    padding: 5px 8px;
-    font-size: 12px;
-    margin: 0 1px 5px 1px;
-  }
-  
-  .paginationControls {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .paginationNumbers {
-    order: -1;
+    margin-top: 20px;
+    gap: 10px;
   }
 }
 
 @media (max-width: 576px) {
   .blogSection {
-    padding: 40px 2%;
+    padding: 20px 2%;
   }
   
   .header {
-    margin: 0 auto 25px auto;
+    margin: 0 auto 15px auto;
   }
   
   .title {
@@ -466,41 +346,15 @@
   }
   
   .postGrid {
-    gap: 12px;
+    gap: 10px;
   }
   
   .postCard {
     padding: 12px;
   }
   
-  .postImage {
-    height: 180px;
-  }
-  
-  .postTitle {
-    font-size: 15px;
-  }
-  
-  .postExcerpt {
-    font-size: 11px;
-  }
-  
-  .readMore {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
-  
   .paginationControls {
-    margin-top: 25px;
-  }
-  
-  .paginationButton {
-    padding: 5px 8px;
-    font-size: 11px;
-  }
-  
-  .paginationNumbers button {
-    padding: 4px 6px;
-    font-size: 11px;
+    margin-top: 15px;
+    gap: 8px;
   }
 }

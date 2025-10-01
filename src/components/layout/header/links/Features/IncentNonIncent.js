@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../../../header/Header";
-import Footer from "../../../footer/Footer";
 import styles from "./IncentNonIncent.module.css";
 import { FaGift, FaStar, FaChartLine, FaUsers, FaBolt, FaDollarSign, FaMedal, FaUserCheck } from "react-icons/fa";
 
@@ -62,7 +60,6 @@ const IncentNonIncent = () => {
 
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Incent vs Non-Incent Campaigns</h1>
@@ -345,7 +342,6 @@ const IncentNonIncent = () => {
         </div>
       )}
       
-      <Footer />
     </div>
   );
 };
